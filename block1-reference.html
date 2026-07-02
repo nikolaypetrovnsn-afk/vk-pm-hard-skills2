@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Справочник формул — VK PM Hard Skills</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-logo">VK PM Hard Skills</div>
+    <a href="index.html">Главная</a>
+    <div class="section-label">Блок 1. Справочник</div>
+    <a href="#metrics" class="sub-link active">Метрики и аналитика</a>
+    <a href="#experimentation" class="sub-link">Экспериментация</a>
+    <a href="#economics" class="sub-link">Продуктовая экономика</a>
+    <a href="#data" class="sub-link">Работа с данными</a>
+    <a href="#discovery" class="sub-link">Discovery & Research</a>
+    <a href="#okr" class="sub-link">Целеполагание (OKR)</a>
+    <a href="#prioritization" class="sub-link">Приоритизация</a>
+    <a href="#backlog" class="sub-link">Бэклог и роадмап</a>
+    <a href="#pmf" class="sub-link">Product-Market Fit</a>
+    <a href="#pricing" class="sub-link">Pricing & Monetization</a>
+    <a href="#growth" class="sub-link">Growth & Viral</a>
+    <a href="#strategy" class="sub-link">Product Strategy</a>
+    <a href="#stakeholders" class="sub-link">Stakeholders</a>
+    <a href="#competitive" class="sub-link">Competitive Analysis</a>
+    <a href="#gtm" class="sub-link">Go-to-Market</a>
+    <a href="#tech-fluency" class="sub-link">Technical Fluency</a>
+    <a href="#people" class="sub-link">People Management</a>
+    <a href="#marketplace" class="sub-link">Marketplace Mechanics</a>
+    <div class="section-label">Блок 2. Кейсы</div>
+    <a href="block2-cases.html#feed" class="sub-link">Лента ВК</a>
+    <a href="block2-cases.html#clips" class="sub-link">Клипы ВК</a>
+    <a href="block2-cases.html#messenger" class="sub-link">Мессенджер</a>
+    <a href="block2-cases.html#video" class="sub-link">VK Видео</a>
+    <div class="section-label">Блок 3. Практикум</div>
+    <a href="block3-practice.html#metrics" class="sub-link">Метрики</a>
+    <a href="block3-practice.html#experimentation" class="sub-link">Эксперименты</a>
+    <a href="block3-practice.html#economics" class="sub-link">Экономика</a>
+    <a href="block3-practice.html#data" class="sub-link">Данные</a>
+    <a href="block3-practice.html#discovery" class="sub-link">Discovery</a>
+    <a href="block3-practice.html#okr" class="sub-link">OKR</a>
+    <a href="block3-practice.html#prioritization" class="sub-link">Приоритизация</a>
+    <a href="block3-practice.html#backlog" class="sub-link">Бэклог</a>
+  </nav>
+
+  <main class="main">
+    <h1>Справочник формул и методов</h1>
+    <p>Каждая формула — с определением, переменными и ссылками на кейсы и задачи, где она применяется.</p>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="metrics">1.1 Метрики и аналитика</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="nsm">
+      <div class="formula-name">North Star Metric (NSM)</div>
+      <p>Единая метрика, отражающая core value продукта для пользователя. Критерии выбора:</p>
+      <ul>
+        <li>Отражает ценность для пользователя (value delivery)</li>
+        <li>Прогнозирует выручку (revenue predictor)</li>
+        <li>Измерима и понятна команде</li>
+      </ul>
+      <p><strong>Proxy-метрики</strong> — опережающие индикаторы, влияющие на NSM (CTR, scroll depth). <strong>Guard-метрики</strong> — ограничения, которые нельзя ухудшать (unlike rate, exit rate).</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-nsm">Кейс 2.1: NSM Ленты</a>
+        <a href="block2-cases.html#clips-nsm">Кейс 2.2: NSM Клипов</a>
+        <a href="block2-cases.html#messenger-nsm">Кейс 2.3: NSM Мессенджера</a>
+        <a href="block2-cases.html#video-nsm">Кейс 2.4: NSM Видео</a>
+        <a href="block3-practice.html#p313">Задача 3.1.3 [Staff]: расхождение NSM и proxy</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="retention-classic">
+      <div class="formula-name">Classic Retention (D1, D7, D30)</div>
+      <div class="formula-expr">Retention_DN = Users_active_on_day_N / Users_in_cohort × 100%</div>
+      <div class="formula-vars">
+        <code>Users_active_on_day_N</code> — пользователи, совершившие целевое действие ровно на N-й день<br>
+        <code>Users_in_cohort</code> — размер когорты (пользователи, зарегистрировавшиеся/активировавшиеся в день 0)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p311">Задача 3.1.1 [M]: расчёт D7 retention</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="retention-rolling">
+      <div class="formula-name">Rolling Retention</div>
+      <div class="formula-expr">Rolling_Retention_DN = Users_active_on_or_after_day_N / Users_in_cohort × 100%</div>
+      <div class="formula-vars">
+        <code>Users_active_on_or_after_day_N</code> — пользователи, вернувшиеся на N-й день <em>или позже</em><br>
+        Всегда ≥ Classic Retention на том же дне, т.к. учитывает всех вернувшихся после дня N
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-sql">Кейс 2.1: rolling retention Ленты (SQL)</a>
+        <a href="block3-practice.html#p312">Задача 3.1.2 [S]: rolling vs bracket</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="retention-bracket">
+      <div class="formula-name">Bracket Retention</div>
+      <div class="formula-expr">Bracket_Retention_DN = Users_active_in_[N-k, N+k] / Users_in_cohort × 100%</div>
+      <div class="formula-vars">
+        <code>[N-k, N+k]</code> — окно вокруг дня N (обычно ±1 или ±3 дня)<br>
+        Компромисс между строгостью classic и мягкостью rolling. Менее чувствительна к дневной волатильности.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p312">Задача 3.1.2 [S]: rolling vs bracket</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="ltv-simple">
+      <div class="formula-name">LTV — Simple (ARPU × Lifetime)</div>
+      <div class="formula-expr">LTV = ARPU × Lifetime</div>
+      <div class="formula-vars">
+        <code>ARPU</code> = Average Revenue Per User — средняя выручка на пользователя за период<br>
+        <code>Lifetime</code> = 1 / Churn_Rate — среднее время жизни пользователя (в тех же единицах, что ARPU)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-ltv">Кейс 2.2: LTV автора клипов</a>
+        <a href="block3-practice.html#p332">Задача 3.3.2 [S]: break-even для фичи авторов</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="ltv-cohort">
+      <div class="formula-name">LTV — Cohort-based</div>
+      <div class="formula-expr">LTV_cohort = Σ(Revenue_cohort_month_t / (1 + d)^t) / Users_in_cohort</div>
+      <div class="formula-vars">
+        <code>Revenue_cohort_month_t</code> — суммарная выручка когорты в месяц t<br>
+        <code>d</code> — ставка дисконтирования (обычно 10% годовых → ~0.8% в месяц)<br>
+        <code>t</code> — месяц с момента привлечения когорты
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#video-cohort">Кейс 2.4: когортный LTV платящих vs бесплатных</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="ltv-predictive">
+      <div class="formula-name">LTV — Predictive (ML-based)</div>
+      <div class="formula-expr">LTV_predicted = f(early_behavior_features)</div>
+      <div class="formula-vars">
+        <code>early_behavior_features</code> — признаки первых дней: частота сессий, глубина прокрутки, действия с контентом<br>
+        Модель обучается на исторических когортах с известным фактическим LTV. Позволяет оценивать LTV через 7-14 дней вместо 90+.
+      </div>
+    </div>
+
+    <div class="formula-block" id="ltv-saas">
+      <div class="formula-name">LTV — SaaS (подписочная модель)</div>
+      <div class="formula-expr">LTV_SaaS = ARPU × (1 / Churn_Rate) × Gross_Margin</div>
+      <p>С учётом дисконтирования (более точно):</p>
+      <div class="formula-expr">LTV_SaaS = ARPU × Gross_Margin / (1 + d - Retention_Rate)</div>
+      <p>Для multi-tier подписок:</p>
+      <div class="formula-expr">LTV_SaaS = Σ(Plan_i_Price × Plan_i_Retention^t) × Gross_Margin, t = 1…∞</div>
+      <div class="formula-vars">
+        <code>ARPU</code> — средняя выручка на пользователя в месяц (для VK Видео: $4.99 подписка)<br>
+        <code>Churn_Rate</code> — месячный отток подписчиков (например, 5%/мес → Lifetime = 1/0.05 = 20 мес)<br>
+        <code>Gross_Margin</code> = (Revenue - COGS) / Revenue — доля выручки после вычета прямых затрат (сервер, лицензии контента). Для стриминга обычно 30-50%<br>
+        <code>d</code> — ставка дисконтирования (10% годовых → ~0.8%/мес). Учитывает, что доллар сегодня > доллар через год<br>
+        <code>Retention_Rate</code> = 1 - Churn_Rate<br>
+        <strong>Почему важен Gross Margin:</strong> $4.99 подписка ≠ $4.99 прибыли. Серверы, CDN, лицензии контента съедают 50-70%.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#video-cohort">Кейс 2.4: LTV подписчиков VK Видео</a>
+        <a href="block3-practice.html#p332">Задача 3.3.2 [S]: break-even с учётом margin</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="ltv-retention">
+      <div class="formula-name">LTV — Through Retention Curve</div>
+      <div class="formula-expr">LTV_retention = ARPU × Σ(Retention_Dt), t = 0…N</div>
+      <p>Развёрнуто:</p>
+      <div class="formula-expr">LTV_retention = ARPU × [R_D0 + R_D1 + R_D7 + R_D14 + R_D30 + … + R_Dn]</div>
+      <p>С дисконтированием:</p>
+      <div class="formula-expr">LTV_retention_disc = ARPU × Σ(Retention_Dt / (1 + d)^t)</div>
+      <div class="formula-vars">
+        <code>R_Dt</code> — retention на день t (classic или rolling, в долях: 0.42, не 42%)<br>
+        <code>ARPU_per_day</code> — дневная выручка на активного пользователя<br>
+        <code>N</code> — горизонт расчёта. Обычно 90, 180 или 365 дней. Дальше кривая выравнивается и вклад мал<br>
+        <code>d</code> — дневная ставка дисконтирования (10% годовых → ~0.027%/день)<br><br>
+        <strong>Ключевое преимущество:</strong> не предполагает константный churn. Реальный churn не постоянен — он высок в первые дни и выравнивается. Эта формула учитывает <em>форму кривой retention</em>.<br><br>
+        <strong>Практика:</strong> чаще всего считаютеся по измеренным точкам (D0, D1, D3, D7, D14, D30, D60, D90), а промежуточные интерполируются. Кривая экстраполируется за D90 через экспоненциальный хвост: R(t) = R_D90 × e^(-λ×(t-90)), где λ подбирается по последним измеренным точкам.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-nsm">Кейс 2.1: LTV через retention-кривую Ленты</a>
+        <a href="block2-cases.html#clips-ltv">Кейс 2.2: creator LTV через retention</a>
+        <a href="block3-practice.html#p312">Задача 3.1.2 [S]: форма кривой retention и выбор метрики</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="unit-economics">
+      <div class="formula-name">Unit-экономика</div>
+      <div class="formula-expr">LTV / CAC ≥ 3</div>
+      <div class="formula-expr">Contribution Margin = Revenue - Variable Costs</div>
+      <div class="formula-expr">Payback Period = CAC / ARPU</div>
+      <div class="formula-vars">
+        <code>CAC</code> = Customer Acquisition Cost — стоимость привлечения пользователя<br>
+        <code>LTV/CAC ≥ 3</code> — эмпирическое правило: юнит рентабелен, если LTV в 3+ раза выше CAC<br>
+        <code>Variable Costs</code> — затраты, растущие пропорционально числу юнитов (сервер, трафик, выплаты авторам)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-unit">Кейс 2.2: стоимость стимуляции авторов vs revenue</a>
+        <a href="block3-practice.html#p332">Задача 3.3.2 [S]: break-even с unit-экономикой</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="funnel-metrics">
+      <div class="formula-name">Funnel Metrics</div>
+      <div class="formula-expr">Step Conversion = Users_at_step_N / Users_at_step_N-1 × 100%</div>
+      <div class="formula-expr">Drop-off Rate = 1 - Step Conversion</div>
+      <div class="formula-expr">Time-to-Convert = avg(timestamp_step_N - timestamp_step_N-1)</div>
+      <div class="formula-vars">
+        <code>Step Conversion</code> — конверсия между соседними шагами воронки<br>
+        <code>Drop-off Rate</code> — доля пользователей, отвалившихся на данном шаге<br>
+        <code>Time-to-Convert</code> — среднее время перехода между шагами
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-funnel">Кейс 2.2: воронка Клипов</a>
+        <a href="block3-practice.html#p343">Задача 3.4.3 [Staff]: event schema воронки создания клипа</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="engagement">
+      <div class="formula-name">Engagement-метрики</div>
+      <div class="formula-expr">Stickiness = DAU / MAU × 100%</div>
+      <div class="formula-expr">Sessions per DAU = Total_sessions / DAU</div>
+      <div class="formula-expr">Session Length = avg(session_end_time - session_start_time)</div>
+      <div class="formula-vars">
+        <code>Stickiness</code> — насколько ежедневно пользователи вовлечены. 50% = в среднем юзер заходит через день<br>
+        <code>DAU/MAU</code> для соцсетей обычно 40-60%, для утилит — 10-20%
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p313">Задача 3.1.3 [Staff]: DAU ↑ time spent ↓</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="experimentation">1.2 Экспериментация</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="hypotheses">
+      <div class="formula-name">Гипотезы H0 / H1</div>
+      <div class="formula-expr">H0: Δ = 0 (эффекта нет)</div>
+      <div class="formula-expr">H1: Δ ≠ 0 (двусторонняя) или H1: Δ > 0 (односторонняя)</div>
+      <div class="formula-vars">
+        <code>Двусторонняя</code> — проверяем эффект в любую сторону. Стандартный выбор.<br>
+        <code>Односторонняя</code> — проверяем эффект только в одном направлении. Даёт меньший sample size, но не ловит эффект в «неправильную» сторону. Применять только если есть веская причина не ждать негативного эффекта.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-ab">Кейс 2.1: A/B рекомендаций Ленты</a>
+        <a href="block2-cases.html#messenger-ab">Кейс 2.3: редизайн панели ввода</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="mde">
+      <div class="formula-name">MDE (Minimum Detectable Effect)</div>
+      <div class="formula-expr">MDE = Z_α/2 × √(p₁(1-p₁) + p₂(1-p₂)) + Z_β × √(p₁(1-p₁) + p₂(1-p₂))</div>
+      <p>Для пропорций (конверсий) упрощённо:</p>
+      <div class="formula-expr">MDE ≈ (Z_α/2 + Z_β) × √(2 × p̄ × (1 - p̄) / n)</div>
+      <div class="formula-vars">
+        <code>Z_α/2</code> — критическое значение нормального распределения (α=0.05 → 1.96)<br>
+        <code>Z_β</code> — критическое значение для мощности (β=0.2 → 0.84)<br>
+        <code>p̄</code> — базовая конверсия (control)<br>
+        <code>n</code> — размер группы<br>
+        MDE зависит от дисперсии: чем выше базовая конверсия → тем больше дисперсия → тем больше MDE при том же n
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-ab">Кейс 2.1: MDE для редизайна рекомендаций Ленты</a>
+        <a href="block3-practice.html#p321">Задача 3.2.1 [M]: sample size при MDE=1pp</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="sample-size">
+      <div class="formula-name">Sample Size</div>
+      <div class="formula-expr">n = (Z_α/2 + Z_β)² × 2 × p̄ × (1 - p̄) / Δ²</div>
+      <div class="formula-vars">
+        <code>n</code> — размер каждой группы (контроль + тест = 2n)<br>
+        <code>p̄</code> — базовая конверсия (control)<br>
+        <code>Δ</code> — минимальный эффект, который хотим обнаружить (MDE в абсолютных единицах)<br>
+        <code>Z_α/2 = 1.96</code> при α = 0.05<br>
+        <code>Z_β = 0.84</code> при мощности 80% (β = 0.2)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p321">Задача 3.2.1 [M]: расчёт sample size для Клипов</a>
+        <a href="block2-cases.html#clips-ab">Кейс 2.2: sample size для кнопки «написать автору»</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="stat-significance">
+      <div class="formula-name">Статистическая значимость</div>
+      <div class="formula-expr">p-value = P(observig this effect | H0 is true)</div>
+      <div class="formula-expr">CI = effect ± Z_α/2 × SE(effect)</div>
+      <div class="formula-vars">
+        <code>p-value &lt; α</code> → отвергаем H0, эффект статистически значим<br>
+        <code>CI (95%)</code> — с 95% вероятностью истинный эффект лежит в этом интервале. Если не содержит 0 — значим.<br>
+        <code>α (Type I error)</code> — вероятность найти эффект, когда его нет (ложноположительный)<br>
+        <code>β (Type II error)</code> — вероятность пропустить эффект (ложноотрицательный)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p322">Задача 3.2.2 [S]: p-value = 0.049, платформенный сплит</a>
+        <a href="block2-cases.html#video-ab">Кейс 2.4: autoplay со звуком — guard-метрики</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="multiple-testing">
+      <div class="formula-name">Поправки на множественное тестирование</div>
+      <div class="formula-expr">Bonferroni: α_adj = α / k</div>
+      <div class="formula-expr">Benjamini-Hochberg (FDR): ранжировать p-values, отвергать если p(i) ≤ i/k × α</div>
+      <div class="formula-vars">
+        <code>k</code> — число тестов (платформ, метрик, вариантов)<br>
+        <code>Bonferroni</code> — консервативна, гарантирует family-wise error rate. Проста, но снижает мощность.<br>
+        <code>BH (FDR)</code> — контролирует долю ложных открытий. Менее консервативна, предпочтительнее при k &gt; 3.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p322">Задача 3.2.2 [S]: несколько платформ = множественные сравнения</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="experiment-checklist">
+      <div class="formula-name">Чек-лист дизайна эксперимента</div>
+      <ol class="checklist">
+        <li><strong>Метрики:</strong> целевая (goal), proxy, guard — определены до старта</li>
+        <li><strong>Сплиттинг:</strong> по user_id / device_id / cluster — без утечки между группами</li>
+        <li><strong>Длительность:</strong> минимум 1 полный цикл (неделя), учесть сезонность</li>
+        <li><strong>Sample size:</strong> рассчитан до старта, группы сбалансированы 50/50</li>
+        <li><strong>Ramp-up:</strong> 1% → 10% → 50%, с проверкой guard-метрик на каждом этапе</li>
+        <li><strong>Guard-метрики:</strong> метрики, которые не должны ухудшиться (crash rate, exit rate, revenue)</li>
+        <li><strong>Инфраструктура:</strong> нагрузка на бэкенд при расчёте нового алгоритма</li>
+        <li><strong>Network effects:</strong> если юзеры групп влияют друг на друга — cluster randomization</li>
+      </ol>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-ab">Кейс 2.1: network effects → cluster randomization</a>
+        <a href="block2-cases.html#clips-ab">Кейс 2.2: сплит по зрителям vs по авторам</a>
+        <a href="block3-practice.html#p323">Задача 3.2.3 [Staff]: дизайн эксперимента для Клипов</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="economics">1.3 Продуктовая экономика</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="impact-top-down">
+      <div class="formula-name">Impact Estimation — Top-Down</div>
+      <div class="formula-expr">Revenue Impact = ΔMetric × Monetization_Coefficient × Affected_Users</div>
+      <div class="formula-vars">
+        Начинаем с целевой метрики (time spent, completion rate), считаем каскадный эффект на revenue.<br>
+        <code>ΔMetric</code> — ожидаемое изменение целевой метрики (абсолют или %)<br>
+        <code>Monetization_Coefficient</code> — сколько $ приносит единица метрики (например, $0.001 за минуту time spent)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-economics">Кейс 2.1: +5% time spent → ad revenue</a>
+        <a href="block3-practice.html#p331">Задача 3.3.1 [M]: completion rate → revenue</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="impact-bottom-up">
+      <div class="formula-name">Impact Estimation — Bottom-Up</div>
+      <div class="formula-expr">Revenue Impact = Δ_Per_User × N_Affected_Users × ARPU_impact</div>
+      <div class="formula-vars">
+        Начинаем с изменения на уровне одного юзера, масштабируем на затронутую аудиторию.<br>
+        Удобнее, когда фича затрагивает подгруппу (например, только авторов клипов).
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p332">Задача 3.3.2 [S]: per-creator lift × creator count</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="financial-model">
+      <div class="formula-name">Financial Model — Revenue Impact</div>
+      <div class="formula-expr">Revenue Impact = ΔMetric × Monetization_Coeff × Users</div>
+      <p>Для рекламных продуктов:</p>
+      <div class="formula-expr">ΔAd Revenue = DAU × ΔTime_Spent × Ad_Impressions_per_Minute × CPM / 1000</div>
+      <div class="formula-vars">
+        <code>Ad_Impressions_per_Minute</code> — среднее число показов рекламы за минуту сессии<br>
+        <code>CPM</code> — Cost Per Mille, стоимость 1000 показов
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-economics">Кейс 2.1: Δtime_spent × impressions × CPM × DAU</a>
+        <a href="block2-cases.html#clips-unit">Кейс 2.2: Δcompletion_rate × CPM × clips/session × DAU</a>
+        <a href="block3-practice.html#p331">Задача 3.3.1 [M]: financial impact</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="opportunity-cost">
+      <div class="formula-name">Opportunity Cost & Expected Value</div>
+      <div class="formula-expr">EV = Probability_Success × Impact_Success + Probability_Failure × Impact_Failure</div>
+      <div class="formula-expr">Opportunity Cost = EV(alternative_not_chosen)</div>
+      <div class="formula-vars">
+        <code>EV</code> — ожидаемая ценность решения с учётом вероятностей исходов<br>
+        <code>Opportunity Cost</code> — упущенная выгода от не выбранной альтернативы<br>
+        Если EV(A) &gt; EV(B) + Opportunity_Cost → выбираем A
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p333">Задача 3.3.3 [Staff]: сравнение Feed vs Clips vs Messenger</a>
+        <a href="block2-cases.html#messenger-economics">Кейс 2.3: indirect impact Мессенджера</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="prioritization">
+      <div class="formula-name">Приоритизация: ICE / RICE</div>
+      <div class="formula-expr">ICE Score = Impact × Confidence × Ease</div>
+      <div class="formula-expr">RICE Score = (Reach × Impact × Confidence) / Effort</div>
+      <div class="formula-vars">
+        <code>Reach</code> — сколько пользователей затронет (в absolute numbers за период)<br>
+        <code>Impact</code> — величина эффекта на одного пользователя (1-3-5 шкала)<br>
+        <code>Confidence</code> — уверенность в оценке (0.5-0.8-1.0)<br>
+        <code>Ease / Effort</code> — простота реализации (1-2-3) или трудозатраты (человеко-недели)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p333">Задача 3.3.3 [Staff]: RICE для трёх продуктов</a>
+        <a href="block2-cases.html#clips-ltv">Кейс 2.2: приоритизация creator vs viewer фич</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="data">1.4 Работа с данными</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="event-schema">
+      <div class="formula-name">Event Schema</div>
+      <div class="formula-expr">{ event_name: string, user_id: string, timestamp: ISO8601, platform: enum, params: dict }</div>
+      <div class="formula-vars">
+        <code>event_name</code> — глагол + объект: <code>clip_watch</code>, <code>feed_scroll</code>, <code>message_send</code><br>
+        <code>params</code> — свойства события (clip_id, duration, source), не свойства юзера<br>
+        <code>user_id</code> — идентификатор для сплиттинга и когорт<br>
+        <code>idempotency_key</code> — уникальный ключ события для дедупликации
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p343">Задача 3.4.3 [Staff]: event schema для воронки создания клипа</a>
+        <a href="block2-cases.html#clips-funnel">Кейс 2.2: event schema для clip_watch</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="sql-cohort">
+      <div class="formula-name">SQL — Cohort Retention</div>
+<pre><code><span class="kw">WITH</span> cohort <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, first_event_ts) <span class="kw">AS</span> cohort_date
+  <span class="kw">FROM</span> user_activation
+),
+active_days <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    c.user_id,
+    c.cohort_date,
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp) <span class="kw">AS</span> active_date,
+    <span class="fn">DATE_DIFF</span>(<span class="str">'day'</span>, c.cohort_date,
+      <span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp)) <span class="kw">AS</span> day_n
+  <span class="kw">FROM</span> cohort c
+  <span class="kw">JOIN</span> events e <span class="kw">ON</span> c.user_id = e.user_id
+)
+<span class="kw">SELECT</span>
+  cohort_date,
+  day_n,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> retained,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id)::<span class="kw">FLOAT</span> /
+    <span class="fn">FIRST_VALUE</span>(<span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id))
+      <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> cohort_date
+             <span class="kw">ORDER BY</span> day_n
+             <span class="kw">ROWS BETWEEN UNBOUNDED</span>
+             <span class="kw">PRECEDING AND UNBOUNDED FOLLOWING</span>)
+    <span class="kw">AS</span> retention_rate
+<span class="kw">FROM</span> active_days
+<span class="kw">WHERE</span> day_n <span class="kw">BETWEEN</span> <span class="num">0</span> <span class="kw">AND</span> <span class="num">30</span>
+<span class="kw">GROUP BY</span> cohort_date, day_n
+<span class="kw">ORDER BY</span> cohort_date, day_n;</code></pre>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-sql">Кейс 2.1: rolling retention для Ленты</a>
+        <a href="block3-practice.html#p341">Задача 3.4.1 [M]: SQL для cohort retention</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="sql-rolling">
+      <div class="formula-name">SQL — Rolling Metrics (Window Functions)</div>
+<pre><code><span class="kw">SELECT</span>
+  user_id,
+  active_date,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> active_date) <span class="kw">OVER</span> (
+    <span class="kw">PARTITION BY</span> user_id
+    <span class="kw">ORDER BY</span> active_date
+    <span class="kw">ROWS BETWEEN</span> <span class="num">6</span> <span class="kw">PRECEDING AND CURRENT ROW</span>
+  ) <span class="kw">AS</span> active_days_7d,
+  <span class="fn">SUM</span>(sessions) <span class="kw">OVER</span> (
+    <span class="kw">PARTITION BY</span> user_id
+    <span class="kw">ORDER BY</span> active_date
+    <span class="kw">ROWS BETWEEN</span> <span class="num">29</span> <span class="kw">PRECEDING AND CURRENT ROW</span>
+  ) <span class="kw">AS</span> sessions_30d
+<span class="kw">FROM</span> daily_user_activity;</code></pre>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-sql">Кейс 2.1: rolling retention SQL</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="sql-funnel">
+      <div class="formula-name">SQL — Funnel Analysis</div>
+<pre><code><span class="kw">WITH</span> step1 <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> user_id,
+    <span class="fn">MIN</span>(timestamp) <span class="kw">AS</span> t1
+  <span class="kw">FROM</span> events
+  <span class="kw">WHERE</span> event_name = <span class="str">'clips_tab_open'</span>
+    <span class="kw">AND</span> timestamp::<span class="kw">DATE</span> = <span class="str">'2026-07-01'</span>
+  <span class="kw">GROUP BY</span> user_id
+),
+step2 <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> s1.user_id, s1.t1,
+    <span class="fn">MIN</span>(e.timestamp) <span class="kw">AS</span> t2
+  <span class="kw">FROM</span> step1 s1
+  <span class="kw">JOIN</span> events e <span class="kw">ON</span> s1.user_id = e.user_id
+    <span class="kw">AND</span> e.event_name = <span class="str">'clip_watch'</span>
+    <span class="kw">AND</span> e.timestamp > s1.t1
+  <span class="kw">GROUP BY</span> s1.user_id, s1.t1
+),
+step3 <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> s2.user_id, s2.t1, s2.t2,
+    <span class="fn">MIN</span>(e.timestamp) <span class="kw">AS</span> t3
+  <span class="kw">FROM</span> step2 s2
+  <span class="kw">JOIN</span> events e <span class="kw">ON</span> s2.user_id = e.user_id
+    <span class="kw">AND</span> e.event_name = <span class="str">'clip_create'</span>
+    <span class="kw">AND</span> e.timestamp > s2.t2
+  <span class="kw">GROUP BY</span> s2.user_id, s2.t1, s2.t2
+)
+<span class="kw">SELECT</span>
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s1.user_id) <span class="kw">AS</span> step1_users,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s2.user_id) <span class="kw">AS</span> step2_users,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s3.user_id) <span class="kw">AS</span> step3_users,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s2.user_id)::<span class="kw">FLOAT</span> /
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s1.user_id) <span class="kw">AS</span> conv_1_to_2,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s3.user_id)::<span class="kw">FLOAT</span> /
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s2.user_id) <span class="kw">AS</span> conv_2_to_3
+<span class="kw">FROM</span> step1 s1
+<span class="kw">LEFT JOIN</span> step2 s2 <span class="kw">ON</span> s1.user_id = s2.user_id
+<span class="kw">LEFT JOIN</span> step3 s3 <span class="kw">ON</span> s1.user_id = s3.user_id;</code></pre>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-funnel">Кейс 2.2: воронка Клипов</a>
+        <a href="block3-practice.html#p343">Задача 3.4.3 [Staff]: funnel event schema</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="logging-design">
+      <div class="formula-name">Logging Design — принципы</div>
+      <ul>
+        <li><strong>Событие = действие пользователя</strong> — клик, скролл, просмотр. Не логировать стейты («окно открыто»)</li>
+        <li><strong>Param vs User Property:</strong> param меняется от события к событию (clip_id), user property — атрибут юзера (plan_type, registration_date)</li>
+        <li><strong>Idempotency:</strong> каждое событие имеет уникальный key = (event_name, user_id, timestamp_ms, session_id) для дедупликации</li>
+        <li><strong>Гранулярность:</strong> логировать на уровне, достаточном для восстановления воронки. Не на уровне каждого пикселя</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p342">Задача 3.4.2 [S]: дублирование clip_watch</a>
+        <a href="block3-practice.html#p343">Задача 3.4.3 [Staff]: event schema для клипов</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="data-quality">
+      <div class="formula-name">Data Quality Checks</div>
+      <ul>
+        <li><strong>Дедупликация:</strong> GROUP BY idempotency_key HAVING COUNT(*) = 1 — или ROW_NUMBER() = 1</li>
+        <li><strong>Null checks:</strong> WHERE event_name IS NOT NULL AND user_id IS NOT NULL — убедиться, что нет «анонимных» событий</li>
+        <li><strong>Pipeline latency:</strong> сравнить MAX(timestamp) в таблице с NOW() — если отставание &gt; 2ч → алерт</li>
+        <li><strong>Volume anomalies:</strong> сравнить дневной объём событий с 7-дневным rolling avg — если отклонение &gt; 30% → проверить</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block3-practice.html#p342">Задача 3.4.2 [S]: дедупликация утроенных событий</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="discovery">1.5 Discovery & Research</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="problem-framing">
+      <div class="formula-name">Problem Framing</div>
+      <div class="formula-expr">Problem Statement = [User] + [Situation] + [Pain] + [Evidence]</div>
+      <div class="formula-vars">
+        <code>User</code> — конкретная персона / сегмент (не «все пользователи»)<br>
+        <code>Situation</code> — контекст, в котором возникает проблема<br>
+        <code>Pain</code> — что болит, в каких терминах пользователь это описывает<br>
+        <code>Evidence</code> — данные, подтверждающие масштаб: метрики, quotes из интервью, саппорт-тики<br><br>
+        <strong>Антипаттерн:</strong> «Нужно добавить фильтры» — это решение, а не проблема. Проблема: «Новые авторы Клипов (user) после публикации первого клипа (situation) не понимают, почему нет просмотров (pain) — 40% не публикуют второй клип (evidence)»
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: problem framing для Клипов</a>
+        <a href="block3-practice.html#p513">Задача 5.1.3 [Staff]: переформулировать решение как проблему</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="hypothesis-product">
+      <div class="formula-name">Продуктовая гипотеза</div>
+      <div class="formula-expr">H = If [Action], then [Outcome] for [Segment], because [Rationale]</div>
+      <div class="formula-vars">
+        <code>Action</code> — что мы делаем (изменяем, добавляем, убираем)<br>
+        <code>Outcome</code> — измеримый результат (метрика, поведение)<br>
+        <code>Segment</code> — на ком ожидаем эффект<br>
+        <code>Rationale</code> — почему ожидаем эффект (инсайт из research, аналоги, теория)<br><br>
+        <strong>Пример:</strong> «Если покажем похожие клипы после досмотра (action), то completion rate вырастет на 5%+ (outcome) для пользователей с 3+ сессиями в день (segment), потому что такие пользователи ищут контент для залипания, а не конкретного автора (rationale)»<br><br>
+        <strong>Критерии сильной гипотезы:</strong> фальсифицируема (можно опровергнуть), измерима, привязана к инсайту (не «мне кажется»)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-okr">Кейс 2.1: гипотезы от OKR Ленты</a>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: гипотезы для Клипов</a>
+        <a href="block3-practice.html#p521">Задача 5.2.1 [M]: сформулировать гипотезу</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="jtbd">
+      <div class="formula-name">Jobs To Be Done (JTBD)</div>
+      <div class="formula-expr">When [Situation], I want to [Motivation], so I can [Expected Outcome]</div>
+      <div class="formula-vars">
+        <code>Situation</code> — контекст, в котором пользователь «нанимает» продукт<br>
+        <code>Motivation</code> — функциональная или эмоциональная потребность<br>
+        <code>Expected Outcome</code> — чего ожидает получить<br><br>
+        <strong>Функциональный Job:</strong> «Когда мне скучно в метро, я хочу посмотреть короткие видео, чтобы убить время»<br>
+        <strong>Эмоциональный Job:</strong> «Когда я вижу смешной клип, я хочу им поделиться, чтобы друзья подумали, что я классный»<br>
+        <strong>Social Job:</strong> «Когда я создаю клип, я хочу набрать 10K просмотров, чтобы почувствовать себя популярным автором»<br><br>
+        <strong>Применение:</strong> JTBD помогает формулировать гипотезы (job не закрывается → фича), приоритизировать (jobs по частоте и боли), и искать конкурентов (кто ещё закрывает этот job — TikTok, YouTube Shorts, Reels)
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: JTBD для Клипов</a>
+        <a href="block2-cases.html#messenger-discovery">Кейс 2.3: JTBD для Мессенджера</a>
+        <a href="block3-practice.html#p512">Задача 5.1.2 [S]: JTBD-анализ</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="custdev">
+      <div class="formula-name">CustDev / Пользовательские интервью</div>
+      <p><strong>Типы интервью:</strong></p>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Цель</th><th>Когда</th><th>Сколько</th></tr>
+        <tr><td>Problem interview</td><td>Понять, есть ли проблема</td><td>До решения</td><td>5-8 респондентов</td></tr>
+        <tr><td>Solution interview</td><td>Проверить, решает ли решение</td><td>С прототипом</td><td>5-8 респондентов</td></tr>
+        <tr><td>Validation interview</td><td>Подтвердить метрики (willingness to pay, частота)</td><td>Перед масштабированием</td><td>15-20 респондентов</td></tr>
+      </table>
+      <p><strong>Правила:</strong></p>
+      <ul>
+        <li><strong>Факт > мнение:</strong> «Расскажи, как ты в последний раз делал X» > «Как бы ты хотел делать X?»</li>
+        <li><strong>5 Why:</strong> копай до корневой причины. «Хочу фильтры» → «Почему?» → «Не нахожу нужное» → «Почему?» → «Лента показывает не то»</li>
+        <li><strong>Не веди:</strong> открытые вопросы, без наводящих. Не «Вам бы пригодились фильтры?», а «Что бы вы изменили в поиске клипов?»</li>
+        <li><strong>Saturate:</strong> если 5-й респондент не даёт новых инсайтов → сатурация достигнута, можно остановить</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: CustDev для авторов Клипов</a>
+        <a href="block3-practice.html#p511">Задача 5.1.1 [M]: спроектировать интервью</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="cjm">
+      <div class="formula-name">Customer Journey Map (CJM)</div>
+      <div class="formula-expr">CJM = Stages × [Actions + Thoughts + Emotions + Pain Points + Opportunities]</div>
+      <div class="formula-vars">
+        <code>Stages</code> — ключевые этапы взаимодействия (Awareness → Consideration → Activation → Engagement → Retention → Advocacy)<br>
+        <code>Actions</code> — что пользователь делает на каждом этапе<br>
+        <code>Thoughts</code> — о чём думает (из интервью)<br>
+        <code>Emotions</code> — что чувствует (+/−/0 по шкале)<br>
+        <code>Pain Points</code> — где «ломается» опыт<br>
+        <code>Opportunities</code> — где продукт может помочь<br><br>
+        <strong>Принцип:</strong> CJM строится по данным (интервью + метрики), а не по предположениям. Каждому pain point сопоставляется метрика для валидации.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: CJM автора клипов</a>
+        <a href="block2-cases.html#messenger-discovery">Кейс 2.3: CJM нового пользователя Мессенджера</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="okr">1.6 Целеполагание (OKR)</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="okr-framework">
+      <div class="formula-name">OKR — Objectives & Key Results</div>
+      <div class="formula-expr">Objective = Качественная цель (куда идём)</div>
+      <div class="formula-expr">Key Result = Количественный измеримый результат (как узнаем, что дошли)</div>
+      <div class="formula-vars">
+        <code>Objective</code> — вдохновляющий, качественный, направленный. Без цифр. Пример: «Сделать Ленту персональным центром интересов пользователя»<br>
+        <code>Key Results</code> — 2-4 на objective. SMART: конкретные, измеримые, с дедлайном. Пример: «Увеличить CTR рекомендаций с 8% до 12% к концу Q3»<br><br>
+        <strong>Правила OKR:</strong><br>
+        <ul>
+          <li>Не более 3-5 OKR на команду — фокус важнее охвата</li>
+          <li>70% достижения = хорошо. 100% = цели были недостаточно амбициозные</li>
+          <li>Key Results — метрики, а не таски. «Запустить фичу X» — не KR. «Увеличить Y на 10% через фичу X» — KR</li>
+          <li>OKR каскадируются: Company → Product Area → Team. Но нижний уровень может иметь свои OKR, не только декомпозицию</li>
+        </ul>
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-okr">Кейс 2.1: OKR для Ленты</a>
+        <a href="block2-cases.html#clips-okr">Кейс 2.2: OKR для Клипов</a>
+        <a href="block3-practice.html#p521">Задача 5.2.1 [M]: сформулировать OKR</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="goal-chain">
+      <div class="formula-name">Goal → Metric → Hypothesis → Experiment</div>
+      <div class="formula-expr">Goal → NSM → Driver Metric → Hypothesis → Experiment → Learn → Iterate</div>
+      <div class="formula-vars">
+        <code>Goal</code> — стратегическая цель (из OKR): «Увеличить engagement Клипов»<br>
+        <code>NSM</code> — метрика-звезда: clips watched per DAU<br>
+        <code>Driver Metric</code> — рычаг, который двигает NSM: completion rate, creation rate, share rate<br>
+        <code>Hypothesis</code> — что конкретно мы сделаем и что ожидаем: «Если добавим автовоспроизведение со звуком → completion rate вырастет на 5%+»<br>
+        <code>Experiment</code> — A/B-тест, prototype test, или или MVP<br>
+        <code>Learn</code> — результат: подтвердили / опровергли / узнали новое. Всегда документируем<br><br>
+        <strong>Антипаттерн:</strong> «Давайте запустим X» без связи с Goal → Metric. Каждая фича должна быть прослежена до OKR.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-okr">Кейс 2.1: цепочка для Ленты</a>
+        <a href="block3-practice.html#p522">Задача 5.2.2 [S]: построить цепочку Goal → Experiment</a>
+        <a href="block3-practice.html#p533">Задача 5.3.3 [Staff]: OKR с конфликтующими целями</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="prioritization">1.7 Приоритизация</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="rice-extended">
+      <div class="formula-name">ICE / RICE (расширенная версия)</div>
+      <div class="formula-expr">ICE Score = Impact × Confidence × Ease</div>
+      <div class="formula-expr">RICE Score = (Reach × Impact × Confidence) / Effort</div>
+      <div class="formula-vars">
+        <code>Reach</code> — сколько пользователей затронет за период (absolute: 1M users/quarter)<br>
+        <code>Impact</code> — эффект на одного пользователя (1=minimal, 2=low, 3=medium, 5=high, 7=massive)<br>
+        <code>Confidence</code> — уверенность в оценке (100%=high, 80%=medium, 50%=low). Снижай, если нет данных<br>
+        <code>Ease</code> — лёгкость (1=months, 2=weeks, 3=days). <code>Effort</code> — трудозатраты (person-weeks)<br><br>
+        <strong>Когда ICE:</strong> нужен быстрый отсев — много идей, мало времени<br>
+        <strong>Когда RICE:</strong> нужен учёт масштаба — идеи с разным reach<br>
+        <strong>Ловушка:</strong> высокие confidence при отсутствии данных. Если нет CustDev → confidence ≤ 50%
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: RICE для бэклога Ленты</a>
+        <a href="block3-practice.html#p333">Задача 3.3.3 [Staff]: RICE для трёх продуктов</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="wsjf">
+      <div class="formula-name">WSJF — Weighted Shortest Job First</div>
+      <div class="formula-expr">WSJF = Cost of Delay / Job Duration</div>
+      <div class="formula-expr">Cost of Delay = User_Business_Value + Time_Criticality + Risk_Reduction</div>
+      <div class="formula-vars">
+        <code>User_Business_Value</code> — ценность для пользователя и бизнеса (1-10 шкала, relative)<br>
+        <code>Time_Criticality</code> — насколько важно успеть сейчас (deadlines, конкуренты, сезонность). 1-10<br>
+        <code>Risk_Reduction</code> — насколько фича снижает риски (технические, регуляторные). 1-10<br>
+        <code>Job Duration</code> — время реализации (1-10, relative). Меньше = быстрее<br><br>
+        <strong>Ключевая идея:</strong> дорогая задержка + быстрая реализация = высокий приоритет. Не «самое важное», а «самое выгодное с учётом времени».<br>
+        <strong>Когда применять:</strong> продуктовые команды с ограниченной ёмкостью, где время — критический ресурс.
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-okr">Кейс 2.2: WSJF для Клипов</a>
+        <a href="block3-practice.html#p531">Задача 5.3.1 [M]: посчитать WSJF</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="kano">
+      <div class="formula-name">Kano Model</div>
+      <p>Классификация фич по типу ценности для пользователя:</p>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Реакция пользователя</th><th>Стратегия</th><th>Пример (Клипы)</th></tr>
+        <tr><td><strong>Must-have</strong></td><td>Нет → недоволен, Есть → ожидаемо</td><td>Обязательно. Без этого продукт не работает</td><td>Запись клипа, публикация</td></tr>
+        <tr><td><strong>Performance</strong></td><td>Больше → лучше. Линейная зависимость</td><td>Инвестируй пропорционально</td><td>Качество видео, скорость загрузки</td></tr>
+        <tr><td><strong>Delight</strong></td><td>Нет → нейтрально, Есть → wow</td><td>Дифференциатор. Добавляй ограниченно</td><td>AR-маски, AI-субтитры</td></tr>
+        <tr><td><strong>Indifferent</strong></td><td>Всё равно</td><td>Не делай</td><td>—</td></tr>
+        <tr><td><strong>Reverse</strong></td><td>Есть → хуже</td><td>Избегай</td><td>Принудительный логин для просмотра</td></tr>
+      </table>
+      <p><strong>Динамика:</strong> Delight-фичи со временем становятся Must-have (AR-маски в 2020 → ожидаемо в 2026). Регулярно пересматривай карту.</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-discovery">Кейс 2.2: Kano-анализ для Клипов</a>
+        <a href="block3-practice.html#p532">Задача 5.3.2 [S]: Kano-классификация</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="value-effort">
+      <div class="formula-name">Value / Effort Matrix</div>
+      <p>Быстрый фреймворк для визуальной приоритизации:</p>
+      <table class="metric-table">
+        <tr><th></th><th>Low Effort</th><th>High Effort</th></tr>
+        <tr><td><strong>High Value</strong></td><td>Quick Wins — делай первым!</td><td>Big Bets — планируй, оценивай риски</td></tr>
+        <tr><td><strong>Low Value</strong></td><td>Fill-ins — делай если есть время</td><td>Money Pit — не делай</td></tr>
+      </table>
+      <p><strong>Применение:</strong> начальная фильтрация бэклога. Каждую идею размещаешь на матрице — и стратегия действий очевидна. Не даёт точный рейтинг (как RICE), но помогает быстро отсеять Money Pit.</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: матрица для бэклога Ленты</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="moscow">
+      <div class="formula-name">MoSCoW</div>
+      <p>Классификация требований по критичности:</p>
+      <ul>
+        <li><strong>MUST:</strong> без этого релиз не имеет смысла. Жёсткое обязательство</li>
+        <li><strong>SHOULD:</strong> важно, но есть обходной путь. Включить если позволяет ёмкость</li>
+        <li><strong>COULD:</strong> желательно. Делаем если осталось время</li>
+        <li><strong>WON'T (this time):</strong> осознанно исключаем из текущего релиза. Не забыть — отложить в бэклог</li>
+      </ul>
+      <p><strong>Правило:</strong> MUST — не более 60% ёмкости спринта. Если всё MUST — приоритизации нет.</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: MoSCoW для спринта Ленты</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="backlog">1.8 Бэклог и роадмап</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="backlog-structure">
+      <div class="formula-name">Структура бэклога</div>
+      <div class="formula-expr">Initiative → Epic → User Story → Task</div>
+      <table class="metric-table">
+        <tr><th>Уровень</th><th>Горизонт</th><th>Кто владеет</th><th>Пример</th></tr>
+        <tr><td><strong>Initiative</strong></td><td>Квартал</td><td>PM / Group PM</td><td>«Увеличить retention авторов Клипов»</td></tr>
+        <tr><td><strong>Epic</strong></td><td>1-2 спринта</td><td>PM + Tech Lead</td><td>«Система аналитики для авторов»</td></tr>
+        <tr><td><strong>User Story</strong></td><td>1-3 дня</td><td>PM / Designer</td><td>«Как автор, я хочу видеть просмотры по дням, чтобы понимать тренды»</td></tr>
+        <tr><td><strong>Task</strong></td><td>Часы</td><td>Developer</td><td>«Настроить endpoint /api/creator/stats»</td></tr>
+      </table>
+      <p><strong>Правила:</strong></p>
+      <ul>
+        <li>Каждый Epic привязан к OKR / Initiative — если нет связи → вырезать</li>
+        <li>User Story = As a [persona], I want [action], so that [outcome]. Без «so that» — это таска, не стори</li>
+        <li>Бэклог = живой документ. Refinement каждую неделю. Stale items (&gt; 3 мес без движения) → архив</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: бэклог Ленты</a>
+        <a href="block3-practice.html#p531">Задача 5.3.1 [M]: декомпозиция Initiative</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="roadmap">
+      <div class="formula-name">Роадмап: Now / Next / Later</div>
+      <table class="metric-table">
+        <tr><th>Горизонт</th><th>Детализация</th><th>Обязательства</th><th>Содержание</th></tr>
+        <tr><td><strong>Now</strong> (1-6 нед)</td><td>High: конкретные эпики и стори</td><td>Обязательство перед стейкхолдерами</td><td>Что точно делаем</td></tr>
+        <tr><td><strong>Next</strong> (1-3 мес)</td><td>Medium: инициативы и эпики</td><td>Плановые, могут измениться</td><td>Что вероятно будем делать</td></tr>
+        <tr><td><strong>Later</strong> (3-12 мес)</td><td>Low: направления и гипотезы</td><td>Никаких. Направление, не обещание</td><td>Куда хотим прийти</td></tr>
+      </table>
+      <p><strong>Антипаттерны роадмапа:</strong></p>
+      <ul>
+        <li><strong>Feature roadmap</strong> (список фич по датам) — негибкий, не оставляет места для обучения. Замени на <strong>outcome roadmap</strong> (какие результаты хотим получить)</li>
+        <li><strong>«Закончим к 15 октября»</strong> для Later-горизонта — ложная точность. Later = направление</li>
+        <li><strong>Роадмап без приоритизации</strong> — всё «важно» = ничего не важно</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: роадмап Ленты</a>
+        <a href="block2-cases.html#clips-okr">Кейс 2.2: роадмап Клипов</a>
+        <a href="block3-practice.html#p533">Задача 5.3.3 [Staff]: роадмап при конфликтующих OKR</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="refinement">
+      <div class="formula-name">Backlog Refinement</div>
+      <p>Регулярный процесс поддержания бэклога в рабочем состоянии:</p>
+      <ul>
+        <li><strong>Частота:</strong> 1 раз в неделю, 1-2 часа с командой</li>
+        <li><strong>Что делать:</strong></li>
+        <li>Оценить новые идеи (T-shirt sizing: S/M/L/XL)</li>
+        <li>Уточнить User Stories (критерии приёмки, edge cases)</li>
+        <li>Обновить приоритеты (новые данные → другой RICE score)</li>
+        <li>Удалить / заархивировать stale-элементы (&gt; 3 мес без движения)</li>
+        <li>Разбить слишком крупные эпики (&gt; 1 спринта — декомпозировать)</li>
+      </ul>
+      <p><strong>Метрика здоровья бэклога:</strong> % элементов со Story Points / Acceptance Criteria. Если &lt; 70% — бэклог «сырой», команда тратит время на уточнение в спринте.</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#feed-backlog">Кейс 2.1: рефайнмент в Ленте</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="pmf">1.9 Product-Market Fit</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="sean-ellis">
+      <div class="formula-name">Sean Ellis PMF Test</div>
+      <div class="formula-expr">PMF = % users who answer "Very disappointed" if product disappears ≥ 40%</div>
+      <div class="formula-vars">
+        <code>Survey question:</code> «Как бы вы почувствовали себя, если [продукт] перестанет существовать?»<br>
+        Варианты: Very disappointed / Somewhat disappointed / Not disappointed<br>
+        <code>≥ 40% "Very disappointed"</code> = PMF достигнут (эмпирический порог Sean Ellis)<br>
+        <code>25-40%</code> = on the way, но не там ещё<br>
+        <code>&lt; 25%</code> = PMF нет, нужно менять продукт<br><br>
+        <strong>Важно:</strong> опрашивать активных пользователей (использовали ≥ 2 раза за последнюю неделю), не всех подряд
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-pmf">Кейс 2.2: PMF Клипов для авторов</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="pmf-retention">
+      <div class="formula-name">PMF через Retention-кривую</div>
+      <p>PMF достигнут, если retention-кривая <strong>выравнивается</strong> (перестаёт падать) на ненулевом уровне:</p>
+      <ul>
+        <li><strong>PMF есть:</strong> кривая выходит на плато (retention стабилизируется на 10-30% в зависимости от продукта)</li>
+        <li><strong>PMF нет:</strong> кривая продолжает падать к нулю — пользователи не находят ценности и уходят</li>
+        <li><strong>Ложный PMF:</strong> кривая выравнивается, но на очень низком уровне (2-3%) — это не PMF, это «проездом»</li>
+      </ul>
+      <p><strong>PMF Engine (Rahul Vohra):</strong> 4 шага: (1) Измерить % "very disappointed", (2) Сегментировать по ответам, (3) Найти общие черты "very disappointed" группы, (4) Сдвинуть продукт к этим чертам</p>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block1-reference.html#retention-classic">← Classic Retention</a>
+        <a href="block1-reference.html#ltv-retention">← LTV через Retention</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="pricing">1.10 Pricing & Monetization</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="pricing-models">
+      <div class="formula-name">Модели монетизации</div>
+      <table class="metric-table">
+        <tr><th>Модель</th><th>Формула</th><th>Когда работает</th><th>Пример VK</th></tr>
+        <tr><td>Ad-supported</td><td>Revenue = DAU × Time × Impr/min × CPM</td><td>Массовый продукт, высокий DAU</td><td>Лента, Клипы</td></tr>
+        <tr><td>Subscription</td><td>Revenue = Subscribers × Price × Retention</td><td>Ценность нарастает со временем</td><td>VK Видео, VK Music</td></tr>
+        <tr><td>Freemium</td><td>Revenue = (Free_users × Ad_rev) + (Paid_users × Sub_rev)</td><td>Часть пользователей готова платить</td><td>VK Donut, стикеры</td></tr>
+        <tr><td>Transaction / Commission</td><td>Revenue = GMV × Take Rate</td><td>Маркетплейс, платежи</td><td>VK Pay</td></tr>
+        <tr><td>Usage-based</td><td>Revenue = Units_consumed × Price_per_unit</td><td>API, cloud, инфраструктура</td><td>VK Cloud</td></tr>
+      </table>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#video-pricing">Кейс 2.4: pricing VK Видео</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="pricing-strategies">
+      <div class="formula-name">Ценовые стратегии</div>
+      <ul>
+        <li><strong>Value-based:</strong> цена = воспринимаемая ценность для пользователя. Максимизирует margin, но сложна в оценке. Метод: conjoint analysis или willingness-to-pay survey</li>
+        <li><strong>Cost-plus:</strong> цена = себестоимость × margin. Просто, но игнорирует ценность для пользователя</li>
+        <li><strong>Competitive:</strong> цена = цена конкурента ± дельта за дифференциацию. Рискуешь попасть в ценовую войну</li>
+        <li><strong>Penetration:</strong> низкая цена для захвата рынка → рост потом. Риск: покупатели лояльны к цене, не продукту</li>
+        <li><strong>Skimming:</strong> высокая цена для early adopters → снижение для масс. Работает для инноваций</li>
+      </ul>
+      <p><strong>Pricing experiment:</strong> A/B-тест цены — сложно (юзеры видят разные цены → неэтично). Альтернативы: cohort-based тест, survey-based (Van Westendorp Price Sensitivity Meter), или тест на новом сегменте</p>
+    </div>
+
+    <div class="formula-block" id="price-elasticity">
+      <div class="formula-name">Ценовая эластичность</div>
+      <div class="formula-expr">Price Elasticity = %ΔQuantity / %ΔPrice</div>
+      <div class="formula-vars">
+        <code>Elasticity &lt; -1</code> — эластичный спрос: рост цены → сильное падение объёма. Пример: стикеры-паки<br>
+        <code>-1 &lt; Elasticity &lt; 0</code> — неэластичный: рост цены → слабое падение объёма. Пример: подписка VK Видео<br>
+        <code>Elasticity = 0</code> — абсолютно неэластичный (жизненно важное лекарство)<br><br>
+        <strong>Для PM:</strong> если |elasticity| &lt; 1 → можешь поднимать цену, выручка вырастет. Если |elasticity| &gt; 1 → снижение цены увеличит выручку
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="growth">1.11 Growth Loops & Viral Mechanics</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="k-factor">
+      <div class="formula-name">Viral Coefficient (K-factor)</div>
+      <div class="formula-expr">K = Invitations_per_user × Conversion_rate_per_invitation</div>
+      <div class="formula-vars">
+        <code>Invitations_per_user</code> — сколько новых юзеров в среднем «приглашает» один пользователь (шерит клип, отправляет реферал)<br>
+        <code>Conversion_rate</code> — какая доля приглашённых регистрируется/активируется<br><br>
+        <code>K &gt; 1</code> — экспоненциальный вирусный рост (каждый юзер приводит &gt;1 нового)<br>
+        <code>K = 0.3-0.7</code> — типичный для соцсетей. Органический рост + paid = combo<br>
+        <code>K &lt; 0.1</code> — виральный эффект почти отсутствует, нужен paid acquisition
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-growth">Кейс 2.2: growth loops Клипов</a>
+        <a href="block2-cases.html#messenger-growth">Кейс 2.3: network effects Мессенджера</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="growth-loops">
+      <div class="formula-name">Типы Growth Loops</div>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Механика</th><th>Пример VK</th></tr>
+        <tr><td><strong>Content loop</strong></td><td>Пользователь создаёт контент → привлекает зрителей → часть зрителей становится авторами</td><td>Клипы: автор → зритель → автор</td></tr>
+        <tr><td><strong>Viral loop</strong></td><td>Пользователь шерит → получатель кликает → регистрируется → шерит дальше</td><td>Шер клипа в Ленту/Мессенджер</td></tr>
+        <tr><td><strong>Paid loop</strong></td><td>Revenue → reinvested в acquisition → больше юзеров → больше revenue</td><td>Performance-маркетинг VK Клипов</td></tr>
+        <tr><td><strong>Network loop</strong></td><td>Каждый новый юзер увеличивает ценность для всех (same-side или cross-side)</td><td>Мессенджер: больше друзей → больше ценности</td></tr>
+        <tr><td><strong>PLG loop</strong></td><td>Бесплатный продукт → пользователь вовлекается → конвертируется в платный → рекомендует</td><td>VK Donut: бесплатный контент → подписка на автора</td></tr>
+      </table>
+      <p><strong>Ключевой принцип:</strong> рост — не воронка (linear), а петля (circular). Каждый loop — самоподдерживающийся цикл.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="strategy">1.12 Product Strategy & Vision</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="strategy-framework">
+      <div class="formula-name">Product Strategy — Where to Play / How to Win</div>
+      <div class="formula-expr">Strategy = Target Market + Value Proposition + Competitive Moat + Capabilities</div>
+      <div class="formula-vars">
+        <code>Target Market</code> — какой сегмент и какую потребность обслуживаем (не «все», а конкретно)<br>
+        <code>Value Proposition</code> — в чём уникальная ценность для этого сегмента<br>
+        <code>Competitive Moat</code> — почему конкурентам будет сложно скопировать (network effects, data, brand, switching costs)<br>
+        <code>Capabilities</code> — какие ресурсы/компетенции нужны для реализации<br><br>
+        <strong>Strategy Diamond (Hambrick):</strong> Арена + Авеню + Дифференциаторы + Экономика + Стейкхолдеры
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-strategy">Кейс 2.2: стратегия Клипов vs TikTok</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="competitive-moat">
+      <div class="formula-name">Типы конкурентных рвов (Moats)</div>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Описание</th><th>Пример VK</th></tr>
+        <tr><td>Network Effects</td><td>Каждый новый юзер увеличивает ценность для остальных</td><td>Мессенджер, Лента</td></tr>
+        <tr><td>Data Moat</td><td>Накопленные данные делают продукт лучше (ML, персонализация)</td><td>Рекомендации Ленты</td></tr>
+        <tr><td>Switching Costs</td><td>Юзеру дорого/сложно перейти к конкуренту</td><td>Контакты Мессенджера, подписки</td></tr>
+        <tr><td>Brand / Trust</td><td>Репутация и привычка</td><td>«ВКонтакте» как бренд для русскоязычных</td></tr>
+        <tr><td>Economies of Scale</td><td>Больший объём = ниже себестоимость на юнит</td><td>CDN для Видео</td></tr>
+      </table>
+    </div>
+
+    <div class="formula-block" id="market-sizing">
+      <div class="formula-name">Market Sizing — TAM / SAM / SOM</div>
+      <div class="formula-expr">TAM = Total Addressable Market (весь рынок, если бы захватили 100%)</div>
+      <div class="formula-expr">SAM = Serviceable Addressable Market (часть TAM, до которой мы можем дотянуться географически/технологически)</div>
+      <div class="formula-expr">SOM = Serviceable Obtainable Market (реалистичная доля SAM, которую мы можем захватить в ближайшие 2-3 года)</div>
+      <div class="formula-vars">
+        <strong>Top-down:</strong> TAM = Общее количество потенциальных пользователей × ARPU за год<br>
+        <strong>Bottom-up:</strong> TAM = Количество платёжеспособных юзеров в сегменте × частота покупки × средний чек<br><br>
+        <strong>Для VK Clips:</strong> TAM (российский рынок коротких видео) ≈ 60M пользователей × $2 ARPU/год = $120M. SAM (18-35 лет) ≈ $48M. SOM (реалистично 15% SAM за 2 года) ≈ $7.2M
+      </div>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-strategy">Кейс 2.2: market sizing для Клипов</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="stakeholders">1.13 Stakeholder Management</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="power-interest">
+      <div class="formula-name">Power / Interest Grid</div>
+      <table class="metric-table">
+        <tr><th></th><th>Low Interest</th><th>High Interest</th></tr>
+        <tr><td><strong>High Power</strong></td><td>Keep Satisfied — информируй, не заваливай деталями</td><td>Manage Closely — активный диалог, согласование</td></tr>
+        <tr><td><strong>Low Power</strong></td><td>Monitor — минимум усилий</td><td>Keep Informed — рассылки, апдейты</td></tr>
+      </table>
+      <p><strong>Для VK:</strong> VP Product = Manage Closely (high power, high interest). Legal = Keep Satisfied (high power, low interest). Команда поддержки = Keep Informed (low power, high interest).</p>
+    </div>
+
+    <div class="formula-block" id="raci">
+      <div class="formula-name">RACI / DACI</div>
+      <div class="formula-expr">R = Responsible (кто делает) | A = Accountable (кто отвечает) | C = Consulted (кого спрашивают) | I = Informed (кого информируют)</div>
+      <div class="formula-vars">
+        <strong>Правило:</strong> на каждую задачу — ровно один A (Accountable). Если A два — никто не отвечает.<br>
+        <strong>DACI:</strong> расширение RACI — D = Driver (ведёт процесс), A = Approver (принимает решение), C = Contributor, I = Informed. Удобнее для кросс-функциональных решений в VK, где PM = Driver, VP = Approver.
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="competitive">1.14 Competitive & Market Analysis</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="porter-five-forces">
+      <div class="formula-name">Porter's Five Forces</div>
+      <ul>
+        <li><strong>Threat of new entrants:</strong> насколько легко новому игроку войти? (барьеры: network effects, капитал, regulation)</li>
+        <li><strong>Bargaining power of suppliers:</strong> насколько контент-провайдеры / авторы могут диктовать условия?</li>
+        <li><strong>Bargaining power of buyers:</strong> насколько пользователи могут переключаться? (switching costs)</li>
+        <li><strong>Threat of substitutes:</strong> есть ли альтернативы? (TikTok, Telegram, YouTube Shorts)</li>
+        <li><strong>Competitive rivalry:</strong> насколько ожесточена конкуренция? (число игроков, темпы инноваций)</li>
+      </ul>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-strategy">Кейс 2.2: конкурентный анализ Клипов</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="positioning-map">
+      <div class="formula-name">Positioning Map</div>
+      <p>Визуальное сравнение конкурентов по двум осям (например, «контент-генерация» vs «социальность»):</p>
+      <table class="metric-table">
+        <tr><th></th><th>High Social</th><th>Low Social</th></tr>
+        <tr><td><strong>High Creation</strong></td><td>VK Clips, Instagram Reels</td><td>TikTok, YouTube Shorts</td></tr>
+        <tr><td><strong>Low Creation</strong></td><td>VK Feed, Facebook</td><td>Netflix, VK Видео</td></tr>
+      </table>
+      <p><strong>Insight:</strong> VK Clips — в «social creation» квадранте. Это дифференциация vs TikTok (алгоритмический, не социальный). Стратегия: усиливать social features (share to friends, collaborative clips).</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="gtm">1.15 Go-to-Market</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="gtm-framework">
+      <div class="formula-name">GTM Strategy Framework</div>
+      <table class="metric-table">
+        <tr><th>Компонент</th><th>Вопрос</th><th>Пример (Клипы: коллаборации)</th></tr>
+        <tr><td>Target Segment</td><td>Для кого запускаем?</td><td>Авторы с 1K+ подписчиков</td></tr>
+        <tr><td>Value Proposition</td><td>Какую ценность несём?</td><td>«Снимай вместе с друзьями — получи в 2 раза больше просмотров»</td></tr>
+        <tr><td>Channel</td><td>Как аудитория узнает?</td><td>In-app notification, creator community, featured section</td></tr>
+        <tr><td>Launch Sequence</td><td>Как поэтапно выводим?</td><td>Alpha (100 авторов) → Beta (5K) → GA</td></tr>
+        <tr><td>Success Metrics</td><td>Как измеряем успех?</td><td>Adoption rate ≥ 15%, collab clips views ≥ 2× solo</td></tr>
+        <tr><td>Rollback Plan</td><td>Что если что-то пойдёт не так?</td><td>Feature flag off, если adoption &lt; 3% или NPS &lt; 30</td></tr>
+      </table>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-gtm">Кейс 2.2: GTM для коллабораций в Клипах</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="launch-checklist">
+      <div class="formula-name">Launch Readiness Checklist</div>
+      <ul>
+        <li>✅ Feature complete + QA passed</li>
+        <li>✅ Analytics instrumented (events, funnels, guard metrics)</li>
+        <li>✅ A/B test designed (если нужен) или staged rollout plan</li>
+        <li>✅ Support team trained + FAQ ready</li>
+        <li>✅ Marketing / PR aligned on messaging</li>
+        <li>✅ Legal / compliance sign-off (если нужно)</li>
+        <li>✅ Rollback plan (feature flag, kill switch)</li>
+        <li>✅ Monitoring + alerting (error rate, latency, key metrics)</li>
+        <li>✅ Post-launch review scheduled (+1 day, +7 days, +30 days)</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="tech-fluency">1.16 Technical Fluency</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="api-basics">
+      <div class="formula-name">API Basics для PM</div>
+      <table class="metric-table">
+        <tr><th>Концепт</th><th>Что знать PM</th><th>Почему важно</th></tr>
+        <tr><td>REST vs GraphQL</td><td>REST = фиксированные endpoints. GraphQL = гибкий запрос нужных полей</td><td>GraphQL → меньше over-fetching → быстрее мобильное приложение</td></tr>
+        <tr><td>API Versioning</td><td>v1/v2 в URL или header. Backward compatibility обязательна</td><td>Сломать API = уронить партнёров/клиентов</td></tr>
+        <tr><td>Rate Limiting</td><td>Ограничение числа запросов в секунду/минуту</td><td>Защита от DDoS и от некорректного использования</td></tr>
+        <tr><td>Webhooks</td><td>Push-уведомление: сервер вызывает ваш endpoint при событии</td><td>Реалтайм-интеграции (новый клип → уведомление автору)</td></tr>
+        <tr><td>Idempotency</td><td>Повторный запрос = тот же результат. Ключ для дедупликации</td><td>См. задача 3.4.2 про утроенные clip_watch</td></tr>
+      </table>
+    </div>
+
+    <div class="formula-block" id="build-vs-buy">
+      <div class="formula-name">Build vs Buy Decision</div>
+      <div class="formula-expr">Build if: Strategic differentiator + Long-term savings > Build cost + Maintenance</div>
+      <div class="formula-expr">Buy if: Commodity + Time-to-market > License cost + Integration effort</div>
+      <div class="formula-vars">
+        <strong>Build:</strong> recommendation engine (core moat), creator analytics (proprietary data)<br>
+        <strong>Buy:</strong> CDN (commodity), push notification service, A/B testing platform<br>
+        <strong>Hybrid:</strong> купи базу, построй поверх. Пример: купить рекомендательный движок, но ML-модель поверх своих данных
+      </div>
+    </div>
+
+    <div class="formula-block" id="system-design-basics">
+      <div class="formula-name">System Design Basics для PM</div>
+      <ul>
+        <li><strong>Microservices vs Monolith:</strong> монолит = проще начать, микросервисы = проще масштабировать команду. VK — микросервисная архитектура</li>
+        <li><strong>Caching:</strong> часто запрашиваемые данные → в кэш (Redis). Для Ленты: кэш рекомендаций, TTL 5-15 мин</li>
+        <li><strong>Async processing:</strong> тяжёлые операции (рендеринг клипа, ML-скоринг) → в очередь (Kafka/RabbitMQ). Не блокировать основной поток</li>
+        <li><strong>CDN:</strong> статический контент (видео, изображения) → ближе к пользователю. Для Клипов — критично: задержка &gt;2 сек = −30% completion</li>
+        <li><strong>Read vs Write:</strong> большинство соц-продуктов = read-heavy (100:1). Оптимизируй чтение: денормализация, реплики БД</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="people">1.17 People Management</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="pm-hiring">
+      <div class="formula-name">Найм PM — Scorecard</div>
+      <p>Структурированная оценка кандидата вместо «понравился / не понравился»:</p>
+      <table class="metric-table">
+        <tr><th>Компетенция</th><th>Как оценивать</th><th>Red flag</th></tr>
+        <tr><td>Product Sense</td><td>Кейс: «Упали просмотры Клипов — что делать?»</td><td>Прыгает к решению без диагноза</td></tr>
+        <tr><td>Analytical Rigor</td><td>Расчёт: sample size, LTV, financial impact</td><td>Не может прикинуть порядок цифр</td></tr>
+        <tr><td>Execution</td><td>Расскажи о запуске фичи end-to-end</td><td>Не упоминает guard metrics / rollback</td></tr>
+        <tr><td>Strategic Thinking</td><td>«Где твой продукт через 2 года?»</td><td>Перечисляет фичи, а не метрики/рынок</td></tr>
+        <tr><td>Communication</td><td>Презентация решения стейкхолдеру</td><td>Не структурирует аргументы</td></tr>
+      </table>
+    </div>
+
+    <div class="formula-block" id="one-on-one">
+      <div class="formula-name">1-on-1 Framework</div>
+      <p>Структура еженедельной 1-on-1 с PM в подчинении:</p>
+      <ul>
+        <li><strong>10 мин — Their agenda:</strong> что у них болит, где нужна помощь. Не твой список</li>
+        <li><strong>10 мин — Development:</strong>成长, обратная связь, карьера. «Что ты хочешь освоить в этом квартале?»</li>
+        <li><strong>10 мин — Alignment:</strong> OKR progress, blockers, dependency. «На что тебя тянут, что не входит в OKR?»</li>
+      </ul>
+      <p><strong>Антипаттерны:</strong> (1) 1-on-1 = status update (для этого есть стендапы), (2) Manager говорит больше 30% времени, (3) Нет записанных action items</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="marketplace">1.18 Platform & Marketplace Mechanics</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="formula-block" id="marketplace-basics">
+      <div class="formula-name">Двухсторонний маркетплейс</div>
+      <table class="metric-table">
+        <tr><th>Концепт</th><th>Описание</th><th>Пример VK</th></tr>
+        <tr><td>Same-side network effects</td><td>Юзеры одной стороны влияют друг на друга</td><td>Авторы Клипов конкурируют за внимание (negative same-side)</td></tr>
+        <tr><td>Cross-side network effects</td><td>Юзеры одной стороны создают ценность для другой</td><td>Больше авторов → больше контента → больше зрителей (positive cross-side)</td></tr>
+        <tr><td>Liquidity</td><td>Вероятность, что транзакция произойдёт (зритель найдёт клип, автор получит отклик)</td><td>Match rate: % клипов, получивших ≥100 просмотров</td></tr>
+        <tr><td>Chicken-and-egg</td><td>Без авторов нет зрителей, без зрителей нет авторов</td><td>Решение: guaranteed initial views, seed-авторы, cross-promo из Ленты</td></tr>
+        <tr><td>Disintermediation</td><td>Пользователи уходят из платформы в прямую коммуникацию</td><td>Автор и зритель переходят в Telegram — предотвратить закрытым мессенджингом</td></tr>
+        <tr><td>Take Rate</td><td>% от транзакции, который забирает платформа</td><td>VK Donut: ~15% от подписки. Ads: CPM share</td></tr>
+      </table>
+      <div class="cross-refs">
+        <div class="ref-label">Применяется в</div>
+        <a href="block2-cases.html#clips-marketplace">Кейс 2.2: Клипы как маркетплейс</a>
+      </div>
+    </div>
+
+    <div class="formula-block" id="marketplace-metrics">
+      <div class="formula-name">Метрики маркетплейса</div>
+      <div class="formula-expr">Match Rate = Transactions / Searches × 100%</div>
+      <div class="formula-expr">Fill Rate = Listings with transaction / Total listings × 100%</div>
+      <div class="formula-expr">Density = Active supply / Active demand in a geography/segment</div>
+      <div class="formula-vars">
+        <code>Match Rate</code> — найдено ли то, что искали. Для Клипов: % сессий, где зритель досмотрел ≥3 клипа<br>
+        <code>Fill Rate</code> — нашёл ли автор аудиторию. Для Клипов: % клипов с ≥100 просмотрами<br>
+        <code>Density</code> — баланс спроса и предложения. Для Клипов: активные авторы / активные зрители. Оптимально 1:50-1:100
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

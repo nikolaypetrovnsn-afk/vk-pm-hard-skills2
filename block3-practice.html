@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практикум — VK PM Hard Skills</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-logo">VK PM Hard Skills</div>
+    <a href="index.html">Главная</a>
+    <div class="section-label">Блок 1. Справочник</div>
+    <a href="block1-reference.html#metrics" class="sub-link">Метрики и аналитика</a>
+    <a href="block1-reference.html#experimentation" class="sub-link">Экспериментация</a>
+    <a href="block1-reference.html#economics" class="sub-link">Продуктовая экономика</a>
+    <a href="block1-reference.html#data" class="sub-link">Работа с данными</a>
+    <a href="block1-reference.html#discovery" class="sub-link">Discovery & Research</a>
+    <a href="block1-reference.html#okr" class="sub-link">Целеполагание (OKR)</a>
+    <a href="block1-reference.html#prioritization" class="sub-link">Приоритизация</a>
+    <a href="block1-reference.html#backlog" class="sub-link">Бэклог и роадмап</a>
+    <a href="block1-reference.html#pmf" class="sub-link">Product-Market Fit</a>
+    <a href="block1-reference.html#pricing" class="sub-link">Pricing</a>
+    <a href="block1-reference.html#growth" class="sub-link">Growth & Viral</a>
+    <a href="block1-reference.html#strategy" class="sub-link">Product Strategy</a>
+    <a href="block1-reference.html#stakeholders" class="sub-link">Stakeholders</a>
+    <a href="block1-reference.html#competitive" class="sub-link">Competitive</a>
+    <a href="block1-reference.html#gtm" class="sub-link">Go-to-Market</a>
+    <a href="block1-reference.html#tech-fluency" class="sub-link">Tech Fluency</a>
+    <a href="block1-reference.html#people" class="sub-link">People Management</a>
+    <a href="block1-reference.html#marketplace" class="sub-link">Marketplace</a>
+    <div class="section-label">Блок 2. Кейсы</div>
+    <a href="block2-cases.html#feed" class="sub-link">Лента ВК</a>
+    <a href="block2-cases.html#clips" class="sub-link">Клипы ВК</a>
+    <a href="block2-cases.html#messenger" class="sub-link">Мессенджер</a>
+    <a href="block2-cases.html#video" class="sub-link">VK Видео</a>
+    <div class="section-label">Блок 3. Практикум</div>
+    <a href="#metrics" class="sub-link active">Метрики</a>
+    <a href="#experimentation" class="sub-link">Эксперименты</a>
+    <a href="#economics" class="sub-link">Экономика</a>
+    <a href="#data" class="sub-link">Данные</a>
+    <a href="#discovery" class="sub-link">Discovery</a>
+    <a href="#okr" class="sub-link">OKR</a>
+    <a href="#prioritization" class="sub-link">Приоритизация</a>
+    <a href="#backlog" class="sub-link">Бэклог</a>
+  </nav>
+
+  <main class="main">
+    <h1>Практикум</h1>
+    <p>24 задачи трёх уровней. Попробуй решить самостоятельно, потом разверни решение.</p>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="metrics">3.1 Метрики и аналитика</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p311">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">3.1.1</span>
+      </div>
+      <div class="problem-question">
+        Рассчитай D7 retention для когорты новых пользователей Ленты ВК, если из 10 000 вернувшихся на 7-й день было 3 200.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Classic Retention = Users_active_on_day_N / Users_in_cohort × 100%
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Формула:</strong></p>
+            <div class="formula-expr">Retention_D7 = Users_active_on_D7 / Users_in_cohort × 100%</div>
+            <p><strong>Расчёт:</strong></p>
+            <div class="formula-expr">Retention_D7 = 3 200 / 10 000 × 100% = 32%</div>
+            <p><strong>Контекст:</strong> D7 = 32% для Ленты соцсети — это ниже нормы (обычно 38-45%). Возможные причины: слабый онбординг, низкая релевантность рекомендаций, недостаток подписок.</p>
+            <p><a href="block1-reference.html#retention-classic">← Classic Retention в справочнике</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p312">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">3.1.2</span>
+      </div>
+      <div class="problem-question">
+        Rolling retention Клипов показывает 45% на D30, а bracket retention — 28%. Объясни разницу и скажи, какую метрику использовать для оценки фичи онбординга Клипов.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Rolling считает всех, кто вернулся на D30 или позже. Bracket — только тех, кто вернулся в окне вокруг D30. Подумай, что онбординг пытается достичь: возврат в конкретный день или долгосрочное удержание?
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Почему разница:</strong></p>
+            <ul>
+              <li><strong>Rolling 45%:</strong> 45% пользователей вернулись <em>хотя бы один раз</em> на 30-й день или позже. Включает юзеров, которые пропали на 2 недели и вернулись на D35.</li>
+              <li><strong>Bracket 28%:</strong> только 28% вернулись в окне [D27…D33]. Строгое совпадение: пользователь активно использует продукт именно вокруг D30.</li>
+            </ul>
+            <p><strong>Разница 17pp</strong> означает, что значительная часть пользователей — «возвращенцы»: они не стабильны, но периодически заходят.</p>
+
+            <p><strong>Что использовать для онбординга:</strong></p>
+            <p><strong>Bracket retention</strong> — более подходящая метрика. Онбординг должен формировать <em>привычку</em>: пользователь возвращается регулярно, а не эпизодически. Bracket показывает стабильность поведения, rolling может дать ложнопозитивный результат (онбординг «не работает», но rolling растёт за счёт спорадических возвратов).</p>
+
+            <p><strong>Дополнительный аргумент:</strong> для онбординга также стоит смотреть на <em>кривую retention</em> (D1→D7→D14→D30), а не одну точку. Если кривая не выравнивается к D14 — онбординг не создаёт привычку.</p>
+            <p><a href="block1-reference.html#retention-rolling">← Rolling Retention</a> · <a href="block1-reference.html#retention-bracket">← Bracket Retention</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p313">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">3.1.3</span>
+      </div>
+      <div class="problem-question">
+        DAU Ленты вырос на +2%, но time spent упал на -5%. Какой диагноз и какие дополнительные данные ты запросишь?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> DAU = количество людей, time spent = глубина вовлечения. Рост DAU + падение time spent = «широко, но мелко». Подумай о составе DAU и о том, что может менять глубину сессии.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Гипотезы:</strong></p>
+            <ol>
+              <li><strong>Смена состава аудитории.</strong> Привлечены новые пользователи с низкой вовлечённостью (performance-кампания, вирусный трафик). Они увеличивают DAU, но тянут вниз avg time spent.</li>
+              <li><strong>Ухудшение рекомендаций.</strong> Алгоритм начал показывать более «кликбейтный» контент → больше кликов (больше DAU), но быстрый уход → меньше time spent.</li>
+              <li><strong>Cross-product cannibalization.</strong> Пользователи стали чаще заходить в Ленту «проверить» и быстро уходить в Клипы или Видео.</li>
+              <li><strong>Техническая деградация.</strong> Увеличилась нагрузка → медленная загрузка → пользователи уходят быстрее.</li>
+            </ol>
+
+            <p><strong>Данные для запроса:</strong></p>
+            <ul>
+              <li>DAU и time spent <em>по когортам</em> (new vs existing users) — если падение только на новых → гипотеза 1</li>
+              <li>DAU и time spent <em>по источникам трафика</em> — если новый трафик из конкретного источника → гипотеза 1</li>
+              <li>Scroll depth, CTR, unlike/hide rate — если CTR растёт, а scroll depth падает → гипотеза 2</li>
+              <li>Time spent в Ленте vs в Клипах/Видео для тех же юзеров → гипотеза 3</li>
+              <li>p50/p95 latency загрузки Ленты, crash rate → гипотеза 4</li>
+              <li>Stickiness (DAU/MAU) — если падает → проблема с retention, а не с acquisition</li>
+            </ul>
+
+            <p><strong>Framework:</strong> Time Spent = DAU × Avg Session Length. Если DAU ↑ и Time Spent ↓, то Session Length упала сильнее, чем вырос DAU. Нужна сегментация, чтобы понять: <em>кто</em> тратит меньше времени.</p>
+            <p><a href="block1-reference.html#engagement">← Engagement-метрики</a> · <a href="block1-reference.html#nsm">← NSM</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="experimentation">3.2 Экспериментация</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p321">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">3.2.1</span>
+      </div>
+      <div class="problem-question">
+        Рассчитай sample size для A/B-теста в Клипах: базовый CTR = 12%, MDE = 1 процентный пункт (т.е. ловим изменение с 12% до 13%), α = 0.05, β = 0.2.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> n = (Z_α/2 + Z_β)² × 2 × p̄ × (1 - p̄) / Δ², где p̄ = 0.12, Δ = 0.01
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Дано:</strong></p>
+            <ul>
+              <li>p̄ = 0.12 (базовый CTR)</li>
+              <li>Δ = 0.01 (1pp = 0.01 в долях)</li>
+              <li>Z_α/2 = 1.96 (α = 0.05, двусторонний)</li>
+              <li>Z_β = 0.84 (мощность = 1 - β = 80%)</li>
+            </ul>
+
+            <p><strong>Расчёт:</strong></p>
+            <div class="formula-expr">n = (1.96 + 0.84)² × 2 × 0.12 × (1 - 0.12) / 0.01²</div>
+            <div class="formula-expr">n = 7.84 × 2 × 0.12 × 0.88 / 0.0001</div>
+            <div class="formula-expr">n = 7.84 × 0.2112 / 0.0001</div>
+            <div class="formula-expr">n = 1.655 / 0.0001</div>
+            <div class="formula-expr">n ≈ 16 550 пользователей на группу</div>
+
+            <p><strong>Итого:</strong> 16 550 × 2 = <strong>33 100 пользователей</strong> в эксперименте.</p>
+            <p>При DAU Клипов ~50M эксперимент наберёт выборку менее чем за час. Но не забудь: нужно минимум 7 дней для учёта дневной сезонности.</p>
+            <p><a href="block1-reference.html#sample-size">← Sample Size</a> · <a href="block1-reference.html#mde">← MDE</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p322">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">3.2.2</span>
+      </div>
+      <div class="problem-question">
+        В A/B-тесте рекомендации Ленты p-value = 0.049, но эффект на iOS = +8%, а на Android = +0.5%. Как интерпретировать результат?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> p-value &lt; 0.05, но эффект неоднороден. Подумай о: (1) множественном тестировании при разрезе по платформам, (2) heterogeneity of treatment effect, (3) практической значимости vs статистической.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Формально:</strong> p-value = 0.049 &lt; 0.05 → отвергаем H0 на уровне α = 0.05. Эффект статистически значим.</p>
+
+            <p><strong>Но:</strong></p>
+
+            <p><strong>1. Heterogeneous Treatment Effect (HTE).</strong> Эффект радикально отличается по платформам: iOS +8%, Android +0.5%. Это не «эффект есть/нет», а «эффект есть на одной платформе и почти отсутствует на другой». Общий p-value маскирует эту неоднородность.</p>
+
+            <p><strong>2. Множественное тестирование.</strong> Если мы смотрим на iOS и Android отдельно — это 2 теста. С поправкой Бонферрони: α_adj = 0.05 / 2 = 0.025. Нужно проверить p-value каждой платформы отдельно. Если p-value на iOS &lt; 0.025, а на Android &gt; 0.025 → эффект значим только на iOS.</p>
+
+            <p><strong>3. Размер выборки по платформам.</strong> Если iOS-пользователей 30%, а Android 70%, то общий p-value ≈ 0.049 мог быть «подтянут» iOS-эффектом. На Android при большой выборке даже +0.5% может быть статистически значимо, но <em>практически незначимо</em>.</p>
+
+            <p><strong>Рекомендация:</strong></p>
+            <ul>
+              <li>Не катить на обе платформы одновременно</li>
+              <li>Проверить interaction effect: есть ли статистически значимая разница между эффектами на iOS и Android</li>
+              <li>Если эффект только на iOS — разобраться почему: другой UI рекомендации? Другой контент? Разная аудитория?</li>
+              <li>Рассмотреть staged rollout: сначала iOS, потом Android с отдельным тестом</li>
+            </ul>
+            <p><a href="block1-reference.html#stat-significance">← Статзначимость</a> · <a href="block1-reference.html#multiple-testing">← Множественное тестирование</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p323">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">3.2.3</span>
+      </div>
+      <div class="problem-question">
+        Спроектируй эксперимент для тестирования нового алгоритма рекомендаций Клипов, учитывая network effects и spillover между группами.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Клипы — социальный продукт: автор видит лайки/комментарии, зритель видит клипы авторов. Сплиттинг по user_id приведёт к spillover. Подумай о: (1) cluster randomization, (2) isolation periods, (3) что делать с новыми авторами.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Проблема network effects в Клипах:</strong></p>
+            <ul>
+              <li><strong>Supply-side spillover:</strong> автор из тест-группы получает больше рекомендаций → создаёт больше клипов → эти клипы видны зрителям из контроля</li>
+              <li><strong>Demand-side spillover:</strong> зритель из теста лайкает/шерит клип → автор видит больший отклик → меняет поведение (это видно и в контроле)</li>
+              <li><strong>Social graph:</strong> друзья чаще видят клипы друг друга → сплиттинг по user_id разрывает социальные связи</li>
+            </ul>
+
+            <p><strong>Дизайн эксперимента:</strong></p>
+
+            <h4>1. Cluster randomization по авторам</h4>
+            <ul>
+              <li>Кластер = автор + все его зрители-подписчики</li>
+              <li>Все зрители конкретного автора получают одну версию алгоритма</li>
+              <li>Для неподписанных зрителей — сплиттинг по user_id (они видят смесь клипов из обеих групп, но это допустимо: основной эффект через авторов)</li>
+            </ul>
+
+            <h4>2. Metrics</h4>
+            <ul>
+              <li><strong>Goal:</strong> clips watched per DAU, watch time per session</li>
+              <li><strong>Creator-level proxy:</strong> clip creation rate, avg views per clip</li>
+              <li><strong>Guard:</strong> clip completion rate (не стала ли рекомендация менее точной), share rate</li>
+            </ul>
+
+            <h4>3. Sample size с учётом дизайна</h4>
+            <ul>
+              <li>Базовый sample size (из формулы) × Design Effect (DEFF)</li>
+              <li>DEFF = 1 + (m - 1) × ICC, где m = средний размер кластера, ICC = внутрикластерная корреляция</li>
+              <li>Для Клипов: m ≈ 500 (автор + подписчики), ICC ≈ 0.02 → DEFF = 1 + 499 × 0.02 = 10.98</li>
+              <li>Sample size увеличивается в ~11 раз по сравнению с user-level randomization</li>
+            </ul>
+
+            <h4>4. Длительность и ramp-up</h4>
+            <ul>
+              <li>Минимум 14 дней (2 полных недельных цикла) — клипы имеют сильную дневную сезонность</li>
+              <li>Ramp-up: 5% кластеров → 20% → 50%, с проверкой guard на каждом этапе</li>
+            </ul>
+
+            <h4>5. Анализ</h4>
+            <ul>
+              <li>Использовать cluster-robust standard errors (а не обычные SE)</li>
+              <li>Сравнивать на уровне кластеров, а не юзеров: avg metric per cluster → t-test</li>
+              <li>Отдельно анализировать creator-level и viewer-level эффекты</li>
+            </ul>
+
+            <p><a href="block1-reference.html#experiment-checklist">← Чек-лист</a> · <a href="block1-reference.html#sample-size">← Sample Size</a> · <a href="block1-reference.html#stat-significance">← Статзначимость</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="economics">3.3 Продуктовая экономика</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p331">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">3.3.1</span>
+      </div>
+      <div class="problem-question">
+        Оцени financial impact увеличения completion rate клипов с 35% до 40%. DAU = 50M, ad CPM = $5, среднее количество клипов за сессию = 8.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Completion rate влияет на показ рекламы: досмотренный клип = полный показ. ΔRevenue = DAU × Δfull_views × CPM / 1000
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Шаг 1: Рассчитать текущие и новые full views</strong></p>
+            <ul>
+              <li>Текущие full views/user/session = 8 × 35% = 2.8</li>
+              <li>Новые full views/user/session = 8 × 40% = 3.2</li>
+              <li>Δ = 3.2 - 2.8 = 0.4 full views/user/session</li>
+            </ul>
+
+            <p><strong>Шаг 2: Financial impact</strong></p>
+            <div class="formula-expr">ΔRevenue/day = DAU × ΔFull_Views × CPM / 1000</div>
+            <div class="formula-expr">ΔRevenue/day = 50 000 000 × 0.4 × 5 / 1000 = $100 000</div>
+
+            <p><strong>Шаг 3: Годовой impact</strong></p>
+            <div class="formula-expr">ΔRevenue/year = $100 000 × 365 = $36.5M</div>
+
+            <p><strong>Оговорки:</strong></p>
+            <ul>
+              <li>Не все full views = ad impression. Зависит от ad load (какой % клипов содержит рекламу). Если ad load = 60% → реальный множитель: $36.5M × 0.6 = $21.9M</li>
+              <li>При росте completion rate CPM может измениться: больше досмотров → выше viewability → выше CPM (позитивный feedback loop)</li>
+              <li>Frequency capping: если юзер видит больше рекламы → может начать пропускать чаще</li>
+            </ul>
+            <p><a href="block1-reference.html#financial-model">← Financial Model</a> · <a href="block1-reference.html#impact-top-down">← Top-Down Impact</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p332">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">3.3.2</span>
+      </div>
+      <div class="problem-question">
+        Фича для авторов клипов стоит $500K разработки. Ожидаемый рост создания клипов — +15%. При каких условиях фича окупится?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Bottom-up подход: сколько дополнительных клипов создадут авторы × сколько revenue приносит каждый клип × за какой период окупятся $500K. Учти unit-экономику: creation rate → supply → views → ad revenue.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Шаг 1: Дополнительный supply</strong></p>
+            <ul>
+              <li>Допустим, 50 000 активных авторов создают в среднем 10 клипов/мес = 500 000 клипов/мес</li>
+              <li>+15% creation = 75 000 доп. клипов/мес</li>
+            </ul>
+
+            <p><strong>Шаг 2: Дополнительный revenue от доп. клипов</strong></p>
+            <ul>
+              <li>Средний клип: 50 000 просмотров, ad CPM = $3, ad load = 60%</li>
+              <li>Revenue per clip = 50 000 × 0.6 × $3 / 1000 = $90</li>
+              <li>ΔRevenue/мес = 75 000 × $90 = $6.75M/мес</li>
+            </ul>
+
+            <p><strong>Шаг 3: Окупаемость</strong></p>
+            <div class="formula-expr">Payback = $500K / $6.75M/мес ≈ 0.07 мес ≈ 2 дня</div>
+
+            <p><strong>Но это оптимистичный сценарий.</strong> Реальные условия для окупаемости:</p>
+
+            <h4>Условие 1: Дополнительные клипы находят аудиторию</h4>
+            <p>Если supply растёт на +15%, но demand (зрители) не растёт → просмотры перераспределяются. Каждый клип получит меньше просмотров. Revenue per clip упадёт.</p>
+            <p>Если эластичность: +15% supply → -10% views/clip → ΔRevenue = 75 000 × $90 × 0.9 = $6.075M/мес. Окупаемость всё ещё &lt; 1 мес.</p>
+
+            <h4>Условие 2: +15% creation — реалистичная оценка</h4>
+            <p>Если реальный прирост только +5% → ΔRevenue = 25 000 × $90 = $2.25M/мес. Окупаемость ≈ 7 дней.</p>
+
+            <h4>Условие 3: Нет каннибализации с другим контентом</h4>
+            <p>Если доп. просмотры клипов отнимаются у Ленты → net impact ниже. Нужно учесть cross-product displacement.</p>
+
+            <p><strong>Break-even condition:</strong> фича окупается, если ΔRevenue/мес &gt; $500K / target_payback_months. При target payback = 6 мес: ΔRevenue ≥ $83.3K/мес → нужен всего 927 доп. клипов/мес при $90/clip. Это всего +0.2% creation rate. Фича почти наверняка окупится.</p>
+            <p><a href="block1-reference.html#ltv-simple">← LTV Simple</a> · <a href="block1-reference.html#unit-economics">← Unit-экономика</a> · <a href="block1-reference.html#impact-bottom-up">← Bottom-Up Impact</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p333">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">3.3.3</span>
+      </div>
+      <div class="problem-question">
+        Бюджет Q3 — 3 команды на 3 месяца. Лента предлагает фичу с ожидаемым +1% time spent. Клипы — фичу с +5% creation rate. Мессенджер — фичу с +3% message sent rate. Как приоритизировать?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Сравнивать % по разным метрикам бессмысленно напрямую. Нужен общий знаменатель — financial impact. Учти: (1) Reach каждой фичи, (2) Confidence в оценке, (3) Косвенное влияние Мессенджера на платформу.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Шаг 1: Привести к общему знаменателю — financial impact</strong></p>
+
+            <table class="metric-table">
+              <tr><th>Продукт</th><th>Δ Метрики</th><th>Финансовая модель</th><th>Δ Revenue/год</th></tr>
+              <tr>
+                <td>Лента</td>
+                <td>+1% time spent</td>
+                <td>72M DAU × +0.32 мин × 0.8 impr/min × $4.2 CPM / 1000 × 365</td>
+                <td>~$28M</td>
+              </tr>
+              <tr>
+                <td>Клипы</td>
+                <td>+5% creation</td>
+                <td>25K доп. клипов/мес × $90/clip × 12</td>
+                <td>~$27M (прям.)</td>
+              </tr>
+              <tr>
+                <td>Мессенджер</td>
+                <td>+3% messages sent</td>
+                <td>Прямого revenue нет. Indirect: +3% msgs → Δretention → ΔDAU Ленты × ad revenue</td>
+                <td>~$15M (косв.)</td>
+              </tr>
+            </table>
+
+            <p><strong>Шаг 2: RICE scoring</strong></p>
+
+            <table class="metric-table">
+              <tr><th>Критерий</th><th>Лента</th><th>Клипы</th><th>Мессенджер</th></tr>
+              <tr><td>Reach (млн юзеров)</td><td>72</td><td>50</td><td>65</td></tr>
+              <tr><td>Impact (1-3-5)</td><td>3 (умеренный рост)</td><td>5 (рост supply)</td><td>2 (косвенный)</td></tr>
+              <tr><td>Confidence (0.5-0.8-1.0)</td><td>0.8 (clear causal path)</td><td>0.5 (elasticity uncertain)</td><td>0.5 (indirect, hard to measure)</td></tr>
+              <tr><td>Ease (1-2-3, less=easier)</td><td>2</td><td>3 (ML + creator tools)</td><td>2</td></tr>
+              <tr><td><strong>RICE Score</strong></td><td><strong>72×3×0.8/2 = 86.4</strong></td><td><strong>50×5×0.5/3 = 41.7</strong></td><td><strong>65×2×0.5/2 = 32.5</strong></td></tr>
+            </table>
+
+            <p><strong>Шаг 3: Рекомендация</strong></p>
+            <ol>
+              <li><strong>Лента (RICE 86.4)</strong> — наибольший reach + высокая confidence + понятный путь к revenue. Приоритет 1.</li>
+              <li><strong>Клипы (RICE 41.7)</strong> — высокий potential impact, но низкая confidence (неизвестно, найдёт ли доп. supply аудиторию). Приоритет 2. Можно Mitigate: запустить маленький эксперимент для валидации +5% creation hypothesis перед полным инвестицией.</li>
+              <li><strong>Мессенджер (RICE 32.5)</strong> — наименьший RICE, но strategic importance: мессенджер — фундамент retention. Приоритет 3, но не исключать. Можно уменьшить scope (вместо 3 команд — 1 команда на 1 мес для MVP).</li>
+            </ol>
+
+            <p><strong>Alternative:</strong> Если бизнес-стратегия Q3 = «рост supply Клипов» (конкуренция с Reels/Shorts), то Клипы получают стратегический множитель × 1.5 → RICE = 62.5 и обгоняют Мессенджер.</p>
+            <p><a href="block1-reference.html#prioritization">← ICE/RICE</a> · <a href="block1-reference.html#opportunity-cost">← Opportunity Cost</a> · <a href="block1-reference.html#financial-model">← Financial Model</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="data">3.4 Работа с данными</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p341">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">3.4.1</span>
+      </div>
+      <div class="problem-question">
+        Напиши SQL-запрос для расчёта когортного retention Ленты за последние 30 дней. Когорта = день первой загрузки Ленты. Возвращение = любое событие в Ленте (таблица <code>feed_events</code>).
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Генерируй ряд дней, найди first_event для каждого user_id (когорта), затем left join с событиями и считай уникальных юзеров на каждый day_n.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+<pre><code><span class="cm">-- Шаг 1: Определяем когорту (день первого события)</span>
+<span class="kw">WITH</span> cohort <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">MIN</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, timestamp)) <span class="kw">AS</span> cohort_date
+  <span class="kw">FROM</span> feed_events
+  <span class="kw">WHERE</span> timestamp >= <span class="fn">CURRENT_DATE</span> - <span class="kw">INTERVAL</span> <span class="str">'30 days'</span>
+  <span class="kw">GROUP BY</span> user_id
+),
+
+<span class="cm">-- Шаг 2: Все активные дни каждого юзера</span>
+active <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    c.user_id,
+    c.cohort_date,
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp) <span class="kw">AS</span> active_date,
+    <span class="fn">DATE_DIFF</span>(<span class="str">'day'</span>, c.cohort_date,
+      <span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp)) <span class="kw">AS</span> day_n
+  <span class="kw">FROM</span> cohort c
+  <span class="kw">JOIN</span> feed_events e
+    <span class="kw">ON</span> c.user_id = e.user_id
+    <span class="kw">AND</span> e.timestamp >= c.cohort_date
+)
+
+<span class="cm">-- Шаг 3: Считаем retention по когортам</span>
+<span class="kw">SELECT</span>
+  cohort_date,
+  day_n,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> retained_users,
+  <span class="fn">FIRST_VALUE</span>(<span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id))
+    <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> cohort_date
+           <span class="kw">ORDER BY</span> day_n
+           <span class="kw">ROWS BETWEEN UNBOUNDED PRECEDING</span>
+           <span class="kw">AND UNBOUNDED FOLLOWING</span>)
+    <span class="kw">AS</span> cohort_size,
+  <span class="fn">ROUND</span>(
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id)::<span class="kw">FLOAT</span> /
+    <span class="fn">FIRST_VALUE</span>(<span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id))
+      <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> cohort_date
+             <span class="kw">ORDER BY</span> day_n
+             <span class="kw">ROWS BETWEEN UNBOUNDED PRECEDING</span>
+             <span class="kw">AND UNBOUNDED FOLLOWING</span>)
+    * <span class="num">100</span>, <span class="num">1</span>
+  ) <span class="kw">AS</span> retention_pct
+<span class="kw">FROM</span> active
+<span class="kw">WHERE</span> day_n <span class="kw">BETWEEN</span> <span class="num">0</span> <span class="kw">AND</span> <span class="num">30</span>
+<span class="kw">GROUP BY</span> cohort_date, day_n
+<span class="kw">ORDER BY</span> cohort_date, day_n;</code></pre>
+            <p><a href="block1-reference.html#sql-cohort">← SQL Cohort Retention</a> · <a href="block1-reference.html#retention-classic">← Classic Retention</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p342">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">3.4.2</span>
+      </div>
+      <div class="problem-question">
+        В логах Клипов событие <code>clip_watch</code> дублируется: один просмотр = 3 события. Как выявить и исправить?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Причины дублирования: (1) клиент шлёт событие несколько раз (retry), (2) несколько систем логируют одно действие, (3) баг в SDK. Подумай о диагностике и о idempotency.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Диагностика:</strong></p>
+
+            <h4>1. Проверить паттерн дублирования</h4>
+<pre><code><span class="kw">SELECT</span>
+  user_id,
+  clip_id,
+  timestamp,
+  <span class="fn">COUNT</span>(*) <span class="kw">AS</span> event_count
+<span class="kw">FROM</span> clips_events
+<span class="kw">WHERE</span> event_name = <span class="str">'clip_watch'</span>
+  <span class="kw">AND</span> timestamp::<span class="kw">DATE</span> = <span class="fn">CURRENT_DATE</span> - <span class="num">1</span>
+<span class="kw">GROUP BY</span> user_id, clip_id, timestamp
+<span class="kw">HAVING</span> <span class="fn">COUNT</span>(*) > <span class="num">1</span>
+<span class="kw">ORDER BY</span> event_count <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> <span class="num">20</span>;</code></pre>
+            <p>Если все дубли = ровно 3 события с одинаковым timestamp → проблема в тройном вызове логирования.</p>
+
+            <h4>2. Проверить источник дублирования</h4>
+<pre><code><span class="kw">SELECT</span>
+  params::<span class="str">'source'</span> <span class="kw">AS</span> source,
+  params::<span class="str">'sdk_version'</span> <span class="kw">AS</span> sdk_version,
+  <span class="fn">COUNT</span>(*) <span class="kw">AS</span> events,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> (user_id, clip_id, timestamp)) <span class="kw">AS</span> unique_views
+<span class="kw">FROM</span> clips_events
+<span class="kw">WHERE</span> event_name = <span class="str">'clip_watch'</span>
+<span class="kw">GROUP BY</span> <span class="num">1</span>, <span class="num">2</span>
+<span class="kw">ORDER BY</span> events::<span class="kw">FLOAT</span> / unique_views <span class="kw">DESC</span>;</code></pre>
+            <p>Если коэффициент = 3 только для определённого source/sdk_version → баг в конкретном клиенте.</p>
+
+            <p><strong>Исправление:</strong></p>
+
+            <h4>Краткосрочное (data fix)</h4>
+<pre><code><span class="cm">-- Дедупликация: оставляем только первое событие</span>
+<span class="kw">WITH</span> deduped <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> *,
+    <span class="fn">ROW_NUMBER</span>() <span class="kw">OVER</span> (
+      <span class="kw">PARTITION BY</span> user_id, clip_id, timestamp
+      <span class="kw">ORDER BY</span> event_id
+    ) <span class="kw">AS</span> rn
+  <span class="kw">FROM</span> clips_events
+  <span class="kw">WHERE</span> event_name = <span class="str">'clip_watch'</span>
+)
+<span class="kw">SELECT</span> * <span class="kw">FROM</span> deduped <span class="kw">WHERE</span> rn = <span class="num">1</span>;</code></pre>
+
+            <h4>Долгосрочное (root cause fix)</h4>
+            <ol>
+              <li><strong>Idempotency key:</strong> добавить <code>idempotency_key = hash(user_id + clip_id + session_id + event_name)</code> на клиенте. Бэкенд проверяет: если key уже есть → skip.</li>
+              <li><strong>Fix SDK:</strong> найти точку, где событие логируется 3 раза. Вероятные причины: (а) onResume/onPause оба вызывают логирование, (б) 3 listener'а подписаны на одно событие, (в) retry без проверки.</li>
+              <li><strong>Мониторинг:</strong> добавить алерт: если avg events per unique view &gt; 1.1 →/incident.</li>
+            </ol>
+            <p><a href="block1-reference.html#data-quality">← Data Quality</a> · <a href="block1-reference.html#logging-design">← Logging Design</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p343">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">3.4.3</span>
+      </div>
+      <div class="problem-question">
+        Спроектируй event schema для логирования воронки создания клипа: от нажатия кнопки «записать» до опубликованного клипа.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Воронка: tap_record → recording_start → recording_stop → preview_shown → edit_start → edit_complete → publish_tap → publish_success. Каждый шаг = событие с params, позволяющими связать шаги одной сессии создания.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Key design decision:</strong> связать шаги воронки через <code>creation_session_id</code> — уникальный ID, генерируемый при tap_record и передаваемый через все шаги до publish.</p>
+
+            <table class="metric-table">
+              <tr><th>Шаг</th><th>event_name</th><th>params</th></tr>
+              <tr>
+                <td>1. Нажал «Записать»</td>
+                <td><code>clip_create_tap</code></td>
+                <td><code>creation_session_id</code>, <code>source</code> (tab/header/camera), <code>entry_point</code></td>
+              </tr>
+              <tr>
+                <td>2. Начал запись</td>
+                <td><code>clip_recording_start</code></td>
+                <td><code>creation_session_id</code>, <code>camera</code> (front/back), <code>filter_id</code>, <code>music_track_id</code></td>
+              </tr>
+              <tr>
+                <td>3. Остановил запись</td>
+                <td><code>clip_recording_stop</code></td>
+                <td><code>creation_session_id</code>, <code>duration_sec</code>, <code>num_segments</code></td>
+              </tr>
+              <tr>
+                <td>4. Увидел превью</td>
+                <td><code>clip_preview_shown</code></td>
+                <td><code>creation_session_id</code>, <code>duration_sec</code></td>
+              </tr>
+              <tr>
+                <td>5. Начал редактирование</td>
+                <td><code>clip_edit_start</code></td>
+                <td><code>creation_session_id</code>, <code>edit_type</code> (trim/filter/text/music/stickers)</td>
+              </tr>
+              <tr>
+                <td>6. Завершил редактирование</td>
+                <td><code>clip_edit_complete</code></td>
+                <td><code>creation_session_id</code>, <code>edits_applied</code> (JSON array of edit types), <code>edit_duration_sec</code></td>
+              </tr>
+              <tr>
+                <td>7. Нажал «Опубликовать»</td>
+                <td><code>clip_publish_tap</code></td>
+                <td><code>creation_session_id</code>, <code>duration_sec</code>, <code>has_music</code>, <code>has_text</code></td>
+              </tr>
+              <tr>
+                <td>8. Успешная публикация</td>
+                <td><code>clip_publish_success</code></td>
+                <td><code>creation_session_id</code>, <code>clip_id</code>, <code>duration_sec</code>, <code>upload_time_ms</code></td>
+              </tr>
+              <tr>
+                <td>— Ошибка публикации</td>
+                <td><code>clip_publish_error</code></td>
+                <td><code>creation_session_id</code>, <code>error_code</code>, <code>error_message</code></td>
+              </tr>
+              <tr>
+                <td>— Отмена</td>
+                <td><code>clip_create_cancel</code></td>
+                <td><code>creation_session_id</code>, <code>last_step</code> (where they dropped), <code>cancel_reason</code> (back_button/new_recording/app_background)</td>
+              </tr>
+            </table>
+
+            <p><strong>Принципы:</strong></p>
+            <ul>
+              <li><code>creation_session_id</code> — UUID, генерируется на шаге 1, передаётся на все шаги. Позволяет восстановить полную воронку одного клипа.</li>
+              <li><code>idempotency_key</code> = <code>creation_session_id + event_name</code> — каждое событие в сессии уникально, дубли будут отсеяны.</li>
+              <li>Отдельные события для error и cancel — позволяют анализировать не только конверсию, но и причины провала.</li>
+              <li><code>upload_time_ms</code> на шаге publish_success — для мониторинга инфраструктуры.</li>
+            </ul>
+
+            <p><strong>SQL для воронки:</strong></p>
+<pre><code><span class="kw">SELECT</span>
+  event_name,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> creation_session_id) <span class="kw">AS</span> sessions
+<span class="kw">FROM</span> clips_events
+<span class="kw">WHERE</span> event_name <span class="kw">IN</span> (
+    <span class="str">'clip_create_tap'</span>,
+    <span class="str">'clip_recording_start'</span>,
+    <span class="str">'clip_preview_shown'</span>,
+    <span class="str">'clip_edit_start'</span>,
+    <span class="str">'clip_publish_tap'</span>,
+    <span class="str">'clip_publish_success'</span>
+  )
+  <span class="kw">AND</span> timestamp::<span class="kw">DATE</span> = <span class="fn">CURRENT_DATE</span> - <span class="num">1</span>
+<span class="kw">GROUP BY</span> event_name
+<span class="kw">ORDER BY</span> sessions <span class="kw">DESC</span>;</code></pre>
+            <p><a href="block1-reference.html#event-schema">← Event Schema</a> · <a href="block1-reference.html#logging-design">← Logging Design</a> · <a href="block1-reference.html#sql-funnel">← SQL Funnel</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="discovery">5.1 Discovery & Research</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p511">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">5.1.1</span>
+      </div>
+      <div class="problem-question">
+        Спроектируй problem interview для проверки гипотезы: «Новые авторы Клипов бросают, потому что не получают просмотров». Какие 5 вопросов ты задашь?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Факт > мнение. Спрашивай про конкретный опыт, а не «хотели бы вы…». Цель — подтвердить/опровергнуть, что проблема существует и важна.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>5 вопросов для problem interview:</strong></p>
+            <ol>
+              <li><strong>«Расскажи, как ты опубликовал свой первый клип»</strong> — открывающий, про конкретный опыт. Слушай эмоции и детали, не перебивай</li>
+              <li><strong>«Что произошло после публикации? Что ты делал дальше?»</strong> — выявляем поведение: проверял ли просмотры, как часто, что чувствовал</li>
+              <li><strong>«Был ли момент, когда ты думал "зачем я это снимаю"? Что именно произошло?»</strong> — прямой зонд pain point. Если респондент не описывает разочарование от просмотров → проблема может быть в другом</li>
+              <li><strong>«Сколько клипов ты опубликовал после первого? Если перестал — почему?»</strong> — валидация: проблема достаточно серьёзна, чтобы бросить?</li>
+              <li><strong>«Что бы помогло тебе продолжить снимать?»</strong> — <em>последний вопрос</em>, про решения. Не ведущий («хотели бы аналитику?»), а открытый</li>
+            </ol>
+            <p><strong>Red flags в ответах:</strong></p>
+            <ul>
+              <li>«Да нормально, просмотры не важны» → проблема не в просмотрах, ищи другую</li>
+              <li>«Мне просто лень» → не та проблема, возможно мотивационная, а не информационная</li>
+              <li>«Я снимаю для друзей, мне не нужны тысячи» → другая аудитория, другой job</li>
+            </ul>
+            <p><a href="block1-reference.html#custdev">← CustDev</a> · <a href="block1-reference.html#problem-framing">← Problem Framing</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p512">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">5.1.2</span>
+      </div>
+      <div class="problem-question">
+        Проведи JTBD-анализ для двух сегментов пользователей Клипов: (1) пассивный зритель, (2) начинающий автор. Найди точки пересечения и конфликта между их jobs.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Для каждого сегмента — функциональный, эмоциональный и social job. Конфликт возникает, когда job одного сегмента противоречит job другого (например, автор хочет популярности → делает кликбейт → зритель разочарован).
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Зритель:</strong></p>
+            <ul>
+              <li><strong>Функциональный:</strong> «Когда мне скучно, я хочу посмотреть короткие видео, чтобы убить 5-10 минут»</li>
+              <li><strong>Эмоциональный:</strong> «Когда я устал после работы, я хочу залипнуть в лёгкий контент, чтобы отключить мозг»</li>
+              <li><strong>Social:</strong> «Когда вижу смешной клип, хочу переслать другу, чтобы вместе посмеяться»</li>
+            </ul>
+            <p><strong>Автор:</strong></p>
+            <ul>
+              <li><strong>Функциональный:</strong> «Когда у меня есть идея, я хочу быстро снять и опубликовать клип, чтобы проверить реакцию»</li>
+              <li><strong>Эмоциональный:</strong> «Когда мой клип набирает просмотры, я чувствую себя успешным создателем»</li>
+              <li><strong>Social:</strong> «Когда меня репостят, я получаю признание в своей тусовке»</li>
+            </ul>
+            <p><strong>Пересечения:</strong></p>
+            <ul>
+              <li>Зритель хочет «залипнуть» ↔ Автор хочет «чтобы залипли» → <strong>общий интерес в длинных сессиях</strong></li>
+              <li>Зритель хочет «переслать» ↔ Автор хочет «чтобы репостили» → <strong>общий интерес в виральности</strong></li>
+            </ul>
+            <p><strong>Конфликты:</strong></p>
+            <ul>
+              <li>Автор хочет «быстрой популярности» → делает кликбейт/шок-контент → зритель хочет «лёгкого контента», получает раздражение → <strong>unlike rate растёт</strong></li>
+              <li>Автор хочет «гарантированных просмотров» → платформа даёт начальный boost → зритель видит нерелевантный контент → <strong>completion rate падает</strong></li>
+              <li>Зритель хочет «бесконечного скролла» ↔ Автор хочет «чтобы досмотрели до конца» → <strong>разные цели для одного клипа</strong></li>
+            </ul>
+            <p><strong>Product implication:</strong> оптимизируй рекомендательную систему не только под viewer job (длина сессии), но и под creator job (качество отклика). Метрика: не просто completion rate, а «qualitative engagement» (share + comment / view).</p>
+            <p><a href="block1-reference.html#jtbd">← JTBD</a> · <a href="block1-reference.html#nsm">← NSM и guard-метрики</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p513">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">5.1.3</span>
+      </div>
+      <div class="problem-question">
+        Команда Ленты предлагает: «Нужно добавить Stories в Ленту ВК». Переформулируй это как проблему и предложи 3 альтернативных решения, помимо Stories.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> «Добавить Stories» — это решение, а не проблема. Какая боль стоит за этим предложением? Какой job не закрыт? Какие данные подтверждают проблему?
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Problem Framing:</strong></p>
+            <p>Пользователи 18-24 лет (user) при открытии Ленты (situation) не находят контент от друзей, только паблики → чувствуют одиночество в соцсети (pain) — D30 retention этого сегмента упал с 32% до 24% за год (evidence).</p>
+
+            <p><strong>JTBD behind the proposal:</strong> «Когда я открываю соцсеть, я хочу увидеть, что происходит у моих друзей, чтобы почувствовать связь»</p>
+
+            <p><strong>3 альтернативных решения:</strong></p>
+
+            <h4>1. «Живые обновления» друзей</h4>
+            <p>Вместо Stories — верхняя лента обновлений друзей: «Аня выложила 3 фото», «Максим сменил статус». Быстрее чем Stories, не требует создания контента, решает job «быть в курсе».</p>
+            <p><strong>Плюс:</strong> низкий порог входа для «читателей», не требует камеры.<br>
+            <strong>Минус:</strong> не закрывает job «самовыражение» для авторов.</p>
+
+            <h4>2. Персональная лента друзей</h4>
+            <p>Отдельный таб «Друзья» с алгоритмической лентой только контента от подписок (не пабликов). Возвращает ощущение «моей соцсети».</p>
+            <p><strong>Плюс:</strong> не нужно менять формат, использует существующий контент.<br>
+            <strong>Минус:</strong> друзья публикуют мало → лента пустая → нужен bootstrap (напоминания, prompts).</p>
+
+            <h4>3. Интерактивные реакции на посты друзей</h4>
+            <p>ВместоStories — quick reactions: голос, emoji-видео, «моментальный ответ» камерой на пост друга. Лёгкий формат создания контента без commit в Stories.</p>
+            <p><strong>Плюс:</strong> виральный loop (реакция → автор видит → отвечает), низкий порог.<br>
+            <strong>Минус:</strong> не полностью заменяет Stories как формат «день в моменте».</p>
+
+            <p><strong>Как выбрать:</strong> не угадывать, а протестировать. Запустить CustDev с 5-8 пользователями 18-24 → узнать, какой job важнее (быть в курсе vs самовыражение vs связь) → выбрать решение под подтверждённый job.</p>
+            <p><a href="block1-reference.html#problem-framing">← Problem Framing</a> · <a href="block1-reference.html#jtbd">← JTBD</a> · <a href="block1-reference.html#hypothesis-product">← Продуктовая гипотеза</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="okr">5.2 Целеполагание (OKR)</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p521">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">5.2.1</span>
+      </div>
+      <div class="problem-question">
+        Сформулируй OKR для команды Клипов на Q3, если стратегическая цель — «Увеличить creator retention». Цель должна быть амбициозной, но достижимой (target: 70%).
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Objective — качественный, вдохновляющий. Key Results — 2-4, количественные, SMART. KR = метрики, не таски.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Objective:</strong> «Сделать Клипы местом, где авторы возвращаются снова и снова»</p>
+            <table class="metric-table">
+              <tr><th>Key Result</th><th>Сейчас</th><th>Цель</th><th>Метрика-драйвер</th></tr>
+              <tr><td>KR1: D30 retention авторов</td><td>28%</td><td>38% (+10pp)</td><td>Retention</td></tr>
+              <tr><td>KR2: Avg clips per author per month</td><td>2.1</td><td>3.5 (+67%)</td><td>Frequency</td></tr>
+              <tr><td>KR3: % авторов с 10+ клипами</td><td>12%</td><td>20% (+8pp)</td><td>Habit formation</td></tr>
+            </table>
+            <p><strong>Почему не «Запустить аналитику для авторов»:</strong> это задача, а не результат. Аналитика может не дать ожидаемого эффекта. KR = бизнес-результат (retention вырос), а не объём работы (фича запущена).</p>
+            <p><strong>70% достижение:</strong> если D30 = 34% (+6pp), clips/month = 3.0 (+43%), %10+ = 16% (+4pp) — это 60+67+50 / 3 = 59%. Допустимо, но нужен усиленный push на KR1.</p>
+            <p><a href="block1-reference.html#okr-framework">← OKR</a> · <a href="block1-reference.html#goal-chain">← Goal → Experiment</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p522">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">5.2.2</span>
+      </div>
+      <div class="problem-question">
+        Построй цепочку Goal → Metric → Hypothesis → Experiment для OKR Ленты: KR = «Увеличить CTR рекомендаций с 8% до 12%».
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Разложи CTR на драйверы: (1) качество рекомендаций, (2) презентация (карточка), (3) контекст (когда показываем). К каждому драйверу — гипотеза и эксперимент.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Goal:</strong> Увеличить CTR рекомендаций с 8% до 12% (+4pp)</p>
+
+            <h4>Driver 1: Качество рекомендаций</h4>
+            <ul>
+              <li><strong>Metric:</strong> % кликов на рекомендованный контент из показов</li>
+              <li><strong>Hypothesis:</strong> Если добавим explainer «почему этот пост» → trust + CTR +2pp, потому что пользователи не понимают, почему чужой пост у них в ленте</li>
+              <li><strong>Experiment:</strong> A/B-тест: контроль — текущая карточка, тест — карточка с лейблом «Рекомендация: потому что вы читали [автор]»</li>
+            </ul>
+
+            <h4>Driver 2: Презентация карточки</h4>
+            <ul>
+              <li><strong>Metric:</strong> CTR по типу карточки (image size, headline length, author badge)</li>
+              <li><strong>Hypothesis:</strong> Если увеличим превью изображения в рекомендациях на 30% → CTR +1pp, потому что визуальный контент привлекает больше внимания в скроллинге</li>
+              <li><strong>Experiment:</strong> A/B-тест с разными размерами карточки. Guard: scroll depth (чтобы карточки не занимали весь экран)</li>
+            </ul>
+
+            <h4>Driver 3: Контекст показа</h4>
+            <ul>
+              <li><strong>Metric:</strong> CTR по позиции в ленте (top vs middle vs bottom)</li>
+              <li><strong>Hypothesis:</strong> Если показывать рекомендации после 3-го поста друзей (вместо 1-го) → CTR +1.5pp, потому что пользователь уже «прогрет» контентом друзей и более открыт к новому</li>
+              <li><strong>Experiment:</strong> A/B-тест с разными позициями вставки рекомендаций. Guard: CTR friend posts (не должна упасть)</li>
+            </ul>
+
+            <p><strong>Комбинированный потенциал:</strong> +2pp + 1pp + 1.5pp = +4.5pp → перекрывает цель. Но нужно тестировать по одному, чтобы изолировать эффекты. Порядок: Driver 1 (быстрее всего реализовать) → Driver 3 → Driver 2.</p>
+            <p><a href="block1-reference.html#goal-chain">← Goal → Experiment</a> · <a href="block1-reference.html#hypothesis-product">← Продуктовая гипотеза</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p533">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">5.2.3</span>
+      </div>
+      <div class="problem-question">
+        OKR Ленты: KR1 = «Увеличить time spent на 5%», KR2 = «Снизить unlike rate с 4.2% до 3.0%». Эти KR конфликтуют: больше time spent можно получить показывая кликбейт, но unlike rate вырастет. Как разрешить конфликт в роадмапе?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Конфликтующие OKR — частая ситуация. Варианты: (1) один KR — guard для другого, (2) сегментация, (3) композитная метрика, (4) реордеринг приоритетов в роадмапе.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Диагноз конфликта:</strong> time spent растёт при показе «залипательного» контента, который может быть не релевантен → unlike/hide растёт. Это типичный trade-off между <em>quantity of engagement</em> и <em>quality of engagement</em>.</p>
+
+            <h4>Решение 1: KR2 = guard metric для KR1</h4>
+            <p>Любой эксперимент, целевой на time spent, <strong>отвергается</strong>, если unlike rate ухудшается. Это превращает KR2 в ограничение, а не цель.</p>
+            <p><strong>Плюс:</strong> просто, чётко.<br>
+            <strong>Минус:</strong> может быть слишком консервативно — блокирует эксперименты с краткосрочным ростом unlike, но долгосрочным улучшением.</p>
+
+            <h4>Решение 2: Композитная метрика</h4>
+            <div class="formula-expr">Quality Engagement Score = Time_Spent × (1 - Unlike_Rate)</div>
+            <p>Сейчас: 32 мин × (1 - 0.042) = 30.66. Цель: 33.6 мин × (1 - 0.030) = 32.59. Рост: +6.3%.</p>
+            <p>Теперь невозможно наращивать time spent за счёт unlike: если unlike растёт, score падает.</p>
+
+            <h4>Решение 3: Сегментация в роадмапе</h4>
+            <table class="metric-table">
+              <tr><th>Спринт</th><th>Фокус</th><th>Целевой KR</th><th>Guard</th></tr>
+              <tr><td>S1-S2</td><td>Качество рекомендаций</td><td>KR2 (unlike ↓)</td><td>time spent не падает &gt;2%</td></tr>
+              <tr><td>S3-S4</td><td>Глубина engagement</td><td>KR1 (time spent ↑)</td><td>unlike не растёт</td></tr>
+              <tr><td>S5-S6</td><td>Комбо: персонализация</td><td>Оба KR</td><td>—</td></tr>
+            </table>
+            <p><strong>Логика:</strong> сначала улучшаем качество (KR2) — это создаёт «запас прочности» для unlike. Потом на этом фундаменте наращиваем time spent (KR1).</p>
+
+            <h4>Рекомендация</h4>
+            <p><strong>Решение 3 + Решение 1</strong>: сегментация роадмапа + unlike как guard metric для time spent экспериментов. Это даёт структуру (роадмап) и страховку (guard).</p>
+            <p><a href="block1-reference.html#okr-framework">← OKR</a> · <a href="block1-reference.html#roadmap">← Роадмап</a> · <a href="block1-reference.html#goal-chain">← Goal → Experiment</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="prioritization">5.3 Приоритизация</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p531">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">5.3.1</span>
+      </div>
+      <div class="problem-question">
+        Посчитай WSJF для эпика «Аналитика для авторов Клипов» со следующими оценками: User Value = 7, Time Criticality = 4, Risk Reduction = 5, Job Duration = 4 (в относительных единицах 1-10).
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> WSJF = (User Value + Time Criticality + Risk Reduction) / Job Duration
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Расчёт:</strong></p>
+            <div class="formula-expr">Cost of Delay = User Value + Time Criticality + Risk Reduction = 7 + 4 + 5 = 16</div>
+            <div class="formula-expr">WSJF = Cost of Delay / Job Duration = 16 / 4 = 4.0</div>
+            <p><strong>Интерпретация:</strong></p>
+            <ul>
+              <li>Cost of Delay = 16 — высокая стоимость задержки (много ценности + снижает риски)</li>
+              <li>WSJF = 4.0 — средний приоритет. Сравниваем с другими эпиками: если у «Шаблонов» WSJF = 5.7 → шаблоны优先</li>
+              <li>Условие, при котором аналитика обгонит шаблоны: если Job Duration уменьшится до 2 (переиспользование компонентов) → WSJF = 16/2 = 8.0</li>
+            </ul>
+            <p><strong>Insight:</strong> сокращение duration (decoupling, MVP-scope) напрямую увеличивает WSJF. PM может повлиять на приоритет, переформулировав scope.</p>
+            <p><a href="block1-reference.html#wsjf">← WSJF</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p532">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">5.3.2</span>
+      </div>
+      <div class="problem-question">
+        Проведи Kano-классификацию для 5 фич Ленты ВК: (1) текстовые посты, (2) алгоритмическая лента, (3) реакция «огонь», (4) AI-саммари длинных постов, (5) скрытие постов с конкретным словом. Объясни, какие из них сейчас — Must-have, а какие были Delight 3 года назад.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Kano динамичен: Delight → Performance → Must-have со временем. Подумай, что уже ожидается пользователем, а что — wow-эффект.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <table class="metric-table">
+              <tr><th>Фича</th><th>Тип сейчас</th><th>Был Delight 3 года назад?</th><th>Обоснование</th></tr>
+              <tr><td>1. Текстовые посты</td><td>Must-have</td><td>Нет — всегда Must-have</td><td>Core functionality, без этого Лента не существует</td></tr>
+              <tr><td>2. Алгоритмическая лента</td><td>Must-have</td><td>Да! Был Delight → Performance → Must-have</td><td>В 2023 пользователи жаловались на «чужие посты», сейчас без рекомендаций лента «мёртвая»</td></tr>
+              <tr><td>3. Реакция «огонь»</td><td>Performance</td><td>Да — Delight при запуске реакций</td><td>Больше реакций → больше выражения эмоций. Линейная ценность. Стремится к Must-have</td></tr>
+              <tr><td>4. AI-саммари длинных постов</td><td>Delight</td><td>Не существовала</td><td>WOW при наличии, нейтрально при отсутствии. Классический Delight</td></tr>
+              <tr><td>5. Скрытие по ключевому слову</td><td>Performance (нишевый)</td><td>Не существовала</td><td>Для тех, кто страдает от шума — высокая ценность. Для остальных — индифферентно</td></tr>
+            </table>
+            <p><strong>Ключевой инсайт:</strong> алгоритмическая лента прошла полный путь Delight → Performance → Must-have за 3 года. Это означает, что <em>конкуренция перешла на другой уровень</em>: раньше «умная лента» была преимуществом, сейчас — гигиенический минимум. Следующий Delight — AI-саммари или персонализация по контексту.</p>
+            <p><strong>Product implication:</strong> не инвестируй в Must-have сверх необходимого (алгоритмическая лента — таблица, не весы). Инвестируй в Performance (реакции, фильтры) для линейного роста, и Delight (AI-саммари) для дифференциации.</p>
+            <p><a href="block1-reference.html#kano">← Kano Model</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p543">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">5.3.3</span>
+      </div>
+      <div class="problem-question">
+        У тебя 3 инициативы в бэклоге Клипов с одинаковым RICE score ≈ 55. Как дополнительно их приоритизировать, если RICE не даёт однозначного ответа?
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> RICE — один инструмент. Когда он не различает — подключай другие: WSJF (учитывает время), Value/Effort matrix (визуально), стратегическое выравнивание (какой OKR двигает), dependency analysis (что блокирует).
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Когда RICE ≈ RICE ≈ RICE — что делать:</strong></p>
+
+            <h4>1. WSJF — учти время</h4>
+            <p>RICE не учитывает, насколько <em>срочно</em>. WSJF добавляет Time Criticality и Risk Reduction:</p>
+            <ul>
+              <li>Инициатива A: конкурент вот-вот запустит аналог → Time Criticality = 9 → WSJF растёт</li>
+              <li>Инициатива B: ничто не торопит → Time Criticality = 2 → WSJF ниже</li>
+            </ul>
+            <p><strong>Результат:</strong> A приоритетнее из-за urgency.</p>
+
+            <h4>2. OKR alignment — выравняй на стратегию</h4>
+            <p>Какую инициативу двигает каждый OKR? Если KR1 (creation rate) — ключевая цель квартала → приоритет инициативам, прямо влияющим на creation.</p>
+
+            <h4>3. Dependency analysis — что разблокирует</h4>
+            <p>Если инициатива A — prerequisite для B и C → делай A первой (эффект мультипликатора). Если A независима — приоритет ниже.</p>
+
+            <h4>4. Option value — что создаёт опции</h4>
+            <p>Инициатива, которая <em>открывает</em> новые возможности (platform play), ценнее чем та, что закрывает одну задачу. «Аналитика для авторов» — platform: на ней строятся дашборды, алерты, AI-insights. «Тема оформления» — одноразовая.</p>
+
+            <h4>5. Confidence audit</h4>
+            <p>Все три получили RICE ≈ 55, но с разной confidence. Если у A confidence = 50% (нет CustDev), а у B = 80% (есть данные) → реальный RICE_A = 55 × 0.5 = 27.5, RICE_B = 55 × 0.8 = 44. B приоритетнее.</p>
+
+            <p><strong>Финальный алгоритм:</strong></p>
+            <ol>
+              <li>Проверь confidence — если разная → это уже разделитель</li>
+              <li>Проверь OKR alignment — какая ближе к ключевой цели квартала</li>
+              <li>Проверь dependencies — что разблокирует другие инициативы</li>
+              <li>Проверь WSJF — если одна срочнее</li>
+              <li>Если всё равно → запусти мини-эксперимент (CustDev, prototype) для снижения неопределённости и пересчитай</li>
+            </ol>
+            <p><a href="block1-reference.html#rice-extended">← RICE</a> · <a href="block1-reference.html#wsjf">← WSJF</a> · <a href="block1-reference.html#value-effort">← Value/Effort</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="backlog">5.4 Бэклог и роадмап</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="problem-card" id="p541">
+      <div class="problem-header">
+        <span class="badge badge-m">Middle</span>
+        <span class="problem-number">5.4.1</span>
+      </div>
+      <div class="problem-question">
+        Декомпозируй Initiative «Увеличить retention авторов Клипов» на 2 эпика и по 2 user story в каждом.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> User Story = «As a [persona], I want [action], so that [outcome]». Без «so that» — это таска.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Initiative:</strong> Увеличить retention авторов Клипов (D30 28% → 38%)</p>
+
+            <h4>Epic 1: Система аналитики для авторов</h4>
+            <ul>
+              <li><strong>US 1.1:</strong> As a автор клипов, I want видеть просмотры по дням в виде графика, so that я понимаю тренды и что работает</li>
+              <li><strong>US 1.2:</strong> As a автор клипов, I want видеть демографию зрителей (возраст, город), so that я адаптирую контент под аудиторию</li>
+            </ul>
+
+            <h4>Epic 2: Onboarding нового автора</h4>
+            <ul>
+              <li><strong>US 2.1:</strong> As a новый автор, I want получить гарантированные 1000 просмотров на первый клип, so that я вижу, что платформа работает, и мотивирован снимать дальше</li>
+              <li><strong>US 2.2:</strong> As a новый автор, I want получить персональные советы после публикации первого клипа (длина, хештеги, музыка), so that я улучшаю контент и расту</li>
+            </ul>
+
+            <p><strong>Чек:</strong> каждая стори связана с retention: US1 — автор понимает, что работает → возвращается. US2 — автор получает ранний позитивный опыт → не бросает.</p>
+            <p><a href="block1-reference.html#backlog-structure">← Структура бэклога</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p542">
+      <div class="problem-header">
+        <span class="badge badge-s">Senior</span>
+        <span class="problem-number">5.4.2</span>
+      </div>
+      <div class="problem-question">
+        В бэклоге Ленты 47 элементов, из них 12 — без Acceptance Criteria, 8 — старше 4 месяцев без движения, 5 — дублируют друг друга. Опиши план рефайнмента.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Сначала очистка (дубли, stale), потом обогащение (AC для ключевых), потом приоритизация. Не пытайся обработать 47 за один рефайнмент — это 3-4 сессии.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <p><strong>Сессия 1: Очистка (1 час)</strong></p>
+            <ol>
+              <li><strong>5 дубликатов:</strong> оставить наиболее полную версию каждой, остальные — архив с ссылкой на мастер</li>
+              <li><strong>8 stale (&gt;4 мес):</strong> по каждому — 2 минуты: «Это всё релевантно?» Если нет → архив. Если да → обновить описание и поднять приоритет. Ожидание: 4-5 в архив, 3-4 обновлены</li>
+              <li><strong>Итого после очистки:</strong> 47 - 5 - 5 = 37 элементов</li>
+            </ol>
+
+            <p><strong>Сессия 2: Обогащение (1.5 часа)</strong></p>
+            <ol>
+              <li><strong>12 без AC:</strong> приоритизировать top-5 по RICE → дописать Acceptance Criteria. Формат: «Given [context], When [action], Then [expected result]»</li>
+              <li>Оставшиеся 7 — пометить как «Draft» и поставить дедлайн: если AC не написаны за 2 недели → архив</li>
+            </ol>
+
+            <p><strong>Сессия 3: Приоритизация (1.5 часа)</strong></p>
+            <ol>
+              <li>Применить Value/Effort matrix для всех 37 элементов — быстрое визуальное разделение</li>
+              <li>Quick Wins (high value, low effort) → Now</li>
+              <li>Big Bets (high value, high effort) → Next с детальной оценкой</li>
+              <li>Money Pit (low value, high effort) → удалить или пересмотреть scope</li>
+            </ol>
+
+            <p><strong>Сессия 4: OKR-выравнивание (1 час)</strong></p>
+            <ol>
+              <li>Проверить каждый Now/Next элемент: привязан ли к OKR?</li>
+              <li>Если нет привязки → или привязать (если релевантно), или вырезать</li>
+              <li>Целевой % элементов с OKR-привязкой: ≥ 80%</li>
+            </ol>
+
+            <p><strong>Метрика здоровья после:</strong> % с AC = (37-7)/37 = 81% (цель >75%). Stale = 0. Дубликаты = 0.</p>
+            <p><a href="block1-reference.html#refinement">← Refinement</a> · <a href="block1-reference.html#backlog-structure">← Структура бэклога</a> · <a href="block1-reference.html#value-effort">← Value/Effort</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="problem-card" id="p543-bl">
+      <div class="problem-header">
+        <span class="badge badge-staff">Staff</span>
+        <span class="problem-number">5.4.3</span>
+      </div>
+      <div class="problem-question">
+        Построй outcome-based роадмап для Клипов на полгода, если стратегия — «Клипы как платформа для создателей». Покажи Now/Next/Later с метриками, а не фичами.
+      </div>
+      <div class="hints">
+        <strong>Подсказка:</strong> Outcome roadmap = роадмап результатов, а не фич. Each horizon = какие метрики двигаем, какие гипотезы проверяем. Фичи — средство, а не цель.
+      </div>
+      <div class="solution">
+        <details>
+          <summary>Развернуть решение</summary>
+          <div class="solution-content">
+            <table class="metric-table">
+              <tr><th>Горизонт</th><th>Outcome (метрики)</th><th>Гипотезы</th><th>Средства (фичи)</th></tr>
+              <tr>
+                <td><strong>Now</strong><br>1-6 нед</td>
+                <td>Creation rate: 3.2% → 4.5%<br>D7 author retention: 55% → 65%</td>
+                <td>1. Шаблоны снимают барьер «не знаю что снимать»<br>2. Базовая аналитика даёт фидбек → автор возвращается</td>
+                <td>Шаблоны и тренды<br>Дашборд просмотров</td>
+              </tr>
+              <tr>
+                <td><strong>Next</strong><br>1-3 мес</td>
+                <td>D30 author retention: 28% → 35%<br>Avg clips/author/month: 2.1 → 3.0</td>
+                <td>3. Guaranteed initial distribution мотивирует на 2-й клип<br>4. Советы «как улучшить» формируют habit loop</td>
+                <td>Guaranteed initial views<br>Post-publish tips</td>
+              </tr>
+              <tr>
+                <td><strong>Later</strong><br>3-6 мес</td>
+                <td>% authors with 10+ clips: 12% → 25%<br>Creator LTV: $4800 → $6000</td>
+                <td>5. AI-инструменты снижают порог создания → больше клипов<br>6. Монетизация через creator fund удерживает top-authors</td>
+                <td>AI-субтитры и эффекты<br>Creator fund / bonuses</td>
+              </tr>
+            </table>
+
+            <p><strong>Ключевые принципы роадмапа:</strong></p>
+            <ul>
+              <li><strong>Метрики первичны</strong> — фичи могут измениться, если гипотеза не подтвердится. Шаблоны → метрика не выросла → пробуем другой подход, метрика та же</li>
+              <li><strong>Now — обязательство</strong> — команда commit к этим метрикам. Next — план, может измениться. Later — направление, не обещание</li>
+              <li><strong>Каждый горизонт = checkpoint</strong> — в конце 6 нед проверяем: creation rate вырос? Если нет → pivot, не упорствуем</li>
+            </ul>
+
+            <p><strong>Антипаттерн:</strong> тот же роадмап как список фич с датами: «Шаблоны — июль, Аналитика — август, AI — октябрь». Если шаблоны не дадут эффекта — весь роадмап ломается. Outcome-роадмап устойчив к этому: мы commit к результату, а не к решению.</p>
+            <p><a href="block1-reference.html#roadmap">← Роадмап</a> · <a href="block1-reference.html#goal-chain">← Goal → Experiment</a> · <a href="block1-reference.html#okr-framework">← OKR</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

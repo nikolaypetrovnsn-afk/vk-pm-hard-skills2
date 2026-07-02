@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Продуктовые кейсы — VK PM Hard Skills</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-logo">VK PM Hard Skills</div>
+    <a href="index.html">Главная</a>
+    <div class="section-label">Блок 1. Справочник</div>
+    <a href="block1-reference.html#metrics" class="sub-link">Метрики и аналитика</a>
+    <a href="block1-reference.html#experimentation" class="sub-link">Экспериментация</a>
+    <a href="block1-reference.html#economics" class="sub-link">Продуктовая экономика</a>
+    <a href="block1-reference.html#data" class="sub-link">Работа с данными</a>
+    <a href="block1-reference.html#discovery" class="sub-link">Discovery & Research</a>
+    <a href="block1-reference.html#okr" class="sub-link">Целеполагание (OKR)</a>
+    <a href="block1-reference.html#prioritization" class="sub-link">Приоритизация</a>
+    <a href="block1-reference.html#backlog" class="sub-link">Бэклог и роадмап</a>
+    <a href="block1-reference.html#pmf" class="sub-link">Product-Market Fit</a>
+    <a href="block1-reference.html#pricing" class="sub-link">Pricing & Monetization</a>
+    <a href="block1-reference.html#growth" class="sub-link">Growth & Viral</a>
+    <a href="block1-reference.html#strategy" class="sub-link">Product Strategy</a>
+    <a href="block1-reference.html#stakeholders" class="sub-link">Stakeholders</a>
+    <a href="block1-reference.html#competitive" class="sub-link">Competitive Analysis</a>
+    <a href="block1-reference.html#gtm" class="sub-link">Go-to-Market</a>
+    <a href="block1-reference.html#tech-fluency" class="sub-link">Technical Fluency</a>
+    <a href="block1-reference.html#people" class="sub-link">People Management</a>
+    <a href="block1-reference.html#marketplace" class="sub-link">Marketplace</a>
+    <div class="section-label">Блок 2. Кейсы</div>
+    <a href="#feed" class="sub-link active">Лента ВК</a>
+    <a href="#clips" class="sub-link">Клипы ВК</a>
+    <a href="#messenger" class="sub-link">Мессенджер</a>
+    <a href="#video" class="sub-link">VK Видео</a>
+    <div class="section-label">Блок 3. Практикум</div>
+    <a href="block3-practice.html#metrics" class="sub-link">Метрики</a>
+    <a href="block3-practice.html#experimentation" class="sub-link">Эксперименты</a>
+    <a href="block3-practice.html#economics" class="sub-link">Экономика</a>
+    <a href="block3-practice.html#data" class="sub-link">Данные</a>
+    <a href="block3-practice.html#discovery" class="sub-link">Discovery</a>
+    <a href="block3-practice.html#okr" class="sub-link">OKR</a>
+    <a href="block3-practice.html#prioritization" class="sub-link">Приоритизация</a>
+    <a href="block3-practice.html#backlog" class="sub-link">Бэклог</a>
+  </nav>
+
+  <main class="main">
+    <h1>Продуктовые кейсы</h1>
+    <p>Как методы и формулы работают на реальных продуктах ВКонтакте. Каждый кейс — от NSM до trade-offs.</p>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="feed">2.1 Лента ВКонтакте</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="case-card">
+      <div class="case-product">VK Feed</div>
+      <h3 id="feed-nsm">Метрики</h3>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+        <tr><td>NSM</td><td>Time spent per DAU</td><td>Отражает ценность: чем дольше — тем больше контента потреблено и рекламы показано</td></tr>
+        <tr><td>Proxy</td><td>CTR, scroll depth, refresh rate</td><td>Опережающие индикаторы time spent: если CTR растёт → time spent, скорее всего, тоже</td></tr>
+        <tr><td>Guard</td><td>Unlike/hide rate, exit rate</td><td>Если растут — рекомендации могут быть навязчивыми, риск оттока</td></tr>
+      </table>
+      <p><a href="block1-reference.html#nsm">← NSM в справочнике</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3>Когортный анализ: рекомендательная vs подписочная Лента</h3>
+      <p>Пользователи, пришедшие через рекомендательную ленту (Discover), показывают выше D1 retention (42% vs 35%), но ниже D30 (8% vs 14%). Подписочные пользователи монетизируются лучше: ARPU × 1.7.</p>
+      <p><strong>Trade-off:</strong> рекомендации быстро активируют, но не создают долгосрочной привязанности. Стратегия — гибрид: показывать рекомендации для активации, но быстро переводить к подпискам.</p>
+      <p><a href="block1-reference.html#retention-classic">← Classic Retention</a> · <a href="block1-reference.html#ltv-cohort">← Cohort LTV</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="feed-ab">A/B-тест: редизайн рекомендаций</h3>
+      <p><strong>Контекст:</strong> новая ML-модель рекомендаций должна увеличить time spent на 3%+.</p>
+
+      <h4>Проблема: network effects</h4>
+      <p>Контент пользователя A показывается пользователю B. Если A в тесте и создаёт больше контента → B видит больше (даже если B в контроле). Это <strong>spillover-эффект</strong>: контрольная группа «загрязняется» эффектом теста.</p>
+
+      <h4>Решение: cluster randomization</h4>
+      <ul>
+        <li>Группируем юзеров в кластеры по социальному графу (друзья → один кластер)</li>
+        <li>Сплиттинг по кластерам, а не по user_id</li>
+        <li>Внутри кластера все юзеры получают одну версию</li>
+        <li>Потеря: меньше effective sample size (кластеров меньше, чем юзеров)</li>
+      </ul>
+
+      <h4>MDE-расчёт</h4>
+      <p>Базовый time spent = 32 мин/DAU, σ ≈ 45 мин. Хотим поймать +3% (≈ +0.96 мин).</p>
+      <div class="formula-expr">n = (1.96 + 0.84)² × 2 × 45² / 0.96² ≈ 7.84 × 2 × 2025 / 0.9216 ≈ 34 400 юзеров на группу</div>
+      <p>С учётом cluster design (inflation factor ≈ 1.5 из-за внутрикластерной корреляции): <strong>n ≈ 51 600 на группу</strong>.</p>
+
+      <p><a href="block1-reference.html#mde">← MDE</a> · <a href="block1-reference.html#sample-size">← Sample Size</a> · <a href="block1-reference.html#experiment-checklist">← Чек-лист эксперимента</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="feed-economics">Экономика: +5% time spent → Ad Revenue</h3>
+      <p><strong>Модель:</strong></p>
+      <div class="formula-expr">ΔAd Revenue = DAU × ΔTime_Spent × Ad_Impressions_per_Minute × CPM / 1000</div>
+      <p><strong>Подстановка:</strong></p>
+      <ul>
+        <li>DAU = 72M</li>
+        <li>ΔTime_Spent = +5% × 32 мин = +1.6 мин</li>
+        <li>Ad_Impressions_per_Minute = 0.8 (1 показ за ~75 сек в Ленте)</li>
+        <li>CPM = $4.2 (mix: feed ads + stories)</li>
+      </ul>
+      <div class="formula-expr">ΔAd Revenue/day = 72M × 1.6 × 0.8 × 4.2 / 1000 = $387 072</div>
+      <p><strong>ΔAd Revenue/year ≈ $141M</strong></p>
+      <p><strong>Trade-off:</strong> больше time spent ≠ пропорционально больше ad revenue. При росте времени показы могут «размазаться» (frequency capping), CPM упасть из-за падения качества инвентаря. Реальный множитель — 0.6-0.8 от расчётного.</p>
+      <p><a href="block1-reference.html#financial-model">← Financial Model</a> · <a href="block1-reference.html#impact-top-down">← Top-Down Impact</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="feed-sql">SQL: Rolling Retention для когорт Ленты</h3>
+<pre><code><span class="kw">WITH</span> cohort <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">MIN</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, timestamp)) <span class="kw">AS</span> cohort_date
+  <span class="kw">FROM</span> feed_events
+  <span class="kw">WHERE</span> event_name = <span class="str">'feed_first_open'</span>
+    <span class="kw">AND</span> timestamp >= <span class="str">'2026-06-01'</span>
+  <span class="kw">GROUP BY</span> user_id
+),
+rolling <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    c.user_id,
+    c.cohort_date,
+    <span class="fn">MAX</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp)) <span class="kw">AS</span> last_active_day,
+    <span class="fn">DATE_DIFF</span>(<span class="str">'day'</span>, c.cohort_date,
+      <span class="fn">MAX</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp))) <span class="kw">AS</span> last_day_n
+  <span class="kw">FROM</span> cohort c
+  <span class="kw">JOIN</span> feed_events e <span class="kw">ON</span> c.user_id = e.user_id
+  <span class="kw">GROUP BY</span> c.user_id, c.cohort_date
+)
+<span class="kw">SELECT</span>
+  cohort_date,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> cohort_size,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> <span class="kw">CASE WHEN</span> last_day_n >= <span class="num">7</span> <span class="kw">THEN</span> user_id <span class="kw">END</span>)::<span class="kw">FLOAT</span> /
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> rolling_d7,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> <span class="kw">CASE WHEN</span> last_day_n >= <span class="num">30</span> <span class="kw">THEN</span> user_id <span class="kw">END</span>)::<span class="kw">FLOAT</span> /
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> rolling_d30
+<span class="kw">FROM</span> rolling
+<span class="kw">GROUP BY</span> cohort_date
+<span class="kw">ORDER BY</span> cohort_date;</code></pre>
+      <p><a href="block1-reference.html#sql-rolling">← SQL Rolling Metrics</a> · <a href="block1-reference.html#retention-rolling">← Rolling Retention</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="feed-okr">OKR и цепочка целей Ленты</h3>
+      <p><strong>Objective (Q3):</strong> «Сделать Ленту персональным центром интересов каждого пользователя»</p>
+      <table class="metric-table">
+        <tr><th>Key Result</th><th>Текущее</th><th>Цель</th><th>Driver Metric</th></tr>
+        <tr><td>KR1: Увеличить CTR рекомендаций</td><td>8%</td><td>12%</td><td>Качество рекомендаций</td></tr>
+        <tr><td>KR2: Увеличить D30 retention новых юзеров</td><td>18%</td><td>22%</td><td>Long-term engagement</td></tr>
+        <tr><td>KR3: Снизить unlike/hide rate</td><td>4.2%</td><td>3.0%</td><td>Релевантность контента</td></tr>
+      </table>
+      <p><strong>Цепочка Goal → Experiment:</strong></p>
+      <ul>
+        <li><strong>KR1 (CTR 8→12%)</strong> → гипотеза: «Если добавим explainer почему этот пост в рекомендациях → trust вырастет → CTR +3pp» → A/B-тест</li>
+        <li><strong>KR2 (D30 18→22%)</strong> → гипотеза: «Если подпишем нового юзера на 5+ сообществ при онбординге → D30 +4pp» → A/B-тест</li>
+        <li><strong>KR3 (unlike 4.2→3.0%)</strong> → гипотеза: «Если добавим тонкую настройку «меньше такого» → unlike rate −1.2pp» → prototype test → A/B</li>
+      </ul>
+      <p><a href="block1-reference.html#okr-framework">← OKR</a> · <a href="block1-reference.html#goal-chain">← Goal → Experiment</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="feed-backlog">Бэклог и роадмап Ленты</h3>
+      <p><strong>Now (1-6 нед):</strong></p>
+      <table class="metric-table">
+        <tr><th>Эпик</th><th>OKR</th><th>RICE</th><th>MoSCoW</th></tr>
+        <tr><td>Explainer «почему этот пост»</td><td>KR1</td><td>86</td><td>MUST</td></tr>
+        <tr><td>Onboarding: 5+ подписок</td><td>KR2</td><td>72</td><td>MUST</td></tr>
+        <tr><td>Тонкая настройка «меньше такого»</td><td>KR3</td><td>54</td><td>SHOULD</td></tr>
+      </table>
+      <p><strong>Next (1-3 мес):</strong></p>
+      <table class="metric-table">
+        <tr><th>Инициатива</th><th>Гипотеза</th><th>Value/Effort</th></tr>
+        <tr><td>Видео-карусель в Ленте</td><td>Видео-контент увеличит time spent +5%</td><td>High Value / High Effort (Big Bet)</td></tr>
+        <tr><td>Collaborative filtering</td><td>«Друзьям нравится» увеличит CTR +2pp</td><td>High Value / Medium Effort</td></tr>
+      </table>
+      <p><strong>Later (3-12 мес):</strong> AI-генерация ленты на основе контекста (время суток, локация, настроение)</p>
+      <p><strong>Refinement:</strong> еженедельно, 1.5 часа. Метрика здоровья: 82% стори с Acceptance Criteria (цель >75%).</p>
+      <p><a href="block1-reference.html#rice-extended">← RICE</a> · <a href="block1-reference.html#value-effort">← Value/Effort</a> · <a href="block1-reference.html#moscow">← MoSCoW</a> · <a href="block1-reference.html#roadmap">← Роадмап</a></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="clips">2.2 Клипы ВКонтакте</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="case-card">
+      <div class="case-product">VK Clips</div>
+      <h3 id="clips-nsm">Метрики</h3>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+        <tr><td>NSM</td><td>Clips watched per DAU</td><td>Core value: потребление короткого контента. Коррелирует и с ad revenue, и с retention</td></tr>
+        <tr><td>Proxy</td><td>Completion rate, share rate, creation rate</td><td>Completion → engagement, share → viral loop, creation → supply</td></tr>
+        <tr><td>Guard</td><td>Time to first clip, exit after first clip</td><td>Если растут — фича стала менее доступной или менее привлекательной</td></tr>
+      </table>
+      <p><a href="block1-reference.html#nsm">← NSM в справочнике</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-funnel">Воронка Клипов</h3>
+      <table class="metric-table">
+        <tr><th>Шаг</th><th>Событие</th><th>Конверсия</th><th>Drop-off</th></tr>
+        <tr><td>1. Открыть вкладку</td><td><code>clips_tab_open</code></td><td>100%</td><td>—</td></tr>
+        <tr><td>2. Посмотреть первый</td><td><code>clip_watch</code></td><td>85%</td><td>15% — не начали смотреть</td></tr>
+        <tr><td>3. Посмотреть 3+</td><td><code>clip_watch</code> × 3</td><td>52%</td><td>33% — ушли после 1-2</td></tr>
+        <tr><td>4. Создать клип</td><td><code>clip_create</code></td><td>3.2%</td><td>48.8% — не стали авторами</td></tr>
+      </table>
+      <p><strong>Insight:</strong> наибольший drop-off — между шагами 2→3 (33%). Это зона оптимизации: если удержать зрителя на 3-м клипе, вероятность продолжить сессию растёт до 78%.</p>
+      <p><a href="block1-reference.html#funnel-metrics">← Funnel Metrics</a> · <a href="block1-reference.html#sql-funnel">← SQL Funnel</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-ab">A/B-тест: кнопка «Написать автору»</h3>
+      <p><strong>Контекст:</strong> добавляем кнопку для написания сообщения автору клипа. Цель — увеличить engagement и viral loop.</p>
+
+      <h4>Проблема: interference</h4>
+      <p>Если сплиттить по зрителям (viewer_id): автор может получать сообщения от теста и контроля одновременно. Автор меняет поведение → эффект «размазывается».</p>
+      <p>Если сплиттить по авторам (creator_id): все зрители автора видят кнопку или не видят. Но авторы с кнопкой получают больше сообщений → могут начать создавать больше клипов → эффект на supply.</p>
+
+      <h4>Решение: двухуровневый эксперимент</h4>
+      <ol>
+        <li><strong>Level 1 (creator-level):</strong> авторы рандомизированы на A/B. Измеряем: получили ли авторы больше сообщений, изменилось ли их поведение (creation rate)</li>
+        <li><strong>Level 2 (viewer-level within creator):</strong> среди зрителей авторов группы A — рандомизация по viewer_id. Измеряем: кликнули ли на кнопку, написали ли сообщение</li>
+      </ol>
+      <p>Это позволяет разделить <strong>прямой эффект</strong> (зритель видит кнопку) и <strong>косвенный</strong> (автор получает фидбек → создаёт больше).</p>
+
+      <p><a href="block1-reference.html#experiment-checklist">← Чек-лист эксперимента</a> · <a href="block1-reference.html#hypotheses">← Гипотезы</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-ltv">LTV автора клипов</h3>
+      <div class="formula-expr">Creator LTV = ARPU_from_views × Average_Creator_Lifetime</div>
+      <p><strong>Подстановка:</strong></p>
+      <ul>
+        <li>Средний автор: 200 000 просмотров/мес, CPM = $3 → revenue = $600/мес</li>
+        <li>Average creator lifetime = 8 месяцев (churn rate = 12.5%/мес)</li>
+      </ul>
+      <div class="formula-expr">Creator LTV = $600 × 8 = $4 800</div>
+      <p><strong>Приоритизация:</strong> фича для авторов (создание шаблонов, аналитика) оправдана, если стоимость разработки &lt; creator_count × ΔLTV_per_creator. Для 50 000 активных авторов +10% LTV = 50 000 × $480 = $24M potential impact.</p>
+      <p><a href="block1-reference.html#ltv-simple">← LTV Simple</a> · <a href="block1-reference.html#prioritization">← Приоритизация</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-unit">Unit-экономика: стимуляция авторов</h3>
+      <p><strong>Программа:</strong> гарантированный минимум $200/мес авторам, создающим 10+ кликов/мес.</p>
+      <table class="metric-table">
+        <tr><th>Параметр</th><th>Значение</th></tr>
+        <tr><td>Стоимость гарантии на автора</td><td>$200/мес</td></tr>
+        <tr><td>Ожидаемый рост creation rate</td><td>+20%</td></tr>
+        <tr><td>Дополнительные просмотры/автор/мес</td><td>40 000 (200K × 20%)</td></tr>
+        <tr><td>Revenue от доп. просмотров</td><td>40K × $3/1000 = $120/мес</td></tr>
+        <tr><td>Contribution margin на автора</td><td>$120 - $200 = -$80/мес</td></tr>
+      </table>
+      <p><strong>Вывод:</strong> гарантии убыточны в isolation. Но если учесть, что +20% supply → +5% viewer retention → indirect revenue, полная картина может быть положительной. Нужно моделировать indirect impact.</p>
+      <p><a href="block1-reference.html#unit-economics">← Unit-экономика</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-discovery">Discovery: авторы Клипов</h3>
+      <p><strong>Problem Framing:</strong> Новые авторы Клипов (user) после публикации первого клипа (situation) не понимают, почему нет просмотров (pain) — 40% не публикуют второй клип в течение 30 дней (evidence).</p>
+
+      <h4>JTBD</h4>
+      <ul>
+        <li><strong>Функциональный:</strong> «Когда я снял клип, я хочу быстро получить просмотры, чтобы понять, стоит ли снимать ещё»</li>
+        <li><strong>Эмоциональный:</strong> «Когда мой клип набирает 10K просмотров, я чувствую себя крутым автором»</li>
+        <li><strong>Social:</strong> «Когда друзья репостят мой клип, я чувствую признание»</li>
+      </ul>
+
+      <h4>CJM нового автора</h4>
+      <table class="metric-table">
+        <tr><th>Этап</th><th>Действие</th><th>Эмоция</th><th>Pain Point</th><th>Opportunity</th></tr>
+        <tr><td>1. Решил снять</td><td>Открыл камеру</td><td>+ Возбуждение</td><td>Не знает, что снимать</td><td>Тренды / шаблоны</td></tr>
+        <tr><td>2. Снял клип</td><td>Записал, отредактировал</td><td>+ Творчество</td><td>Мало эффектов, сложный редактор</td><td>Простой редактор, AI-эффекты</td></tr>
+        <tr><td>3. Опубликовал</td><td>Нажал «Опубликовать»</td><td>0 Ожидание</td><td>—</td><td>—</td></tr>
+        <tr><td>4. Ждёт реакцию</td><td>Проверяет просмотры</td><td>− Тревога</td><td>0 просмотров в первый час</td><td>Guaranteed initial distribution</td></tr>
+        <tr><td>5. Разочарование</td><td>Видит 50 просмотров</td><td>−− Фрустрация</td><td>Нет фидбека, что делать иначе</td><td>Советы «как улучшить»</td></tr>
+      </ul>
+
+      <h4>Kano-анализ фич для авторов</h4>
+      <table class="metric-table">
+        <tr><th>Фича</th><th>Тип</th><th>Обоснование</th></tr>
+        <tr><td>Базовая аналитика (просмотры, лайки)</td><td>Must-have</td><td>Без этого автор не понимает результат. Ожидание по умолчанию</td></tr>
+        <tr><td>Шаблоны / тренды</td><td>Performance</td><td>Больше шаблонов → больше клипов. Линейная зависимость</td></tr>
+        <tr><td>AI-субтитры</td><td>Delight</td><td>WOW-эффект, но отсутствие не фрустрирует</td></tr>
+        <tr><td>Guaranteed initial views</td><td>Performance → Must-have?</td><td>Сейчас Delight, но при росте конкуренции за внимание авторов станет ожидаемым</td></tr>
+      </table>
+
+      <p><a href="block1-reference.html#problem-framing">← Problem Framing</a> · <a href="block1-reference.html#jtbd">← JTBD</a> · <a href="block1-reference.html#cjm">← CJM</a> · <a href="block1-reference.html#kano">← Kano</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-okr">OKR и роадмап Клипов</h3>
+      <p><strong>Objective (Q3):</strong> «Сделать Клипы магнитом для создателей контента»</p>
+      <table class="metric-table">
+        <tr><th>Key Result</th><th>Текущее</th><th>Цель</th></tr>
+        <tr><td>KR1: Увеличить creation rate</td><td>3.2%</td><td>5.0%</td></tr>
+        <tr><td>KR2: Увеличить D30 retention авторов</td><td>28%</td><td>38%</td></tr>
+        <tr><td>KR3: Увеличить avg clips per author</td><td>2.1/мес</td><td>3.5/мес</td></tr>
+      </table>
+      <p><strong>WSJF-приоритизация:</strong></p>
+      <table class="metric-table">
+        <tr><th>Эпик</th><th>User Value</th><th>Time Crit.</th><th>Risk Red.</th><th>CoD</th><th>Duration</th><th>WSJF</th></tr>
+        <tr><td>Шаблоны и тренды</td><td>8</td><td>6</td><td>3</td><td>17</td><td>3</td><td><strong>5.7</strong></td></tr>
+        <tr><td>Аналитика для авторов</td><td>7</td><td>4</td><td>5</td><td>16</td><td>4</td><td><strong>4.0</strong></td></tr>
+        <tr><td>Guaranteed initial views</td><td>9</td><td>7</td><td>2</td><td>18</td><td>6</td><td><strong>3.0</strong></td></tr>
+        <tr><td>AI-субтитры</td><td>5</td><td>2</td><td>1</td><td>8</td><td>5</td><td><strong>1.6</strong></td></tr>
+      </table>
+      <p><strong>Роадмап:</strong> Now → шаблоны + аналитика. Next → guaranteed views. Later → AI-субтитры, AR-маски.</p>
+      <p><a href="block1-reference.html#okr-framework">← OKR</a> · <a href="block1-reference.html#wsjf">← WSJF</a> · <a href="block1-reference.html#roadmap">← Роадмап</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-pmf">PMF Клипов для авторов</h3>
+      <p><strong>Sean Ellis Test:</strong> опрос 200 активных авторов (3+ клипа/мес). Результат: «Very disappointed» = 32% — ниже порога 40%, PMF не достигнут.</p>
+      <p><strong>Сегментация ответов:</strong></p>
+      <table class="metric-table">
+        <tr><th>Группа</th><th>% Very disappointed</th><th>Общие черты</th></tr>
+        <tr><td>Авторы 10+ клипов/мес</td><td>52%</td><td>Регулярные авторы, монетизируют через VK Donut</td></tr>
+        <tr><td>Авторы 3-9 клипов/мес</td><td>28%</td><td>Хобби-авторы, не нашли устойчивую аудиторию</td></tr>
+        <tr><td>Авторы 1-2 клипа/мес</td><td>12%</td><td>Пробуют, но не втянулись</td></tr>
+      </table>
+      <p><strong>PMF Engine:</strong> (1) Сегмент 10+ клипов = «very disappointed» → у них PMF есть. (2) Их общая черта: монетизация + аналитика + аудитория &gt;5K. (3) Стратегия: приблизить 3-9 группу к этому паттерну — дать инструменты монетизации и аналитику → сдвинуть PMF вверх.</p>
+      <p><strong>Retention-кривая:</strong> D30 авторов = 28%, но кривая выравнивается на 18-20% к D60 — частичный PMF, плато на низком уровне.</p>
+      <p><a href="block1-reference.html#sean-ellis">← Sean Ellis Test</a> · <a href="block1-reference.html#pmf-retention">← PMF через Retention</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-growth">Growth Loops Клипов</h3>
+      <p><strong>K-factor:</strong></p>
+      <ul>
+        <li>Средний зритель шерит 0.3 клипа/день</li>
+        <li>Конверсия из шера в нового юзера = 8%</li>
+        <li>K = 0.3 × 0.08 = 0.024 — виральный эффект слабый</li>
+      </ul>
+      <p><strong>Но:</strong> есть content loop:</p>
+      <ul>
+        <li>Авторы создают клипы → зрители смотрят → 3.2% зрителей становятся авторами → новый контент</li>
+        <li>Cycle time: ~7 дней (от первого просмотра до первой публикации)</li>
+        <li>Этот loop не показан в K-factor, потому что он не «приглашение», а «наблюдение → вдохновение → действие»</li>
+      </ul>
+      <p><strong>Усиление loops:</strong></p>
+      <ul>
+        <li>Viral loop: добавить «Share to friend» с превью → +0.05 к K-factor</li>
+        <li>Content loop: «Снять ответный клип» → сокращает cycle time с 7 до 2 дней → ускоряет loop в 3.5×</li>
+        <li>Paid loop: revenue от рекламы → reinvest в performance-маркетинг → +0.5M new users/мес</li>
+      </ul>
+      <p><a href="block1-reference.html#k-factor">← K-factor</a> · <a href="block1-reference.html#growth-loops">← Growth Loops</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-strategy">Стратегия Клипов vs TikTok</h3>
+      <p><strong>Where to Play:</strong> русскоязычный рынок коротких видео, сегмент 16-35 лет, потребление + создание.</p>
+      <p><strong>How to Win:</strong></p>
+      <table class="metric-table">
+        <tr><th>Фактор</th><th>TikTok</th><th>VK Clips</th><th>Наш moat</th></tr>
+        <tr><td>Рекомендации</td><td>Лучшая ML-модель</td><td>Хорошая + социальный граф</td><td>Data moat: данные ВК о связях</td></tr>
+        <tr><td>Социальность</td><td>Слабая (асоциальная лента)</td><td>Сильная (друзья, группы)</td><td>Network effects</td></tr>
+        <tr><td>Создание</td><td>Богатый редактор</td><td>Простой + шаблоны</td><td>Низкий порог входа</td></tr>
+        <tr><td>Монетизация авторов</td><td>Creator Fund</td><td>VK Donut + гарантии</td><td>Brand moat: доверие ВК</td></tr>
+      </table>
+      <p><strong>Market Sizing:</strong> TAM (российский короткие видео) ≈ 60M × $2 ARPU = $120M. SAM (16-35) ≈ $48M. SOM (15% за 2 года) ≈ $7.2M.</p>
+      <p><strong>Стратегическое решение:</strong> не конкурировать с TikTok в «алгоритмическом совершенстве», а усиливать социальность — «Клипы от людей, которых ты знаешь». Это позиционирование, которое TikTok не может скопировать без социальной платформы.</p>
+      <p><a href="block1-reference.html#strategy-framework">← Product Strategy</a> · <a href="block1-reference.html#market-sizing">← TAM/SAM/SOM</a> · <a href="block1-reference.html#competitive-moat">← Moats</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-gtm">GTM: коллаборации в Клипах</h3>
+      <p><strong>Фича:</strong> дуэт-клипы — пользователь может добавить свой клип рядом с чужим (split screen).</p>
+      <table class="metric-table">
+        <tr><th>Компонент GTM</th><th>План</th></tr>
+        <tr><td>Target Segment</td><td>Авторы с 1K+ подписчиков + их зрители</td></tr>
+        <tr><td>Value Proposition</td><td>«Сними ответный клип — получи в 2× больше просмотров»</td></tr>
+        <tr><td>Channel</td><td>In-app notification авторам, featured section «Коллаборации»</td></tr>
+        <tr><td>Launch Sequence</td><td>Alpha: 100 авторов (1 нед) → Beta: 5K авторов (2 нед) → GA</td></tr>
+        <tr><td>Success Metrics</td><td>Adoption ≥ 15% авторов, collab clips views ≥ 2× solo, K-factor +0.05</td></tr>
+        <tr><td>Rollback</td><td>Feature flag off если adoption &lt; 3% или NPS &lt; 30</td></tr>
+      </table>
+      <p><a href="block1-reference.html#gtm-framework">← GTM Framework</a> · <a href="block1-reference.html#launch-checklist">← Launch Checklist</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="clips-marketplace">Клипы как двухсторонний маркетплейс</h3>
+      <p><strong>Supply (авторы)</strong> ↔ <strong>Demand (зрители)</strong>. Cross-side network effect: больше авторов → больше контента → больше зрителей.</p>
+      <p><strong>Chicken-and-egg решение:</strong></p>
+      <ul>
+        <li>Seed: привлечь 500 топ-авторов из других платформ (гарантии + финансовые бонусы)</li>
+        <li>Cross-promo: показывать клипы в Ленте ВК (demand-side bootstrap)</li>
+        <li>Guaranteed initial views: каждый новый клип получает 500+ просмотров (supply-side confidence)</li>
+      </ul>
+      <p><strong>Метрики:</strong></p>
+      <ul>
+        <li>Match Rate: 72% сессий заканчиваются 3+ досмотренными клипами → хорошая ликвидность</li>
+        <li>Fill Rate: 45% клипов получают ≥100 просмотров → умеренная, нужно больше demand</li>
+        <li>Density: 50K авторов / 50M зрителей = 1:1000 — дисбаланс, нужно больше авторов</li>
+      </ul>
+      <p><a href="block1-reference.html#marketplace-basics">← Маркетплейс</a> · <a href="block1-reference.html#marketplace-metrics">← Метрики маркетплейса</a></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="messenger">2.3 Мессенджер ВКонтакте</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="case-card">
+      <div class="case-product">VK Messenger</div>
+      <h3 id="messenger-nsm">Метрики</h3>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+        <tr><td>NSM</td><td>Messages sent per DAU</td><td>Core value: коммуникация. Больше сообщений = больше пользы от мессенджера</td></tr>
+        <tr><td>Proxy</td><td>Response rate, group chat activity, sticker usage</td><td>Response rate → двусторонняя коммуникация, groups → сетевой эффект, стикеры → monetization</td></tr>
+        <tr><td>Guard</td><td>Avg message length, spam report rate</td><td>Если сообщения короче → может быть сигналом снижения качества коммуникации</td></tr>
+      </table>
+      <p><a href="block1-reference.html#nsm">← NSM в справочнике</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="messenger-ab">A/B-тест: редизайн панели ввода</h3>
+      <p><strong>Контекст:</strong> новая панель ввода с быстрыми ответами и встроенным AI-ассистентом.</p>
+
+      <h4>Гипотезы</h4>
+      <ul>
+        <li><strong>H0:</strong> редизайн не влияет на messages sent per DAU</li>
+        <li><strong>H1:</strong> редизайн увеличивает messages sent per DAU</li>
+      </ul>
+
+      <h4>Риск каннибализации</h4>
+      <p>Быстрые ответы могут <em>сократить</em> количество отправленных сообщений: пользователь выбирает готовый ответ вместо того, чтобы написать 2-3 сообщения. Но при этом <code>response_rate</code> может вырасти.</p>
+      <p><strong>Guard-метрика:</strong> avg message length. Если сообщения стали короче на 40%+ — коммуникация деградирует, даже если count вырос.</p>
+
+      <h4>H1 должна быть двусторонней</h4>
+      <p>Поскольку возможен эффект в обе стороны (быстрые ответы могут и увеличить, и уменьшить count), используем двустороннюю H1.</p>
+
+      <p><a href="block1-reference.html#hypotheses">← Гипотезы</a> · <a href="block1-reference.html#stat-significance">← Статзначимость</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="messenger-economics">Экономика: indirect impact Мессенджера</h3>
+      <p>Мессенджер сам по себе не генерирует значительный ad revenue. Но он — <strong>ключевой драйвер retention</strong> платформы: пользователь, активно переписывающийся, возвращается чаще и проводит больше времени в Ленте и Клипах.</p>
+
+      <h4>Модель: counterfactual analysis</h4>
+      <ul>
+        <li>Группа A: пользователи с messages_sent > 10/день</li>
+        <li>Группа B: пользователи с messages_sent ≤ 10/день (matched по demographics)</li>
+        <li>Разница в DAU Ленты между A и B = +18%</li>
+        <li>Attributed ad revenue = ΔDAU × time_spent_per_DAU × impressions/min × CPM</li>
+      </ul>
+      <div class="formula-expr">Indirect Messenger Value = (DAU_A × time_A - DAU_B × time_B) × impr/min × CPM / 1000</div>
+      <p><strong>Trade-off:</strong> correlation ≠ causation. Активные мессенджер-пользователи могут быть изначально более вовлечёнными. Для строгой оценки нужен инструментальный подход или эксперимент с ограничением функционала.</p>
+      <p><a href="block1-reference.html#opportunity-cost">← Opportunity Cost</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="messenger-discovery">Discovery: новый пользователь Мессенджера</h3>
+      <p><strong>JTBD:</strong></p>
+      <ul>
+        <li><strong>Функциональный:</strong> «Когда мне нужно быстро скоординироваться с группой, я хочу написать в чат, чтобы все получили информацию одновременно»</li>
+        <li><strong>Эмоциональный:</strong> «Когда друг не отвечает 2 часа, я хочу написать ещё раз, чтобы почувствовать связь»</li>
+        <li><strong>Social:</strong> «Когда я в общем чате, я хочу быть в курсе обсуждений, чтобы не выпасть из коллектива»</li>
+      </ul>
+      <p><strong>CJM нового пользователя:</strong></p>
+      <table class="metric-table">
+        <tr><th>Этап</th><th>Действие</th><th>Эмоция</th><th>Pain Point</th><th>Opportunity</th></tr>
+        <tr><td>1. Установил</td><td>Открыл Мессенджер</td><td>0 Любопытство</td><td>Пустой экран, нет контактов</td><td>Подсказать друзей из ВК</td></tr>
+        <tr><td>2. Нашёл друга</td><td>Написал сообщение</td><td>+ Вовлечение</td><td>Не знает, что написать</td></tr>
+        <tr><td>3. Ждёт ответ</td><td>Проверяет уведомления</td><td>0 Ожидание</td><td>Нет ответа → не возвращается</td><td>Push-напоминания, «печатает…»</td></tr>
+        <tr><td>4. Получил ответ</td><td>Продолжает диалог</td><td>+ Удовлетворение</td><td>—</td><td>—</td></tr>
+        <tr><td>5. Хочет написать группе</td><td>Создаёт чат</td><td>− Сложность</td><td>Не понимает, как добавить людей</td><td>Упрощённый flow создания чата</td></tr>
+      </table>
+      <p><a href="block1-reference.html#jtbd">← JTBD</a> · <a href="block1-reference.html#cjm">← CJM</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="messenger-growth">Network Effects Мессенджера</h3>
+      <p><strong>Same-side network effects:</strong> каждый новый пользователь увеличивает ценность для всех существующих (больше друзей в мессенджере → больше поводов зайти). K-factor:</p>
+      <ul>
+        <li>Средний юзер приглашает 1.2 новых юзера за первые 30 дней</li>
+        <li>Конверсия приглашения → регистрация = 25%</li>
+        <li>K = 1.2 × 0.25 = 0.3 — умеренный органический рост</li>
+      </ul>
+      <p><strong>Усиление network loop:</strong></p>
+      <ul>
+        <li>«Ваши друзья в ВК» — автоматическая адресная книга (снижает friction приглашения)</li>
+        <li>Групповые чаты — каждый новый участник = ещё один человек, который тянет остальных</li>
+        <li>Стикеры и реакции — social currency, повод написать</li>
+      </ul>
+      <p><strong>Метрика network health:</strong> среднее количество контактов с 2+ сообщениями/неделю. Если &lt;3 → риск оттока (нечего терять). Цель: ≥5 для новых юзеров к D14.</p>
+      <p><a href="block1-reference.html#k-factor">← K-factor</a> · <a href="block1-reference.html#growth-loops">← Growth Loops</a></p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <h2 id="video">2.4 VK Видео</h2>
+    <!-- ══════════════════════════════════════════ -->
+
+    <div class="case-card">
+      <div class="case-product">VK Video</div>
+      <h3 id="video-nsm">Метрики</h3>
+      <table class="metric-table">
+        <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+        <tr><td>NSM</td><td>Watch time per DAU</td><td>Длинный контент — time spent = value + monetization. Лучший proxy для ad revenue среди всех продуктов</td></tr>
+        <tr><td>Proxy</td><td>Autoplay-to-click rate, session length, completion rate</td><td>Autoplay-to-click — заинтересовал ли контент, completion — досмотрел ли</td></tr>
+        <tr><td>Guard</td><td>Feed exit rate, skip rate</td><td>Если видео «затягивает» в ущерб Ленте — cross-product каннибализация</td></tr>
+      </table>
+      <p><a href="block1-reference.html#nsm">← NSM в справочнике</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="video-cohort">Когортный анализ: платящие vs бесплатные</h3>
+      <p>Подписчики VK Видео (платный доступ к эксклюзиву) vs бесплатные зрители:</p>
+      <table class="metric-table">
+        <tr><th>Метрика</th><th>Платящие</th><th>Бесплатные</th></tr>
+        <tr><td>D7 Retention</td><td>68%</td><td>41%</td></tr>
+        <tr><td>D30 Retention</td><td>45%</td><td>18%</td></tr>
+        <tr><td>ARPU/мес</td><td>$4.99 (подписка) + $0.30 (ads)</td><td>$0.80 (ads only)</td></tr>
+        <tr><td>Watch time/DAU</td><td>52 мин</td><td>18 мин</td></tr>
+        <tr><td>Churn rate/мес</td><td>5%</td><td>—</td></tr>
+        <tr><td>Gross Margin</td><td>40% (CDN + лицензии ≈ 60% COGS)</td><td>55% (только ad serving)</td></tr>
+      </table>
+
+      <h4>LTV платящего — SaaS-метод</h4>
+      <div class="formula-expr">LTV_SaaS = ARPU × (1 / Churn_Rate) × Gross_Margin</div>
+      <div class="formula-expr">LTV_SaaS = $5.29 × (1 / 0.05) × 0.40 = $5.29 × 20 × 0.40 = $42.3</div>
+      <p>С дисконтированием (d = 0.8%/мес, Retention_Rate = 0.95):</p>
+      <div class="formula-expr">LTV_SaaS_disc = $5.29 × 0.40 / (1 + 0.008 - 0.95) = $2.116 / 0.058 = $36.5</div>
+
+      <h4>LTV бесплатного — через retention-кривую</h4>
+      <p>Для ad-supported модели churn не имеет смысла (нет подписки), зато есть кривая retention:</p>
+      <div class="formula-expr">LTV_retention = ARPU_per_day × Σ(Retention_Dt)</div>
+      <p>ARPU_per_day = $0.80 / 30 = $0.027. Сумма retention за 180 дней по измеренным точкам:</p>
+      <table class="metric-table">
+        <tr><th>День</th><th>Retention</th><th>Фактор</th></tr>
+        <tr><td>D0</td><td>100%</td><td>1.00</td></tr>
+        <tr><td>D1</td><td>55%</td><td>0.55</td></tr>
+        <tr><td>D7</td><td>41%</td><td>0.41</td></tr>
+        <tr><td>D14</td><td>32%</td><td>0.32</td></tr>
+        <tr><td>D30</td><td>18%</td><td>0.18</td></tr>
+        <tr><td>D60</td><td>12%</td><td>0.12</td></tr>
+        <tr><td>D90</td><td>9%</td><td>0.09</td></tr>
+        <tr><td>D180</td><td>5%</td><td>0.05</td></tr>
+      </table>
+      <p>Сумма (интеграл кривой, интерполяция между точками) ≈ 38.2 «эквивалентных дня» за 180 дней.</p>
+      <div class="formula-expr">LTV_retention_180d = $0.027 × 38.2 ≈ $1.03</div>
+      <p>С экстраполяцией экспоненциального хвоста за D180 (λ ≈ 0.003): +8.4 доп. дней → LTV ≈ $1.26</p>
+
+      <p><strong>Insight:</strong> LTV платящего ($36.5) в 29× выше бесплатного ($1.26). Стратегия: инвестиции в conversion free → paid дают больший ROI, чем инвестиции в удержание бесплатных. Каждый 1% конверсии free → paid = 1% × free_users × ($36.5 - $1.26) incremental LTV.</p>
+      <p><a href="block1-reference.html#ltv-saas">← LTV SaaS</a> · <a href="block1-reference.html#ltv-retention">← LTV через Retention</a> · <a href="block1-reference.html#retention-classic">← Classic Retention</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="video-ab">A/B-тест: Autoplay со звуком</h3>
+      <p><strong>Контекст:</strong> автовоспроизведение видео в Ленте со звуком (сейчас — без звука). Цель — увеличить watch time в Видео.</p>
+
+      <h4>Целевые метрики</h4>
+      <ul>
+        <li><strong>Goal:</strong> watch time per DAU (Видео) — ожидаемый рост +8%</li>
+      </ul>
+
+      <h4>Guard-метрики (cross-product)</h4>
+      <ul>
+        <li>Feed exit rate — если звук раздражает, пользователи уходят из Ленты</li>
+        <li>Feed session length — может упасть, если автовоспроизведение «ломает» скроллинг</li>
+        <li>Clips watch time — может вырасти (создаётся привычка к звуковому контенту) или упасть (каннибализация)</li>
+      </ul>
+
+      <h4>Дизайн</h4>
+      <ul>
+        <li>Сплиттинг по user_id (50/50)</li>
+        <li>Длительность: 2 недели (учесть weekend/weekday разницу в потреблении видео)</li>
+        <li>Ramp-up: 5% → 20% → 50%, проверка guard на каждом этапе</li>
+      </ul>
+
+      <p><a href="block1-reference.html#experiment-checklist">← Чек-лист эксперимента</a> · <a href="block1-reference.html#stat-significance">← Статзначимость</a></p>
+    </div>
+
+    <div class="case-card">
+      <h3 id="video-pricing">Pricing: подписка VK Видео</h3>
+      <p><strong>Модель:</strong> Freemium — бесплатный ad-supported + платная подписка $4.99/мес.</p>
+      <p><strong>Ценовая эластичность:</strong> при повышении цены с $4.99 до $5.99 (+20%) отток подписчиков составил 8% → |elasticity| = 8/20 = 0.4 (неэластичный спрос). Вывод: можно поднимать цену — выручка вырастет.</p>
+      <p><strong>Pricing experiment:</strong> нельзя A/B-тестить цену (юзеры видят разные цены). Альтернатива: тест на новом сегменте (новые регионы) или survey-based Van Westendorp. Результат: оптимальная цена для массового сегмента = $4.99, для premium = $7.99 (tiered pricing).</p>
+      <p><strong>Tiered pricing:</strong></p>
+      <table class="metric-table">
+        <tr><th>Tier</th><th>Цена</th><th>Контент</th><th>Target</th></tr>
+        <tr><td>Free</td><td>$0 (ads)</td><td>Базовый каталог</td><td>Массовая аудитория</td></tr>
+        <tr><td>Standard</td><td>$4.99</td><td>Полный каталог + HD</td><td>Регулярные зрители</td></tr>
+        <tr><td>Premium</td><td>$7.99</td><td>Всё + 4K + offline + family</td><td>Семьи, киноманы</td></tr>
+      </table>
+      <p><a href="block1-reference.html#pricing-models">← Модели монетизации</a> · <a href="block1-reference.html#price-elasticity">← Ценовая эластичность</a></p>
+    </div>
+
+  </main>
+</body>
+</html>
