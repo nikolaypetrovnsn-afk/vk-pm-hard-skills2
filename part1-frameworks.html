@@ -51,22 +51,2458 @@
 
   <main class="main">
     <h1>Часть I. Универсальные frameworks</h1>
-    <p>Заглушка — будет заполнено в Фазе 5.</p>
+    <p>Методы и фреймворки для подготовки к собеседованиям в любой российской tech-компании. Каждый раздел — с примерами и ссылками на Часть II (компании) и Часть III (формулы).</p>
 
+    <p class="subtitle" style="color: var(--vk-text-secondary); margin-bottom: 24px;">
+      Раздел 1.2 <em>Analytical methods</em> — центральная cross-company глава: одни и те же концепции (метрики, A/B, SQL) рассматриваются через призму разных компаний. Остальные разделы содержат universal-фреймворки, которые переиспользуются во всех главах Части II.
+    </p>
+
+    <div class="formula-backref">
+      <div class="formula-backref-title">Как пользоваться этой главой</div>
+      <ol>
+        <li><strong>Готовитесь к конкретному формату</strong> (например, analytical раунд в Яндексе) — открывайте нужный раздел.</li>
+        <li><strong>Хотите понять, как один и тот же метод применяется в разных компаниях</strong> — смотрите раздел 1.2 и cross-company заметки в остальных разделах.</li>
+        <li><strong>Нужны формулы</strong> — переходите по ссылкам <a href="part3-reference.html#metrics" class="formula-inline-ref">Часть III</a>. Формулы открываются в соседнем файле, не теряйте контекст.</li>
+        <li><strong>Хотите посмотреть реальный кейс</strong> — ссылки ведут в Часть II, например <a href="part2-vk.html#vk-case-feed">разбор Ленты ВК</a>.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <h2 id="product-sense">1.1 Product Sense</h2>
-    <p>TODO в Фазе 5.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
 
+    <h3>Что такое Product Sense</h3>
+    <p><strong>Product Sense</strong> — способность понимать, что нужно пользователю, и превращать это в конкретные продуктовые решения. Это не «креативность» и не «хорошее чувство продукта»: это структурное мышление, которое декомпозирует проблему, находит сегмент, формулирует JTBD, генерирует решения и приоритизирует их по impact.</p>
+
+    <p>На собеседованиях Product Sense проверяют в форматах:</p>
+    <ul>
+      <li><strong>Открытый кейс:</strong> «Улучши Ленту ВК» / «Придумай фичу для Ozon» / «Что делать сMessenger ВК».</li>
+      <li><strong>Reverse-инжиниринг:</strong> «Почему X сделал фичу Y? Как бы ты её улучшил?»</li>
+      <li><strong>Стратегический кейс:</strong> «VK Видео конкурирует с Кинопоиск. Твоя стратегия?» — граничит со стратегическим раундом, но проверяет product thinking.</li>
+      <li><strong>Favorite product:</strong> «Назови любимый продукт и объясни почему» — проверяет, умеет ли кандидат рассуждать о product-дизайне, а не только о UX.</li>
+    </ul>
+
+    <h3>CIRCLES framework</h3>
+    <p><strong>CIRCLES</strong> (Lewis C. Lin) — наиболее распространённая структура для ответа на product sense вопросы. Семь шагов, которые гарантируют, что кандидат не перескакивает к решению и не забывает сегментацию.</p>
+
+    <div class="formula-block">
+      <div class="formula-name">CIRCLES Method</div>
+      <div class="formula-expr">C → I → R → C → L → E → S</div>
+      <div class="formula-vars">
+        <code>C</code> — <strong>Comprehend</strong> — понял ли ситуацию, переформулировал ли вопрос, уточнил ли constraints<br>
+        <code>I</code> — <strong>Identify</strong> — идентифицировал пользователей и сегменты<br>
+        <code>R</code> — <strong>Report</strong> — описал pain points и JTBD для каждого сегмента<br>
+        <code>C</code> — <strong>Cut</strong> — сузил до приоритетного сегмента (не решай «для всех»)<br>
+        <code>L</code> — <strong>List</strong> — сгенерировал 3-5 решений (не одно)<br>
+        <code>E</code> — <strong>Evaluate</strong> — сравнил по impact/effort, выбрал trade-off<br>
+        <code>S</code> — <strong>Summarize</strong> — подвёл итог, что и почему выбрал
+      </div>
+    </div>
+
+    <h4>Comprehend — понять задачу</h4>
+    <p>Прежде чем что-то предлагать, переформулируй вопрос своими словами и уточни constraints. Часто интервьюер вкладывает в вопрос скрытые предположения, которые кандидат должен проверить.</p>
+    <ul>
+      <li>«Что значит „улучши"? Метрику какую-то конкретную растим? Time spent, retention, revenue?»</li>
+      <li>«Есть ли временной горизонт — это квартальная фича или стратегия на год?»</li>
+      <li>«На каком сегменте фокусируемся — все пользователи или конкретная когорта?»</li>
+      <li>«Можно ли трогать только этот продукт или вся экосистема в scope?»</li>
+    </ul>
+    <p class="hints"><strong>Частая ошибка:</strong> пропустить этот шаг и сразу начать генерить идеи. Если интервьюер потом уточнит constraints — половина идей окажется невалидной, и ты потеряешь время.</p>
+
+    <h4>Identify — кто пользователи</h4>
+    <p>Перечисли сегменты пользователей продукта. Сегментация может быть по поведению, по демографии, по JTBD, по уровню активности.</p>
+    <p>Пример для Ленты ВК:</p>
+    <ul>
+      <li><strong>Активные создатели контента</strong> — постят в группы, ведут свои страницы.</li>
+      <li><strong>Пассивные потребители</strong> — только читают/смотрят, не постят.</li>
+      <li><strong>Молодая аудитория (16-24)</strong> — уходит в TikTok/Клипы, короткий формат.</li>
+      <li><strong>Взрослая аудитория (35+)</strong> — долгое чтение, ностальгический контент.</li>
+      <li><strong>Локальные сообщества</strong> — ищут региональный контент.</li>
+    </ul>
+
+    <h4>Report — их pain points и JTBD</h4>
+    <p>Для каждого сегмента опиши, что они пытаются сделать (JTBD) и что им мешает. Здесь полезно применять <a href="part3-reference.html#jtbd" class="formula-inline-ref">Jobs-to-be-Done</a> и <a href="part3-reference.html#cjm" class="formula-inline-ref">Customer Journey Map</a>.</p>
+    <p>Пример: для молодой аудитории Ленты ВК JTBD = «убить 5 минут в очереди / перед сном», pain points = «скучный длинный контент», «нет свежих трендов», «алгоритм затягивает в однообразие».</p>
+
+    <h4>Cut — выбрать приоритетный сегмент</h4>
+    <p>Не пытайся решить «для всех». Выбери один сегмент, который:</p>
+    <ol>
+      <li>Самый большой по impact (что двигает бизнес-метрику сильнее всего).</li>
+      <li>Самый underserved (где pain points острее всего).</li>
+      <li>Самый стратегически важный (например, отток молодой аудитории — экзистенциальная угроза).</li>
+    </ol>
+    <p>Обоснуй выбор: «Фокусируюсь на молодой аудитории, потому что (1) это 30% DAU, (2) retention у них ниже на 40%, (3)长期 риск — потерять поколение Z полностью».</p>
+
+    <h4>List — сгенерируй 3-5 решений</h4>
+    <p>Генерируй несколько альтернативных решений, не зацикливайся на одном. Это показывает ability think divergent, а не только convergent. Решения могут быть:</p>
+    <ul>
+      <li><strong>Дешёвое и быстрое:</strong> tweak существующего UX.</li>
+      <li><strong>Среднее по усилиям:</strong> новая фича внутри текущей архитектуры.</li>
+      <li><strong>Стратегическое:</strong> новый продукт или серьёзная переработка.</li>
+    </ul>
+
+    <h4>Evaluate — сравни по impact/effort</h4>
+    <p>Используй <a href="part3-reference.html#rice-extended" class="formula-inline-ref">RICE</a>, <a href="part3-reference.html#wsjf" class="formula-inline-ref">WSJF</a> или <a href="part3-reference.html#kano" class="formula-inline-ref">Kano</a>. Назови trade-off явно: «Решение А даёт быстрый uplift, но каннибализирует Clips. Решение Б — долгосрочное, но требует ML-pipeline».</p>
+
+    <h4>Summarize — итог</h4>
+    <p>В конце — 30-секундная выжимка: «Я выбрал сегмент X, потому что Y. Предлагаю решение Z. Ожидаю impact W, буду мерить через метрику M. Риски: R, митигация: R'».</p>
+
+    <h3>Walked example: CIRCLES для «Улучши Ленту ВК»</h3>
+    <div class="case-walkthrough">
+      <h4>Шаг 1. Comprehend</h4>
+      <p>«Уточню: мы улучшаем Ленту с какой целью? Если time spent — это одно решение, если retention young cohort — другое. Предположу, что фокус — рост time spent per DAU без каннибализации Клипов. Верно?»</p>
+
+      <h4>Шаг 2. Identify</h4>
+      <p>Перечисляю сегменты:</p>
+      <ul>
+        <li>Молодая аудитория (16-24) — уходит в TikTok</li>
+        <li>Активные группы — социальное потребление</li>
+        <li>Пассивные читатели 35+ — длинный контент</li>
+        <li>Региональная аудитория — локальный контент</li>
+      </ul>
+
+      <h4>Шаг 3. Report</h4>
+      <p>Для каждого сегмента — JTBD и pain:</p>
+      <ul>
+        <li><strong>Молодые:</strong> JTBD «убить время развлекаясь», pain «длинный контент скучный», «нет свежих трендов».</li>
+        <li><strong>Активные группы:</strong> JTBD «найти своё сообщество», pain «Лента показывает общий контент, не мои группы».</li>
+        <li><strong>Региональные:</strong> JTBD «что происходит вокруг меня», pain «Лента не понимает гео».</li>
+      </ul>
+
+      <h4>Шаг 4. Cut</h4>
+      <p>Выбираю <strong>молодую аудиторию</strong>, потому что:</p>
+      <ol>
+        <li>30% DAU, но retention ниже на 40% — наибольший business risk.</li>
+        <li>Этот сегмент — будущее платформы, упустим Z — потеряем всё.</li>
+        <li>Pain points острее всего (контент не релевантен их формату потребления).</li>
+      </ol>
+
+      <h4>Шаг 5. List</h4>
+      <p>Генерирую 4 решения:</p>
+      <ul>
+        <li><strong>A.</strong> Длинные посты → swipe-карусели с auto-play (быстрый UX-fix).</li>
+        <li><strong>Б.</strong> Geo-таргетинг в Ленте — локальный контент young-сегменту (долгосрочное, ML-pipeline).</li>
+        <li><strong>В.</strong> Интеграция Клипов как блока в Ленте (но риск каннибализации Клипов как отдельного продукта).</li>
+        <li><strong>Г.</strong> Creator-программа: награды за короткие вертикальные посты в Ленте (двухсторонний маркетплейс).</li>
+      </ul>
+
+      <h4>Шаг 6. Evaluate</h4>
+      <p>По RICE:</p>
+      <ul>
+        <li>A — высокий reach, низкий effort, но и умеренный impact (UX-tweak).</li>
+        <li>Б — высокий impact, но high effort (ML + data), долгий runway.</li>
+        <li>В — риск каннибализации, метрики Клипов упадут.</li>
+        <li>Г — стратегический, но нужно время на creator-экономику.</li>
+      </ul>
+      <p>Trade-off: выбираю <strong>А + Б</strong> в связке. А — quick win, Б — стратегический bet.</p>
+
+      <h4>Шаг 7. Summarize</h4>
+      <p>«Фокус — молодая аудитория. Решение: A (swipe-карусели, квартал) + B (geo-targeting, два квартала). Impact: +5-8% time spent young cohort. Метрики: time spent per DAU 16-24, retention D7 young cohort, без ухудшения retention Клипов. Риск: каннибализация — митигирую staggered rollout и guardrail метрикой Clips DAU».</p>
+      <p><a href="part2-vk.html#vk-case-feed">Полный разбор Ленты ВК с метриками →</a></p>
+    </div>
+
+    <h3>Альтернативные фреймворки</h3>
+
+    <h4>CIRCLES vs MECE vs Issue Tree</h4>
+    <table class="metric-table">
+      <tr><th>Фреймворк</th><th>Когда применять</th><th>Сила</th><th>Слабость</th></tr>
+      <tr>
+        <td><strong>CIRCLES</strong></td>
+        <td>Открытые product sense кейсы («улучши X», «придумай фичу для Y»)</td>
+        <td>Структура от пользователя к решению, не забываешь сегментацию</td>
+        <td>Может быть избыточен для простых кейсов, формален</td>
+      </tr>
+      <tr>
+        <td><strong>MECE</strong> (Mutually Exclusive, Collectively Exhaustive)</td>
+        <td>Декомпозиция проблемы (почему метрика упала, как увеличить revenue)</td>
+        <td>Гарантирует, что ты покрыл все ветви, не дублируя</td>
+        <td>Не говорит, как генерировать решения — только структурирует</td>
+      </tr>
+      <tr>
+        <td><strong>Issue Tree</strong></td>
+        <td>Аналитические кейсы (diagnose, root cause, sizing)</td>
+        <td>Иерархическая декомпозиция с гипотезами на каждой ветви</td>
+        <td>Может разрастись, теряет фокус на пользовательеле</td>
+      </tr>
+    </table>
+
+    <p><strong>Практическое правило:</strong></p>
+    <ul>
+      <li>Кейс начинается с «улучши / придумай» → CIRCLES.</li>
+      <li>Кейс начинается с «почему / как увеличить / что вызвало» → MECE / Issue Tree.</li>
+      <li>В сложных кейсах комбинируй: MECE для диагностики + CIRCLES для решения.</li>
+    </ul>
+
+    <h4>MECE — пример декомпозиции</h4>
+    <p>«Почему time spent в Ленте упал на 5%?» — MECE-декомпозиция:</p>
+    <pre><code>Time spent down 5%
+├── DAU изменился?
+│   ├── New users down?
+│   ├── Retained users down?
+│   └── Reactivated users down?
+├── Sessions per DAU изменился?
+│   ├── Push CTR down?
+│   ├── App open rate down?
+│   └── Session frequency down?
+└── Time per session изменился?
+    ├── Content mix changed?
+    ├── Recommendation quality down?
+    ├── Performance (load speed) down?
+    └── External (competitor launched X)?</code></pre>
+    <p>Каждая ветвь — гипотеза для проверки. MECE гарантирует, что не упустили категорию.</p>
+
+    <h4>Issue Tree — пример для revenue</h4>
+    <p>«Как увеличить revenue Ozon на 20% за год?» — Issue Tree с гипотезами:</p>
+    <pre><code>Revenue +20%
+├── Increase GMV (hypothesis: +15% from buyers growth)
+│   ├── Active buyers +10% (acquisition / reactivation)
+│   ├── Orders per buyer +5% (cross-sell, frequency)
+│   └── AOV +3% (pricing, basket size)
+├── Increase take rate (hypothesis: +3% from commission optimization)
+│   ├── Commission rates
+│   ├── Advertising revenue (sellers buying ads)
+│   └── Fulfillment fees
+└── New revenue streams (hypothesis: +2% from new products)
+    ├── Financial services
+    ├── Subscriptions
+    └── B2B services</code></pre>
+    <p>На каждой ветви — гипотеза с ожидаемым вкладом. Это позволяет приоритизировать рычаги.</p>
+
+    <h3>Reverse-engineering: разбираем чужой продукт</h3>
+    <p>Отдельный тип кейсов: «Почему X сделал фичу Y? Как бы ты её улучшил?» — проверяет ability думать о product-дизайне, а не только генерировать идеи с нуля.</p>
+
+    <h4>Walked example: Instagram Stories</h4>
+    <div class="case-walkthrough">
+      <h4>Почему Instagram скопировал Stories у Snapchat?</h4>
+      <p>Анализ через CIRCLES:</p>
+      <ul>
+        <li><strong>Comprehend:</strong> Instagram терял молодую аудиторорию, которая уходила в Snapchat. Time spent на Instagram у 16-24 падал.</li>
+        <li><strong>Identify:</strong> молодая аудитория 16-24, ценит ephemeral контент (low pressure to be perfect).</li>
+        <li><strong>Report:</strong> pain = «постить в ленте тяжело, нужно идеально выглядеть», JTBD = «поделиться моментом без давления permanence».</li>
+        <li><strong>Cut:</strong> фокус — young creators, которые уже используют Snapchat.</li>
+        <li><strong>List:</strong> (1) копировать Stories, (2) улучшить Direct messages, (3) запустить ephemeral feed, (4) приобрести Snapchat (пробовали, отказались).</li>
+        <li><strong>Evaluate:</strong> копирование Stories — fastest time-to-market, leveraging Instagram's distribution. Trade-off: PR-риск «копировали», но business-wise оправдано.</li>
+        <li><strong>Summarize:</strong> Stories решали pain point young audience, leveraging Instagram's massive distribution. Результат: DAU young вырос, Snapchat growth замедлился.</li>
+      </ul>
+
+      <h4>Как бы улучшить Stories сейчас?</h4>
+      <p>Применяю тот же CIRCLES:</p>
+      <ul>
+        <li>Сегмент: power-creators (те, кто постит 5+ stories в день).</li>
+        <li>Pain: «сложно монетизировать», «нет advanced analytics», «алгоритм показа непрозрачен».</li>
+        <li>Решения: (A) Subscriptions for stories, (B) Stories analytics dashboard, (C) Highlights для сериального контента.</li>
+        <li>Trade-off: monetization может снизить engagement, нужен careful balance.</li>
+      </ul>
+    </div>
+
+    <h3>Типичные ошибки</h3>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 1. Перескакивание к решению без структуры.</strong></p>
+      <p class="question-tips">«Улучши Ленту ВК» → «Добавлю TikTok-like свайпы и AI-эффекты». Интервьюер слышит набор фичей без обоснования. Решение: всегда начинай с Comprehend → Identify → Report. Даже если у тебя уже есть идея — покажи, что ты её вывел из сегмента и pain point.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 2. Игнорирование сегментации.</strong></p>
+      <p class="question-tips">«Все пользователи хотят...» — нет, не все. Молодая аудитория хочет короткого контента, взрослая — длинного. Региональная — локального. Без сегментации решения получаются усреднёнными и не двигают метрику. Минимум — 3-4 сегмента в Identify.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 3. Отсутствие trade-offs.</strong></p>
+      <p class="question-tips">«Я выбрал решение А потому что оно лучшее». Лучшее для кого? Что теряешь? Что рискуешь каннибализировать? Интервьюер хочет видеть, что ты понимаешь: любое решение имеет cost. Назови trade-off явно и предложи митигацию.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 4. Игнорирование бизнес-модели.</strong></p>
+      <p class="question-tips">Решение без учёта монетизации. Например, предложение убрать рекламу из Ленты — увеличит time spent, но убьёт revenue. Всегда связывай product-решение с бизнес-метрикой: <a href="part3-reference.html#unit-economics" class="formula-inline-ref">unit economics</a>, <a href="part3-reference.html#ltv-simple" class="formula-inline-ref">LTV</a>, revenue impact.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 5. Слишком много решений, без приоритизации.</strong></p>
+      <p class="question-tips">Перечислить 10 фичей и не выбрать — показывает нерешительность. Цель List — генерация, цель Evaluate — приоритизация. Применяй <a href="part3-reference.html#rice-extended" class="formula-inline-ref">RICE</a> или <a href="part3-reference.html#wsjf" class="formula-inline-ref">WSJF</a>, выбери top 1-2, обоснуй.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 6. Решение «для всех» без фокуса.</strong></p>
+      <p class="question-tips">CIRCLES требует шага Cut — выбрать один сегмент. Решить «для всех» = решить «ни для кого». Усреднённое решение не двигает конкретную метрику. Фокус — это сила.</p>
+    </div>
+
+    <h3>Favorite product: разобрать чужой продукт</h3>
+    <p>Отдельный тип вопроса: «Назови любимый продукт и объясни почему» — проверяет, умеет ли кандидат рассуждать о product-дизайне, а не только о UX. Часто следует «как бы ты его улучшил?»</p>
+
+    <h4>Walked example: Telegram</h4>
+    <div class="case-walkthrough">
+      <h4>Почему Telegram — favourite product</h4>
+      <ul>
+        <li><strong>Clear value prop:</strong> fast, secure, cross-platform messaging. JTBD = «надёжно связаться с кем угодно, с любого устройства».</li>
+        <li><strong>Exceptional UX:</strong> latency ниже, чем у конкурентов. Secret chats с E2E encryption. Cloud sync — сообщения доступны везде.</li>
+        <li><strong>Platform thinking:</strong> bots, channels, groups — Telegram как platform, не просто messenger. Создал ecosystem.</li>
+        <li><strong>Product-led growth:</strong> фичи драйвят retention (voice messages, stickers, stories) — каждый launch создаёт новый use case.</li>
+        <li><strong>Architecture trade-offs:</strong> cloud-first (vs Signal's local-first) — sacrifice max security для convenience. Trade-off explicit, target audience matches.</li>
+      </ul>
+
+      <h4>Как бы улучшил</h4>
+      <p>Применяю CIRCLES:</p>
+      <ul>
+        <li><strong>Identify:</strong> power-users channels (100K+ subscribers), creators, business users.</li>
+        <li><strong>Report (pain points):</strong> нет advanced analytics для channel owners, ограниченная monetization, нет native scheduling для posts.</li>
+        <li><strong>Cut:</strong> channel creators — strategic segment (creators driver of ecosystem).</li>
+        <li><strong>List:</strong> (A) Analytics dashboard, (B) Subscriptions / paid channels, (C) Scheduled posts, (D) Native polls / quizzes advanced.</li>
+        <li><strong>Evaluate:</strong> Analytics — high impact, low effort. Paid channels — high impact, but monetization model complex. Scheduled posts — medium impact, low effort.</li>
+        <li><strong>Summarize:</strong> сначала Analytics + Scheduled posts (quick wins), потом Paid channels (strategic bet).</li>
+      </ul>
+    </div>
+
+    <h3>Cross-company note: как формулируют product sense вопросы</h3>
+    <p>Хотя CIRCLES работает везде, формулировки и ожидания отличаются. Подробности — в Части II, здесь — общий обзор.</p>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Типичный формат product sense</th><th>Что ценят</th></tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Открытые consumer-кейсы: «Лента теряет time spent young», «Мессенджер vs Telegram»</td>
+        <td>Consumer интуицию, понимание JTBD, эмпатию к пользователю, учёт экосистемы</td>
+      </tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Поисковые / интрументальные кейсы: «улучши Search», «придумай фичу для Maps»</td>
+        <td>Глубину thinking, data-driven подход, понимание query intent</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>E-commerce кейсы: «увеличь конверсию в корзину», «приоритизируй фичи для sellers»</td>
+        <td>Marketplace мышление (двухсторонний), понимание funnel, economic trade-offs</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Финтех-кейсы: «onboarding для кредитной карты», «продукт для инвестиций»</td>
+        <td>Compliance-aware мышление, понимание regulatory constraints, risk-aware decisions</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Classifieds кейсы: «улучши поиск объявлений», «снизь churn продавцов»</td>
+        <td>Marketplace liquidity thinking, trust & safety, understanding двухсторонней экономики</td>
+      </tr>
+      <tr>
+        <td><a href="part2-wildberries.html#wildberries-questions">Wildberries</a></td>
+        <td>Marketplace кейсы: «логистика для sellers», «повысь repeat purchase rate»</td>
+        <td>Operational мышление, понимание supply chain, seller economics</td>
+      </tr>
+    </table>
+
+    <h3>Связи с Частью III</h3>
+    <div class="cross-refs">
+      <div class="ref-label">Формулы и методы</div>
+      <a href="part3-reference.html#pmf">PMF</a>
+      <a href="part3-reference.html#growth">Growth Loops</a>
+      <a href="part3-reference.html#strategy">Strategy</a>
+      <a href="part3-reference.html#custdev">CustDev</a>
+      <a href="part3-reference.html#cjm">CJM</a>
+      <a href="part3-reference.html#jtbd">JTBD</a>
+      <a href="part3-reference.html#rice-extended">RICE</a>
+      <a href="part3-reference.html#wsjf">WSJF</a>
+      <a href="part3-reference.html#kano">Kano</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Кейсы в Части II</div>
+      <a href="part2-vk.html#vk-cases">ВК кейсы</a>
+      <a href="part2-yandex.html#yandex-questions">Яндекс вопросы</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon вопросы</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф вопросы</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <h2 id="analytical">1.2 Analytical methods</h2>
-    <p>TODO в Фазе 5.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
 
+    <p class="subtitle" style="color: var(--vk-text-secondary); margin-bottom: 24px;">
+      <strong>Центральная cross-company глава.</strong> Аналитический раунд есть почти в каждой российской tech-компании, но фокус отличается: где-то глубже метрики, где-то A/B-методология, где-то SQL. Здесь — universal-методы + cross-company сравнение. Реальные вопросы с собеседований — в Части II.
+    </p>
+
+    <p>Аналитический раунд обычно проверяет четыре блока:</p>
+    <ol>
+      <li><strong>Метрики и metric trees</strong> — способность построить дерево метрик от NSM к input.</li>
+      <li><strong>A/B testing</strong> — формулирование гипотезы, выбор метрики, MDE, интерпретация.</li>
+      <li><strong>SQL</strong> — когортный анализ, воронки, window functions.</li>
+      <li><strong>Diagnosis</strong> — «метрика упала, что делать», root cause analysis.</li>
+    </ol>
+
+    <!-- 1.2.1 Metric trees -->
+    <h3 id="analytical-metric-trees">1.2.1 Metric trees</h3>
+
+    <p><strong>Metric tree</strong> — иерархическая декомпозиция бизнес-метрики на input-компоненты, которые команда может напрямую влиять. Сверху — <a href="part3-reference.html#nsm" class="formula-inline-ref">North Star Metric</a> (NSM), ниже — input metrics, ещё ниже — actionable metrics.</p>
+
+    <div class="formula-block">
+      <div class="formula-name">Структура metric tree</div>
+      <div class="formula-expr">NSM = f(input₁, input₂, ..., inputₙ)</div>
+      <div class="formula-vars">
+        <code>NSM</code> — North Star Metric, верхнеуровневая метрика успеха продукта<br>
+        <code>inputᵢ</code> — входные метрики, которые команда может менять напрямую<br>
+        <code>f</code> — функция, связывающая inputs с NSM (часто мультипликативная)
+      </div>
+    </div>
+
+    <h4>Зачем строить metric tree</h4>
+    <ul>
+      <li><strong>Фокус:</strong> команда понимает, какие input-метрики двигают NSM, не размывается.</li>
+      <li><strong>Причинность:</strong> видно, какой рычаг потянуть, если NSM просел.</li>
+      <li><strong>Эксперименты:</strong> A/B-метрики выбираются из input-уровня, не top-level (где эффект размывается).</li>
+      <li><strong>Коммуникация:</strong> стейкхолдеры видят логику: «мы делаем X, чтобы двинуть Y, чтобы двинуть NSM».</li>
+    </ul>
+
+    <h4>Пример: NSM для Ленты ВК</h4>
+    <p>NSM = <strong>Daily Time Spent per DAU</strong> (среднее время в Ленте на активного пользователя в день).</p>
+    <div class="case-walkthrough">
+      <p>Декомпозиция:</p>
+      <pre><code>Daily Time Spent per DAU
+├── Sessions per DAU
+│   ├── Push notification CTR
+│   ├── App open rate (от пуша)
+│   └── Session frequency
+├── Items per session
+│   ├── Scroll depth
+│   ├── Feed load speed
+│   └── Content diversity
+└── Time per item
+    ├── Content type mix (short/long/video)
+    ├── Recommendation relevance
+    └── Engagement (comments, likes)</code></pre>
+      <p>Каждый лист — actionable metric. Например, команда реком-системы владеет «Recommendation relevance», команда push — «Push CTR».</p>
+      <p><a href="part2-vk.html#vk-case-feed">Полный разбор Ленты ВК с метриками →</a></p>
+    </div>
+
+    <h4>Пример: NSM для Яндекс Поиска</h4>
+    <p>NSM = <strong>Daily Successful Queries per DAU</strong> (количество успешных поисковых запросов на пользователя в день).</p>
+    <div class="case-walkthrough">
+      <p>Успешный запрос = пользователь кликнул в результат и не вернулся на SERP в течение N секунд (или не переформулировал).</p>
+      <pre><code>Daily Successful Queries per DAU
+├── Queries per DAU
+│   ├── Search penetration (доля сессий с поиском)
+│   └── Query frequency per searcher
+├── Success rate per query
+│   ├── CTR на топ-результат
+│   ├── Time to first click
+│   ├── Reformulation rate (показатель неудачи)
+│   └── Long-click rate (пользователь остался на сайте)
+└── Retention (D7, D30)
+    ├── Satisfaction score (CSAT на поиск)
+    ├── Speed perception
+    └── Coverage (доля query с релевантным ответом)</code></pre>
+      <p>Заметь: retention — часть NSM, потому что успешный поиск сегодня → возвращение завтра.</p>
+    </div>
+
+    <h4>Пример: NSM для Ozon</h4>
+    <p>NSM = <strong>GMV per active buyer per month</strong> (месячный GMV на активного покупателя).</p>
+    <div class="case-walkthrough">
+      <pre><code>GMV per active buyer / month
+├── Orders per buyer / month
+│   ├── Purchase frequency
+│   ├── Repeat purchase rate
+│   └── Cross-category purchase
+├── AOV (Average Order Value)
+│   ├── Items per order
+│   ├── Average item price
+│   └── Cross-sell / up-sell rate
+└── Active buyers (denominator)
+    ├── New buyer acquisition
+    ├── Retention (D30, M3)
+    └── Reactivation rate</code></pre>
+      <p>Подвох: «active buyers» в знаменателе — это значит, что рост active buyers через скидки может <em>снизить</em> NSM, если новые покупатели заказывают мало. Это важно для trade-off.</p>
+    </div>
+
+    <h4>Кросс-принципы построения metric trees</h4>
+    <ul>
+      <li><strong>NSM должен отражать value для пользователя, не только для бизнеса.</strong> «Revenue» — плохой NSM, «GMV per buyer» — лучше.</li>
+      <li><strong>Inputs должны быть actionable.</strong> «Retention» — плохо как input (это следствие). «Push CTR» — хорошо (это рычаг).</li>
+      <li><strong>Дерево должно быть MECE.</strong> Inputs не должны дублировать друг друга, и должны покрывать всю NSM.</li>
+      <li><strong>Связь с funnel metrics.</strong> На каждом уровне — <a href="part3-reference.html#funnel-metrics" class="formula-inline-ref">funnel-метрики</a> и <a href="part3-reference.html#engagement" class="formula-inline-ref">engagement-метрики</a>.</li>
+    </ul>
+
+    <h4>Walked example: построй metric tree для Avito</h4>
+    <div class="case-walkthrough">
+      <p>NSM = <strong>Successful transactions per month</strong> (число успешных сделок в месяц).</p>
+      <pre><code>Successful transactions / month
+├── Listings active
+│   ├── New listings created
+│   │   ├── Seller acquisition
+│   │   ├── Seller reactivation
+│   │   └── Listings per seller
+│   └── Listing lifetime (дольше active — больше сделок)
+├── Conversion per listing
+│   ├── Views per listing (discovery quality)
+│   ├── Contacts per view (listing attractiveness)
+│   └── Transactions per contact (closing rate)
+└── Marketplace health
+    ├── Trust signals (reviews, verified sellers)
+    ├── Pricing competitiveness
+    └── Geographic match (buyer/seller proximity)</code></pre>
+      <p>Каждый лист — рычаг. Например, команда discovery владеет «Views per listing», команда trust — «Trust signals».</p>
+    </div>
+
+    <h4>Walked example: NSM для Wildberries</h4>
+    <div class="case-walkthrough">
+      <p>NSM = <strong>Repeat purchase rate (M3)</strong> — доля покупателей, сделавших повторный заказ в течение 3 месяцев.</p>
+      <pre><code>Repeat purchase rate (M3)
+├── First-order satisfaction
+│   ├── Delivery speed
+│   ├── Product quality (returns rate)
+│   └── Pricing vs expectations
+├── Post-purchase engagement
+│   ├── Push/email effectiveness
+│   ├── App re-engagement
+│   └── Loyalty program participation
+└── Catalog attractiveness
+    ├── Personalization quality
+    ├── Promo frequency
+    └── New SKU freshness</code></pre>
+      <p>Почему Repeat purchase rate, а не GMV: WB уже доминирует по GMV, рост идёт через retention. NSM отражает долгосрочное здоровье, не краткосрочную выручку.</p>
+    </div>
+
+    <h4>Связь с формулами</h4>
+    <div class="cross-refs">
+      <div class="ref-label">Часть III</div>
+      <a href="part3-reference.html#nsm">North Star Metric</a>
+      <a href="part3-reference.html#funnel-metrics">Funnel Metrics</a>
+      <a href="part3-reference.html#engagement">Engagement</a>
+      <a href="part3-reference.html#retention-classic">Retention (classic)</a>
+      <a href="part3-reference.html#retention-rolling">Retention (rolling)</a>
+      <a href="part3-reference.html#ltv-simple">LTV</a>
+      <a href="part3-reference.html#unit-economics">Unit Economics</a>
+    </div>
+
+    <!-- 1.2.2 A/B testing -->
+    <h3 id="analytical-ab-testing">1.2.2 A/B testing methodology</h3>
+
+    <p>A/B-тестирование — основной инструмент product-решений в российских tech-компаниях. На интервью ожидают умение формулировать гипотезу, выбирать метрику, считать MDE и интерпретировать результат с учётом ловушек.</p>
+
+    <h4>Пайплайн A/B-теста</h4>
+    <ol>
+      <li><strong>Гипотеза:</strong> «Если мы сделаем X, то метрика Y изменится на Z, потому что W».</li>
+      <li><strong>Метрика:</strong> primary (что двигаем) + guardrail (что не должно упасть).</li>
+      <li><strong>MDE:</strong> минимальный detectable effect — какой эффект мы хотим увидеть.</li>
+      <li><strong>Sample size:</strong> сколько пользователей нужно, чтобы увидеть MDE с заданной мощностью.</li>
+      <li><strong>Запуск:</strong> рандомизация, продолжительность (минимум 1 full cycle).</li>
+      <li><strong>Интерпретация:</strong> статзначимость + практическая значимость + sanity checks.</li>
+    </ol>
+
+    <p>Подробно формулы — в <a href="part3-reference.html#hypotheses" class="formula-inline-ref">Hypotheses</a>, <a href="part3-reference.html#mde" class="formula-inline-ref">MDE</a>, <a href="part3-reference.html#sample-size" class="formula-inline-ref">Sample Size</a>, <a href="part3-reference.html#stat-significance" class="formula-inline-ref">Statistical Significance</a>. Здесь — методология и cross-company специфика.</p>
+
+    <h4>Ловушки A/B-тестирования</h4>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 1. Network effects (interference).</strong></p>
+      <p class="question-tips">В социальных продуктах (ВК, Мессенджер) пользователи влияют друг на друга. Если пользователь в тестовой группе получает больше контента, его друзья в контрольной группе тоже видят изменения (через комментарии, реакции). Классическая A/B-метрика искажается. Решение: cluster randomization (на группы, не на пользователей) или isolation (тестовая и контрольная группы не пересекаются по social graph).</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 2. Peeking (подглядывание).</strong></p>
+      <p class="question-tips">PM смотрит на метрику каждый день и видит, что на 5-й день эффект статзначим — останавливает тест. Проблема: при множественном peeking p-value искажается, реальная статзначимость ниже. Решение: фиксируй длительность заранее (на основе sample size calculation), не останавливай раньше без веской причины (например, катастрофическое падение guardrail).</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 3. Multiple testing.</strong></p>
+      <p class="question-tips">Если смотришь 20 метрик, хотя бы одна покажет статзначимость случайно. Решение: <a href="part3-reference.html#multiple-testing" class="formula-inline-ref">Bonferroni / FDR</a>, фиксируй primary метрику заранее, остальные — exploratory.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 4. Simpson's paradox.</strong></p>
+      <p class="question-tips">В целом по выборке эффект положительный, но в каждом сегменте — отрицательный (или наоборот). Пример: общая конверсия выросла, но упала и у новых, и у старых пользователей — потому что mix пользователей изменился. Решение: всегда смотри на segment analysis, не только на top-line.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 5. Spill-over (marketplace interference).</strong></p>
+      <p class="question-tips">В marketplace (Ozon, Avito) seller и buyer влияют друг на друга. Если даёшь скидку одной группе покупателей, sellers могут изменить цены для всех. Решение: geo-randomization (город как кластер) или seller-level randomization с изоляцией.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ловушка 6. Survivorship bias.</strong></p>
+      <p class="question-tips">Анализируешь только активных пользователей — упускаешь тех, кто отвался. Решение: считай retention / churn как часть метрик, не только engagement активных.</p>
+    </div>
+
+    <h4>Cross-company паттерны A/B</h4>
+
+    <p>Хотя методология одна, у каждой компании своя специфика из-за типа продукта. Знание этих паттернов — то, что отличает подготовленного кандидата.</p>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Специфика A/B</th><th>Типичные ловушки</th><th>Что ожидают от кандидата</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Строгий design, обязательная MDE, проверка на subgroups. Часто отдельный analytical раунд с разбором кейса «A/B тест дал странный результат».</td>
+        <td>Multiple testing (много metrics), peeking (быстрые итерации)</td>
+        <td>Считать MDE, интерпретировать stat significance, видеть Simpson's paradox</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>Spill-over: seller / buyer влияют друг на друга. Часто geo-randomization. Длинные циклы (заказ → доставка → repeat purchase).</td>
+        <td>Spill-over, network effects через seller pricing</td>
+        <td>Понимать marketplace interference, предлагать cluster randomization</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Regulatory constraints: нельзя тестировать финансовые условия случайно. Compliance approvals. Часто A/B на UX, не на rates.</td>
+        <td>Regulatory risk, legal exposure</td>
+        <td>Понимать, где A/B невозможен (нужен quasi-experiment), предлагать alternative designs</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Network effects: пользователи влияют друг на друга. Cluster randomization на группы. Часто interference между Лентой и Клипами.</td>
+        <td>Network effects, cross-product interference</td>
+        <td>Сам поднять вопрос interference, предложить cluster / isolation design</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Marketplace interference + долгий цикл (лид → сделка). Часто cohort analysis вместо чистого A/B.</td>
+        <td>Long feedback loops, seller-buyer interaction</td>
+        <td>Понимать liquidity metrics, cluster на гео / category</td>
+      </tr>
+    </table>
+
+    <h4>Walked example: A/B тест редизайна Ленты ВК</h4>
+    <div class="case-walkthrough">
+      <h4>Ситуация</h4>
+      <p>Команда Ленты запускает новый формат выдачи — больше вертикальных карточек, меньше текстовых постов. Гипотеза: повысит time spent per DAU на 2% за счёт молодого сегмента.</p>
+
+      <h4>Гипотеза</h4>
+      <p>«Если мы покажем больше вертикальных карточек молодой аудитории (16-24), то time spent per DAU вырастет на 2%, потому что этот сегмент предпочитает короткий вертикальный формат (подтверждено CustDev и кликами в Клипах)».</p>
+
+      <h4>Метрики</h4>
+      <ul>
+        <li><strong>Primary:</strong> time spent per DAU (для young cohort).</li>
+        <li><strong>Guardrail:</strong> Clips DAU (не должна упасть — иначе каннибализация), retention D7 (не должна упасть).</li>
+        <li><strong>Secondary:</strong> scroll depth, item CTR, content diversity.</li>
+      </ul>
+
+      <h4>MDE и sample size</h4>
+      <p>Базовый time spent per DAU young = 25 мин. MDE = 2% (0.5 мин). При мощности 80%, α=5%, sample size ~ 50K per group. С DAU young 20M — тест пройдёт за 1 день, но нужно минимум 7 дней для capture недельной сезонности.</p>
+      <p><a href="part3-reference.html#mde" class="formula-inline-ref">MDE формула</a>, <a href="part3-reference.html#sample-size" class="formula-inline-ref">Sample Size формула</a>.</p>
+
+      <h4>Design</h4>
+      <p>Проблема: вертикальные карточки могут попасть в Ленту друзей — возникает network effect. Решение: cluster randomization на user_id, но исключаем социальные взаимодействия из primary метрики (считаем только solo consumption). Дополнительно: проверяем, что в тестовой и контрольной группах нет overlap по друзьям.</p>
+
+      <h4>Интерпретация</h4>
+      <ul>
+        <li>Primary: +2.3% time spent per DAU young, p &lt; 0.05 — статзначимо.</li>
+        <li>Guardrail Clips: -0.8%, p &gt; 0.1 — не статзначимо, но направление настораживает.</li>
+        <li>Retention D7: +0.5%, p &gt; 0.2 — нейтрально.</li>
+        <li>Segment: эффект сильнее для 16-19, слабее для 20-24.</li>
+      </ul>
+
+      <h4>Решение</h4>
+      <p>Roll out young 16-19 (где эффект сильнее), monitor Clips DAU. Для 20-24 — отдельный тест с меньшим share vertical cards.</p>
+
+      <p><a href="part2-vk.html#vk-case-feed">Полный разбор кейса Ленты ВК →</a></p>
+    </div>
+
+    <h4>Walked example: A/B в marketplace (Ozon)</h4>
+    <div class="case-walkthrough">
+      <h4>Ситуация</h4>
+      <p>Команда Ozon тестирует новый алгоритм рекомендаций cross-sell на странице товара. Гипотеза: +5% к AOV.</p>
+
+      <h4>Проблема: spill-over</h4>
+      <p>Если тестовая группа покупателей видит больше cross-sell, они покупают больше, sellers видят спрос — могут изменить цены для всех. Это искажает метрики контрольной группы.</p>
+
+      <h4>Design</h4>
+      <p>Варианты:</p>
+      <ol>
+        <li><strong>Geo-randomization:</strong> вся莫斯科 в тесте, Санкт-Петербург — контроль. Но разница между городами может искажать.</li>
+        <li><strong>Seller-level randomization:</strong> делим sellers на две группы,买家 видят разные recommendations в зависимости от того, чей товар смотрят. Сложно — пользователь видит смешанный experience.</li>
+        <li><strong>Time-based:</strong> неделя тест / неделя контроль. Сезонность искажает.</li>
+        <li><strong>Isolated cohorts:</strong> изолированные группы покупателей, не пересекающиеся по seller interactions. Сложно реализовать.</li>
+      </ol>
+      <p><strong>Решение:</strong> geo-randomization на город-кластеры, плюс A/A test для проверки design.</p>
+
+      <h4>Метрики</h4>
+      <ul>
+        <li><strong>Primary:</strong> AOV для тестовой группы.</li>
+        <li><strong>Guardrail:</strong> seller metrics (не должны упасть из-за ценовых изменений), marketplace liquidity.</li>
+        <li><strong>Secondary:</strong> conversion в корзину, repeat purchase rate.</li>
+      </ul>
+
+      <h4>Интерпретация</h4>
+      <p>Spill-over проверяется через сравнение цен sellers в тестовой и контрольной группах. Если цены изменились одинаково — spill-over есть, нужно учесть в интерпретации.</p>
+
+      <p><a href="part2-ozon.html#ozon-questions">Ozon: marketplace A/B паттерны →</a></p>
+    </div>
+
+    <h4>Walked example: A/B в regulated product (Тинькофф)</h4>
+    <div class="case-walkthrough">
+      <h4>Ситуация</h4>
+      <p>Тинькофф хочет тестировать новый flow активации кредитной карты. Но нельзя случайно отказывать клиентам в фиче из-за regulatory (все должны получить одинаковый сервис).</p>
+
+      <h4>Проблема: regulatory constraints</h4>
+      <p>Финансовые продукты регулируются: нельзя A/B-тестировать условия (ставки, лимиты) случайно. Compliance требует равного доступа.</p>
+
+      <h4>Design</h4>
+      <p>Что можно тестировать:</p>
+      <ul>
+        <li><strong>UX variations</strong> — расположение элементов, тексты, flow (не financial terms).</li>
+        <li><strong>Communication</strong> — какие письма / push получать.</li>
+        <li><strong>Educational content</strong> — как подать информацию о продукте.</li>
+      </ul>
+      <p>Что нельзя (нужен quasi-experiment):</p>
+      <ul>
+        <li>Ставки, лимиты, fees.</li>
+        <li>Условия одобрения.</li>
+        <li>Программы лояльности.</li>
+      </ul>
+      <p><strong>Quasi-experiment designs:</strong></li>
+      <ul>
+        <li><strong>Geo roll-out:</strong> сначала один регион, потом другой (разница во времени).</li>
+        <li><strong>Regression discontinuity:</strong> те, кто чуть выше порога — получают, чуть ниже — нет.</li>
+        <li><strong>Difference-in-differences:</strong> сравнение до/после между группами.</li>
+      </ul>
+      <p><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф: regulated A/B →</a></p>
+    </div>
+
+    <h4>Связь с формулами и чек-листами</h4>
+    <div class="cross-refs">
+      <div class="ref-label">Часть III — experimentation</div>
+      <a href="part3-reference.html#hypotheses">Hypotheses</a>
+      <a href="part3-reference.html#mde">MDE</a>
+      <a href="part3-reference.html#sample-size">Sample Size</a>
+      <a href="part3-reference.html#stat-significance">Statistical Significance</a>
+      <a href="part3-reference.html#multiple-testing">Multiple Testing</a>
+      <a href="part3-reference.html#experiment-checklist">Experiment Checklist</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Кейсы</div>
+      <a href="part2-vk.html#vk-case-feed">Лента ВК: A/B редизайн</a>
+      <a href="part2-yandex.html#yandex-questions">Яндекс: A/B вопросы</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon: marketplace A/B</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф: regulated A/B</a>
+    </div>
+
+    <!-- 1.2.3 SQL -->
+    <h3 id="analytical-sql">1.2.3 SQL patterns</h3>
+
+    <p>SQL — базовое требование для PM в российских tech-компаниях. Не «продвинутый DBA», но способность написать запрос для когортного анализа, воронки, retention. На интервью обычно дают schema + задачу, ожидают рабочий SQL.</p>
+
+    <h4>Три обязательных паттерна</h4>
+
+    <h5>1. Cohort analysis</h5>
+    <p>Когорта — группа пользователей, объединённая по моменту активации (например, все, кто установил в январе). Когортный анализ показывает, как меняется метрика (retention, revenue) внутри когорты со временем.</p>
+    <p>SQL-паттерн: <a href="part3-reference.html#sql-cohort" class="formula-inline-ref">cohort analysis query</a>.</p>
+    <p>Типичная задача: «Посчитай retention для пользователей Тинькофф, сгруппированных по месяцу установки».</p>
+
+    <h5>2. Rolling retention</h5>
+    <p>Rolling retention (n-day) — доля пользователей, вернувшихся в день N после активации. Отличается от bracket retention тем, что считает ровно день N, не «любой день с N до M».</p>
+    <p>SQL-паттерн: <a href="part3-reference.html#sql-rolling" class="formula-inline-ref">rolling retention query</a>.</p>
+    <p>Типичная задача: «Посчитай rolling retention D1, D7, D30 для пользователей Ленты ВК».</p>
+
+    <h5>3. Funnel analysis</h5>
+    <p>Воронка — последовательность шагов (например, open app → view product → add to cart → checkout → purchase). Funnel analysis показывает конверсию между шагами и dropout.</p>
+    <p>SQL-паттерн: <a href="part3-reference.html#sql-funnel" class="formula-inline-ref">funnel analysis query</a>.</p>
+    <p>Типичная задача: «Построй воронку конверсии для Ozon: view → cart → checkout → purchase».</p>
+
+    <h4>Window functions для time-series</h4>
+    <p>Window functions — must-have для time-series анализа. Базовые:</p>
+    <ul>
+      <li><code>ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY date)</code> — нумерация событий пользователя.</li>
+      <li><code>LAG() OVER (...)</code> — предыдущее значение (для сравнения периодов).</li>
+      <li><code>SUM() OVER (...)</code> — кумулятивная сумма.</li>
+      <li><code>RANK() OVER (...)</code> — ранжирование (для top-N).</li>
+    </ul>
+
+    <p>Пример: «Найди для каждого пользователя его 3-ю сессию»:</p>
+    <pre><code><span class="kw">SELECT</span> user_id, session_start
+<span class="kw">FROM</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    session_start,
+    <span class="fn">ROW_NUMBER()</span> <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> user_id <span class="kw">ORDER BY</span> session_start) <span class="kw">AS</span> session_n
+  <span class="kw">FROM</span> user_sessions
+) t
+<span class="kw">WHERE</span> session_n = 3;</code></pre>
+
+    <p>Пример: «Cumulative revenue за месяц по дням»:</p>
+    <pre><code><span class="kw">SELECT</span>
+  date,
+  daily_revenue,
+  <span class="fn">SUM</span>(daily_revenue) <span class="kw">OVER</span> (<span class="kw">ORDER BY</span> date) <span class="kw">AS</span> cumulative_revenue
+<span class="kw">FROM</span> daily_revenue
+<span class="kw">WHERE</span> date <span class="kw">BETWEEN</span> <span class="str">'2025-01-01'</span> <span class="kw">AND</span> <span class="str">'2025-01-31'</span>
+<span class="kw">ORDER BY</span> date;</code></pre>
+
+    <p>Пример: «Для каждого пользователя — его следующий session_start» (LAG/LEAD):</p>
+    <pre><code><span class="kw">SELECT</span>
+  user_id,
+  session_start,
+  <span class="fn">LEAD</span>(session_start) <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> user_id <span class="kw">ORDER BY</span> session_start) <span class="kw">AS</span> next_session,
+  <span class="fn">DATEDIFF</span>(<span class="fn">LEAD</span>(session_start) <span class="kw">OVER</span> (...), session_start) <span class="kw">AS</span> gap_days
+<span class="kw">FROM</span> user_sessions;</code></pre>
+
+    <p>Пример: «Top-3 товара по revenue для каждой категории» (RANK with PARTITION):</p>
+    <pre><code><span class="kw">WITH</span> ranked <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    category,
+    product_name,
+    revenue,
+    <span class="fn">RANK()</span> <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> category <span class="kw">ORDER BY</span> revenue <span class="kw">DESC</span>) <span class="kw">AS</span> rnk
+  <span class="kw">FROM</span> product_revenue
+)
+<span class="kw">SELECT</span> category, product_name, revenue
+<span class="kw">FROM</span> ranked
+<span class="kw">WHERE</span> rnk &lt;= 3;</code></pre>
+
+    <h4>Cross-company SQL паттерны</h4>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Что чаще всего просят в SQL</th><th>Специфика</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Window functions, time-series, ranking. Часто задачи на «найди топ-N пользователей по X».</td>
+        <td>Ожидают уверенное владение window functions, понимание производительности (не всегда, но на Senior+ — да).</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>Marketplace joins: sellers × buyers × orders × items. Часто funnel analysis.</td>
+        <td>Schema может быть сложной (много таблиц). Умеешь ли ты JOIN'ить без дубликатов?</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Financial aggregations: оборот по картам, средний чек, транзакции по категориям.</td>
+        <td>Учёт temporal validity (карта активна с X по Y), currency conversion, transaction reversal.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Engagement-метрики: time spent, sessions, content interactions. Когортный анализ.</td>
+        <td>Часто нужно считать retention / engagement по когортам.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Liquidity-метрики: conversion из listing в contact, из contact в сделку. Funnel analysis.</td>
+        <td>Долгие циклы (лид → сделка может занять недели), time-window в JOIN.</td>
+      </tr>
+    </table>
+
+    <h4>Связь с формулами</h4>
+    <div class="cross-refs">
+      <div class="ref-label">SQL-паттерны в Части III</div>
+      <a href="part3-reference.html#sql-cohort">SQL Cohort</a>
+      <a href="part3-reference.html#sql-rolling">SQL Rolling Retention</a>
+      <a href="part3-reference.html#sql-funnel">SQL Funnel</a>
+      <a href="part3-reference.html#event-schema">Event Schema</a>
+      <a href="part3-reference.html#logging-design">Logging Design</a>
+      <a href="part3-reference.html#data-quality">Data Quality</a>
+    </div>
+
+    <h4>Walked SQL example: rolling retention для Ленты ВК</h4>
+    <div class="case-walkthrough">
+      <h4>Задача</h4>
+      <p>«Посчитай rolling retention D1, D7, D30 для пользователей Ленты ВК, сгруппированных по неделе активации».</p>
+
+      <h4>Schema</h4>
+      <pre><code><span class="kw">CREATE TABLE</span> user_sessions (
+  user_id <span class="kw">BIGINT</span>,
+  session_date <span class="kw">DATE</span>,
+  session_id <span class="kw">STRING</span>
+);
+
+<span class="kw">CREATE TABLE</span> user_activations (
+  user_id <span class="kw">BIGINT</span>,
+  activation_date <span class="kw">DATE</span>
+);</code></pre>
+
+      <h4>Решение</h4>
+      <pre><code><span class="kw">WITH</span> cohort <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'week'</span>, activation_date) <span class="kw">AS</span> cohort_week
+  <span class="kw">FROM</span> user_activations
+),
+retention <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    c.cohort_week,
+    <span class="fn">DATEDIFF</span>(s.session_date, a.activation_date) <span class="kw">AS</span> day_n,
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> c.user_id) <span class="kw">AS</span> users_active
+  <span class="kw">FROM</span> cohort c
+  <span class="kw">JOIN</span> user_sessions s <span class="kw">ON</span> c.user_id = s.user_id
+  <span class="kw">GROUP BY</span> c.cohort_week, <span class="fn">DATEDIFF</span>(s.session_date, a.activation_date)
+),
+cohort_sizes <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> cohort_week, <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> cohort_size
+  <span class="kw">FROM</span> cohort
+  <span class="kw">GROUP BY</span> cohort_week
+)
+<span class="kw">SELECT</span>
+  r.cohort_week,
+  r.day_n,
+  r.users_active,
+  cs.cohort_size,
+  r.users_active <span class="kw">* 1.0</span> / cs.cohort_size <span class="kw">AS</span> retention_rate
+<span class="kw">FROM</span> retention r
+<span class="kw">JOIN</span> cohort_sizes cs <span class="kw">ON</span> r.cohort_week = cs.cohort_week
+<span class="kw">WHERE</span> r.day_n <span class="kw">IN</span> (<span class="num">0</span>, <span class="num">1</span>, <span class="num">7</span>, <span class="num">30</span>)
+<span class="kw">ORDER BY</span> r.cohort_week, r.day_n;</code></pre>
+
+      <p><a href="part3-reference.html#sql-rolling" class="formula-inline-ref">SQL Rolling Retention pattern</a>, <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention formula</a>.</p>
+    </div>
+
+    <h4>Walked SQL example: funnel для Ozon</h4>
+    <div class="case-walkthrough">
+      <h4>Задача</h4>
+      <p>«Построй воронку конверсии: view → cart → checkout → purchase за последний месяц, с конверсией между шагами».</p>
+
+      <h4>Schema</h4>
+      <pre><code><span class="kw">CREATE TABLE</span> events (
+  user_id <span class="kw">BIGINT</span>,
+  event_type <span class="kw">STRING</span>,  <span class="cm">-- 'view', 'cart', 'checkout', 'purchase'</span>
+  event_time <span class="kw">TIMESTAMP</span>,
+  product_id <span class="kw">BIGINT</span>,
+  order_id <span class="kw">BIGINT</span>
+);</code></pre>
+
+      <h4>Решение</h4>
+      <pre><code><span class="kw">WITH</span> funnel_steps <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">MAX</span>(<span class="kw">CASE WHEN</span> event_type = <span class="str">'view'</span> <span class="kw">THEN</span> <span class="num">1</span> <span class="kw">ELSE</span> <span class="num">0</span> <span class="kw">END</span>) <span class="kw">AS</span> viewed,
+    <span class="fn">MAX</span>(<span class="kw">CASE WHEN</span> event_type = <span class="str">'cart'</span> <span class="kw">THEN</span> <span class="num">1</span> <span class="kw">ELSE</span> <span class="num">0</span> <span class="kw">END</span>) <span class="kw">AS</span> carted,
+    <span class="fn">MAX</span>(<span class="kw">CASE WHEN</span> event_type = <span class="str">'checkout'</span> <span class="kw">THEN</span> <span class="num">1</span> <span class="kw">ELSE</span> <span class="num">0</span> <span class="kw">END</span>) <span class="kw">AS</span> checked_out,
+    <span class="fn">MAX</span>(<span class="kw">CASE WHEN</span> event_type = <span class="str">'purchase'</span> <span class="kw">THEN</span> <span class="num">1</span> <span class="kw">ELSE</span> <span class="num">0</span> <span class="kw">END</span>) <span class="kw">AS</span> purchased
+  <span class="kw">FROM</span> events
+  <span class="kw">WHERE</span> event_time <span class="kw">&gt;=</span> <span class="fn">DATEADD</span>(<span class="str">'month'</span>, <span class="num">-1</span>, <span class="fn">CURRENT_DATE</span>())
+  <span class="kw">GROUP BY</span> user_id
+)
+<span class="kw">SELECT</span>
+  <span class="fn">SUM</span>(viewed) <span class="kw">AS</span> view_count,
+  <span class="fn">SUM</span>(carted) <span class="kw">AS</span> cart_count,
+  <span class="fn">SUM</span>(checked_out) <span class="kw">AS</span> checkout_count,
+  <span class="fn">SUM</span>(purchased) <span class="kw">AS</span> purchase_count,
+  <span class="fn">SUM</span>(carted) <span class="kw">* 1.0</span> / <span class="fn">NULLIF</span>(<span class="fn">SUM</span>(viewed), <span class="num">0</span>) <span class="kw">AS</span> view_to_cart,
+  <span class="fn">SUM</span>(checked_out) <span class="kw">* 1.0</span> / <span class="fn">NULLIF</span>(<span class="fn">SUM</span>(carted), <span class="num">0</span>) <span class="kw">AS</span> cart_to_checkout,
+  <span class="fn">SUM</span>(purchased) <span class="kw">* 1.0</span> / <span class="fn">NULLIF</span>(<span class="fn">SUM</span>(checked_out), <span class="num">0</span>) <span class="kw">AS</span> checkout_to_purchase
+<span class="kw">FROM</span> funnel_steps;</code></pre>
+
+      <p><a href="part3-reference.html#sql-funnel" class="formula-inline-ref">SQL Funnel pattern</a>, <a href="part3-reference.html#funnel-metrics" class="formula-inline-ref">Funnel Metrics</a>.</p>
+    </div>
+
+    <h4>Walked SQL example: cohort comparison для Тинькофф</h4>
+    <div class="case-walkthrough">
+      <h4>Задача</h4>
+      <p>«Сравни LTV когорт пользователей Тинькофф, активированных в январе vs феврале, через 6 месяцев».</p>
+
+      <h4>Решение (упрощённо)</h4>
+      <pre><code><span class="kw">WITH</span> cohorts <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    user_id,
+    <span class="fn">DATE_TRUNC</span>(<span class="str">'month'</span>, activation_date) <span class="kw">AS</span> cohort_month
+  <span class="kw">FROM</span> user_activations
+  <span class="kw">WHERE</span> activation_date <span class="kw">IN</span> (<span class="str">'2025-01-01'</span>, <span class="str">'2025-02-01'</span>)
+),
+ltv <span class="kw">AS</span> (
+  <span class="kw">SELECT</span>
+    c.cohort_month,
+    c.user_id,
+    <span class="fn">SUM</span>(t.amount) <span class="kw">AS</span> user_ltv_6m
+  <span class="kw">FROM</span> cohorts c
+  <span class="kw">JOIN</span> transactions t <span class="kw">ON</span> c.user_id = t.user_id
+    <span class="kw">AND</span> t.transaction_date <span class="kw">&lt;=</span> <span class="fn">DATEADD</span>(<span class="str">'month'</span>, <span class="num">6</span>, c.activation_date)
+  <span class="kw">GROUP BY</span> c.cohort_month, c.user_id
+)
+<span class="kw">SELECT</span>
+  cohort_month,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> cohort_size,
+  <span class="fn">AVG</span>(user_ltv_6m) <span class="kw">AS</span> avg_ltv_6m,
+  <span class="fn">PERCENTILE_CONT</span>(<span class="num">0.5</span>) <span class="kw">WITHIN GROUP</span> (<span class="kw">ORDER BY</span> user_ltv_6m) <span class="kw">AS</span> median_ltv_6m
+<span class="kw">FROM</span> ltv
+<span class="kw">GROUP BY</span> cohort_month;</code></pre>
+
+      <p><a href="part3-reference.html#sql-cohort" class="formula-inline-ref">SQL Cohort pattern</a>, <a href="part3-reference.html#ltv-cohort" class="formula-inline-ref">LTV Cohort</a>.</p>
+    </div>
+
+    <!-- 1.2.4 Cross-company patterns -->
+    <h3 id="analytical-cross-company">1.2.4 Cross-company analytical question patterns</h3>
+
+    <p>Один и тот же аналитический концепт разные компании формулируют по-разному. Это связано с типом продукта, бизнес-моделью и культурой. Подготовленный кандидат узнаёт «код» компании по формулировке и адаптирует ответ.</p>
+
+    <h4>Паттерн 1. «Метрика упала на X%» — diagnosis question</h4>
+    <p>Универсальная задача: «Time spent / GMV / retention упала на 10%. Что делать?» — но в каждой компании свой фокус diagnosis.</p>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Формулировка</th><th>Фокус diagnosis</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>«CTR на топ-результат упал на 5%. Диагностируй».</td>
+        <td>Segment analysis: разрезы по query type, geo, device, time of day. Проверка на Simpson's paradox. A/B regression check.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>«GMV упал на 10% в категории X. Что случилось?»</td>
+        <td>Marketplace liquidity check: sellers active? buyers active? pricing changes? out-of-stock? checkout broken?</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>«Конверсия в заявку на карту упала на 15%. Разберись».</td>
+        <td>Financial impact: сколько потеряли? Compliance change? Funnel step diagnosis (открытие заявки → одобрение → активация).</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>«Time spent young cohort упал на 8%. Что делаешь?»</td>
+        <td>Cohort analysis, проверка на seasonal / competitor effect (TikTok launched X?), segment по sub-cohort (16-19 vs 20-24).</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>«Conversion из listing в контакт упала на 10%. Почему?»</td>
+        <td>Listing quality check, photo / description / price distribution, seller response rate, competitor inventory.</td>
+      </tr>
+    </table>
+
+    <p><strong>Общий подход к diagnosis:</strong> MECE-декомпозиция → проверка каждого разреза → формулировка гипотезы → план A/B или rollback.</p>
+
+    <h4>Паттерн 2. «Спроектируй метрику» — metric design question</h4>
+    <p>«Придумай метрику для X» — проверяют, умеет ли кандидат строить метрики, которые actionable и не gamable.</p>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Формулировка</th><th>Что ценят</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>«Придумай метрику качества поиска для локальных запросов».</td>
+        <td>Соответствие user intent, устойчивость к gamification, корреляция с retention.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>«Какая метрика лучше отражает здоровье маркетплейса: GMV или take rate?»</td>
+        <td>Понимание двухсторонней экономики, trade-off между ростом и монетизацией.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>«Метрика здоровья кредитной карты: что выберешь?»</td>
+        <td>Risk-aware мышление: не только activation, но и NPL, avg balance, churn.</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>«Какая метрика — health Ленты: time spent или session count?»</td>
+        <td>Понимание, что time spent может быть gamable (длинные скроллы без вовлечения), session count — нет.</td>
+      </tr>
+    </table>
+
+    <h4>Паттерн 3. «Оцени влияние фичи» — impact estimation</h4>
+    <p>«Мы запустили X. Какой impact на бизнес?» — нужно применить top-down или bottom-up оценку.</p>
+    <ul>
+      <li>В Яндексе: «Оцени impact новой выдачи для локальных запросов» — top-down от всего query volume.</li>
+      <li>В Ozon: «Оцени impact новой рекомендации cross-sell» — bottom-up от текущих заказов.</li>
+      <li>В Тинькофф: «Оцени impact снижения ставки по карте на 1 п.п.» — financial model с учётом risk.</li>
+      <li>В ВК: «Оцени impact новой onboarding-фичи на D7 retention» — cohort modeling.</li>
+    </ul>
+    <p>Формулы: <a href="part3-reference.html#impact-top-down" class="formula-inline-ref">Top-down impact</a>, <a href="part3-reference.html#impact-bottom-up" class="formula-inline-ref">Bottom-up impact</a>, <a href="part3-reference.html#financial-model" class="formula-inline-ref">Financial Model</a>.</p>
+
+    <h4>Паттерн 4. SQL на собеседовании</h4>
+    <p>На interviewing SQL проверяют по-разному:</p>
+    <ul>
+      <li><strong>Яндекс:</strong> часто сложные window functions, time-series, ranking. Могут дать schema с миллионами строк и спросить про оптимизацию.</li>
+      <li><strong>Ozon:</strong> marketplace joins — sellers × buyers × orders. Проверяют умение JOIN'ить без дубликатов.</li>
+      <li><strong>Тинькофф:</strong> financial aggregations, temporal validity (карта активна с X по Y).</li>
+      <li><strong>ВК:</strong> engagement-метрики, когортный анализ.</li>
+      <li><strong>Avito:</strong> funnel с long feedback loops (лид → сделка через недели).</li>
+    </ul>
+
+    <h4>Паттерн 5. Interpretation question</h4>
+    <p>«A/B дал такой результат. Что делаешь?» — проверяют интерпретацию данных, а не расчёт.</p>
+    <ul>
+      <li>Яндекс: часто кейс с Simpson's paradox или multiple testing trap.</li>
+      <li>Ozon: кейс со spill-over (тест на одной группе покупателей повлиял на prices для всех).</li>
+      <li>Тинькофф: кейс с regulatory constraint (нельзя катить на всех).</li>
+      <li>ВК: кейс с network effects (одна группа влияет на другую через социальный граф).</li>
+    </ul>
+
+    <h4>Walked example: «Метрика упала — diagnose»</h4>
+    <div class="case-walkthrough">
+      <h4>Ситуация</h4>
+      <p>«Time spent в Ленте ВК упал на 5% за последнюю неделю. Твои действия?»</p>
+
+      <h4>Шаг 1. Подтверди fall (не artifact)</h4>
+      <ul>
+        <li>Проверь data pipeline: logging работает? Event schema не сломалась?</li>
+        <li>Сравни с прошлой неделей: это сезонность (праздник, каникулы)?</li>
+        <li>Проверь на разных устройствах / платформах — может, только iOS упала?</li>
+        <li>Sanity check: похожие метрики (sessions, items viewed) тоже упали?</li>
+      </ul>
+
+      <h4>Шаг 2. Localize (когда, где, кто)</h4>
+      <ul>
+        <li><strong>Когда:</strong> точная дата падения. Что изменилось в этот день? (релиз, outage, конкурент)</li>
+        <li><strong>Где:</strong> какие сегменты затронуты. Гео, device, cohort, network type.</li>
+        <li><strong>Кто:</strong> все пользователи или конкретная когорта? Новые vs returning?</li>
+      </ul>
+
+      <h4>Шаг 3. MECE-декомпозиция</h4>
+      <pre><code>Time spent down 5%
+├── DAU down?
+│   ├── Push delivery broken?
+│   ├── App open rate down?
+│   └── Retention dropped?
+├── Sessions per DAU down?
+│   ├── Push CTR down?
+│   └── Session frequency down?
+└── Time per session down?
+    ├── Content quality down?
+    ├── Recommendation relevance down?
+    ├── Performance (load speed) down?
+    └── External competitor effect?</code></pre>
+
+      <h4>Шаг 4. Гипотезы и проверка</h4>
+      <p>Top-3 гипотезы по likelihood × impact:</p>
+      <ol>
+        <li><strong>Performance regression</strong> — recent release замедлил feed load. Проверка: latency metrics за последние 2 недели.</li>
+        <li><strong>Algorithm change</strong> — ML team deployил новую ranking model. Проверка: A/B vs control, segment analysis.</li>
+        <li><strong>Competitor launch</strong> — TikTok/Reels запустили фичу. Проверка: correlation с competitor release notes.</li>
+      </ol>
+
+      <h4>Шаг 5. Решение</h4>
+      <ul>
+        <li>Если performance — rollback или hotfix.</li>
+        <li>Если algorithm — A/B off, retrain.</li>
+        <li>Если competitor — стратегический ответ (не fast fix).</li>
+      </ul>
+
+      <h4>Шаг 6. Пост-мортем</h4>
+      <p>После решения — документируй root cause, добавь guardrail метрику в future releases, setup alerting на аномалии.</p>
+
+      <p><a href="part3-reference.html#hypotheses" class="formula-inline-ref">Hypotheses</a>, <a href="part3-reference.html#experiment-checklist" class="formula-inline-ref">Experiment Checklist</a>.</p>
+    </div>
+
+    <h4>Walked example: «Какую метрику выбрать»</h4>
+    <div class="case-walkthrough">
+      <h4>Ситуация</h4>
+      <p>«Команда запускает новую функцию — личные рекомендации контента в Ленте ВК. Какую primary метрику выберешь для A/B?»</p>
+
+      <h4>Подход</h4>
+      <ol>
+        <li><strong>Что двигаем бизнес-целью?</strong> NSM = time spent per DAU. Primary metric candidate.</li>
+        <li><strong>Но:</strong> time spent может вырасти из-за bad UX (пользователь дольше ищет нужное). Нужна guardrail — engagement quality (CTR, scroll depth without long stalls).</li>
+        <li><strong>Simpler proxy:</strong> CTR на рекомендованных items — если растёт, значит рекомендации релевантны. Но это узкая метрика, не покрывает весь experience.</li>
+        <li><strong>Composite:</strong> primary = time spent per DAU, secondary = CTR, scroll depth, diversity, guardrail = retention D7, DAU.</li>
+      </ol>
+
+      <h4>Trade-off</h4>
+      <p>Если выбрать слишком узкую метрику (CTR) — оптимизируем local, но не global. Если слишком широкую (revenue) — effect размывается. <strong>Лучший выбор</strong> — метрика, которая напрямую отражает user value и связана с NSM.</p>
+
+      <h4>Принципы выбора метрики</h4>
+      <ul>
+        <li><strong>Actionable:</strong> метрика должна меняться от действий команды.</li>
+        <li><strong>Not gameable:</strong> нельзя накрутить без реального улучшения.</li>
+        <li><strong>Measurable:</strong> можно посчитать точно, без шума.</li>
+        <li><strong>Aligned with NSM:</strong> движение метрики коррелирует с NSM.</li>
+        <li><strong>Fast feedback:</strong> меняется за период A/B, не требует месяцев.</li>
+      </ul>
+
+      <p><a href="part3-reference.html#nsm" class="formula-inline-ref">North Star Metric</a>, <a href="part3-reference.html#engagement" class="formula-inline-ref">Engagement</a>.</p>
+    </div>
+
+    <h3>Связи с Частью III</h3>
+    <div class="cross-refs">
+      <div class="ref-label">Все формулы analytical раунда</div>
+      <a href="part3-reference.html#metrics">Метрики</a>
+      <a href="part3-reference.html#experimentation">Экспериментация</a>
+      <a href="part3-reference.html#data">Данные</a>
+      <a href="part3-reference.html#economics">Экономика</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Все компании</div>
+      <a href="part2-vk.html#vk-questions">ВКонтакте</a>
+      <a href="part2-yandex.html#yandex-questions">Яндекс</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a>
+      <a href="part2-avito.html#avito-questions">Avito</a>
+      <a href="part2-wildberries.html#wildberries-questions">Wildberries</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <h2 id="estimation">1.3 Estimation</h2>
-    <p>TODO в Фазе 5.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
 
+    <h3>Что такое Estimation</h3>
+    <p><strong>Estimation</strong> (Fermi problems) — оценка неизвестной величины через известные. На собеседованиях проверяют структурное мышление, способность разбить сложную задачу на простые компоненты и сделать разумные допущения.</p>
+
+    <p>На интервью обычно дают задачу без точных данных: «Оцени рынок X», «Сколько Y нужно Z», «Каков размер рынка X в городе Y». Цель — не точный ответ, а ход рассуждений.</p>
+
+    <h3>Четыре метода estimation</h3>
+
+    <h4>1. Top-down estimation</h4>
+    <p>От общего к частному: начинаем с большой известной величины (население, рынок) и применяем фильтры (сегментация × конверсия × доля).</p>
+    <div class="formula-block">
+      <div class="formula-name">Top-down estimation</div>
+      <div class="formula-expr">Market = Total × %segment × %conversion × %share</div>
+      <div class="formula-vars">
+        <code>Total</code> — общая известная величина (население, интернет-пользователи)<br>
+        <code>%segment</code> — доля целевого сегмента<br>
+        <code>%conversion</code> — конверсия в пользователя / покупателя<br>
+        <code>%share</code> — ожидаемая доля рынка
+      </div>
+    </div>
+    <p>Пример: рынок Яндекс Такси в Москве. Население Москвы 13M → активные пользователи смартфонов 70% → хотя бы раз в месяц пользуются такси 25% → средняя частота 4 поездки/мес → средний чек 350₽ → месячный рынок: 13M × 0.7 × 0.25 × 4 × 350 = 318M₽/мес, ~3.8B₽/год.</p>
+
+    <h4>2. Bottom-up estimation</h4>
+    <p>От элементов к целому: считаем supply × demand, либо единичную economics × количество.</p>
+    <div class="formula-block">
+      <div class="formula-name">Bottom-up estimation</div>
+      <div class="formula-expr">Total = Unit × Count × Frequency</div>
+      <div class="formula-vars">
+        <code>Unit</code> — единичная величина (один пользователь, один заказ)<br>
+        <code>Count</code> — количество таких единиц<br>
+        <code>Frequency</code> — частота (если нужно за период)
+      </div>
+    </div>
+    <p>Пример: GMV Ozon за год. Активные покупатели 40M → средняя частота покупок 12/год → средний чек 1500₽ → GMV = 40M × 12 × 1500 = 720B₽/год. (Реальная цифра — порядка этого, погрешность в пределах 30%.)</p>
+
+    <h4>3. Replacement theory</h4>
+    <p>Сколько X нужно, чтобы заменить Y. Подходит для оценки инфраструктуры.</p>
+    <p>Пример: сколько пунктов выдачи Wildberries нужно в городе X. Население 500K → доля покупателей WB 30% = 150K → средние заказы 1/мес = 150K заказов/мес → один ПВЗ обрабатывает 3000 заказов/мес → нужно 50 ПВЗ.</p>
+
+    <h4>4. Fermi problems</h4>
+    <p>Оценка неизвестного через цепочку известных. Классический пример: «сколько пианино-тюнеров в Чикаго». Метод: население / домохозяйства / доля с пианино / частота настройки / загрузка одного тюнера = число тюнеров.</p>
+    <p>В российских интервью часто встречаются: «сколько подков в Москве», «сколько рекламных щитов нужно», «сколько кофеен Starbucks может быть в городе X».</p>
+
+    <h3>Walked examples</h3>
+
+    <h4>Пример 1. Оцени рынок Яндекс Такси в Москве (top-down)</h4>
+    <div class="case-walkthrough">
+      <p>Метод: top-down. Разбиваю на компоненты:</p>
+      <ol>
+        <li><strong>Население Москвы:</strong> 13M (известно).</li>
+        <li><strong>Активные пользователи смартфонов:</strong> 70% = 9.1M (исключаем детей до 12, пожилых без смартфонов).</li>
+        <li><strong>Установлено приложение такси:</strong> 60% = 5.46M (Яндекс Go, другие).</li>
+        <li><strong>Активные пользователи такси (раз в месяц+):</strong> 35% = 1.91M.</li>
+        <li><strong>Средняя частота поездок:</strong> 3/мес.</li>
+        <li><strong>Средний чек:</strong> 400₽ (с учётом комиссии, средняя поездка 15 км).</li>
+      </ol>
+      <p>Месячный рынок: 1.91M × 3 × 400 = 2.29B₽/мес → годовой: ~27.5B₽.</p>
+      <p>Sanity check: реальный рынок такси Москвы оценивается в 200-300B₽/год, но это включая корпоративный, B2B, курьерскую доставку. Наша оценка consumer-сегмента — 27B₽, что выглядит разумно.</p>
+      <p><a href="part3-reference.html#impact-top-down" class="formula-inline-ref">Top-down impact formula</a>.</p>
+    </div>
+
+    <h4>Пример 2. Оцени GMV Ozon за год (bottom-up)</h4>
+    <div class="case-walkthrough">
+      <p>Метод: bottom-up. Считаю от активных покупателей:</p>
+      <ol>
+        <li><strong>Активные покупатели Ozon:</strong> 40M (по отчётам, примерно).</li>
+        <li><strong>Средняя частота покупок:</strong> 8/год (раз в 1.5 месяца — у разных по-разному, беру среднее).</li>
+        <li><strong>Средний чек:</strong> 1800₽ (заказ обычно 2-3 товара).</li>
+      </ol>
+      <p>GMV = 40M × 8 × 1800 = 576B₽/год.</p>
+      <p>Sanity check: реальный GMV Ozon 2024 — около 1T₽. Наша оценка занижена, возможно, частота покупок выше (10-12/год для активных) или активных покупателей больше. Подстройка допущений.</p>
+      <p><a href="part3-reference.html#impact-bottom-up" class="formula-inline-ref">Bottom-up impact formula</a>.</p>
+    </div>
+
+    <h4>Пример 3. Сколько ПВЗ Wildberries нужно в городе X (replacement)</h4>
+    <div class="case-walkthrough">
+      <p>Город 500K населения. Заменяем потребность в доставке пунктами.</p>
+      <ol>
+        <li><strong>Доля покупателей WB:</strong> 30% = 150K.</li>
+        <li><strong>Среднее число заказов на покупателя:</strong> 1/мес = 12/год.</li>
+        <li><strong>Итого заказов в год:</strong> 150K × 12 = 1.8M/год.</li>
+        <li><strong>Или в день:</strong> ~5K/день.</li>
+        <li><strong>Один ПВЗ обрабатывает:</strong> 150 заказов/день (5 операторов × 30 заказов).</li>
+        <li><strong>Нужно ПВЗ:</strong> 5000 / 150 = 33.</li>
+      </ol>
+      <p>Sanity check: город 500K — это крупный региональный центр, обычно 20-40 ПВЗ крупных маркетплейсов. Наша оценка 33 — в диапазоне.</p>
+    </div>
+
+    <h4>Пример 4. Сколько запросов в день получает Яндекс Поиск (Fermi)</h4>
+    <div class="case-walkthrough">
+      <p>Оценка через население и поведение.</p>
+      <ol>
+        <li><strong>Население России:</strong> 144M.</li>
+        <li><strong>Интернет-пользователи:</strong> 75% = 108M.</li>
+        <li><strong>Пользуются Яндексом (не Google):</strong> 60% = 65M (Яндекс доминирует в РФ).</li>
+        <li><strong>Активные в день:</strong> 70% = 45M.</li>
+        <li><strong>Среднее число поисковых сессий на пользователя:</strong> 3/день.</li>
+        <li><strong>Сессия = 2.5 запроса в среднем</strong> (переформулировки, related searches).</li>
+      </ol>
+      <p>Итого: 45M × 3 × 2.5 = 337M запросов/день.</p>
+      <p>Sanity check: публичные оценки — Яндекс обрабатывает 300-500M поисковых запросов в день. Наша оценка 337M — в диапазоне.</p>
+      <p><a href="part3-reference.html#market-sizing" class="formula-inline-ref">Market Sizing</a>.</p>
+    </div>
+
+    <h4>Пример 5. Оцени ad revenue ВК за месяц (Fermi)</h4>
+    <div class="case-walkthrough">
+      <p>Ad revenue = показы × CPM × fill rate.</p>
+      <ol>
+        <li><strong>DAU ВК:</strong> 72M.</li>
+        <li><strong>Среднее число ad impressions на DAU:</strong> 20 (одна сессия = 5-7 экранов, по 3-4 ad в каждом).</li>
+        <li><strong>Итого impressions в день:</strong> 72M × 20 = 1.44B.</li>
+        <li><strong>Fill rate:</strong> 70% (не все слоты заполнены) = 1B impressions/день.</li>
+        <li><strong>CPM (cost per mille):</strong> 100₽ (средний по рынку display рекламы в РФ).</li>
+        <li><strong>Дневной revenue:</strong> 1B / 1000 × 100 = 100M₽/день.</li>
+        <li><strong>Месячный revenue:</strong> 100M × 30 = 3B₽/мес.</li>
+      </ol>
+      <p>Sanity check: годовая выручка VK Group от рекламы — порядка 100-130B₽, месячная ~10B₽. Наша оценка 3B₽ — занижена, потому что мы не учли premium inventory (video ads, branded content), targeting premium и другие форматы. Подстройка: ad revenue ВК в 3-4 раза выше базовой display оценки.</p>
+      <p><a href="part3-reference.html#financial-model" class="formula-inline-ref">Financial Model</a>, <a href="part3-reference.html#unit-economics" class="formula-inline-ref">Unit Economics</a>.</p>
+    </div>
+
+    <h4>Пример 6. Оцени число sellers на Ozon (bottom-up)</h4>
+    <div class="case-walkthrough">
+      <p>GMV = sellers × avg sales per seller. Известно GMV ~1T₽/год.</p>
+      <ol>
+        <li><strong>GMV Ozon:</strong> 1T₽/год (из отчётов).</li>
+        <li><strong>Распределение sellers по размеру:</strong> power law — top 10% дают 80% GMV, long tail — 20%.</li>
+        <li><strong>Top 10% sellers (large):</strong> пусть 10K sellers, средний GMV/seller = 80M₽/год. Итого 800B₽.</li>
+        <li><strong>Long tail (90%):</strong> дают 200B₽. Средний GMV/seller = 1M₽/год (мелкие). Число = 200K sellers.</li>
+        <li><strong>Итого sellers:</strong> 10K + 200K = 210K.</li>
+      </ol>
+      <p>Sanity check: Ozon заявляет ~500K active sellers. Наша оценка 210K — занижена, возможно, long tail ещё длиннее. Подстройка: возможно, средний GMV long tail = 500K₽, тогда sellers = 400K.</p>
+    </div>
+
+    <h4>Пример 7. Оцени LTV пользователя Тинькофф кредитной карты (bottom-up)</h4>
+    <div class="case-walkthrough">
+      <p>LTV = monthly revenue per user × lifetime.</p>
+      <ol>
+        <li><strong>Средний balance:</strong> 30K₽ (типичный держатель карты).</li>
+        <li><strong>Ставка по кредиту (если revolving):</strong> 24% годовых = 2% в месяц.</li>
+        <li><strong>Monthly interest revenue:</strong> 30K × 2% = 600₽/мес.</li>
+        <li><strong>Interchange revenue:</strong> 1.5% от оборота, средний оборот 20K₽/мес = 300₽/мес.</li>
+        <li><strong>Monthly revenue per user:</strong> 600 + 300 = 900₽/мес.</li>
+        <li><strong>Lifetime:</strong> 36 месяцев (средний срок удержания кредитной карты).</li>
+        <li><strong>LTV:</strong> 900 × 36 = 32.4K₽.</li>
+      </ol>
+      <p>Sanity check: CAC для кредитной карты обычно 3-5K₽, LTV/CAC ratio = 6-10x — здоровый unit economics.</p>
+      <p><a href="part3-reference.html#ltv-simple" class="formula-inline-ref">LTV</a>, <a href="part3-reference.html#ltv-cohort" class="formula-inline-ref">LTV Cohort</a>, <a href="part3-reference.html#ltv-predictive" class="formula-inline-ref">LTV Predictive</a>.</p>
+    </div>
+
+    <h3>Типичные ошибки estimation</h3>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 1. Одно уравнение вместо декомпозиции.</strong></p>
+      <p class="question-tips">«Рынок = население × средний чек» — слишком грубо. Разбей на 4-5 шагов, каждый с обоснованным допущением. Это даёт интерьюеру возможность оспорить любое звено и показать твою способность defend assumptions.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 2. Не делать sanity check.</strong></p>
+      <p class="question-tips">После оценки всегда сравни с известной величиной (реальный GMV, население, реальное число ПВЗ). Если различается в 10 раз — пересматривай допущения. Без sanity check оценка «висит в воздухе».</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 3. Слишком точные допущения.</strong></p>
+      <p class="question-tips">«Средний чек 423 рубля 50 копеек» — эстимация не про точность. Округляй: 400₽. Это показывает, что ты понимаешь природу задачи.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 4. Игнорирование segment differences.</strong></p>
+      <p class="question-tips">«Все 13M москвичей используют такси» — нет. Сегментируй: возраст, доход, гео. Каждый сегмент — своя конверсия и частота.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Ошибка 5. Не озвучивать assumptions вслух.</strong></p>
+      <p class="question-tips">Молча считать в голове — интерьюер не видит ход мысли. Озвучивай каждое допущение: «Предположу, что активных пользователей смартфонов в Москве 70%». Тогда интервьюер может подсказать: «Возьми 75%» — и ты пересчитаешь без потери нити.</p>
+    </div>
+
+    <h3>Cross-company note: где и как estimation встречается</h3>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Фокус estimation</th><th>Типичные задачи</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Часто отдельный раунд. Строгий, оценка рынков, query volumes.</td>
+        <td>«Оцени число запросов к Яндексу за день», «Рынок локальных сервисов в Москве»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Финансовые оценки: P&L, NPV, риск-модели.</td>
+        <td>«Оцени P&L кредитной карты за год», «NPV нового продукта»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>Marketplace sizing: GMV, liquidity, seller economics.</td>
+        <td>«Оцени GMV категории X», «Сколько sellers нужно для покрытия спроса»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Engagement-estimation: ad revenue, time spent impact.</td>
+        <td>«Оцени ad revenue от роста time spent на 2%», «Сколько пользователей кликнут на новую фичу»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-wildberries.html#wildberries-questions">Wildberries</a></td>
+        <td>Operational sizing: ПВЗ, склады, логистика.</td>
+        <td>«Сколько ПВЗ в городе X», «Сколько складов для категории Y»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Liquidity estimation: число listings, conversion в сделки.</td>
+        <td>«Оцени число активных listings в категории X», «Сколько сделок в месяц»</td>
+      </tr>
+    </table>
+
+    <h4>Estimation паттерны по типам продуктов</h4>
+
+    <h5>Consumer products (ВК, Яндекс Поиск)</h5>
+    <ul>
+      <li>Top-down от населения / интернет-пользователей.</li>
+      <li>Фокус на engagement-метриках: time spent, sessions, retention.</li>
+      <li>Ad revenue estimation через impressions × CPM × fill rate.</li>
+      <li>Sanity check через публичные отчёты компаний.</li>
+    </ul>
+
+    <h5>Marketplace (Ozon, Wildberries, Avito)</h5>
+    <ul>
+      <li>Bottom-up от active buyers / sellers.</li>
+      <li>GMV = buyers × orders × AOV.</li>
+      <li>Liquidity = listings × conversion × deal value.</li>
+      <li>Seller economics: revenue per seller, take rate.</li>
+      <li>Operational sizing: ПВЗ, склады, через volume / unit capacity.</li>
+    </ul>
+
+    <h5>Fintech (Тинькофф)</h5>
+    <ul>
+      <li>Financial modeling: P&L, NPV, IRR.</li>
+      <li>LTV = monthly revenue × lifetime.</li>
+      <li>Risk-adjusted estimates: expected loss, probability of default.</li>
+      <li>Unit economics: CAC, LTV/CAC ratio, payback period.</li>
+      <li>Regulatory impact: capital requirements, provisioning.</li>
+    </ul>
+
+    <h5>Search / Инструментальные (Яндекс)</h5>
+    <ul>
+      <li>Query volume estimation: users × sessions × queries per session.</li>
+      <li>Monetization: queries × ad CTR × CPC × monetizable queries share.</li>
+      <li>Index sizing: documents × average size × replication.</li>
+      <li>Latency estimation: query path × cache hit rate × backend response.</li>
+    </ul>
+
+    <h3>Связи с Частью III</h3>
+    <div class="cross-refs">
+      <div class="ref-label">Формулы estimation</div>
+      <a href="part3-reference.html#impact-top-down">Top-down impact</a>
+      <a href="part3-reference.html#impact-bottom-up">Bottom-up impact</a>
+      <a href="part3-reference.html#financial-model">Financial Model</a>
+      <a href="part3-reference.html#market-sizing">Market Sizing</a>
+      <a href="part3-reference.html#opportunity-cost">Opportunity Cost</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Кейсы в компаниях</div>
+      <a href="part2-yandex.html#yandex-questions">Яндекс: estimation раунд</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф: финансовые оценки</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon: marketplace sizing</a>
+      <a href="part2-wildberries.html#wildberries-questions">Wildberries: operational sizing</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <h2 id="system-design">1.4 System Design для PM</h2>
-    <p>TODO в Фазе 5.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
 
+    <h3>Что такое System Design для PM</h3>
+    <p><strong>System Design для PM</strong> — это не то же, что System Design для инженера. PM не пишет код, но должен:</p>
+    <ul>
+      <li>Понимать архитектурные trade-offs (build vs buy, latency vs consistency).</li>
+      <li>Уметь обсуждать архитектуру с инженерами на их языке.</li>
+      <li>Формулировать требования (functional + non-functional) и приоритизировать их.</li>
+      <li>Понимать, как архитектурные решения влияют на метрики (latency → конверсия).</li>
+      <li>Документировать решения через ADR (Architecture Decision Records).</li>
+    </ul>
+
+    <p>На интервью проверяют способность PM вести архитектурный разговор, не теряя product-фокуса.</p>
+
+    <h3>Trade-off framework</h3>
+
+    <p>Любое архитектурное решение — это trade-off. PM должен уметь называть оси trade-off и выбирать.</p>
+
+    <table class="metric-table">
+      <tr><th>Trade-off</th><th>Описание</th><th>Когда выбирать A</th><th>Когда выбирать B</th></tr>
+      <tr>
+        <td><strong>Build vs Buy</strong></td>
+        <td>Строить своё или брать готовое решение</td>
+        <td>Стратегическое преимущество, долгосрочная экономика, уникальные требования</td>
+        <td>Time-to-market критичен, не core-функционал, есть зрелый vendor</td>
+      </tr>
+      <tr>
+        <td><strong>Latency vs Consistency</strong></td>
+        <td>Быстрый ответ vs гарантированно актуальные данные</td>
+        <td>Real-time UX, cache-friendly сценарии</td>
+        <td>Финансовые транзакции, критичные данные</td>
+      </tr>
+      <tr>
+        <td><strong>Speed vs Quality</strong></td>
+        <td>Быстро запустить vs запустить качественно</td>
+        <td>MVP, проверка гипотезы, learning</td>
+        <td>Core-функционал, высокая цена ошибки</td>
+      </tr>
+      <tr>
+        <td><strong>Cost vs Performance</strong></td>
+        <td>Экономия инфраструктуры vs максимальная производительность</td>
+        <td>Bootstrap, низкая маржа</td>
+        <td>Core-функционал, рост важнее краткосрочной экономии</td>
+      </tr>
+      <tr>
+        <td><strong>Flexibility vs Simplicity</strong></td>
+        <td>Гибкая архитектура vs простая</td>
+        <td>Неизвестные требования, долгосрочный продукт</td>
+        <td>MVP, понятные требования, быстро меняемся</td>
+      </tr>
+    </table>
+
+    <p>Подробнее: <a href="part3-reference.html#build-vs-buy" class="formula-inline-ref">Build vs Buy</a>, <a href="part3-reference.html#api-basics" class="formula-inline-ref">API Basics</a>, <a href="part3-reference.html#system-design-basics" class="formula-inline-ref">System Design Basics</a>.</p>
+
+    <h4>Detailed trade-off analysis: Build vs Buy</h4>
+    <p>Один из самых частых trade-off на PM-интервью. Разберём критерии развёрнуто.</p>
+
+    <table class="metric-table">
+      <tr><th>Критерий</th><th>Build (своё)</th><th>Buy (vendor)</th></tr>
+      <tr>
+        <td>Time-to-market</td>
+        <td>Долго (3-12 месяцев)</td>
+        <td>Быстро (1-4 недели на интеграцию)</td>
+      </tr>
+      <tr>
+        <td>Cost (краткосрочно)</td>
+        <td>Высокий (команда, infra)</td>
+        <td>Низкий (subscription / per-call fee)</td>
+      </tr>
+      <tr>
+        <td>Cost (долгосрочно)</td>
+        <td>Амортизируется, низкий marginal cost</td>
+        <td>Растёт с масштабом, может стать дороже</td>
+      </tr>
+      <tr>
+        <td>Strategic advantage</td>
+        <td>Высокий (если это core)</td>
+        <td>Низкий (тот же vendor у конкурентов)</td>
+      </tr>
+      <tr>
+        <td>Customization</td>
+        <td>Полная</td>
+        <td>Ограничена API vendor'а</td>
+      </tr>
+      <tr>
+        <td>Maintenance</td>
+        <td>Своя команда, full ownership</td>
+        <td>Vendor, но integration overhead</td>
+      </tr>
+      <tr>
+        <td>Vendor lock-in</td>
+        <td>Нет</td>
+        <td>Есть, switching cost высокий</td>
+      </tr>
+      <tr>
+        <td>Quality (если vendor зрелый)</td>
+        <td>Зависит от команды</td>
+        <td>Высокая (vendor специализируется)</td>
+      </tr>
+    </table>
+
+    <p><strong>Решающее правило:</strong> если фича <em>core</em> для продукта (даёт competitive advantage) — build. Если <em>commodity</em> (нужно, но не дифференцирует) — buy.</p>
+
+    <p>Примеры:</p>
+    <ul>
+      <li><strong>ВК Лента — ranking model:</strong> build (core advantage, ML-команда большая).</li>
+      <li><strong>Ozon — платежный шлюз:</strong> изначально buy, потом build по мере роста.</li>
+      <li><strong>Тинькофф — KYC provider:</strong> buy (commodity, regulatory compliance важнее дифференциации).</li>
+      <li><strong>Avito — search infrastructure:</strong> hybrid (Elasticsearch buy, LTR model build).</li>
+    </ul>
+
+    <h3>Scaling concepts для PM</h3>
+
+    <p>PM не обязан уметь настраивать Kubernetes, но должен понимать концепции масштабирования, чтобы обсуждать с инженерами.</p>
+
+    <h4>1. Horizontal vs Vertical scaling</h4>
+    <ul>
+      <li><strong>Vertical</strong> — больше CPU / RAM на одной машине. Просто, но ограничено железом.</li>
+      <li><strong>Horizontal</strong> — больше машин. Сложнее (нужен load balancer, синхронизация состояния), но масштабируется бесконечно.</li>
+    </ul>
+
+    <h4>2. Caching</h4>
+    <p>Cache — сохранение результата дорогой операции для быстрого повторного доступа. Уровни cache:</p>
+    <ul>
+      <li><strong>Browser cache:</strong> статика, JS, CSS.</li>
+      <li><strong>CDN:</strong> контент ближе к пользователю.</li>
+      <li><strong>Application cache:</strong> Redis, Memcached — для query results, sessions.</li>
+      <li><strong>Database cache:</strong> встроенный в БД.</li>
+    </ul>
+    <p>Trade-off: cache ускоряет, но может показывать устаревшие данные (consistency).</p>
+
+    <h4>3. Queues и async processing</h4>
+    <p>Долгие операции (отправка email, обработка видео, ML inference) не должны блокировать запрос. Помещаются в очередь, обрабатываются асинхронно. PM должен понимать: «Фича не real-time, а near-real-time» — это влияет на UX.</p>
+
+    <h4>4. Databases</h4>
+    <ul>
+      <li><strong>Relational (PostgreSQL, MySQL):</strong> транзакционность, consistency, хорошо для финансовых данных.</li>
+      <li><strong>NoSQL (MongoDB, Cassandra):</strong> гибкая схема, горизонтальное масштабирование, хорошо для UGC.</li>
+      <li><strong>Columnar (ClickHouse):</strong> аналитика, агрегации по миллионам строк.</li>
+      <li><strong>Search (Elasticsearch):</strong> full-text search, faceted navigation.</li>
+    </ul>
+
+    <h4>5. Microservices vs Monolith</h4>
+    <p>Trade-off: microservices дают независимость команд, но добавляют сложность (network, deployment, observability). На ранней стадии — monolith, при росте команд — постепенный переход к microservices.</p>
+
+    <h4>6. CAP theorem (для PM)</h4>
+    <p>В распределённых системах нельзя одновременно иметь Consistency, Availability, Partition tolerance. На практике: при network partition выбираешь между C и A.</p>
+    <ul>
+      <li><strong>CP (consistency):</strong> банковские транзакции — лучше отказать, чем показать противоречивые данные.</li>
+      <li><strong>AP (availability):</strong> social feed — лучше показать slightly stale контент, чем отказать.</li>
+    </ul>
+    <p>PM должен понимать, какой выбор сделан в его продукте, потому что это влияет на UX (например, «почему я вижу старый лайк?» — eventual consistency).</p>
+
+    <h4>7. Idempotency и retries</h4>
+    <p>В распределённых системах запросы могут теряться / дублироваться. Idempotency = повторный запрос не меняет состояние. Важно для платежей, транзакций. PM должен требовать idempotency keys для критичных операций.</p>
+
+    <h4>8. Observability</h4>
+    <p>PM не настраивает мониторинг, но должен знать три столпа:</p>
+    <ul>
+      <li><strong>Logs:</strong> что произошло (event-level).</li>
+      <li><strong>Metrics:</strong> агрегаты (rate, latency, errors).</li>
+      <li><strong>Traces:</strong> путь запроса через сервисы.</li>
+    </ul>
+    <p>Без observability невозможно понять, почему метрика упала. PM должен закладывать observability в требования к фиче.</p>
+    <p><a href="part3-reference.html#logging-design" class="formula-inline-ref">Logging Design</a>, <a href="part3-reference.html#event-schema" class="formula-inline-ref">Event Schema</a>.</p>
+
+    <h3>Architecture Decision Records (ADR)</h3>
+
+    <p><strong>ADR</strong> — короткий документ, фиксирующий архитектурное решение. PM часто пишет или ревьюит ADR.</p>
+
+    <div class="formula-block">
+      <div class="formula-name">Структура ADR</div>
+      <div class="formula-expr">Title + Context + Decision + Consequences</div>
+      <div class="formula-vars">
+        <code>Title</code> — короткое название решения<br>
+        <code>Context</code> — проблема, constraints, требования<br>
+        <code>Decision</code> — что решили, почему (альтернативы, trade-off)<br>
+        <code>Consequences</code> — что меняется, риски, follow-ups
+      </div>
+    </div>
+
+    <p>Пример ADR для рекомендательной системы Ленты ВК:</p>
+    <div class="case-walkthrough">
+      <h4>ADR: Выбор ML-pipeline для Ленты ВК</h4>
+      <p><strong>Context:</strong> Текущая Лента использует статический ranking, качество реком-падает при росте контента. Нужно ввести ML-pipeline для персонализации. Constraints: latency &lt; 200ms, 50M DAU, daily refresh моделей.</p>
+      <p><strong>Decision:</strong> Двухстадийный pipeline: candidate generation (ANN над embeddings) → ranking (gradient boosting). Альтернативы: end-to-end neural net (отклонено — latency), rule-based (отклонено — качество).</p>
+      <p><strong>Consequences:</strong> + улучшение CTR на 8-12%, + время в Ленте на 3-5%. - new infra (feature store, model registry), - зависимость от data quality. Follow-ups: A/B на 1% → 10% → 100%, monitoring drift, retrain цикл.</p>
+    </div>
+
+    <h3>Walked examples</h3>
+
+    <h4>Пример 1. Спроектируй рекомендательную систему для Ленты ВК</h4>
+    <div class="case-walkthrough">
+      <h4>Шаг 1. Требования</h4>
+      <ul>
+        <li><strong>Functional:</strong> персональная выдача контента (посты, фото, видео) на основе user signals.</li>
+        <li><strong>Non-functional:</strong> latency p99 &lt; 200ms, throughput 50M DAU × 100 sessions = 5B requests/day, daily model refresh.</li>
+      </ul>
+
+      <h4>Шаг 2. Архитектура</h4>
+      <pre><code>User request
+  ↓
+API Gateway (auth, rate limit)
+  ↓
+Recommendation Service
+  ├── Candidate Generation (ANN над user embeddings)
+  │     - Index 100M items, retrieve top 1000
+  ├── Ranking (gradient boosting model)
+  │     - Score 1000 → top 100
+  ├── Re-ranking (diversity, freshness, ads)
+  │     - Score 100 → top 20
+  └── Cache (для повторных запросов)
+  ↓
+Response (20 items, latency &lt; 200ms)</code></pre>
+
+      <h4>Шаг 3. Trade-offs</h4>
+      <ul>
+        <li><strong>End-to-end neural net vs двухстадийный:</strong> двухстадийный — latency ниже, quality достаточно.</li>
+        <li><strong>Real-time features vs batch:</strong> hybrid — batch для embeddings (daily refresh), real-time для session features (last 5 actions).</li>
+        <li><strong>Cache vs always compute:</strong> cache на 5 минут, trade-off: пользователь видит slightly stale рекомендации.</li>
+      </ul>
+
+      <h4>Шаг 4. Метрики</h4>
+      <ul>
+        <li><strong>Online:</strong> CTR, time spent, scroll depth, diversity.</li>
+        <li><strong>Offline:</strong> AUC, NDCG, recall@k.</li>
+        <li><strong>System:</strong> latency p99, throughput, error rate, model drift.</li>
+      </ul>
+
+      <p><a href="part2-vk.html#vk-case-feed">Полный разбор кейса Ленты ВК →</a></p>
+      <p>Связанные формулы: <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency</a>, <a href="part3-reference.html#logging-design" class="formula-inline-ref">Logging Design</a>.</p>
+    </div>
+
+    <h4>Пример 2. Спроектируй систему выдачи для Ozon</h4>
+    <div class="case-walkthrough">
+      <h4>Требования</h4>
+      <ul>
+        <li>Search + ranking + personalization для 100M+ SKU.</li>
+        <li>Latency p99 &lt; 300ms (search), &lt; 100ms (autocomplete).</li>
+        <li>Throughput: 10K QPS peak.</li>
+        <li>Multi-faceted filters (price, brand, rating, delivery options).</li>
+      </ul>
+
+      <h4>Архитектура</h4>
+      <pre><code>Search query
+  ↓
+Query understanding (spell correct, synonyms, intent)
+  ↓
+Elasticsearch (full-text + faceted)
+  ↓
+Ranking (LTR model: CTR, conversion, AOV, freshness)
+  ↓
+Personalization layer (user history, geo)
+  ↓
+Inventory filter (in stock, delivery to user geo)
+  ↓
+Response (top 30 items)</code></pre>
+
+      <h4>Trade-offs</h4>
+      <ul>
+        <li><strong>Elasticsearch vs custom search:</strong> ES — зрелый, но ограниченная personalization. Custom — flex, но дорого. Решение: ES + LTR layer.</li>
+        <li><strong>Real-time inventory vs cached:</strong> cached с TTL 5 мин (trade-off: occasionally out-of-stock в выдаче, но latency приемлемая).</li>
+        <li><strong>Personalization depth:</strong> full personalization для top-10, остальное — generic ranking.</li>
+      </ul>
+    </div>
+
+    <h4>Пример 3. Спроектируй onboarding для Тинькофф</h4>
+    <div class="case-walkthrough">
+      <h4>Требования</h4>
+      <ul>
+        <li>Onboarding для кредитной карты:申请 → одобрение → активация.</li>
+        <li>Compliance: KYC, AML, подпись договора.</li>
+        <li>Conversion target: 70% от старта заявки до активации.</li>
+        <li>Latency: решение по заявке &lt; 5 минут.</li>
+      </ul>
+
+      <h4>Архитектура</h4>
+      <pre><code>Step 1. Application form (mobile / web)
+  ↓ (data capture)
+Step 2. KYC check (third-party vendor + internal)
+  ├── Identity verification
+  ├── Sanctions check
+  └── Credit bureau pull
+  ↓
+Step 3. Risk scoring (ML model)
+  ↓
+Step 4. Decision (approve / decline / manual review)
+  ↓ (if approved)
+Step 5. Contract signing (e-signature)
+  ↓
+Step 6. Card issuance (digital first, physical optional)
+  ↓
+Step 7. Activation (PIN set, first transaction)</code></pre>
+
+      <h4>Trade-offs</h4>
+      <ul>
+        <li><strong>Real-time KYC vs async:</strong> real-time даёт лучший UX, но дороже. Решение: real-time для sanity checks, async для deep checks.</li>
+        <li><strong>Manual review threshold:</strong> низкий threshold — выше одобрение, но больше операционных расходов.</li>
+        <li><strong>Compliance vs UX:</strong> компромисс — минимизировать steps, но не в ущерб regulatory requirements.</li>
+      </ul>
+    </div>
+
+    <h4>Пример 4. Спроектируй search для Avito</h4>
+    <div class="case-walkthrough">
+      <h4>Требования</h4>
+      <ul>
+        <li>Search по 200M+ активных listings.</li>
+        <li>Latency p99 &lt; 200ms.</li>
+        <li>Throughput: 5K QPS peak.</li>
+        <li>Faceted filters: category, geo, price, condition, seller type.</li>
+        <li>Geo search с radius, map view.</li>
+      </ul>
+
+      <h4>Архитектура</h4>
+      <pre><code>Query
+  ↓
+Query understanding (synonyms, geo extraction)
+  ↓
+Elasticsearch (multi-tenant index по категориям)
+  ├── Full-text search
+  ├── Faceted aggregation
+  └── Geo filter (geo_distance)
+  ↓
+Ranking (LTR: CTR, conversion, freshness, seller rating)
+  ↓
+Personalization (geo, recent views)
+  ↓
+Inventory filter (active, not deleted, not sold)
+  ↓
+Response (top 30 listings)</code></pre>
+
+      <h4>Trade-offs</h4>
+      <ul>
+        <li><strong>Index size vs freshness:</strong> real-time indexing — latency, batch — staleness. Решение: hybrid — real-time для new listings, batch для updates.</li>
+        <li><strong>Category-specific ranking vs universal:</strong> category-specific даёт качество, но сложнее maintain. Решение: universal base + category overrides.</li>
+        <li><strong>Geo precision vs performance:</strong> precise geo_distance медленный. Решение: geo_grid bucketing на phase 1, precise на phase 2 (top 100).</li>
+      </ul>
+    </div>
+
+    <h4>Пример 5. Спроектируй push-уведомления для ВК</h4>
+    <div class="case-walkthrough">
+      <h4>Требования</h4>
+      <ul>
+        <li>100M+ устройств, 50M pushes/день.</li>
+        <li>Latency: send &lt; 30 sec от триггера.</li>
+        <li>Personalization: user segment, content type, time window.</li>
+        <li>Opt-out: granular controls по типу push.</li>
+        <li>Frequency capping: не более N pushes/день на пользователя.</li>
+      </ul>
+
+      <h4>Архитектура</h4>
+      <pre><code>Trigger (event: new message, group post, etc.)
+  ↓
+Push eligibility service
+  ├── User preferences check
+  ├── Frequency cap check
+  ├── Quiet hours check
+  └── Segment targeting
+  ↓
+Push content generation (personalized)
+  ↓
+Push queue (priority, deduplication)
+  ↓
+Platform sender (APNs, FCM, Web Push)
+  ↓
+Delivery tracking (sent, delivered, opened)</code></pre>
+
+      <h4>Trade-offs</h4>
+      <ul>
+        <li><strong>Real-time vs batch:</strong> real-time для personal messages (latency критичен), batch для content recommendations.</li>
+        <li><strong>Personalization depth:</strong> deep personalization — выше CTR, но дороже compute. Решение: ML scoring для top candidates, rule-based для остальных.</li>
+        <li><strong>Frequency cap strictness:</strong> strict — лучше UX, но меньше engagement. Решение: adaptive — по user engagement history.</li>
+      </ul>
+
+      <p><a href="part3-reference.html#system-design-basics" class="formula-inline-ref">System Design Basics</a>.</p>
+    </div>
+
+    <h3>Cross-company note: ожидания от System Design</h3>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Глубина System Design</th><th>Типичные задачи</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Высокая, особенно для search / infra ролей. Ожидают понимание search architecture, indexing, ranking.</td>
+        <td>«Спроектируй поиск для локальных запросов», «Архитектура autocomplete»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Средняя. Marketplace architecture, search, listings.</td>
+        <td>«Спроектируй search для категории X», «Архитектура chat между продавцом и покупателем»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>Средняя. E-commerce stack: search, recommendation, checkout, inventory.</td>
+        <td>«Спроектируй recommendation для cross-sell», «Архитектура inventory sync»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Высокая для recom-ролей. Pipeline, ML-инфра.</td>
+        <td>«Спроектируй рекомендательную систему для Ленты / Клипов»</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Средняя, compliance-heavy. Архитектура с regulatory constraints.</td>
+        <td>«Спроектируй onboarding с KYC», «Архитектура платежа»</td>
+      </tr>
+    </table>
+
+    <h4>Что PM должен требовать от инженеров</h4>
+    <p>PM не пишет архитектуру, но должен требовать от инженеров:</p>
+    <ul>
+      <li><strong>ADR для каждого важного решения.</strong> Не устный «мы решили», а записанный.</li>
+      <li><strong>Non-functional requirements явно.</strong> Latency, throughput, availability — на старте, не после.</li>
+      <li><strong>Observability с первого дня.</strong> Logs, metrics, traces — без этого нельзя debug'ать.</li>
+      <li><strong>Capacity planning.</strong> Что будет при 10x росте? Где узкие места?</li>
+      <li><strong>Disaster recovery.</strong> Что если упадёт главный дата-центр? RTO / RPO.</li>
+      <li><strong>Cost awareness.</strong> Сколько стоит каждый request? Где оптимизация?</li>
+    </ul>
+
+    <h4>Красные флаги для PM</h4>
+    <ul>
+      <li>«Мы это купим, не пиши своё» — без оценки build vs buy trade-off.</li>
+      <li>«Это просто, добавим cache» — без оценки consistency trade-off.</li>
+      <li>«ML решит» — без понимания, какие данные, какая модель, какой fallback.</li>
+      <li>«Добавим микросервис» — без оценки operational overhead.</li>
+      <li>«Real-time» — без оценки cost vs batch alternative.</li>
+    </ul>
+
+    <h4>Чек-лист System Design для PM на интервью</h4>
+    <ol class="checklist">
+      <li>Уточни requirements: functional + non-functional (latency, throughput, availability).</li>
+      <li>Определи constraints: budget, team size, timeline, regulatory.</li>
+      <li>Предложи 2-3 архитектурных варианта, не один.</li>
+      <li>Назови trade-off для каждого: build vs buy, latency vs consistency, cost vs performance.</li>
+      <li>Выбери один с обоснованием.</li>
+      <li>Опиши компоненты: API gateway, services, data stores, cache, queues.</li>
+      <li>Покажи data flow: откуда данные, куда идут, где кэшируются.</li>
+      <li>Обсудай scaling: что при 10x росте? При 100x?</li>
+      <li>Покажи observability: что логируется, какие метрики, как debug'ать.</li>
+      <li>Обсудай failure modes: что если упадёт X? Как восстанавливаемся?</li>
+      <li>Запиши ADR-style summary: Context, Decision, Consequences.</li>
+    </ol>
+
+    <h3>Связи с Частью III</h3>
+    <div class="cross-refs">
+      <div class="ref-label">Технические формулы</div>
+      <a href="part3-reference.html#tech-fluency">Tech Fluency</a>
+      <a href="part3-reference.html#api-basics">API Basics</a>
+      <a href="part3-reference.html#build-vs-buy">Build vs Buy</a>
+      <a href="part3-reference.html#system-design-basics">System Design Basics</a>
+      <a href="part3-reference.html#logging-design">Logging Design</a>
+      <a href="part3-reference.html#event-schema">Event Schema</a>
+      <a href="part3-reference.html#data">Данные</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Кейсы</div>
+      <a href="part2-vk.html#vk-case-feed">Лента ВК: recom-система</a>
+      <a href="part2-yandex.html#yandex-questions">Яндекс: search architecture</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon: e-commerce stack</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф: compliance onboarding</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <h2 id="behavioral">1.5 Behavioral</h2>
-    <p>TODO в Фазе 5.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <h3>Что такое Behavioral interview</h3>
+    <p><strong>Behavioral interview</strong> — проверка soft skills, leadership, работы со стейкхолдерами, принятия решений в сложных ситуациях. В FAANG это отдельный раунд с фиксированным форматом (Amazon Leadership Principles), в российских компаниях — менее формализованный, но растёт.</p>
+
+    <p>На интервью дают вопросы типа: «Расскажи о случае, когда ты...» — ожидают конкретный пример из опыта, структурированный по STAR.</p>
+
+    <h3>STAR framework</h3>
+
+    <div class="formula-block">
+      <div class="formula-name">STAR Method</div>
+      <div class="formula-expr">S → T → A → R</div>
+      <div class="formula-vars">
+        <code>S</code> — <strong>Situation</strong> — контекст, в чём была ситуация<br>
+        <code>T</code> — <strong>Task</strong> — какая была задача / вызов перед тобой<br>
+        <code>A</code> — <strong>Action</strong> — что конкретно ты сделал (не «мы», а «я»)<br>
+        <code>R</code> — <strong>Result</strong> — что получилось, метрики, lessons learned
+      </div>
+    </div>
+
+    <h4>Как применять STAR</h4>
+    <ul>
+      <li><strong>Situation:</strong> 30 секунд. Контекст, кто участвовал, в чём сложность.</li>
+      <li><strong>Task:</strong> 15 секунд. Конкретно твоя задача, без «мы».</li>
+      <li><strong>Action:</strong> 60-90 секунд. Что ты сделал, шаг за шагом. Это центр — здесь interview проверяет твою роль.</li>
+      <li><strong>Result:</strong> 30 секунд. Метрики, feedback, что изменилось. Если возможно — числа.</li>
+    </ul>
+
+    <p><strong>Частая ошибка:</strong> говорить «мы сделали» — интервьюер не понимает, твой это вклад или команды. Говори «я», даже если работало в команде: «Я инициировал», «Я договорился», «Я защитил решение».</p>
+
+    <h3>Leadership principles</h3>
+
+    <p>Хотя российские компании не формализуют leadership principles как Amazon, в поведении ожидают:</p>
+
+    <table class="metric-table">
+      <tr><th>Principle</th><th>Что проверяют</th><th>Пример вопроса</th></tr>
+      <tr>
+        <td><strong>Customer obsession</strong></td>
+        <td>Начинаешь ли с пользователя, а не с технологий</td>
+        <td>«Расскажи о решении, где ты отстаивал интересы пользователя против стейкхолдеров»</td>
+      </tr>
+      <tr>
+        <td><strong>Ownership</strong></td>
+        <td>Берёшь ли ответственность за результат, не «это не моя зона»</td>
+        <td>«Пример, когда ты взял ответственность вне своих прямых обязанностей»</td>
+      </tr>
+      <tr>
+        <td><strong>Deliver results</strong></td>
+        <td>Доводишь ли до результата, несмотря на препятствия</td>
+        <td>«Случай, когда ты довёл проект вопреки обстоятельствам»</td>
+      </tr>
+      <tr>
+        <td><strong>Disagree & commit</strong></td>
+        <td>Умеешь ли спорить, но потом выполнять решение</td>
+        <td>«Пример, когда ты не соглашался, но принял решение команды»</td>
+      </tr>
+      <tr>
+        <td><strong>Bias for action</strong></td>
+        <td>Действуешь ли, а не анализируешь бесконечно</td>
+        <td>«Случай, когда ты принял решение без полных данных»</td>
+      </tr>
+      <tr>
+        <td><strong>Think big</strong></td>
+        <td>Видишь ли стратегическую картину</td>
+        <td>«Пример, когда ты предложил стратегическое изменение»</td>
+      </tr>
+      <tr>
+        <td><strong>Learn & be curious</strong></td>
+        <td>Учишься ли новому, интересуешься ли</td>
+        <td>«Что нового ты выучил за последний год»</td>
+      </tr>
+    </table>
+
+    <h3>Российская специфика behavioral</h3>
+    <p>В России behavioral-раунд менее формализован, чем в FAANG, но тренд — к большей структуре. Что отличается:</p>
+    <ul>
+      <li><strong>Меньше шаблонных вопросов «Amazon-style».</strong> Часто conversation-style: «Расскажи про свой самый сложный проект».</li>
+      <li><strong>Больше фокус на реальные кейсы, не hypotheticals.</strong> «Что бы ты сделал, если бы X» — реже, «расскажи, когда ты делал X» — чаще.</li>
+      <li><strong>Яндекс и Тинькофф структурнее.</strong> На Senior+ могут быть чек-листы principles, по которым интервьюер отмечает.</li>
+      <li><strong>ВКонтакте, Avito — мягче.</strong> Больше про cultural fit, командную динамику.</li>
+      <li><strong>Wildberries, middle-tier — наименее формальны.</strong> Часто один раунд с hiring manager.</li>
+    </ul>
+
+    <h3>Частые behavioral вопросы</h3>
+
+    <div class="question-card">
+      <p class="question-text"><strong>1. «Расскажи о продуктовом провале».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> способность признавать ошибки, извлекать уроки, не повторять.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «В моём прошлом продукте мы запустили фичу X, потратив 3 месяца разработки».</li>
+        <li><strong>T:</strong> «Моя задача была — увеличить retention D7 на 5%».</li>
+        <li><strong>A:</strong> «Я настоял на запуске без CustDev, опираясь на гипотезу. После запуска — A/B показал нулевой эффект, retention даже упал на 1% из-за confusion».</li>
+        <li><strong>R:</strong> «Rollback через 2 недели. Lessons: (1) всегда CustDev перед разработкой, (2) MDE расчёт заранее, чтобы не запускать с недостаточной мощностью. После этого внедрил process: hypothesis → CustDev → prototype → A/B → launch».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>2. «Как ты урегулировал конфликт со стейкхолдером».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> способность работать с разными интересами, не эскалируя без необходимости.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Sales-команда хотела добавить фичу X для крупных клиентов, я считал, что это отвлекает от стратегического направления».</li>
+        <li><strong>T:</strong> «Нужно было принять решение, не разрушив отношения с sales».</li>
+        <li><strong>A:</strong> «Я не сказал „нет" сразу. Назначил встречу, выслушал их pain points. Понял, что реальная проблема — отсутствие self-service для крупных клиентов. Предложил альтернативу: admin-панель для account managers, не custom-фича в продукт».</li>
+        <li><strong>R:</strong> «Sales приняли альтернативу, мы запустили admin-панель за 1 месяц вместо 3. CSAT крупных клиентов вырос на 15%».</li>
+      </ul>
+      <p><a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholder Management</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>3. «Пример, когда ты изменил стратегию на основе данных».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> data-driven decision-making, способность отказаться от любимой гипотезы.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Мы верили, что наша целевая аудитория — миллениалы, и вся коммуникация строилась вокруг них».</li>
+        <li><strong>T:</strong> «Retention стагнировал, нужно было понять почему».</li>
+        <li><strong>A:</strong> «Я раскрутил cohort analysis по возрастным сегментам. Оказалось, что retention у 35+ на 20% выше, и они дают 60% LTV. Изменил positioning, таргетинг и product-фокус на этот сегмент».</li>
+        <li><strong>R:</strong> «Через 6 месяцев retention вырос на 12%, LTV на 18%. Lesson: не строить стратегию на assumptions, проверять данными».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>4. «Как ты приоритизировал конкурирующие инициативы».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> способность работать в условиях ограниченных ресурсов, прозрачная логика приоритизации.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «5 команд хотели запустить 8 инициатив, ресурсы на 3».</li>
+        <li><strong>T:</strong> «Нужно было выбрать 3 и объяснить выбор».</li>
+        <li><strong>A:</strong> «Я построил матрицу RICE (Reach × Impact × Confidence / Effort) для каждой инициативы. Добавил strategic alignment score (насколько инициатива двигает годовую цель). Защитил приоритизацию перед командами, объяснив каждое решение».</li>
+        <li><strong>R:</strong> «Команды приняли логику, даже те, чьи инициативы не попали в top-3. Все 3 запущенных достигли ожидаемых метрик».</li>
+      </ul>
+      <p><a href="part3-reference.html#rice-extended" class="formula-inline-ref">RICE</a>, <a href="part3-reference.html#wsjf" class="formula-inline-ref">WSJF</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>5. «Пример лидерства без формального авторитета».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> способность вести за собой, не имея прямой власти.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «3 команды работали над связанными фичами, но не было единого owner'а. Координация страдала».</li>
+        <li><strong>T:</strong> «Нужно было синхронизировать релизы, не имея формальной роли».</li>
+        <li><strong>A:</strong> «Я инициировал еженедельные sync-встречи, подготовил shared roadmap, согласовал зависимости. Не диктовал, а фасилитировал: задавал вопросы, помогал командам договариваться».</li>
+        <li><strong>R:</strong> «Релизы синхронизировались, time-to-market снизился на 30%. Позже формальная роль coordinator была создана, и я её получил».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>6. «Случай, когда ты отстаивал непопулярное решение».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> готовность идти против мнения большинства при наличии данных, ownership.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Команда и руководство хотели запустить фичу X, потому что конкуренты её имеют. Я считал, что это не решит нашу метрику».</li>
+        <li><strong>T:</strong> «Нужно было либо согласиться, либо аргументированно отказаться».</li>
+        <li><strong>A:</strong> «Я провёл анализ: A/B у конкурентов (по публичным данным), CustDev у наших пользователей, расчёт expected impact. Данные показали, что фича не двигает нашу метрику, а требует 4 месяца разработки. Защитил анализ перед VP».</li>
+        <li><strong>R:</strong> «Решение отказались запускать. Вместо этого запустили альтернативу, которая дала +8% к целевой метрике за 1.5 месяца. Lesson: данные важнее FOMO».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>7. «Как ты развивал члена команды».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> people management, способность менторить, делегировать.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Junior PM в команде не проявлял инициативу, качество работы страдало».</li>
+        <li><strong>T:</strong> «Нужно было либо развить, либо потерять как ресурс».</li>
+        <li><strong>A:</strong> «Я не стал делать его работу за него. Поставил 1-on-1, разобрали, где он хочет расти. Делегировал конкретный проект с понятными границами, был доступен для вопросов, но не делал за него. Давал feedback еженедельно».</li>
+        <li><strong>R:</strong> «Через 6 месяцев он самостоятельно вёл проект, получил повышение. Lesson: people растут через ownership, не через инструкции».</li>
+      </ul>
+      <p><a href="part3-reference.html#people" class="formula-inline-ref">People Management</a>, <a href="part3-reference.html#one-on-one" class="formula-inline-ref">1-on-1s</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>8. «Расскажи о случае, когда ты работал в условиях неопределённости».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> comfort with ambiguity, способность принимать решения без полных данных.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Запускали новый продукт в категории, где у нас не было опыта. Рынок новый, данные отсутствовали».</li>
+        <li><strong>T:</strong> «Нужно было определить MVP scope за 4 недели, не имея CustDev и market research».</li>
+        <li><strong>A:</strong> «Разбил неопределённость: что мы знаем (competitor analysis), что можем быстро узнать (5 CustDev interviews с экспертами), что примем как assumption с проверкой в MVP. Приоритизировал фичи по reversible / irreversible — выбрал reversible, чтобы быстро pivot'нуть».</li>
+        <li><strong>R:</strong> «Запустились в срок, MVP показал signals. Из 5 assumptions 3 подтвердились, 2 опровергнуты — pivot'нули roadmap. Lesson: не ждать идеальных данных, а структурированно работать с assumptions».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>9. «Пример, когда ты принял решение, которое не поддерживала команда».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> решительность, способность вести за собой, ability объяснить и продать решение.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Команда хотела переписать legacy-систему с нуля, я считал, что нужно incremental migration».</li>
+        <li><strong>T:</strong> «Принять решение, которое команда не поддерживала, и не потерять их мотивацию».</li>
+        <li><strong>A:</strong> «Я не просто Override — организовал технический discussion, попросил инженеров оценить both подхода по 5 критериям (time, risk, cost, quality, morale). Incremental выиграл по 4 из 5. Команда увидела логику, а не top-down решение. Дал владельцам миграции autonomy в деталях».</li>
+        <li><strong>R:</strong> «Миграция прошла за 8 месяцев без даунтайма. Команда приняла подход, два инженера выросли как tech leads».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>10. «Как ты управляешь приоритетами при множестве стейкхолдеров».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> stakeholder management, способность работать с competing demands.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Sales, Marketing, Customer Support — каждый тянул в свою сторону, у меня было 20 запросов в backlog».</li>
+        <li><strong>T:</strong> «Принять прозрачный процесс приоритизации, чтобы все приняли решения».</li>
+        <li><strong>A:</strong> «Ввёл monthly prioritization committee с представителями всех стейкхолдеров. Каждый request оценивался по RICE, плюс strategic alignment score. Прозрачная формула, не PM sole decision. Для неприоритетных — объяснял, почему и что нужно, чтобы они стали приоритетными».</li>
+        <li><strong>R:</strong> «Жалобы упали на 80%, throughput вырос на 25%. Стейкхолдеры приняли процесс, потому что он прозрачный».</li>
+      </ul>
+      <p><a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholder Management</a>, <a href="part3-reference.html#power-interest" class="formula-inline-ref">Power-Interest Grid</a>, <a href="part3-reference.html#rice-extended" class="formula-inline-ref">RICE</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>11. «Расскажи о случае, когда ты disagree and commit».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> способность спорить constructively, потом выполнять решение команды.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Я спорил с leadership о стратегии: я хотел фокус на retention, leadership — на acquisition. Решение было принято в пользу acquisition».</li>
+        <li><strong>T:</strong> «Несмотря на несогласие, нужно было deliver results по выбранной стратегии».</li>
+        <li><strong>A:</strong> «Я не саботировал. Аргументировал свою позицию письменно (для record), но потом полностью commit'нулся на execution acquisition-стратегии. Делал всё, чтобы она работала: detailed metrics, weekly reviews, iteration на данных».</li>
+        <li><strong>R:</strong> «Стратегия дала +15% acquisition. Через 6 месяцев данные показали, что retention тоже нужно поднимать — leadership сам поднял этот вопрос. Lesson: данные лучше спора, а commit важнее правоты».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>12. «Пример, когда ты доставил результат вопреки обстоятельствам».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> ownership, deliver results, resilience.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Критический launch через 2 недели, key инженер заболел, дизайн не готов».</li>
+        <li><strong>T:</strong> «Доставить launch в срок без потери качества».</li>
+        <li><strong>A:</strong> «Переприоритизировал: разделил scope на must-have и nice-to-have. Договорился с другой командой о temporary engineer. Сам разобрался в части дизайна, нанял contractor для production-ready. Daily standups с прозрачным статусом».</li>
+        <li><strong>R:</strong> «Запустились в срок с must-have scope. Nice-to-added follow-up release через месяц. Lesson: где воля — там путь, но через transparent prioritization, не через hero work в одиночку».</li>
+      </ul>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>13. «Как ты принимал решение без полных данных».</strong></p>
+      <p class="question-tips"><strong>Что проверяют:</strong> bias for action, comfort with ambiguity, structured decision-making.</p>
+      <p><strong>STAR-пример:</strong></p>
+      <ul>
+        <li><strong>S:</strong> «Нужно было решить: строить фичу A или B. Данных было мало, рынок новый».</li>
+        <li><strong>T:</strong> «Принять решение без полных данных, не блокируя команду».</li>
+        <li><strong>A:</strong> «Структурировал: что известно (facts), что предполагаю (assumptions), что неизвестно (unknowns). Оценил each option по 3 критериям: worst case, best case, reversible? Выбрал reversible option (фича A) — если ошибёмся, pivot'нём. Запустил сinstrumentation для сбора данных».</li>
+        <li><strong>R:</strong> «Запустились за 6 недель, данные показали, что A работает, но не оптимально. Pivot'нули к hybrid за 4 недели. Lesson: лучше запустить и учиться, чем анализировать полгода».</li>
+      </ul>
+    </div>
+
+    <h3>Подготовка к behavioral</h3>
+
+    <ol>
+      <li><strong>Подготовь 5-7 историй</strong> из реального опыта, каждая покрывает несколько principles. На интервью адаптируешь историю под вопрос.</li>
+      <li><strong>Запиши истории в STAR-формате</strong> — заранее, не импровизируй. Метрики, конкретные имена (можно анонимизировать), даты.</li>
+      <li><strong>Не ври.</strong> Если не было случая — скажи прямо: «У меня не было такого опыта, но похожая ситуация...». Интервьюер ценит честность.</li>
+      <li><strong>Practice вслух.</strong> Behavioral легко провалить из-за волнения: начинаешь перескакивать, теряешь структуру. Practice с другом или перед зеркалом.</li>
+      <li><strong>Заканчивай lessons learned.</strong> Каждая история — что ты вынес. Это показывает growth mindset.</li>
+    </ol>
+
+    <h4>Банк историй: какие подготовить</h4>
+    <p>Не нужно 50 историй — нужно 7-10, которые покрывают все principles. Каждая история должна быть гибкой: на интервью адаптируешь акцент под вопрос.</p>
+
+    <table class="metric-table">
+      <tr><th>История</th><th>Принципы, которые покрывает</th></tr>
+      <tr>
+        <td>Продуктовый провал</td>
+        <td>Learn & be curious, customer obsession, ownership</td>
+      </tr>
+      <tr>
+        <td>Конфликт со стейкхолдером</td>
+        <td>Stakeholder management, disagree & commit, communication</td>
+      </tr>
+      <tr>
+        <td>Decision на основе данных</td>
+        <td>Data-driven, bias for action, think big</td>
+      </tr>
+      <tr>
+        <td>Приоритизация</td>
+        <td>Ownership, deliver results, strategic thinking</td>
+      </tr>
+      <tr>
+        <td>Лидерство без авторитета</td>
+        <td>Leadership, influence, collaboration</td>
+      </tr>
+      <tr>
+        <td>Непопулярное решение</td>
+        <td>Courage, ownership, data-driven</td>
+      </tr>
+      <tr>
+        <td>Менторство / развитие команды</td>
+        <td>People management, delegation, growth mindset</td>
+      </tr>
+      <tr>
+        <td>Ambiguity / неопределённость</td>
+        <td>Comfort with ambiguity, bias for action, structured thinking</td>
+      </tr>
+      <tr>
+        <td>Доставка вопреки обстоятельствам</td>
+        <td>Deliver results, resilience, problem-solving</td>
+      </tr>
+      <tr>
+        <td>Стратегическое изменение</td>
+        <td>Think big, strategic thinking, influence</td>
+      </tr>
+    </table>
+
+    <h4>Формула ответа на behavioral</h4>
+    <p>Универсальный темплейт для любого behavioral вопроса:</p>
+    <ol>
+      <li><strong>Пауза (3-5 сек):</strong> подумай, какую историю рассказать. Не начинай сразу.</li>
+      <li><strong>Краткое intro (15 сек):</strong> «У меня был случай, когда...» — обозначь тему.</li>
+      <li><strong>Situation (30 сек):</strong> контекст, кто участвовал, в чём сложность.</li>
+      <li><strong>Task (15 сек):</strong> конкретно твоя задача.</li>
+      <li><strong>Action (60-90 сек):</strong> что ты сделал, шаг за шагом. «Я», не «мы».</li>
+      <li><strong>Result (30 сек):</strong> метрики, feedback, что изменилось.</li>
+      <li><strong>Lesson (15 сек):</strong> что вынес, как применяешь сейчас.</li>
+    </ol>
+    <p>Итого: ~3 минуты. Интервьюер успеет задать follow-up.</p>
+
+    <h4>Follow-up вопросы — будь готов</h4>
+    <p>Интервьюер не примет историю на веру. Типичные follow-ups:</p>
+    <ul>
+      <li>«Что было самым сложным в этой ситуации?»</li>
+      <li>«Если бы можно было переиграть, что бы ты сделал по-другому?»</li>
+      <li>«Как ты измерял успех?»</li>
+      <li>«Кто ещё был вовлечён, и каковы были их интересы?»</li>
+      <li>«Как ты коммуницировал решение команде?»</li>
+      <li>«Какой feedback ты получил?»</li>
+    </ul>
+    <p>Подготовь ответы на эти follow-ups для каждой истории.</p>
+
+    <h3>Cross-company note: фокус behavioral</h3>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Фокус behavioral</th><th>Что ценят</th></tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-questions">Яндекс</a></td>
+        <td>Impact, data-driven decisions, ability work in ambiguity</td>
+        <td>Способность принимать решения в неопределённости, measurable results</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a></td>
+        <td>Ownership, deliver results, bias for action</td>
+        <td>Скорость, ответственность, результат-oriented</td>
+      </tr>
+      <tr>
+        <td><a href="part2-avito.html#avito-questions">Avito</a></td>
+        <td>Collaboration, stakeholder management, cross-functional work</td>
+        <td>Способность работать через границы команд, partnership</td>
+      </tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-questions">ВКонтакте</a></td>
+        <td>Consumer empathy, product intuition, iteration speed</td>
+        <td>Эмпатия к пользователю, скорость, learning mindset</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-questions">Ozon</a></td>
+        <td>Marketplace thinking, two-sided economics, scale</td>
+        <td>Понимание двухсторонней экономики, способность работать в scale</td>
+      </tr>
+      <tr>
+        <td><a href="part2-wildberries.html#wildberries-questions">Wildberries</a></td>
+        <td>Operational excellence, execution under pressure</td>
+        <td>Способность доставлять в условиях операционной нагрузки</td>
+      </tr>
+    </table>
+
+    <h3>Связи с Частью III</h3>
+    <div class="cross-refs">
+      <div class="ref-label">Soft skills формулы</div>
+      <a href="part3-reference.html#stakeholders">Stakeholders</a>
+      <a href="part3-reference.html#power-interest">Power-Interest Grid</a>
+      <a href="part3-reference.html#raci">RACI</a>
+      <a href="part3-reference.html#people">People Management</a>
+      <a href="part3-reference.html#pm-hiring">PM Hiring</a>
+      <a href="part3-reference.html#one-on-one">1-on-1s</a>
+      <a href="part3-reference.html#okr-framework">OKR</a>
+    </div>
+    <div class="cross-refs">
+      <div class="ref-label">Кейсы в компаниях</div>
+      <a href="part2-vk.html#vk-questions">ВКонтакте</a>
+      <a href="part2-yandex.html#yandex-questions">Яндекс</a>
+      <a href="part2-ozon.html#ozon-questions">Ozon</a>
+      <a href="part2-tinkoff.html#tinkoff-questions">Тинькофф</a>
+      <a href="part2-avito.html#avito-questions">Avito</a>
+      <a href="part2-wildberries.html#wildberries-questions">Wildberries</a>
+    </div>
+
+    <hr style="margin: 64px 0; border: none; border-top: 1px solid var(--vk-border);">
+
+    <h2 id="combining">Комбинирование frameworks на реальном собеседовании</h2>
+    <p>Реальные интервью редко проверяют один framework. Senior+ PM должен уметь комбинировать: product sense → analytical → system design → behavioral. Разберём, как это выглядит на практике.</p>
+
+    <p>На собеседованиях в российский tech часто один и тот же кейс развивается через несколько раундов. Интервьюер оценивает, насколько консистентно кандидат держит product thread: метрики, выбранные в analytical, должны быть теми же, что защищались в product sense; архитектура из system design должна поддерживать эти метрики; behavioral примеры должны проиллюстрировать, как кандидат решает похожие задачи в реальности.</p>
+
+    <p>Способность комбинировать frameworks — индикатор Senior+ уровня. Middle PM применяет фреймворки изолированно, Senior — видит, как они связаны.</p>
+
+    <p>В этой главе мы разобрали пять универсальных frameworks: <a href="#product-sense">Product Sense (CIRCLES)</a>, <a href="#analytical">Analytical methods</a> (metric trees, A/B, SQL), <a href="#estimation">Estimation</a> (top-down, bottom-up, Fermi), <a href="#system-design">System Design для PM</a> (trade-offs, scaling, ADR), <a href="#behavioral">Behavioral</a> (STAR, leadership principles). Каждый раздел содержит walked examples и cross-company заметки. Аналитический раздел (1.2) — центральная cross-company глава: одни и те же концепции (метрики, A/B, SQL) рассмотрены через призму разных компаний. Реальные вопросы с собеседований 2023-2026 — в Части II, формулы и SQL-паттерны — в Части III.</p>
+
+    <h3>Пример комбинированного кейса: «Улучши Ленту ВК»</h3>
+    <div class="case-walkthrough">
+      <h4>Раунд 1. Product Sense (45 мин)</h4>
+      <p>Применяем <a href="#product-sense">CIRCLES</a>:</p>
+      <ul>
+        <li>Comprehend → уточняем метрику (time spent per DAU young).</li>
+        <li>Identify → сегментируем (молодые, активные группы, региональные).</li>
+        <li>Report → JTBD и pain points каждого сегмента.</li>
+        <li>Cut → фокус на молодой аудитории.</li>
+        <li>List → 4 решения (swipe-карусели, geo-targeting, интеграция Клипов, creator-программа).</li>
+        <li>Evaluate → RICE, выбор A + Б.</li>
+        <li>Summarize → итог, метрики, риски.</li>
+      </ul>
+
+      <h4>Раунд 2. Analytical (45 мин)</h4>
+      <p>Интервьюер: «Окей, как ты докажешь, что swipe-карусели работают?»</p>
+      <ul>
+        <li>Формулируем <a href="part3-reference.html#hypotheses" class="formula-inline-ref">гипотезу</a>.</li>
+        <li>Выбираем primary метрику (time spent per DAU young) + guardrail (Clips DAU).</li>
+        <li>Считаем <a href="part3-reference.html#mde" class="formula-inline-ref">MDE</a> и <a href="part3-reference.html#sample-size" class="formula-inline-ref">sample size</a>.</li>
+        <li>Design: cluster randomization из-за <a href="#analytical-ab-testing">network effects</a>.</li>
+        <li>Интерпретация: primary + guardrail + segment analysis.</li>
+      </ul>
+
+      <h4>Раунд 3. System Design (45 мин)</h4>
+      <p>Интервьюер: «Как архитектурно реализуем swipe-карусели?»</p>
+      <ul>
+        <li>Requirements: functional + non-functional (latency, throughput).</li>
+        <li>Trade-offs: <a href="part3-reference.html#build-vs-buy" class="formula-inline-ref">build vs buy</a> (rendering engine).</li>
+        <li>Architecture: client-side rendering + server-side content API + ML ranking.</li>
+        <li>Cache strategy, observability.</li>
+        <li><a href="part3-reference.html#logging-design" class="formula-inline-ref">Logging design</a> для новых событий (swipe, dwell time per card).</li>
+      </ul>
+
+      <h4>Раунд 4. Behavioral (45 мин)</h4>
+      <p>Интервьюер: «Расскажи о случае, когда ты запускал фичу, которая повлияла на несколько продуктов».</p>
+      <ul>
+        <li>STAR-история о cross-product launch.</li>
+        <li>Trade-off: каннибализация vs синергия.</li>
+        <li>Stakeholder management: как договорился с PM Клипов.</li>
+        <li>Result: метрики обоих продуктов.</li>
+      </ul>
+    </div>
+
+    <h3>Типичные комбинации на интервью</h3>
+
+    <table class="metric-table">
+      <tr><th>Компания</th><th>Типичная комбинация раундов</th><th>Что связывает</th></tr>
+      <tr>
+        <td><a href="part2-vk.html#vk-format">ВКонтакте</a></td>
+        <td>Product Sense → Analytical → System Design</td>
+        <td>Consumer-кейс проходит через все раунды, проверяется целостность мышления</td>
+      </tr>
+      <tr>
+        <td><a href="part2-yandex.html#yandex-format">Яндекс</a></td>
+        <td>Analytical → Estimation → System Design → Behavioral</td>
+        <td>Часто один и тот же кейс (например, Search) развивается через все раунды</td>
+      </tr>
+      <tr>
+        <td><a href="part2-ozon.html#ozon-format">Ozon</a></td>
+        <td>Product Sense → Analytical (marketplace) → Behavioral</td>
+        <td>Marketplace-мышление проверяется через several раундов</td>
+      </tr>
+      <tr>
+        <td><a href="part2-tinkoff.html#tinkoff-format">Тинькофф</a></td>
+        <td>Analytical (regulated) → System Design (compliance) → Behavioral</td>
+        <td>Compliance и risk — связующая нить</td>
+      </tr>
+    </table>
+
+    <h3>Принципы комбинирования</h3>
+    <ol>
+      <li><strong>Не теряй product thread.</strong> Если начал кейс с сегмента и pain point, во всех раундах возвращайся к ним.</li>
+      <li><strong>Метрики связывают раунды.</strong> NSM из product sense → primary metric из analytical → observability из system design → result metrics из behavioral.</li>
+      <li><strong>Trade-offs cumulative.</strong> Решение из product sense создаёт trade-off для analytical (как измерять), для system design (как строить), для behavioral (как защищать).</li>
+      <li><strong>Не повторяй.</strong> Если в product sense уже обсудили сегментацию, в analytical не пересказывай — сразу к метрикам.</li>
+      <li><strong>Учитывай company-specific.</strong> В ВК — network effects, в Ozon — spill-over, в Тинькофф — compliance.</li>
+    </ol>
+
+    <h3>Чек-лист подготовки к комбинированному интервью</h3>
+    <ol class="checklist">
+      <li>Подготовь 2-3 «сквозных» кейса, которые можно развернуть через все раунды.</li>
+      <li>Для каждого кейса имей: product sense story, analytical breakdown, system design sketch, behavioral narrative.</li>
+      <li>Практикуй переходы между раундами: «Теперь давай посмотрим, как это измерять...»</li>
+      <li>Знай company-specific ловушки (network effects, spill-over, compliance).</li>
+      <li>Готовь questions для интервьюера в конце каждого раунда — показывает interest.</li>
+    </ol>
+
+    <h3>Универсальные ошибки на любом интервью</h3>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 1. Отсутствие структуры.</strong></p>
+      <p class="question-tips">Независимо от формата (product sense, analytical, system design) — интервьюер хочет видеть структуру. Не начинай сразу с ответа, сначала обозначь framework: «Я применю CIRCLES / MECE / ADR...». Это показывает методичность.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 2. Игнорирование интервьюера.</strong></p>
+      <p class="question-tips">Интервьюер даёт hints: уточняющие вопросы, контр-аргументы, изменения constraints. Если ты не реагируешь — теряешь баллы. Активно слушай, задавай clarifying questions, принимай feedback.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 3. Не озвучивать ход мысли.</strong></p>
+      <p class="question-tips">Молчание = интервьюер не видит, как ты думаешь. Озвучивай каждый шаг: «Сейчас я сегментирую...», «Дальше применю RICE...», «Sanity check: сравню с...». Это позволяет интервьюеру следить и подсказывать.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 4. Перескакивание между уровнями абстракции.</strong></p>
+      <p class="question-tips">«Нужно улучшить retention через ML-ranking на backend с new cache layer» — смешение product / analytical / technical в одном предложении. Держи уровни раздельно: сначала product (что и почему), потом analytical (как измерим), потом technical (как реализуем).</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 5. Не задавать вопросы в конце.</strong></p>
+      <p class="question-tips">«У меня нет вопросов» — красный flag. Подготовь 2-3 вопроса о команде, продукте, культуре. Это показывает интерес и research.</p>
+    </div>
+
+    <div class="question-card">
+      <p class="question-text"><strong>Универсальная ошибка 6. Заваливание на технических деталях.</strong></p>
+      <p class="question-tips">Если не знаешь техническую деталь — скажи прямо: «Не знаю деталей, но на уровне PM я бы пообщался с инженерами, чтобы понять trade-off». Не выдумывай. Честность ценится выше surface knowledge.</p>
+    </div>
+
+    <h3>Психологическая подготовка</h3>
+    <ul>
+      <li><strong>Интервьюер — на твоей стороне.</strong> Он хочет, чтобы ты прошёл. Его задача — увидеть твой best, не «поймать».</li>
+      <li><strong>Паузы — нормально.</strong> 5-10 секунд подумать перед ответом — это зрелость, не слабость.</li>
+      <li><strong>Не знаешь — признай.</strong> «Я не уверен, но предположу...» — лучше, чем уверенно неправильный ответ.</li>
+      <li><strong>Усталость — реальный фактор.</strong> Если несколько раундов подряд, между ними делай паузы: вода, глубокое дыхание.</li>
+      <li><strong>Одно плохо пройденное интервью — не приговор.</strong> Часто решение принимается по совокупности, не по одному раунду.</li>
+      <li><strong>Подготовь self-introduction.</strong> 60-секундный pitch: кто ты, какой опыт, что ищешь. Будет на каждом интервью.</li>
+      <li><strong>Имей вопросы наготове.</strong> На «есть ли вопросы?» — всегда да. Подготови 5-7 про команду, продукт, культуру, roadmap.</li>
+      <li><strong>Follow-up после интервью.</strong> Короткое thank-you email в течение 24 часов. Не обязательно, но выделяет.</li>
+    </ul>
+
+    <h3 id="summary">Что дальше</h3>
+    <p>Освоив universal frameworks из Части I, переходи к Части II — конкретные гайды по компаниям. Каждый гайд содержит:</p>
+    <ul>
+      <li>Профиль компании и культуру</li>
+      <li>Формат собеседования (раунды, длительности, что отсеивают)</li>
+      <li>Реальные вопросы с собеседований (2023-2026)</li>
+      <li>Walked-кейсы с разбором</li>
+      <li>Чек-лист подготовки</li>
+    </ul>
+    <p>Рекомендуемый порядок:</p>
+    <ol>
+      <li><a href="part2-vk.html">ВКонтакте</a> — самая проработанная глава, model для остальных.</li>
+      <li><a href="part2-yandex.html">Яндекс</a> — если целевая компания.</li>
+      <li><a href="part2-ozon.html">Ozon</a>, <a href="part2-tinkoff.html">Тинькофф</a>, <a href="part2-avito.html">Avito</a>, <a href="part2-wildberries.html">Wildberries</a> — по приоритету.</li>
+      <li><a href="part2-middle.html">Middle-tier</a> — если рассматриваете компании второго эшелона.</li>
+    </ol>
+    <p>Для формул и практикума — <a href="part3-reference.html">Часть III</a>. Для практических задач с разборами — <a href="part3-practice.html">Практикум</a>.</p>
+
+    <div class="formula-backref">
+      <div class="formula-backref-title">Итоговый чек-лист подготовки к интервью</div>
+      <ol class="checklist">
+        <li>Определи целевую компанию и формат (Часть II).</li>
+        <li>Освой universal frameworks (эта глава): CIRCLES, MECE, STAR, ADR.</li>
+        <li>Подготовь 5-7 behavioral историй в STAR-формате.</li>
+        <li>Потренируй SQL: cohort, rolling retention, funnel.</li>
+        <li>Разбери A/B methodology: MDE, sample size, ловушки.</li>
+        <li>Потренируй estimation: top-down, bottom-up, Fermi.</li>
+        <li>Подготовь 2-3 сквозных кейса для комбинированных интервью.</li>
+        <li>Изучи формулы в Части III — особенно NSM, LTV, retention, RICE.</li>
+        <li>Решай практические задачи из Практикума.</li>
+        <li>Практикуй вслух с другом или перед зеркалом.</li>
+      </ol>
+    </div>
+
   </main>
 </body>
 </html>
