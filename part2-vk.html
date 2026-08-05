@@ -51,7 +51,743 @@
 
   <main class="main">
     <h1>ВКонтакте: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-profile">§1. Профиль компании</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <p><strong>ВКонтакте</strong> — крупнейшая российская социальная сеть и ядро экосистемы VK (вместе с Mail.ru, VK Музыка, VK Видео, Одноклассники, VK Pay, Юла, Skillbox). DAU ~72M, MAU ~100M. Бизнес-модель: реклама (основной драйвер выручки) + подписки (VK Donut, VK Видео Premium) + комиссии маркетплейса + B2B-сервисы.</p>
+
+    <h3>Продуктовый портфель</h3>
+    <table class="metric-table">
+      <tr><th>Продукт</th><th>NSM</th><th>Монетизация</th><th>Специфика PM-роли</th></tr>
+      <tr><td>Лента (Feed)</td><td>Time spent per DAU</td><td>Реклама (feed ads, stories)</td><td>Рекомендательные системы, ML-ранжирование, A/B с network effects</td></tr>
+      <tr><td>Клипы</td><td>Clips watched per DAU</td><td>Реклама + creator monetization</td><td>Двухсторонний маркетплейс (авторы ↔ зрители), viral loops</td></tr>
+      <tr><td>Мессенджер</td><td>Messages sent per DAU</td><td>Indirect (retention-драйвер)</td><td>Network effects, real-time, cross-product связи</td></tr>
+      <tr><td>VK Видео</td><td>Watch time per DAU</td><td>Реклама + подписка</td><td>Длинный контент, CDN-экономика, pricing tiers</td></tr>
+      <tr><td>Группы / Сообщества</td><td>Active communities per DAU</td><td>Реклама + VK Donut</td><td>UGC-платформа, модерация, creator tools</td></tr>
+      <tr><td>Закладки</td><td>Return rate to saved</td><td>Indirect (сигнал для реком)</td><td>Discovery surface, retention-петля</td></tr>
+    </table>
+
+    <h3>Культура и принципы</h3>
+    <ul>
+      <li><strong>Data-driven:</strong> решения принимаются на A/B и когортах, не на интуиции. Ожидание: PM сам пишет SQL, сам считает MDE, сам интерпретирует статзначимость.</li>
+      <li><strong>A/B-культура:</strong> 100+ экспериментов одновременно. Понимание network effects, interference, cluster randomization — базовое требование.</li>
+      <li><strong>Рекомендательные системы:</strong> ядро Ленты, Клипов, Видео. PM работает с ML-инженерами, понимает candidate generation → ranking → re-ranking pipeline.</li>
+      <li><strong>Multi-product экосистема:</strong> PM одного продукта должен учитывать кросс-продуктовые связи (Лента → Мессенджер → Клипы → Видео). Каннибализация и синергия — повседневные темы.</li>
+      <li><strong>Скорость и итерации:</strong> недельные релизы, feature flags, ramp-up подход. MVP → замер → масштабирование.</li>
+    </ul>
+
+    <h3>Уровни и ожидания</h3>
+    <table class="metric-table">
+      <tr><th>Уровень</th><th>Обхват</th><th>Метрики</th><th>Стейкхолдеры</th></tr>
+      <tr><td><span class="badge badge-m">Middle PM</span></td><td>Фичи в одной команде</td><td>Фича-уровень (CTR, конверсия)</td><td>Команда (техлид, дизайнер)</td></tr>
+      <tr><td><span class="badge badge-s">Senior PM</span></td><td>Продуктовая область, 2-3 команды</td><td>Бизнес-уровень (DAU, retention, revenue)</td><td>Кросс-команды, аналитика, ML</td></tr>
+      <tr><td><span class="badge badge-s">Lead PM</span></td><td>Продукт целиком, 4+ команды</td><td>P&L продукта, стратегические метрики</td><td>VP, CPO, внешние партнёры</td></tr>
+      <tr><td><span class="badge badge-staff">Principal PM</span></td><td>Кросс-продуктовая стратегия</td><td>Экосистемные метрики</td><td>C-level, совет директоров</td></tr>
+    </table>
+
+    <p><strong>Ключевой отличитель Senior+:</strong> владение бизнес-результатами, не доставка фичей. Формулирует стратегию, разделяет сигналы от шума, работает в высокой неопределённости.</p>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-format">§2. Формат собеседования</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <p>Процесс состоит из 4-5 раундов. На каждом отсеивают по разным причинам — важно понимать, что именно проверяют.</p>
+
+    <table class="metric-table">
+      <tr><th>Раунд</th><th>Фокус</th><th>Длительность</th><th>Где отсеивают чаще всего</th></tr>
+      <tr><td>1. HR screen</td><td>Мотивация, релевантность, expectation по деньгам</td><td>30 мин</td><td>Несоответствие уровню, нереалистичные expectation</td></tr>
+      <tr><td>2. Product case</td><td>Продуктовое мышление, приоритизация, стратегия</td><td>45-60 мин</td><td>Отсутствие структуры, скачки в решении, игнор trade-offs</td></tr>
+      <tr><td>3. Analytical</td><td>Метрики, A/B, SQL, интерпретация данных</td><td>45-60 мин</td><td>Слабая статистика, неумение считать MDE, путаница в causation/correlation</td></tr>
+      <tr><td>4. System design</td><td>Архитектура фичи, recom-pipeline, data flows</td><td>45-60 мин</td><td>Непонимание scale, network effects, рекомендательных систем</td></tr>
+      <tr><td>5. Final (hiring manager)</td><td>Стратегическое видение, культурное соответствие</td><td>45 мин</td><td>Отсутствие стратегического мышления, неготовность к ambiguity</td></tr>
+    </table>
+
+    <h3>Специфика ВК</h3>
+    <ul>
+      <li><strong>Экосистемное мышление:</strong> кейсы часто требуют учёта влияния на 2-3 продукта (например, изменение в Ленте → влияние на Мессенджер и Клипы).</li>
+      <li><strong>Рекомендательные системы:</strong> на Senior+ ожидают понимание recom-pipeline: candidate generation → features → model → ranking → re-ranking. Не нужно уметь писать ML, но нужно уметь формулировать trade-offs.</li>
+      <li><strong>Network effects в A/B:</strong> если кейс про социальный продукт (Мессенджер, Группы) — ожидаем, что кандидат сам поднимет вопрос interference и предложит cluster randomization.</li>
+      <li><strong>Consumer интуиция:</strong> ВК — consumer-продукт. Ожидают эмпатии к пользователю, понимания JTBD, CustDev-мышления.</li>
+    </ul>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-questions">§3. Реальные вопросы с собеседований</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <h3>Product Sense</h3>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024-2025</span>
+      </div>
+      <p class="question-text">Лента ВК теряет time spent у молодой аудитории (16-24), которая уходит в TikTok/Клипы. Что делать?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> способность сегментировать проблему, отличить симптом от причины, предложить trade-off между коротким и длинным контентом.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не предлагай «скопировать TikTok». Начни с CustDev — почему уходят? Возможно, дело не в формате, а в релевантности. Учти каннибализацию: Clips уже есть, нужно интегрировать, не плодить дубликаты.</p>
+      <p class="question-source">Источник: <a href="docs/vk-feed-recoma-mechanics.md">docs/vk-feed-recoma-mechanics.md</a></p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024</span>
+      </div>
+      <p class="question-text">Какую одну фичу ты добавишь в Клипы ВК, чтобы увеличить creation rate с 3.2% до 5%?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> фокус (одна фича, не список), обоснование выбора, понимание funnel авторов.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> сначала покажи воронку авторов — где наибольший drop-off. Фича должна бить в конкретный шаг. Не предлагай «AI-эффекты» без данных — это догадка.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Мессенджер ВК теряет активных пользователей в пользу Telegram. Твоя стратегия?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> стратегическое мышление, понимание network effects, способность не конкурировать «фича-за-фичу».</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не пытайся «догнать Telegram фичами» — это проигрышная стратегия. Найди уникальную ценность ВК: экосистема (Лента + Группы + Видео), социальный граф, интеграция с сервисами.</p>
+      <p class="question-source">Источник: <a href="docs/messenger-superapp-architecture-decisions.md">docs/messenger-superapp-architecture-decisions.md</a></p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2024</span>
+      </div>
+      <p class="question-text">Закладки ВК — «кладбище сохранённого». Как превратить в точку контентного потребления?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> способность переосмыслить продукт, understanding user intent (почему сохраняют).</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> начни с CustDev — зачем сохраняют? Не все сохранения одинаковые (рецепт vs статья vs товар). Предложи Smart Collections + recom-петлю внутри закладок.</p>
+      <p class="question-source">Источник: <a href="docs/vk-bookmarks-product-strategy.md">docs/vk-bookmarks-product-strategy.md</a></p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Гео-таргетинг в Ленте: для кого это ценно, для кого вредно? Как решить, кому показывать локальный контент?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> сегментацию, понимание geo-dependency контента, способность работать с trade-offs.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не все контент одинаково geo-зависим. Раздели: geo-critical (доставка, афиша), geo-neutral (мемы), geo-inverted (travel). Для каждого типа — своя стратегия показа.</p>
+      <p class="question-source">Источник: <a href="docs/vk-feed-geo-architecture-decisions.md">docs/vk-feed-geo-architecture-decisions.md</a></p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency rare">Редкий</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">VK Видео конкурирует с Кинопоиском и YouTube. Какая стратегия дифференциации?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> конкурентный анализ, understanding moats, стратегическое позиционирование.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не пытайся быть «лучшим YouTube» — это проигрыш. Найди уникальный угол: UGC + профессиональный контент, интеграция с экосистемой ВК, социальные функции.</p>
+    </div>
+
+    <h3>Analytical</h3>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024-2025</span>
+      </div>
+      <p class="question-text">Time spent в Ленте выросло на 3% в A/B, но ad revenue не изменился. Почему? Что делать?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> понимание метрик, ability distinguish symptoms from causes, знание unit-экономики рекламы.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> проверь frequency capping — больше времени не значит пропорционально больше показов. Проверь качество инвентаря: если пользователи дольше скроллят, но менее вовлечены, CPM падает. Реальный множитель ad revenue от time spent = 0.6-0.8.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024</span>
+      </div>
+      <p class="question-text">A/B-тест новой ML-модели рекомендаций показал +2% time spent, p-value 0.04. Выводы?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> статистическую грамотность, понимание multiple testing, network effects.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> подними (1) multiple testing — если тестов много, p-value 0.04 может быть ложноположительным; (2) interference — контент пользователя A показывается B, спилит по user_id может быть некорректен; (3) MDE — был ли тест достаточно мощным, чтобы поймать 2%.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">D30 retention новых юзеров Ленты = 18%. Это хорошо или плохо? Какой baseline?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> знание benchmark'ов, способность контекстуализировать метрику.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> D30 для consumer social = 15-25% (нормально), для subscription = 40%+. Но важно сегментировать: органические vs платные, рекомендации vs подписки. Не отвечай без сегментации.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2024</span>
+      </div>
+      <p class="question-text">Напиши SQL: посчитай rolling retention D7 и D30 для когорт, пришедших через рекомендательную ленту.</p>
+      <p class="question-tests"><strong>Проверяют:</strong> SQL-навыки, понимание rolling vs classic retention.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> rolling retention = хотя бы одно действие после дня N, не «вернулся именно в день N». Используй MAX(DATE_DIFF) по пользователю. См. <a href="part3-reference.html#sql-rolling">SQL Rolling Retention</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Когортный анализ: пользователи рекомендательной ленты имеют выше D1, но ниже D30, чем подписочные. Объясни.</p>
+      <p class="question-tests"><strong>Проверяют:</strong> когортное мышление, понимание trade-off между активацией и retention.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> рекомендации быстро активируют (новизна), но не создают долгосрочной привязанности (нет «своих» авторов). Подписки медленнее активируются, но создают привычку. Стратегия: гибрид.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency rare">Редкий</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Как посчитать indirect value Мессенджера для всей экосистемы ВК?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> причинно-следственное мышление, понимание counterfactual analysis.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> correlation ≠ causation. Активные мессенджер-пользователи могут быть изначально более вовлечёнными. Нужен инструментальный подход или A/B с ограничением функционала (этически сложно).</p>
+    </div>
+
+    <h3>Estimation</h3>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024</span>
+      </div>
+      <p class="question-text">Оцени ежедневный ad revenue Ленты ВК.</p>
+      <p class="question-tests"><strong>Проверяют:</strong> structured estimation, знание unit-экономики рекламы.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> DAU ~72M, time spent ~32 мин, ~0.8 показа/мин, CPM ~$4.2. Не забудь frequency capping и realisation rate (~70%). См. <a href="part3-reference.html#impact-top-down">Top-Down Impact</a>.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Сколько активных авторов Клипов нужно, чтобы платформа была жизнеспособной?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> understanding marketplace dynamics, density metrics.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> соотнеси supply (авторы) и demand (зрители). Density ratio 1:1000 — дисбаланс. Считай: средний автор = 10 клипов/мес, средний зритель = 50 клипов/день. Найди равновесие.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency rare">Редкий</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Оцени LTV платящего подписчика VK Видео за 12 месяцев.</p>
+      <p class="question-tests"><strong>Проверяют:</strong> LTV-расчёт, understanding churn и gross margin.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> ARPU $5.29/мес, churn 5%/мес, gross margin 40%. SaaS-метод: LTV = ARPU × (1/churn) × margin. Не забудь дисконтирование. См. <a href="part3-reference.html#ltv-cohort">LTV (cohort)</a>.</p>
+    </div>
+
+    <h3>System Design</h3>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024-2025</span>
+      </div>
+      <p class="question-text">Спроектируй рекомендательную систему для Ленты ВК. Какие слои?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> понимание recom-pipeline, ability articulate trade-offs.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> 5 слоёв: candidate generation → features → model → ranking → re-ranking. Для ВК важно: cross-product embeddings (Лента + Клипы + Видео), multi-objective ranking (CTR + dwell + completion). Упомни MMoE/PLE.</p>
+      <p class="question-source">Источник: <a href="docs/recommendation-system-layers.md">docs/recommendation-system-layers.md</a></p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Как спроектировать A/B-тест для новой фичи Мессенджера, если есть network effects?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> understanding interference, cluster randomization.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> сплиттинг по user_id некорректен — сообщения пересекаются. Предложи cluster randomization по социальному графу (друзья → один кластер). Учти потерю effective sample size.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency rare">Редкий</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Спроектируй notification system для суперприложения ВК (cross-product orchestration).</p>
+      <p class="question-tests"><strong>Проверяют:</strong> архитектурное мышление, understanding prioritization и deduplication.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не каждый product pushes независимо. Нужен orchestrator: priority stacking (message > post > recommendation), deduplication, timing (food = immediate, recommendation = digest).</p>
+      <p class="question-source">Источник: <a href="docs/messenger-superapp-architecture-decisions.md">docs/messenger-superapp-architecture-decisions.md</a></p>
+    </div>
+
+    <h3>Behavioral</h3>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Частый</span>
+        <span class="source-year">2024-2025</span>
+      </div>
+      <p class="question-text">Расскажи про кейс, где данные противоречили твоей интуиции. Что делал?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> data-driven культуру, способность признавать ошибки.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> важен не сам факт противоречия, а как ты действовал. Покажи: (1) проверил качество данных; (2) искал альтернативные объяснения; (3) принял решение на данных, не на эго.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency">Средний</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Как ты урегулируешь конфликт с ML-командой, которая не хочет деплоить твою фичу?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> stakeholder management, способность работать через влияние.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не «я заставил», а «я понял их опасения». Покажи: (1) выслушал; (2) нашёл общую метрику; (3) предложил компромисс (feature flag, ramp-up); (4) зафиксировал критерии успеха.</p>
+    </div>
+
+    <div class="question-card">
+      <div class="question-meta">
+        <span class="badge badge-frequency rare">Редкий</span>
+        <span class="source-year">2025</span>
+      </div>
+      <p class="question-text">Расскажи про продукт, который ты запустил и который провалился. Что узнал?</p>
+      <p class="question-tests"><strong>Проверяют:</strong> способность к рефлексии, learning from failure.</p>
+      <p class="question-tips"><strong>На что обратить внимание:</strong> не «я всё сделал правильно, просто рынок не принял». Покажи конкретные ошибки: пропустил CustDev, не учёл network effect, переоценил MDE. Что бы сделал иначе.</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-cases">§4. Разборы кейсов</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <p>Четыре продукта ВК, четыре кейса. Каждый разбираем по структуре: NSM → метрики → A/B → экономика → стратегия. В разборах — inline-ссылки на формулы Части III.</p>
+
+    <!-- ─── Кейс 1: Лента ─── -->
+    <div class="case-walkthrough" id="vk-case-feed">
+      <h3>4.1 Лента ВКонтакте</h3>
+      <p><strong>Формулировка:</strong> «Лента — ядро ВК. Time spent стагнирует. Твоя задача — предложить стратегию роста на Q3.»</p>
+      <p><strong>Структура ответа:</strong> NSM → proxy → guard → сегментация проблемы → гипотезы → приоритизация → эксперименты → экономика.</p>
+
+      <div class="answer-example">
+        <h4>NSM и метрики</h4>
+        <p>NSM Ленты — <a href="part3-reference.html#nsm" class="formula-inline-ref">Time spent per DAU</a>. Это отражает и ценность для пользователя (потребление контента), и монетизацию (больше времени → больше показов).</p>
+
+        <table class="metric-table">
+          <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+          <tr><td>NSM</td><td>Time spent per DAU</td><td>Отражает ценность: чем дольше — тем больше контента потреблено и рекламы показано</td></tr>
+          <tr><td>Proxy</td><td>CTR, scroll depth, refresh rate</td><td>Опережающие индикаторы time spent</td></tr>
+          <tr><td>Guard</td><td>Unlike/hide rate, exit rate</td><td>Если растут — рекомендации навязчивы, риск оттока</td></tr>
+        </table>
+
+        <h4>Когортный анализ</h4>
+        <p>Пользователи рекомендательной ленты (Discover) показывают выше D1 retention (42% vs 35%), но ниже D30 (8% vs 14%). Подписочные — лучше монетизируются: ARPU × 1.7.</p>
+        <p>Для D30 использую <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">rolling retention</a> с 30-дневным окном — для рекомендательной Ленты короткое окно скрывает отложенное возвращение пользователей. Classic retention по конкретному дню D30 даёт искажённую картину: пользователь мог вернуться на D28 и D32, но не на D30.</p>
+        <p><strong>Trade-off:</strong> рекомендации быстро активируют, но не создают долгосрочной привязанности. Стратегия — гибрид: рекомендации для активации, быстрый перевод к подпискам.</p>
+
+        <h4>A/B-тест: новая ML-модель рекомендаций</h4>
+        <p>Контекст: новая ML-модель должна увеличить time spent на 3%+. Базовый time spent = 32 мин/DAU, σ ≈ 45 мин.</p>
+
+        <p><strong>Проблема network effects:</strong> контент пользователя A показывается пользователю B. Если A в тесте и создаёт больше контента → B видит больше (даже если B в контроле). Это spillover-эффект.</p>
+
+        <p><strong>Решение:</strong> cluster randomization. Группируем юзеров в кластеры по социальному графу (друзья → один кластер), сплиттинг по кластерам. Потеря: меньше effective sample size.</p>
+
+        <p><strong>MDE-расчёт:</strong> хочу поймать +3% (≈ +0.96 мин). Применяю <a href="part3-reference.html#mde" class="formula-inline-ref">MDE</a> и <a href="part3-reference.html#sample-size" class="formula-inline-ref">Sample Size</a> формулы:</p>
+        <div class="formula-expr">n = (1.96 + 0.84)² × 2 × 45² / 0.96² ≈ 34 400 юзеров на группу</div>
+        <p>С учётом cluster design (inflation factor ≈ 1.5): <strong>n ≈ 51 600 на группу</strong>.</p>
+
+        <p><strong>Multiple testing:</strong> если параллельно тестируем 5 гипотез, применяю <a href="part3-reference.html#multiple-testing" class="formula-inline-ref">поправку Бонферрони</a> — иначе false positive rate вырастает до 23%. Это критично: запуск плохой модели стоит дорого (ad revenue loss + репутация ML-команды).</p>
+
+        <h4>Экономика: +5% time spent → Ad Revenue</h4>
+        <p>Применяю <a href="part3-reference.html#financial-model" class="formula-inline-ref">Financial Model</a> для top-down оценки:</p>
+        <div class="formula-expr">ΔAd Revenue = DAU × ΔTime_Spent × Ad_Impressions_per_Minute × CPM / 1000</div>
+        <ul>
+          <li>DAU = 72M</li>
+          <li>ΔTime_Spent = +5% × 32 мин = +1.6 мин</li>
+          <li>Ad_Impressions_per_Minute = 0.8</li>
+          <li>CPM = $4.2</li>
+        </ul>
+        <div class="formula-expr">ΔAd Revenue/day = 72M × 1.6 × 0.8 × 4.2 / 1000 = $387 072</div>
+        <p><strong>ΔAd Revenue/year ≈ $141M</strong></p>
+        <p><strong>Trade-off:</strong> больше time spent ≠ пропорционально больше ad revenue. При росте времени показы «размазываются» (frequency capping), CPM падает. Реальный множитель — 0.6-0.8 от расчётного. Это важно учитывать в <a href="part3-reference.html#impact-top-down" class="formula-inline-ref">Top-Down Impact</a> оценке.</p>
+
+        <h4>SQL: Rolling Retention для когорт Ленты</h4>
+        <p>Для анализа использую <a href="part3-reference.html#sql-rolling" class="formula-inline-ref">SQL: Rolling Retention</a> — считаю долю пользователей, у которых последнее действие было не раньше дня N:</p>
+<pre><code><span class="kw">WITH</span> cohort <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> user_id, <span class="fn">MIN</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, timestamp)) <span class="kw">AS</span> cohort_date
+  <span class="kw">FROM</span> feed_events <span class="kw">WHERE</span> event_name = <span class="str">'feed_first_open'</span>
+  <span class="kw">GROUP BY</span> user_id
+),
+rolling <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> c.user_id, c.cohort_date,
+    <span class="fn">DATE_DIFF</span>(<span class="str">'day'</span>, c.cohort_date,
+      <span class="fn">MAX</span>(<span class="fn">DATE_TRUNC</span>(<span class="str">'day'</span>, e.timestamp))) <span class="kw">AS</span> last_day_n
+  <span class="kw">FROM</span> cohort c <span class="kw">JOIN</span> feed_events e <span class="kw">ON</span> c.user_id = e.user_id
+  <span class="kw">GROUP BY</span> c.user_id, c.cohort_date
+)
+<span class="kw">SELECT</span> cohort_date,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> <span class="kw">CASE WHEN</span> last_day_n >= <span class="num">30</span> <span class="kw">THEN</span> user_id <span class="kw">END</span>)::<span class="kw">FLOAT</span> /
+    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> user_id) <span class="kw">AS</span> rolling_d30
+<span class="kw">FROM</span> rolling <span class="kw">GROUP BY</span> cohort_date;</code></pre>
+
+        <h4>OKR и цепочка целей</h4>
+        <p>Применяю <a href="part3-reference.html#okr-framework" class="formula-inline-ref">OKR Framework</a> для структурирования целей Q3:</p>
+        <p><strong>Objective:</strong> «Сделать Ленту персональным центром интересов каждого пользователя»</p>
+        <table class="metric-table">
+          <tr><th>Key Result</th><th>Текущее</th><th>Цель</th><th>Driver</th></tr>
+          <tr><td>KR1: CTR рекомендаций</td><td>8%</td><td>12%</td><td>Качество рекомендаций</td></tr>
+          <tr><td>KR2: D30 retention новых юзеров</td><td>18%</td><td>22%</td><td>Long-term engagement</td></tr>
+          <tr><td>KR3: Unlike/hide rate</td><td>4.2%</td><td>3.0%</td><td>Релевантность</td></tr>
+        </table>
+      </div>
+
+      <p><strong>Что часто упускают:</strong></p>
+      <ul>
+        <li>Network effects в A/B — сплиттинг по user_id даёт искажённый результат для социальных продуктов</li>
+        <li>Frequency capping — больше time spent ≠ пропорционально больше ad revenue</li>
+        <li>Каннибализация — рост Ленты может съесть time spent Клипов/Видео</li>
+        <li>Rolling vs classic retention — для рекомендательной Ленты classic D30 скрывает отложенные возвраты</li>
+      </ul>
+
+      <p><strong>Красные флаги:</strong></p>
+      <ul>
+        <li>«Просто добавим больше ML» — без понимания, какой слой pipeline улучшать</li>
+        <li>«Time spent вырастет → revenue вырастет» — без учёта frequency capping</li>
+        <li>Игнорирование guard-метрик (unlike/hide rate)</li>
+      </ul>
+    </div>
+
+    <!-- ─── Кейс 2: Клипы ─── -->
+    <div class="case-walkthrough" id="vk-case-clips">
+      <h3>4.2 Клипы ВКонтакте</h3>
+      <p><strong>Формулировка:</strong> «Creation rate Клипов = 3.2%. Цель — 5%. Бюджет — 2 квартала. Что делать?»</p>
+      <p><strong>Структура ответа:</strong> NSM → воронка → сегментация авторов → гипотезы → приоритизация (WSJF) → эксперименты → unit-экономика.</p>
+
+      <div class="answer-example">
+        <h4>NSM и воронка</h4>
+        <p>NSM Клипов — <a href="part3-reference.html#nsm" class="formula-inline-ref">Clips watched per DAU</a>. Но для кейса про creation rate нужен фокус на supply-стороне.</p>
+
+        <p>Применяю <a href="part3-reference.html#funnel-metrics" class="formula-inline-ref">Funnel Metrics</a> для воронки авторов:</p>
+        <table class="metric-table">
+          <tr><th>Шаг</th><th>Событие</th><th>Конверсия</th><th>Drop-off</th></tr>
+          <tr><td>1. Открыть вкладку</td><td><code>clips_tab_open</code></td><td>100%</td><td>—</td></tr>
+          <tr><td>2. Посмотреть первый</td><td><code>clip_watch</code></td><td>85%</td><td>15%</td></tr>
+          <tr><td>3. Посмотреть 3+</td><td><code>clip_watch</code> × 3</td><td>52%</td><td>33% — наибольший drop-off</td></tr>
+          <tr><td>4. Создать клип</td><td><code>clip_create</code></td><td>3.2%</td><td>48.8%</td></tr>
+        </table>
+
+        <p><strong>Insight:</strong> наибольший drop-off — между шагами 2→3 (33%). Если удержать зрителя на 3-м клипе, вероятность продолжить сессию = 78%. Это зона оптимизации для engagement, но не напрямую для creation.</p>
+
+        <h4>Discovery: CJM нового автора</h4>
+        <p>Для понимания барьеров создания применяю <a href="part3-reference.html#cjm" class="formula-inline-ref">Customer Journey Map</a> нового автора:</p>
+        <table class="metric-table">
+          <tr><th>Этап</th><th>Эмоция</th><th>Pain Point</th><th>Opportunity</th></tr>
+          <tr><td>1. Решил снять</td><td>+ Возбуждение</td><td>Не знает, что снимать</td><td>Тренды / шаблоны</td></tr>
+          <tr><td>2. Снял клип</td><td>+ Творчество</td><td>Сложный редактор</td><td>Простой редактор, AI-эффекты</td></tr>
+          <tr><td>3. Опубликовал</td><td>0 Ожидание</td><td>—</td><td>—</td></tr>
+          <tr><td>4. Ждёт реакцию</td><td>− Тревога</td><td>0 просмотров в первый час</td><td>Guaranteed initial distribution</td></tr>
+          <tr><td>5. Разочарование</td><td>−− Фрустрация</td><td>Нет фидбека</td><td>Советы «как улучшить»</td></tr>
+        </table>
+
+        <p><strong>Проблема:</strong> 40% авторов не публикуют второй клип в течение 30 дней. Главная боль — «0 просмотров в первый час» → разочарование → отток авторов.</p>
+
+        <h4>A/B-тест: кнопка «Написать автору»</h4>
+        <p>Проблема interference: если сплиттить по зрителям, автор получает сообщения от обеих групп. Применяю двухуровневый эксперимент (creator-level + viewer-level within creator), чтобы разделить прямой и косвенный эффект. См. <a href="part3-reference.html#experiment-checklist" class="formula-inline-ref">Experiment Checklist</a>.</p>
+
+        <h4>LTV автора и unit-экономика</h4>
+        <p>Для обоснования инвестиций в авторов считаю <a href="part3-reference.html#ltv-cohort" class="formula-inline-ref">LTV (cohort)</a> автора:</p>
+        <div class="formula-expr">Creator LTV = ARPU_from_views × Average_Creator_Lifetime</div>
+        <div class="formula-expr">Creator LTV = $600 × 8 = $4 800</div>
+
+        <p>Для программы стимуляции авторов (гарантированный минимум $200/мес) применяю <a href="part3-reference.html#unit-economics" class="formula-inline-ref">Unit Economics</a>:</p>
+        <table class="metric-table">
+          <tr><th>Параметр</th><th>Значение</th></tr>
+          <tr><td>Стоимость гарантии</td><td>$200/мес</td></tr>
+          <tr><td>Ожидаемый рост creation rate</td><td>+20%</td></tr>
+          <tr><td>Доп. просмотры/автор/мес</td><td>40 000</td></tr>
+          <tr><td>Revenue от доп. просмотров</td><td>$120/мес</td></tr>
+          <tr><td>Contribution margin</td><td>-$80/мес</td></tr>
+        </table>
+        <p><strong>Вывод:</strong> гарантии убыточны в isolation. Но если учесть indirect impact (+20% supply → +5% viewer retention), полная картина может быть положительной. Нужно моделировать.</p>
+
+        <h4>WSJF-приоритизация</h4>
+        <p>Применяю <a href="part3-reference.html#wsjf" class="formula-inline-ref">WSJF</a> для приоритизации эпиков:</p>
+        <table class="metric-table">
+          <tr><th>Эпик</th><th>Value</th><th>Time Crit.</th><th>Risk Red.</th><th>CoD</th><th>Duration</th><th>WSJF</th></tr>
+          <tr><td>Шаблоны и тренды</td><td>8</td><td>6</td><td>3</td><td>17</td><td>3</td><td><strong>5.7</strong></td></tr>
+          <tr><td>Аналитика для авторов</td><td>7</td><td>4</td><td>5</td><td>16</td><td>4</td><td><strong>4.0</strong></td></tr>
+          <tr><td>Guaranteed initial views</td><td>9</td><td>7</td><td>2</td><td>18</td><td>6</td><td><strong>3.0</strong></td></tr>
+          <tr><td>AI-субтитры</td><td>5</td><td>2</td><td>1</td><td>8</td><td>5</td><td><strong>1.6</strong></td></tr>
+        </table>
+        <p><strong>Роадмап:</strong> Now → шаблоны + аналитика. Next → guaranteed views. Later → AI-субтитры.</p>
+
+        <h4>PMF для авторов</h4>
+        <p>Применяю <a href="part3-reference.html#sean-ellis" class="formula-inline-ref">Sean Ellis Test</a>: опрос 200 активных авторов. Результат: «Very disappointed» = 32% — ниже порога 40%, PMF не достигнут.</p>
+        <p>Сегментация: авторы 10+ клипов/мес = 52% (PMF есть), 3-9 = 28%, 1-2 = 12%. Стратегия: приблизить 3-9 группу к паттерну 10+ (монетизация + аналитика + аудитория &gt;5K).</p>
+        <p>Дополнительно проверяю <a href="part3-reference.html#pmf-retention" class="formula-inline-ref">PMF через Retention</a>: D30 авторов = 28%, кривая выравнивается на 18-20% к D60 — частичный PMF, плато на низком уровне.</p>
+
+        <h4>Growth Loops</h4>
+        <p>Применяю <a href="part3-reference.html#growth" class="formula-inline-ref">Growth</a> фреймворк. K-factor:</p>
+        <ul>
+          <li>Средний зритель шерит 0.3 клипа/день</li>
+          <li>Конверсия из шера в нового юзера = 8%</li>
+          <li>K = 0.3 × 0.08 = 0.024 — виральный эффект слабый</li>
+        </ul>
+        <p>Но есть content loop: авторы создают → зрители смотрят → 3.2% становятся авторами → новый контент. Cycle time ~7 дней. Усиление: «Снять ответный клип» → cycle time с 7 до 2 дней → ускорение loop в 3.5×.</p>
+      </div>
+
+      <p><strong>Что часто упускают:</strong></p>
+      <ul>
+        <li>Creation rate — не единая метрика, а воронка. Нужно бить в конкретный шаг</li>
+        <li>Guaranteed initial views — убыточны в isolation, но могут быть оправданы через indirect impact</li>
+        <li>Content loop важнее viral loop для UGC-платформ</li>
+        <li>PMF нужно измерять по сегментам, не в среднем</li>
+      </ul>
+
+      <p><strong>Красные флаги:</strong></p>
+      <ul>
+        <li>«Добавим AI-эффекты» — без данных о том, какой pain point это решает</li>
+        <li>Игнорирование indirect impact в unit-экономике</li>
+        <li>Сравнение K-factor Клипов с TikTok без учёта content loop</li>
+      </ul>
+    </div>
+
+    <!-- ─── Кейс 3: Мессенджер ─── -->
+    <div class="case-walkthrough" id="vk-case-messenger">
+      <h3>4.3 Мессенджер ВКонтакте</h3>
+      <p><strong>Формулировка:</strong> «Мессенджер ВК теряет активность. Telegram доминирует. Твоя стратегия на 6 месяцев?»</p>
+      <p><strong>Структура ответа:</strong> NSM → сегментация проблемы → барьеры → стратегические опции → рекомендация → метрики успеха.</p>
+
+      <div class="answer-example">
+        <h4>NSM и метрики</h4>
+        <p>NSM Мессенджера — <a href="part3-reference.html#nsm" class="formula-inline-ref">Messages sent per DAU</a>. Но метрика обманчива: быстрые ответы могут увеличить count, но снизить качество коммуникации.</p>
+
+        <table class="metric-table">
+          <tr><th>Тип</th><th>Метрика</th><th>Почему</th></tr>
+          <tr><td>NSM</td><td>Messages sent per DAU</td><td>Core value: коммуникация</td></tr>
+          <tr><td>Proxy</td><td>Response rate, group chat activity</td><td>Двусторонняя коммуникация, сетевой эффект</td></tr>
+          <tr><td>Guard</td><td>Avg message length, spam report rate</td><td>Если сообщения короче → деградация качества</td></tr>
+        </table>
+
+        <h4>Проблема: network effects Telegram</h4>
+        <p>Telegram = 75-85% охват русскоязычных. Переключение мессенджера = стоимость переключения (все контакты, каналы, привычки). Это структурный барьер — Мессенджер ВК не может победить фичами.</p>
+
+        <h4>Стратегические опции</h4>
+        <p><strong>Опция А:</strong> Догоняющее совпадение фичей (дорого, вряд ли выиграть — Telegram инновирует быстрее)</p>
+        <p><strong>Опция Б:</strong> Отличающаяся ценность через экосистему (leveraging Лента + Группы + Видео + VK Pay)</p>
+        <p><strong>Опция В:</strong> Нишевый таргетинг (госслужащие, банковские пользователи, старшие демографии)</p>
+
+        <p><strong>Рекомендация:</strong> Опция Б — не быть «лучшим Telegram», быть другой продуктовой категорией. Мессенджер как часть суперприложения ВК, не standalone-продукт.</p>
+
+        <h4>A/B-тест: редизайн панели ввода</h4>
+        <p>Контекст: новая панель с быстрыми ответами и AI-ассистентом.</p>
+        <p><strong>Риск каннибализации:</strong> быстрые ответы могут сократить количество сообщений (юзер выбирает готовый ответ вместо 2-3 своих). Но response_rate может вырасти.</p>
+        <p><strong>Guard-метрика:</strong> avg message length. Если сообщения стали короче на 40%+ — коммуникация деградирует, даже если count вырос.</p>
+        <p>Применяю <a href="part3-reference.html#engagement" class="formula-inline-ref">Engagement</a> метрики комплексно: не только messages sent, но и response rate, avg length, group chat activity.</p>
+
+        <h4>Indirect value Мессенджера</h4>
+        <p>Мессенджер не генерирует ad revenue напрямую, но — ключевой драйвер retention платформы. Пользователь, активно переписывающийся, возвращается чаще и проводит больше времени в Ленте и Клипах.</p>
+
+        <p>Применяю <a href="part3-reference.html#impact-bottom-up" class="formula-inline-ref">Bottom-Up Impact Estimation</a> через counterfactual analysis:</p>
+        <ul>
+          <li>Группа A: messages_sent > 10/день</li>
+          <li>Группа B: messages_sent ≤ 10/день (matched по demographics)</li>
+          <li>Разница в DAU Ленты между A и B = +18%</li>
+          <li>Attributed ad revenue = ΔDAU × time_spent × impressions/min × CPM</li>
+        </ul>
+        <div class="formula-expr">Indirect Messenger Value = (DAU_A × time_A - DAU_B × time_B) × impr/min × CPM / 1000</div>
+
+        <p><strong>Trade-off:</strong> correlation ≠ causation. Активные мессенджер-пользователи могут быть изначально более вовлечёнными. Для строгой оценки нужен инструментальный подход или эксперимент с ограничением функционала (этически сложно).</p>
+
+        <h4>Network Effects и growth</h4>
+        <p>K-factor Мессенджера:</p>
+        <ul>
+          <li>Средний юзер приглашает 1.2 новых юзера за 30 дней</li>
+          <li>Конверсия приглашения → регистрация = 25%</li>
+          <li>K = 1.2 × 0.25 = 0.3 — умеренный органический рост</li>
+        </ul>
+        <p><strong>Метрика network health:</strong> среднее количество контактов с 2+ сообщениями/неделю. Если &lt;3 → риск оттока (нечего терять). Цель: ≥5 для новых юзеров к D14.</p>
+
+        <p>Усиление network loop:</p>
+        <ul>
+          <li>«Ваши друзья в ВК» — автоматическая адресная книга</li>
+          <li>Групповые чаты — каждый новый участник тянет остальных</li>
+          <li>Стикеры и реакции — social currency</li>
+        </ul>
+      </div>
+
+      <p><strong>Что часто упускают:</strong></p>
+      <ul>
+        <li>Не конкурируй с Telegram фича-за-фичу — это проигрышная стратегия</li>
+        <li>Indirect value Мессенджера важнее direct — это retention-драйвер экосистемы</li>
+        <li>Network health метрика (контакты с 2+ сообщениями) — опережающий индикатор оттока</li>
+        <li>Correlation ≠ causation в оценке indirect impact</li>
+      </ul>
+
+      <p><strong>Красные флаги:</strong></p>
+      <ul>
+        <li>«Добавим E2EE как у Telegram» — закон Яровой делает это невозможным</li>
+        <li>«Скопируем каналы Telegram» — без учёта сетевых эффектов</li>
+        <li>Оценка Мессенджера только по direct revenue, без indirect impact</li>
+      </ul>
+    </div>
+
+    <!-- ─── Кейс 4: VK Видео ─── -->
+    <div class="case-walkthrough" id="vk-case-video">
+      <h3>4.4 VK Видео</h3>
+      <p><strong>Формулировка:</strong> «VK Видео: freemium-модель, платная подписка $4.99/мес. Как увеличить revenue на 20% за год?»</p>
+      <p><strong>Структура ответа:</strong> NSM → когорты (платящие vs бесплатные) → LTV → pricing → эксперименты → стратегия.</p>
+
+      <div class="answer-example">
+        <h4>NSM и метрики</h4>
+        <p>NSM VK Видео — <a href="part3-reference.html#nsm" class="formula-inline-ref">Watch time per DAU</a>. Длинный контент — time spent = value + monetization. Лучший proxy для ad revenue среди всех продуктов ВК.</p>
+
+        <h4>Когортный анализ: платящие vs бесплатные</h4>
+        <p>Применяю <a href="part3-reference.html#retention-bracket" class="formula-inline-ref">Bracket Retention</a> для сравнения когорт:</p>
+        <table class="metric-table">
+          <tr><th>Метрика</th><th>Платящие</th><th>Бесплатные</th></tr>
+          <tr><td>D7 Retention</td><td>68%</td><td>41%</td></tr>
+          <tr><td>D30 Retention</td><td>45%</td><td>18%</td></tr>
+          <tr><td>ARPU/мес</td><td>$5.29 (подписка + ads)</td><td>$0.80 (ads only)</td></tr>
+          <tr><td>Watch time/DAU</td><td>52 мин</td><td>18 мин</td></tr>
+          <tr><td>Churn rate/мес</td><td>5%</td><td>—</td></tr>
+          <tr><td>Gross Margin</td><td>40%</td><td>55%</td></tr>
+        </table>
+
+        <h4>LTV платящего — SaaS-метод</h4>
+        <p>Применяю <a href="part3-reference.html#ltv-predictive" class="formula-inline-ref">LTV (predictive)</a> по SaaS-формуле:</p>
+        <div class="formula-expr">LTV_SaaS = ARPU × (1 / Churn_Rate) × Gross_Margin</div>
+        <div class="formula-expr">LTV_SaaS = $5.29 × (1 / 0.05) × 0.40 = $5.29 × 20 × 0.40 = $42.3</div>
+        <p>С дисконтированием (d = 0.8%/мес, Retention = 0.95):</p>
+        <div class="formula-expr">LTV_SaaS_disc = $5.29 × 0.40 / (1 + 0.008 - 0.95) = $36.5</div>
+
+        <h4>LTV бесплатного — через retention-кривую</h4>
+        <p>Для ad-supported модели churn не имеет смысла (нет подписки). Применяю <a href="part3-reference.html#ltv-simple" class="formula-inline-ref">LTV (simple)</a> через интеграл retention-кривой:</p>
+        <div class="formula-expr">LTV_retention = ARPU_per_day × Σ(Retention_Dt)</div>
+        <p>ARPU_per_day = $0.80 / 30 = $0.027. Сумма retention за 180 дней ≈ 38.2 «эквивалентных дня».</p>
+        <div class="formula-expr">LTV_retention_180d = $0.027 × 38.2 ≈ $1.03</div>
+        <p>С экстраполяцией хвоста за D180: +8.4 доп. дней → LTV ≈ $1.26</p>
+
+        <p><strong>Insight:</strong> LTV платящего ($36.5) в 29× выше бесплатного ($1.26). Стратегия: инвестиции в conversion free → paid дают больший ROI, чем инвестиции в удержание бесплатных. Каждый 1% конверсии = 1% × free_users × ($36.5 - $1.26) incremental LTV.</p>
+
+        <h4>Pricing: ценовая эластичность</h4>
+        <p>Применяю <a href="part3-reference.html#pricing-models" class="formula-inline-ref">Pricing Models</a> и <a href="part3-reference.html#pricing-strategies" class="formula-inline-ref">Pricing Strategies</a>:</p>
+        <p>При повышении цены с $4.99 до $5.99 (+20%) отток составил 8% → |elasticity| = 8/20 = 0.4 (неэластичный спрос). Вывод: можно поднимать цену — выручка вырастет.</p>
+
+        <p><strong>Pricing experiment:</strong> нельзя A/B-тестить цену (юзеры увидят разные цены). Альтернатива: тест на новом сегменте или Van Westendorp. Результат: оптимальная цена для массового сегмента = $4.99, для premium = $7.99.</p>
+
+        <p><strong>Tiered pricing:</strong></p>
+        <table class="metric-table">
+          <tr><th>Tier</th><th>Цена</th><th>Контент</th><th>Target</th></tr>
+          <tr><td>Free</td><td>$0 (ads)</td><td>Базовый каталог</td><td>Массовая аудитория</td></tr>
+          <tr><td>Standard</td><td>$4.99</td><td>Полный каталог + HD</td><td>Регулярные зрители</td></tr>
+          <tr><td>Premium</td><td>$7.99</td><td>Всё + 4K + offline + family</td><td>Семьи, киноманы</td></tr>
+        </table>
+
+        <h4>A/B-тест: Autoplay со звуком</h4>
+        <p>Контекст: автовоспроизведение в Ленте со звуком. Цель — увеличить watch time в Видео.</p>
+        <p><strong>Guard-метрики (cross-product):</strong></p>
+        <ul>
+          <li>Feed exit rate — если звук раздражает, уходят из Ленты</li>
+          <li>Clips watch time — может вырасти (привычка к звуку) или упасть (каннибализация)</li>
+        </ul>
+        <p><strong>Дизайн:</strong> сплиттинг по user_id (50/50), 2 недели, ramp-up 5% → 20% → 50%.</p>
+
+        <h4>Стратегия роста revenue на 20%</h4>
+        <p>Декомпозиция по <a href="part3-reference.html#impact-top-down" class="formula-inline-ref">Top-Down Impact</a>:</p>
+        <ul>
+          <li><strong>Цена:</strong> +10% цены при |elasticity| 0.4 → +6% revenue (после оттока)</li>
+          <li><strong>Conversion free → paid:</strong> +2% conversion rate → ~58% revenue growth (из-за 29× LTV разницы)</li>
+          <li><strong>Watch time (free):</strong> +10% watch time → ~7% ad revenue growth (с учётом frequency capping)</li>
+          <li><strong>Churn reduction (paid):</strong> -1% churn → +25% LTV → ~5% revenue growth</li>
+        </ul>
+        <p><strong>Итого:</strong> комбинация lever'ов даёт ~20% growth. Наибольший рычаг — conversion free → paid.</p>
+      </div>
+
+      <p><strong>Что часто упускают:</strong></p>
+      <ul>
+        <li>LTV платящего vs бесплатного — разница в 29×, фокус должен быть на conversion</li>
+        <li>Цену нельзя A/B-тестить напрямую — нужны альтернативные методы</li>
+        <li>Churn reduction даёт нелинейный рост LTV (1/churn в формуле)</li>
+        <li>Cross-product каннибализация (Звук в Ленте → влияние на Клипы)</li>
+      </ul>
+
+      <p><strong>Красные флаги:</strong></p>
+      <ul>
+        <li>«Просто поднимем цену» — без оценки эластичности</li>
+        <li>Игнорирование gross margin (CDN + лицензии = 60% COGS для платящего)</li>
+        <li>Сравнение LTV платящего и бесплатного без учёта дисконтирования</li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-distinct">§5. Что отличает ВКонтакте</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <h3>Специфика expectations</h3>
+    <ul>
+      <li><strong>Рекомендательные системы — core competency:</strong> PM любого контентного продукта (Лента, Клипы, Видео) должен понимать recom-pipeline. Не нужно уметь писать ML, но нужно формулировать trade-offs: candidate generation vs ranking, single-objective vs multi-objective, cold start.</li>
+      <li><strong>Network effects в A/B:</strong> ВК — социальный продукт. Сплиттинг по user_id часто некорректен. Ожидается понимание interference, cluster randomization, spillover-эффектов.</li>
+      <li><strong>Multi-product экосистема:</strong> PM одного продукта должен учитывать кросс-продуктовые связи. Изменение в Ленте влияет на Мессенджер, Клипы, Видео. Каннибализация и синергия — повседневные темы.</li>
+      <li><strong>Consumer интуиция:</strong> ВК — consumer-продукт с десятками миллионов DAU. Ожидается эмпатия к пользователю, понимание JTBD, CustDev-мышление. Не «B2B-подход».</li>
+      <li><strong>Scale:</strong> 72M DAU — каждое решение влияет на миллионы. MDE-расчёты, sample size, power analysis — базовые навыки. Нельзя запускать A/B без понимания статистики.</li>
+    </ul>
+
+    <h3>Типичные ошибки кандидатов</h3>
+    <ul>
+      <li><strong>«Скопировать конкурента»:</strong> «Давайте сделаем как TikTok/Telegram» — без понимания, почему это работает у них и почему может не сработать у ВК. ВК должен отличаться, не догонять.</li>
+      <li><strong>Игнор network effects в A/B:</strong> сплиттинг по user_id для социального продукта — частая ошибка. Нужно поднимать question interference.</li>
+      <li><strong>Correlation = causation:</strong> «Активные мессенджер-пользователи больше тратят в Ленте → Мессенджер драйвит revenue» — логическая ошибка. Нужен counterfactual analysis.</li>
+      <li><strong>Linear thinking в экономике:</strong> «+5% time spent → +5% ad revenue» — игнор frequency capping, качества инвентаря, CPM-динамики. Реальный множитель 0.6-0.8.</li>
+      <li><strong>Отсутствие guard-метрик:</strong> фокус только на goal-метрике, без проверки, что не сломали другое. Каждый эксперимент должен иметь guard-метрики.</li>
+      <li><strong>Слабая сегментация:</strong> «D30 retention = 18%» — без сегментации по источнику, гео, демографии. Среднее скрывает важные различия.</li>
+    </ul>
+
+    <h3>Сигналы успеха</h3>
+    <ul>
+      <li><strong>Структурированность:</strong> кандидат начинает с clarifying questions, сегментирует проблему, предлагает MECE-разложение.</li>
+      <li><strong>Quantitative thinking:</strong> считает MDE, sample size, LTV, unit-экономику на лету. Не боится цифр.</li>
+      <li><strong>Trade-offs:</strong> явно называет trade-offs, не предлагает «win-win» решения. Понимает, что у каждого решения есть стоимость.</li>
+      <li><strong>Customer empathy:</strong> говорит о пользователе, а не о фичах. Понимает JTBD, боли, сценарии.</li>
+      <li><strong>Ecosystem thinking:</strong> учитывает кросс-продуктовые связи, каннибализацию, синергии.</li>
+      <li><strong>Hypothesis-driven:</strong> формулирует гипотезы, предлагает эксперименты, определяет критерии успеха заранее.</li>
+    </ul>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <h2 id="vk-checklist">§6. Чек-лист подготовки</h2>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+
+    <ul class="checklist">
+      <li><strong>Повторить в Части I:</strong>
+        <ul>
+          <li><a href="part1-frameworks.html#product-sense">Product Sense</a> — структуры для кейсов (CIRCLES, AARRR)</li>
+          <li><a href="part1-frameworks.html#analytical">Analytical</a> — метрики, A/B, SQL</li>
+          <li><a href="part1-frameworks.html#system-design">System Design</a> — recom-pipeline, архитектура</li>
+          <li><a href="part1-frameworks.html#estimation">Estimation</a> — structured estimation для market sizing</li>
+        </ul>
+      </li>
+      <li><strong>Прорешать в Части III:</strong>
+        <ul>
+          <li><a href="part3-practice.html#metrics">Метрики</a> — задачи на NSM, proxy, guard</li>
+          <li><a href="part3-practice.html#experimentation">Эксперименты</a> — MDE, sample size, interference</li>
+          <li><a href="part3-reference.html#retention-rolling">Rolling Retention</a>, <a href="part3-reference.html#retention-bracket">Bracket Retention</a> — для когортного анализа</li>
+          <li><a href="part3-reference.html#ltv-cohort">LTV (cohort)</a>, <a href="part3-reference.html#unit-economics">Unit Economics</a> — для экономических кейсов</li>
+          <li><a href="part3-reference.html#wsjf">WSJF</a>, <a href="part3-reference.html#rice-extended">RICE Extended</a> — для приоритизации</li>
+        </ul>
+      </li>
+      <li><strong>Что почитать:</strong>
+        <ul>
+          <li><a href="docs/vk-feed-recoma-mechanics.md">VK Feed recoma mechanics</a> — детали рекомендательной системы Ленты</li>
+          <li><a href="docs/messenger-superapp-architecture-decisions.md">Messenger as superapp</a> — архитектура мессенджера и суперприложения</li>
+          <li><a href="docs/recommendation-system-layers.md">Recommendation system layers</a> — 5 слоёв recom-pipeline</li>
+          <li><a href="docs/vk-bookmarks-product-strategy.md">VK Bookmarks strategy</a> — стратегия закладок</li>
+          <li><a href="docs/vk-feed-geo-architecture-decisions.md">VK Feed geo architecture</a> — гео в рекомендациях</li>
+          <li><a href="docs/max-pm-case-preparation.md">PM case preparation</a> — структура кейс-интервью</li>
+        </ul>
+      </li>
+      <li><strong>Self-check (5 вопросов для самопроверки):</strong>
+        <ol>
+          <li>Могу ли я объяснить, почему для Ленты rolling retention лучше classic retention?</li>
+          <li>Могу ли я посчитать sample size для A/B с cluster randomization (inflation factor 1.5)?</li>
+          <li>Могу ли я назвать 3 trade-off между рекомендательной и подписочной Лентой?</li>
+          <li>Могу ли я объяснить, почему correlation ≠ causation в оценке indirect value Мессенджера?</li>
+          <li>Могу ли я декомпозировать рост revenue VK Видео на 4 рычага и оценить каждый?</li>
+        </ol>
+      </li>
+      <li><strong>Практика перед интервью:</strong>
+        <ul>
+          <li>Прорешай 2-3 кейса из §4 вслух, с таймером 45 мин</li>
+          <li>Подготовь 2 behavioral-кейса по STAR (ситуация, задача, действие, результат)</li>
+          <li>Повтори SQL-запросы: cohort, rolling retention, funnel</li>
+          <li>Освежи формулы: LTV, MDE, sample size, WSJF, K-factor</li>
+        </ul>
+      </li>
+    </ul>
   </main>
 </body>
 </html>
