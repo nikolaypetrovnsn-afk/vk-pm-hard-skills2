@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" >
+
+  <channel>
+    <title><![CDATA[Результаты поиска по запросу «wildberries»]]></title>
+    <link>https://habr.com/ru/</link>
+    <description><![CDATA[Результаты поиска по запросу «wildberries»]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Wed, 05 Aug 2026 15:02:10 GMT</pubDate>
+    
+    
+      <image>
+        <link>https://habr.com/ru/</link>
+        <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+        <title>Хабр</title>
+      </image>
+    
+
+    
+      
+        
+    
+    <item>
+      <title><![CDATA[Как я потеряла 1 миллион рублей на Wildberries из-за своей ошибки]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/geltek/articles/652085/</guid>
+      <link>https://habr.com/ru/companies/geltek/articles/652085/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=652085</link>
+      <description><![CDATA[Вспоминать до сих пор страшно. У меня волосы просто на всех местах седели. У нас есть гель для ультразвуковой чистки и лосьон для ультразвуковой чистки. УЗ-чистка лица — это популярная аппаратная методика очищения кожи, когда звуковой волной отшелушиваются ороговевшие частицы эпидермиса, что убирает тусклый цвет кожи. Средства для аппаратной косметологии очень требовательны к стабильности среды и ещё куче параметров, и у нас это одни из самых популярных продуктов. Так вот, у них одинаковые красные этикетки. <br>
+<br>
+По требованию WB каждый флакон в дополнение к заводской упаковке заворачивается на нашем складе в пупырчатую плёнку. Для этого склад вскрывает коробки, доупаковывает флаконы, затем клеит на пупырку штрихкод WB, и он не связан со штрихкодом флакона. Затем снова собирает коробки. Вот на этой стадии кладовщик перепутал штрихкоды. <br>
+<br>
+<img src="https://habrastorage.org/webt/qs/c5/-0/qsc5-0tsw3nhs-5_teamy5-fzuw.jpeg"><br>
+<br>
+Дальше эта партия ушла на Wildberries. <br>
+<br>
+Отозвать товар из маркетплейса обычно очень дорого, часто проще заказать утилизацию. Но нас ни то, ни другое не устраивало по цене, поэтому мы придумали поставить на свой же товар максимальную скидку 90 % и выкупить всё самим через розничный интерфейс. Речь шла примерно про 1 500 флаконов. <br>
+<br>
+Единственное, чего мы не учли, — это алгоритмов маркетплейса, где сразу поняли, что этот товар надо мгновенно отрекомендовать максимальному количеству людей. <br> <a href="https://habr.com/ru/articles/652085/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=652085#habracut">Читать дальше &rarr;</a>]]></description>
+      
+      <pubDate>Thu, 17 Feb 2022 11:12:24 GMT</pubDate>
+      <dc:creator><![CDATA[elena_pastukhova (Гельтек-Медика)]]></dc:creator>
+      <category><![CDATA[Блог компании Гельтек-Медика]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Управление проектами]]></category>
+      <category><![CDATA[Wildberries]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[товар]]></category><category><![CDATA[алгоритмы]]></category><category><![CDATA[косметика]]></category><category><![CDATA[продажа]]></category><category><![CDATA[факап]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Сколько товаров пропало с полок Wildberries после введения систем контроля контрафакта? Собрали аналитику с полок]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/677476/</guid>
+      <link>https://habr.com/ru/articles/677476/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=677476</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/42e/741/be5/42e741be57ef4545652d29ad0d72d25b.png" /><p>Еще 7 июля Минпромторг заявил, что Wildberries является одним из каналов сбыта контрафакта в России. Ведомство пояснило, что подобные выводы многократно подтверждены жалобами покупателей и продавцов и тогда де уточнило, что маркетплейс выразил готовность к борьбе с нелегальными товарами. В тот же день Wildberries зачем то заявил, что информация о продаже на маркетплейсе контрафактной продукции не соответствует действительности. То есть утвердил, что "левых" товаров на его полках нет. Тогда же, противореча себе, заявил, что разрабатывает систему автоматической борьбы с контрафактом на основе искусственного интеллекта. То есть утвердил, что "левые" товары есть и их нужно активно искать. А уже 8 июля Wildberries официально заявил о запуске в работы своей автоматизированной системы и стал подчищать товары продавцов. То есть контрафакт, которого "не было" все-таки нашли и стали удалять. Весь этот круговорот, конечно, взволновал селлеров. Они стали опасаться того, что автоматическая система может удалить даже легальные товары. Мы стали опасаться, что все опять делается лишь на словах и контрафакт никуда не исчезнет. А потом мы просто решили проверить, что произошло с товарами на полках Wildberries после запуска робота-поисковика. Стало ли товаров меньше, ушел ли контрафакт? Рассказываем.</p><p><strong>Был ли контрафакт на Wildberries?</strong></p><p>Писать текст о Wildberries и контрафактных товарах просто. Глубоко внутри эта тема точно не вызывает никакого диссонанса, ведь все знают, что купить реплики и копии товаров на маркетплейсе было можно всегда. Бренды и сами неоднократно намекали на это Wildberries, обращались в суд и пытались запретить площадке продажу левых товаров под их товарным знаком. Весной 2022 года в сети появилась информация о том, производитель посуды в который раз пытается запретить продажу своих копий на маркетплейсе. А совсем недавно все заговорили<a href="https://vc.ru/trade/436772-wildberries-torguet-recepturnymi-preparatami-skryvaya-ih-nazvaniya-prokuratura-mozhet-zanyatsya-proverkoy-wb-po-4-statyam" rel="noopener noreferrer nofollow">&nbsp;</a>о том, что на Wildberries спокойно можно купить рецептурные лекарства и спирт. То есть контрафакт был и удаляли его неохотно, поэтому официальный ответ Wildberries в сторону Минпромторга звучит странно.</p> <a href="https://habr.com/ru/articles/677476/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=677476#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 18 Jul 2022 10:30:10 GMT</pubDate>
+      <dc:creator><![CDATA[SellerDen]]></dc:creator>
+      <category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Разработка под e-commerce]]></category>
+      <category><![CDATA[торговля]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[ecommerce]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[После ударов по складам Wildberries цены пошли вниз? Что увидел мониторинг цен]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1061002/</guid>
+      <link>https://habr.com/ru/articles/1061002/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1061002</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f67/af7/f0b/f67af7f0ba606a789d205006ed021dcd.png" /><p>После атак на логистические центры Wildberries мониторинг цен YoloPrice зафиксировал аномальную волну снижения цен. Разбираемся, был ли это реальный «обвал», реакция селлеров на сбои или просто совпавшая по времени массовая переоценка.</p> <a href="https://habr.com/ru/articles/1061002/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1061002#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 20 Jul 2026 13:44:52 GMT</pubDate>
+      <dc:creator><![CDATA[YoloGuy]]></dc:creator>
+      <category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Открытые данные]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Big Data]]></category>
+      <category><![CDATA[wildberries]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[продажи]]></category><category><![CDATA[аналитика]]></category><category><![CDATA[e-com]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries и Ozon выполнили требования ФАС о сроках выплат продавцам]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1063908/</guid>
+		<link>https://habr.com/ru/news/1063908/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1063908</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/265/124/a07/265124a077eca24ad06ce5b8cac1f565.jpg" /><p>Wildberries и Ozon <a href="https://fas.gov.ru/news/34773" rel="noopener noreferrer nofollow">исполнили</a> предписания Федеральной антимонопольной службы. Платформы синхронизировали сроки выплат продавцам, деньги на&nbsp;счёт продавца будут зачислять в&nbsp;течение 30&nbsp;дней с&nbsp;момента продажи товара.</p> <a href="https://habr.com/ru/articles/1063908/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Tue, 28 Jul 2026 09:52:52 GMT</pubDate>
+    <dc:creator><![CDATA[LizzieSimpson]]></dc:creator>
+		<category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Финансы в IT]]></category><category><![CDATA[Монетизация веб-сервисов]]></category><category><![CDATA[Законодательство в IT]]></category>
+		<category><![CDATA[маркетплейсы]]></category><category><![CDATA[фас]]></category><category><![CDATA[ozon]]></category><category><![CDATA[wildberries]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries, Ozon, МТС и «Яндекс» заинтересовались покупкой долей в НСПК]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1065932/</guid>
+		<link>https://habr.com/ru/news/1065932/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1065932</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a70/1f7/142/a701f714255f30af5dd568174135af68.webp" /><p>Wildberries (группа РВБ), Ozon, МТС и&nbsp;«Яндекс» интересуются покупкой доли в&nbsp;Национальной системе платёжных карт (НСПК)&nbsp;— операторе национальной платёжной системы «Мир». Об&nbsp;этом <a href="https://expert.ru/finance/platformy-khotyat-idti-s-mirom" rel="noopener noreferrer nofollow">пишет</a> «Эксперт» со ссылкой на&nbsp;источник, близкий к&nbsp;ЦБ. Информацию подтвердили три собеседника, знакомые с&nbsp;планами компаний.</p> <a href="https://habr.com/ru/articles/1065932/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Mon, 03 Aug 2026 08:29:06 GMT</pubDate>
+    <dc:creator><![CDATA[LizzieSimpson]]></dc:creator>
+		<category><![CDATA[Финансы в IT]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[IT-компании]]></category><category><![CDATA[Платежные системы]]></category>
+		<category><![CDATA[маркетплейсы]]></category><category><![CDATA[мтс]]></category><category><![CDATA[ozon]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[яндекс]]></category><category><![CDATA[нскп]]></category><category><![CDATA[цб]]></category><category><![CDATA[цб рф]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Продажи на Wildberries с помощью SEO-запросов. Опыт бренда одежды Zeri]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/670726/</guid>
+      <link>https://habr.com/ru/articles/670726/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=670726</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bf1/b14/4b6/bf1b144b66f5402f17fcbe77fd85a034.png" /><p><em>Все секреты малиновой строки «Я ищу…» на Wildberries и ответы на вопросы селлеров по SEO-продвижению, то, что вы всегда хотели узнать — мы расскажем в этом материале.</em></p><p>Почти 3 года мы, Наталья Петрова и Валентина Мамаева, основательницы&nbsp;бренда одежды Zeri, работаем в ритейле. Начинали продавать, как и большинство продавцов, через соцсеть*. Далее – супер классическая история: пандемия, падение продаж, много сложностей с доставкой и работа в минус. Не будем давать много букв, посмотрите на наши “достижения” в этой таблице.</p> <a href="https://habr.com/ru/articles/670726/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=670726#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 10 Jun 2022 08:12:47 GMT</pubDate>
+      <dc:creator><![CDATA[Nataliya_Zeri]]></dc:creator>
+      <category><![CDATA[Разработка под e-commerce]]></category><category><![CDATA[Управление e-commerce]]></category>
+      <category><![CDATA[seo]]></category><category><![CDATA[seo-продвижение]]></category><category><![CDATA[маркетинг]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[аналитика данных]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[торговля]]></category><category><![CDATA[электронная коммерция]]></category><category><![CDATA[продажи]]></category><category><![CDATA[marketplace]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Контрагенты Wildberries подали к ритейлеру тринадцать исков на 80 миллионов рублей]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/293310/</guid>
+      <link>https://habr.com/ru/articles/293310/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=293310</link>
+      <description><![CDATA[В начале 2015 года интернет-ритейлер <a href="http://www.wildberries.ru/">Wildberries</a> получил тринадцать исков в арбитражные суды Москвы и Московской области на общую сумму около восьмидесяти миллионов рублей. Основная часть претензий контрагентов — просрочки выплат за оказанные компании услуги и несвоевременная оплата товаров, <a href="http://top.rbc.ru/technology_and_media/04/08/2015/55b8b49f9a794735eff64221">пишет РБК</a>.<br/>
+ <a href="https://habr.com/ru/articles/293310/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=293310#habracut">Читать дальше &rarr;</a>]]></description>
+      
+      <pubDate>Tue, 04 Aug 2015 18:14:03 GMT</pubDate>
+      <dc:creator><![CDATA[ivansychev]]></dc:creator>
+      <category><![CDATA[Законодательство в IT]]></category>
+      <category><![CDATA[Wildberries]]></category><category><![CDATA[интернет-ритейл]]></category><category><![CDATA[ритейлеры]]></category><category><![CDATA[розничные магазины]]></category><category><![CDATA[электронная коммерция]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Выгрузка карточек товаров на Wildberries через API]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/897548/</guid>
+      <link>https://habr.com/ru/articles/897548/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=897548</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/925/058/81f/92505881fb026aacc3cd7b8e334b18d3.jpg" /><p>Всем, привет!</p><p>Продолжаем цикл статей про API различных маркетплейсов, что мы используем в своей <strong>PIM </strong>системе <strong>OpenPIM</strong>. Ранее мы описали как создавать карточки товаров на Озон - <a href="https://habr.com/ru/articles/872228/" rel="noopener noreferrer nofollow">https://habr.com/ru/articles/872228/</a>, теперь пришла очередь Wildberries.</p><p></p> <a href="https://habr.com/ru/articles/897548/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=897548#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 07 Apr 2025 07:23:00 GMT</pubDate>
+      <dc:creator><![CDATA[vpedak]]></dc:creator>
+      <category><![CDATA[Программирование]]></category><category><![CDATA[Проектирование API]]></category><category><![CDATA[Управление продажами]]></category>
+      <category><![CDATA[wildberries]]></category><category><![CDATA[api]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Маркетплейс Wildberries запустил портал бронирования билетов «Wildberries.Вместе»]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/725644/</guid>
+		<link>https://habr.com/ru/news/725644/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=725644</link>
+		<description><![CDATA[<p>Wildberries запустит новый сервис туристических услуг, который получит название «WIldberries.Вместе»; на&nbsp;нём будут доступны бронирования авиа-,&nbsp;железнодорожных и автобусных билетов, а&nbsp;также возможность их комбинирования, <a href="https://www.kommersant.ru/doc/5901435" rel="noopener noreferrer nofollow">пишет</a> «Коммерсантъ».</p><p></p> <a href="https://habr.com/ru/articles/725644/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Wed, 29 Mar 2023 12:38:22 GMT</pubDate>
+    <dc:creator><![CDATA[avouner]]></dc:creator>
+		<category><![CDATA[IT-компании]]></category><category><![CDATA[Финансы в IT]]></category>
+		<category><![CDATA[Wildberries]]></category><category><![CDATA[Wildberries.Вместе]]></category><category><![CDATA[тревел-услуги]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Брутальный маркетплейс. Разбираем суть цифровых платформ на примере забастовки против Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/723012/</guid>
+      <link>https://habr.com/ru/articles/723012/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=723012</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d3e/f16/cfb/d3ef16cfb59cf5990d1ecf93f5dfd01c.png" /><p>Последние пару дней идет забастовка пунктов выдачи (ПВЗ) Wildberries. Причина&nbsp;— недовольство новой&nbsp;жесткой политикой штрафов. Мне надоело читать объяснения а‑ля «ааа опять этот Вайлдберрис, закройте его уже!». Постараюсь объяснить ситуацию более научно&nbsp;— исходя из&nbsp;базовых принципов бизнес‑модели цифровой платформы.</p><p></p> <a href="https://habr.com/ru/articles/723012/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=723012#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 17 Mar 2023 07:23:52 GMT</pubDate>
+      <dc:creator><![CDATA[AlekseiPodkletnov]]></dc:creator>
+      <category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Бизнес-модели]]></category><category><![CDATA[IT-компании]]></category>
+      <category><![CDATA[wildberries]]></category><category><![CDATA[цифровые платформы]]></category><category><![CDATA[платформа]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[ecommerce]]></category><category><![CDATA[забастовка]]></category><category><![CDATA[логистика]]></category><category><![CDATA[логистика ecommerce]]></category><category><![CDATA[логистика интернет торговли]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ML Meetup Wildberries 11/09]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/839194/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/839194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=839194</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f38/a30/9f6/f38a309f6abd7e656cd572ae2ae32905.png" /><p>11 сентября в 18:00 пройдет первый ML Meetup Wildberries в московском офисе компании. Спикеры расскажут про ML-решения в продуктах и процессах WB, а также поделятся интересными решениями в Рекомендациях и Поиске.</p><p><a href="https://wbtech.timepad.ru/event/3010640/">Регистрируйтесь</a> и обязательно дождитесь подтверждения участия. Количество мест ограничено!</p> <a href="https://habr.com/ru/articles/839194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=839194#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 28 Aug 2024 10:43:32 GMT</pubDate>
+      <dc:creator><![CDATA[Garret944 (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[ml]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[wbtech]]></category><category><![CDATA[meetup]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries изменит требования к габаритам товаров после конфликта с продавцами]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/708758/</guid>
+		<link>https://habr.com/ru/news/708758/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=708758</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3f1/f90/20f/3f1f9020f7d17bffec99fe2b2a622bb1.jpg" /><p>Маркетплейс Wildberries после консультаций с Федеральной антимонопольной службой <a href="https://www.forbes.ru/tekhnologii/483398-fas-zaavila-ob-izmeneniah-v-pravilah-wildberries-posle-konflikta-sajta-s-prodavcami" rel="noopener noreferrer nofollow">создаст</a> комплексную систему замеров габаритов упаковки товара. Ранее продавцы пожаловались на платформу в связи с начислением штрафов за несоответствие заявленных параметров товара реальным.</p><p></p> <a href="https://habr.com/ru/articles/708758/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Sat, 31 Dec 2022 08:53:13 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		<category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Законодательство в IT]]></category><category><![CDATA[Финансы в IT]]></category>
+		<category><![CDATA[wildberries]]></category><category><![CDATA[маркетплейсы]]></category><category><![CDATA[фас]]></category><category><![CDATA[товары]]></category><category><![CDATA[габариты]]></category><category><![CDATA[штрафы]]></category><category><![CDATA[нарушения]]></category><category><![CDATA[оферта]]></category><category><![CDATA[продавцы]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Российские пользователи стали обналичивать деньги через покупки в Wildberries, в маркетплейсе это отрицают]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/719732/</guid>
+		<link>https://habr.com/ru/news/719732/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=719732</link>
+		<description><![CDATA[Российские пользователи стали массово <a href="https://lenta.ru/news/2023/03/01/wild_obnal/" rel="nofollow noopener noreferrer">обналичивать</a> деньги через покупки и возврат товаров в Wildberries. Клиенты маркетплейса <a href="https://t.me/bazabazon/16100" rel="nofollow noopener noreferrer">оплачивают</a> с кредитной карты или счёта юрлица дорогие товары, а при их получении сразу оформляют отказ, говоря, что не то заказали. Wildberries возвращает деньги на баланс учётной записи покупателя, с которого их можно вывести на карту любого банка. Этой лазейкой стали пользоваться многие клиенты, чтобы обналичивать средства и уклоняться от уплаты налогов или банковских комиссий. В маркетплейсе назвали такую ситуацию фейком.<br> <a href="https://habr.com/ru/articles/719732/#habracut">Читать дальше &rarr;</a>]]></description>
+		
+		<pubDate>Wed, 01 Mar 2023 10:12:37 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		<category><![CDATA[Монетизация веб-сервисов]]></category><category><![CDATA[Смартфоны]]></category><category><![CDATA[Социальные сети]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Финансы в IT]]></category>
+		<category><![CDATA[пользовател]]></category><category><![CDATA[финансы]]></category><category><![CDATA[возврат]]></category><category><![CDATA[обналичивание]]></category><category><![CDATA[Wildberries]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как финтех-прокладка Wildberries выдает займы под 85% годовых, маскируясь под «поручителя»]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1000046/</guid>
+      <link>https://habr.com/ru/articles/1000046/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1000046</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ca8/a32/604/ca8a32604240ea8bb83a91d08acb0920.jpg" /><p><strong>Федеральный закон № 31-ФЗ о самозапрете на кредиты не работает на Wildberries.</strong>&nbsp;Маркетплейс выдает займы даже тем, у кого стоит официальный запрет через Госуслуги.</p><p>В январе 2026 года моя мама-пенсионерка, несмотря на активный самозапрет в БКИ, получила долг за БАДы под&nbsp;<strong>85% годовых</strong>. Я провел техническое и юридическое расследование, чтобы понять, как это возможно.</p><p><strong>Внутри статьи:</strong></p><p><strong>Юридический взлом:</strong>&nbsp;Как подмена «Кредитного договора» на «Договор поручения» позволяет игнорировать запросы в БКИ.</p><p><strong>Frontend-расследование:</strong>&nbsp;Почему в DOM-дереве страницы физически отсутствует кнопка отказа от процентов (льготного периода).</p><p><strong>Фискальный след:</strong>&nbsp;Анализ чеков (Тег 1214 «Передача в кредит» и НДС 20% на «воздух»), доказывающий притворность сделки.</p><p><strong>OSINT:</strong>&nbsp;Связь «независимой» ООО «Престо» с действующим CISO банка Wildberries.</p><p><strong>Комментарии юристов:</strong>&nbsp;Эксперты подтверждают — это схема обхода нового закона, который вступит в силу 1 апреля.</p><p>Инструкция о том, как работает «регуляторный арбитраж» в российском финтехе и как защитить своих близких от долговой ямы в один клик.</p> <a href="https://habr.com/ru/articles/1000046/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1000046#habracut">По горячим следам...</a>]]></description>
+      
+      <pubDate>Mon, 16 Feb 2026 12:49:47 GMT</pubDate>
+      <dc:creator><![CDATA[David_Osipov]]></dc:creator>
+      <category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Законодательство в IT]]></category><category><![CDATA[Платежные системы]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category><category><![CDATA[Бизнес-модели]]></category>
+      <category><![CDATA[Wildberries]]></category><category><![CDATA[самозапрет на кредиты]]></category><category><![CDATA[информационная безопасность]]></category><category><![CDATA[финтех]]></category><category><![CDATA[темные паттерны]]></category><category><![CDATA[BNPL]]></category><category><![CDATA[защита прав потребителей]]></category><category><![CDATA[микрозаймы]]></category><category><![CDATA[115-ФЗ]]></category><category><![CDATA[ООО Престо]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Парсинг цен и данных о товарах конкурентов на Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/amvera/articles/948988/</guid>
+      <link>https://habr.com/ru/companies/amvera/articles/948988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=948988</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c41/f78/45d/c41f7845df0a917a3766f4a724108b98.png" /><p>Всем привет! Ранее я <a href="https://habr.com/ru/companies/amvera/articles/834582/">уже писал</a> про парсинг Wildberries, но та статья была довольно узконаправленной и не затрагивала более широкие возможности анализа. Да и с тех пор многое изменилось — тема стала ещё актуальнее, а у читателей накопилось больше вопросов.</p><p>Поэтому в этой статье мы разберём тему заново, но уже с акцентом на практическую пользу.</p> <a href="https://habr.com/ru/articles/948988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=948988#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sun, 21 Sep 2025 08:07:19 GMT</pubDate>
+      <dc:creator><![CDATA[MarkovM (Amvera)]]></dc:creator>
+      <category><![CDATA[Блог компании Amvera]]></category><category><![CDATA[Python]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Разработка под e-commerce]]></category><category><![CDATA[Google Chrome]]></category>
+      <category><![CDATA[парсинг цен]]></category><category><![CDATA[парсинг данных]]></category><category><![CDATA[парсинг конкурентов]]></category><category><![CDATA[парсинг wildberries]]></category><category><![CDATA[парсинг wb]]></category><category><![CDATA[парсер цен]]></category><category><![CDATA[парсер цен конкурентов]]></category><category><![CDATA[парсер wildberries]]></category><category><![CDATA[парсинг на python]]></category><category><![CDATA[парсинг товаров]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[В каких командах и проектах Wildberries есть задачи для аналитиков]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/886064/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/886064/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=886064</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/40b/466/2cf/40b4662cfcc87d885e96e26670f90086.png" /><p>Привет, Хабр! Меня зовут Миша Климушкин, я руковожу аналитикой Рекомендаций и Data Science в Wildberries: отвечаю за метрики, цели и точки роста рекомендательных и других ML-решений.</p><p>В статье расскажу про Аналитику в компании: в каких командах она нужна и с какими задачами сталкивается.</p> <a href="https://habr.com/ru/articles/886064/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=886064#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 27 Feb 2025 09:04:36 GMT</pubDate>
+      <dc:creator><![CDATA[MikKlim (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[IT-компании]]></category>
+      <category><![CDATA[аналитика]]></category><category><![CDATA[wb]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[команды]]></category><category><![CDATA[структура компании]]></category><category><![CDATA[wbtech]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Wildberries заявил, что снизил стоимость международной доставки до 30%, по факту для части клиентов она стала дороже]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/595531/</guid>
+      <link>https://habr.com/ru/articles/595531/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=595531</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8d0/2fe/f7b/8d02fef7b9f9d12cffe2c16b5e3df49c.png" /><p>Сегодня все новостные ленты опубликовали новость о том, что Wildberries снизил стоимость международной доставки до 30%. Повод звучит серьезно и, конечно, СМИ узнали об этом от пресс-службы самого маркетплейса. Они не погружены в тему, поэтому всецело доверяют информации, предоставленной гигантом отечественного ecommerce. </p><p>Мы бы тоже доверились, но всего неделю назад пытались решить с той же самой пресс-службой другой вопрос: почему международная доставка подорожала?</p> <a href="https://habr.com/ru/articles/595531/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=595531#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Tue, 14 Dec 2021 13:50:29 GMT</pubDate>
+      <dc:creator><![CDATA[SellerDen]]></dc:creator>
+      <category><![CDATA[Интернет-маркетинг]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Разработка под e-commerce]]></category>
+      <category><![CDATA[ecommerce]]></category><category><![CDATA[marketplace]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[торговля]]></category><category><![CDATA[продажи]]></category><category><![CDATA[доставка]]></category><category><![CDATA[логистика ecommerce]]></category><category><![CDATA[логистика]]></category><category><![CDATA[wildberries]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries начал тестировать функцию чатов продавцов с покупателями]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/721270/</guid>
+		<link>https://habr.com/ru/news/721270/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=721270</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/5ec/490/2d2/5ec4902d24fc7d065efc29e6f4ab5a8e.png" /><p>Wildberries запустит чаты продавцов с покупателями, сейчас эта функция доступна для 19,5 тыс. предпринимателей, торгующих на площадке маркетплейса, <a href="https://www.vedomosti.ru/business/articles/2023/03/09/965714-wildberries-testiruet-chati-prodavtsov-s-pokupatelyami" rel="noopener noreferrer nofollow">пишут</a>&nbsp;«Ведомости» со ссылкой на представителя компании. </p><p></p> <a href="https://habr.com/ru/articles/721270/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 09 Mar 2023 10:08:35 GMT</pubDate>
+    <dc:creator><![CDATA[LizzieSimpson]]></dc:creator>
+		<category><![CDATA[Управление e-commerce]]></category><category><![CDATA[IT-компании]]></category>
+		<category><![CDATA[wildberries]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[чат]]></category><category><![CDATA[торговля]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Too.u, razz и заказавр: какими товарными знаками и программами владеет Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/onlinepatent/articles/846290/</guid>
+      <link>https://habr.com/ru/companies/onlinepatent/articles/846290/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=846290</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c55/265/c0f/c55265c0ff853551f9b7a73567487437.png" /><p>Один из крупнейших российских маркетплейсов появился в 2004 году.</p><p>«Деловая среда»,&nbsp;<a href="https://dasreda.ru/learn/blog/article/1956-istoriya-razvitiya-i-uspeha-kompanii-wildberries">рассказывая</a>&nbsp;историю создания интернет-сайта, подчеркивает, что основательница проекта Татьяна Бакальчук работала в начале 2000-х простым учителем английского языка. Ее муж в это же время занимался бизнесом. У пары появился ребенок, женщина решила оставить преподавание, перейдя в сферу продаж. Первое время Татьяна реализовывала товары из каталогов Otto и Quelle через агентов. Чтобы увеличить свой доход, семья решила открыть интернет-магазин, в котором всегда будут низкие цены и возможность примерять купленное при получении без предоплаты.</p> <a href="https://habr.com/ru/articles/846290/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=846290#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 26 Sep 2024 13:35:37 GMT</pubDate>
+      <dc:creator><![CDATA[Oksana_Nedvigina (Online patent)]]></dc:creator>
+      <category><![CDATA[Блог компании Online patent]]></category><category><![CDATA[Патентование]]></category><category><![CDATA[Брендинг]]></category>
+      <category><![CDATA[wildberries]]></category><category><![CDATA[товарный знак]]></category><category><![CDATA[бренд]]></category><category><![CDATA[история]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как Wildberries перенял стратегию «Красное &amp; Белое» и создал самый крупный онлайн-дискаунтер в России]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/861288/</guid>
+      <link>https://habr.com/ru/articles/861288/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=861288</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/abd/500/943/abd500943a48d7da9cded33dd6833028.png" /><p>За&nbsp;каждый реализованный товар Wildberries возьмет свое. И за&nbsp;каждый нереализованный. Но&nbsp;при&nbsp;пересчете любого товара ВБ откроется неизведанная тайна&nbsp;— вести бизнес там сложно, особенно для&nbsp;спекулянтов. </p><p>Рассказываем: </p><p>— Почему Wildberries и маркетплейсы&nbsp;— это дискаунтер для&nbsp;продавцов и покупателей. </p><p>— Почему комиссия с&nbsp;продаж на&nbsp;маркетплейсах&nbsp;— это далеко не&nbsp;главный источник дохода. </p><p>— Почему WB не&nbsp;заинтересовано в&nbsp;вашем успехе. </p><p></p> <a href="https://habr.com/ru/articles/861288/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=861288#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 25 Nov 2024 20:26:46 GMT</pubDate>
+      <dc:creator><![CDATA[medoedov]]></dc:creator>
+      <category><![CDATA[Управление продажами]]></category><category><![CDATA[Бизнес-модели]]></category><category><![CDATA[Интернет-маркетинг]]></category><category><![CDATA[Управление e-commerce]]></category>
+      <category><![CDATA[ритейл]]></category><category><![CDATA[маркетинг]]></category><category><![CDATA[юнит-экономика]]></category><category><![CDATA[Wildberries]]></category><category><![CDATA[маркетплейсы]]></category><category><![CDATA[банкротство]]></category><category><![CDATA[продажи]]></category><category><![CDATA[продажи вещей]]></category><category><![CDATA[разработка бота]]></category><category><![CDATA[Ozon]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+      
+
+      
+
+      
+
+    
+  </channel>
+</rss>

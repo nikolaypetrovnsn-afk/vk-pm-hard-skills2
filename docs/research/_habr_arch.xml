@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" >
+
+  <channel>
+    <title><![CDATA[Результаты поиска по запросу «wildberries архитектура»]]></title>
+    <link>https://habr.com/ru/</link>
+    <description><![CDATA[Результаты поиска по запросу «wildberries архитектура»]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Wed, 05 Aug 2026 15:07:35 GMT</pubDate>
+    
+    
+      <image>
+        <link>https://habr.com/ru/</link>
+        <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+        <title>Хабр</title>
+      </image>
+    
+
+    
+      
+        
+    
+    <item>
+      <title><![CDATA[Как мы автоматизировали модерацию карточек товаров с помощью Computer Vision в Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/992716/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/992716/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=992716</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b3d/51a/a5e/b3d51aa5eec6cf12a3a420006d254827.png" /><p>Привет! Я Дмитрий Колесников, Team Lead DS-команды «Платформа модерации» в Wildberries &amp; Russ. В этой статье по мотивам моего доклада на <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=highload.ru/moscow/2025/abstracts/16888&amp;ved=2ahUKEwjTioXo6K6TAxUpFBAIHa_FCiYQFnoECBwQAQ&amp;usg=AOvVaw3B1IFVqY594wlmQa3QzVsF&amp;utm_source=habr&amp;utm_medium=article&amp;utm_campaign=hl&amp;utm_content=992716">HighLoad </a>расскажу, как у нас получилось превратить сотни Computer Vision моделей в единый масштабируемый пайплайн, который ежедневно обрабатывает 15 млн карточек товаров (50+ млн изображений и 500K видео).</p> <a href="https://habr.com/ru/articles/992716/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=992716#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Tue, 31 Mar 2026 09:00:46 GMT</pubDate>
+      <dc:creator><![CDATA[Koldim2001 (RWB, Конференции Олега Бунина (Онтико))]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Блог компании Конференции Олега Бунина (Онтико)]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[ml]]></category><category><![CDATA[machine learning]]></category><category><![CDATA[data science]]></category><category><![CDATA[cv]]></category><category><![CDATA[computer vision]]></category><category><![CDATA[компьютерное зрение]]></category><category><![CDATA[triton-inference-server]]></category><category><![CDATA[highload]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[moderation]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как удалить Excel навсегда: делегируем юнит-экономику на Wildberries нейронке]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/861928/</guid>
+      <link>https://habr.com/ru/articles/861928/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=861928</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/0a3/556/5ea/0a35565eafa9c58e443b1a5ab85f14e1.png" /><p>В предыдущей статье мы рассказали примерно, как обстоят дела с подсчетом юнит-экономики среди продавцов на WB. Некоторые подходят к ней неверно и не используют как способ предварительного планирования.&nbsp;</p><p>Но на деле хорошо, когда перед вами выбор о выкладывании одного товара или в обороте находится ассортимент из трех платьев. Когда продавец выходит с крупным бюджетом и целой плеядой разношерстных товаров…<br><br>Рассказываем, как доверить нейросети принятие решений об оптимизации юнит-экономики. </p><p></p> <a href="https://habr.com/ru/articles/861928/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=861928#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 28 Nov 2024 02:21:05 GMT</pubDate>
+      <dc:creator><![CDATA[medoedov]]></dc:creator>
+      <category><![CDATA[Интернет-маркетинг]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[Ритейл]]></category><category><![CDATA[маркетинг]]></category><category><![CDATA[Wildberries]]></category><category><![CDATA[бот]]></category><category><![CDATA[юнит-экономика]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[продажи вещей]]></category><category><![CDATA[продажи]]></category><category><![CDATA[разработка бота]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Файловое хранилище Wildberries: бескомпромиссный HighLoad]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/967988/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/967988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=967988</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/253/de2/604/253de2604cafa29f0fddd067666c420a.jpg" /><p>Привет, меня зовут Иван Волков, я CTO продукта CDN MediaBasket в Wildberries. Это большое распределенное файловое хранилище, используемое различными внутренними продуктами Wildberries. Одним из продуктов, с которым взаимодействуют внешние клиенты, является каталог товаров. Это ставит перед хранилищем высокую планку по оптимизации и готовности к экстремальным нагрузкам. В этой статье я расскажу, какие решения мы использовали в архитектуре продукта и как при миллионном RPS мы доставляем картинки пользователям за считанные миллисекунды.</p> <a href="https://habr.com/ru/articles/967988/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=967988#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 27 Nov 2025 10:42:16 GMT</pubDate>
+      <dc:creator><![CDATA[DrPaster (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Высоконагруженные системы]]></category>
+      <category><![CDATA[файловое хранилище]]></category><category><![CDATA[шардирование]]></category><category><![CDATA[шардинг]]></category><category><![CDATA[highload]]></category><category><![CDATA[хайлоад]]></category><category><![CDATA[схд]]></category><category><![CDATA[ceph]]></category><category><![CDATA[hadoop]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[drpaster]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Интеграция с маркетплейсами Wildberries и Ozon: коды, лимиты и одна Елена]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/cdek_blog/articles/970696/</guid>
+      <link>https://habr.com/ru/companies/cdek_blog/articles/970696/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=970696</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/7e5/c6b/892/7e5c6b892178511201cfb87e4f604db0.png" /><p>Привет, Хабр! Меня зовут Юля Анпилогова, я менеджер команды индивидуальных интеграций CDEK. Мы стали первыми, кто не только запустил интеграцию с Wildberries по схеме DBS (delivery by seller — доставка силами продавца), но и создал единую точку подключения к маркетплейсам WB и Ozon. Этот опыт оказался похож на квест. Курьеры, не привыкшие спрашивать код, лимиты запросов API Wildberries и покупательница Елена, заказавшая тестовый ежедневник — всё это оказалось его частью. Сегодня в статье расскажу, как мы прошли этот путь.</p> <a href="https://habr.com/ru/articles/970696/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=970696#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 27 Nov 2025 09:22:48 GMT</pubDate>
+      <dc:creator><![CDATA[YulAnpilogova (CDEK)]]></dc:creator>
+      <category><![CDATA[Блог компании CDEK]]></category><category><![CDATA[Проектирование API]]></category><category><![CDATA[Разработка под e-commerce]]></category><category><![CDATA[Управление проектами]]></category><category><![CDATA[Управление разработкой]]></category>
+      <category><![CDATA[pm]]></category><category><![CDATA[wb]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[интеграция]]></category><category><![CDATA[запуск проекта]]></category><category><![CDATA[ozon]]></category><category><![CDATA[dbs]]></category><category><![CDATA[fbs]]></category><category><![CDATA[api]]></category><category><![CDATA[маркетплейсы]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ML Meetup Wildberries 11/09]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/839194/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/839194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=839194</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f38/a30/9f6/f38a309f6abd7e656cd572ae2ae32905.png" /><p>11 сентября в 18:00 пройдет первый ML Meetup Wildberries в московском офисе компании. Спикеры расскажут про ML-решения в продуктах и процессах WB, а также поделятся интересными решениями в Рекомендациях и Поиске.</p><p><a href="https://wbtech.timepad.ru/event/3010640/">Регистрируйтесь</a> и обязательно дождитесь подтверждения участия. Количество мест ограничено!</p> <a href="https://habr.com/ru/articles/839194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=839194#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 28 Aug 2024 10:43:32 GMT</pubDate>
+      <dc:creator><![CDATA[Garret944 (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[ml]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[wbtech]]></category><category><![CDATA[meetup]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Быстрый матчинг товаров на маркетплейсе Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/876036/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/876036/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=876036</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b64/90e/fad/b6490efad1e06cfc84165078cd0d2832.png" /><p>Привет! Меня зовут Павел Саликов, я Senior ML-инженер в команде Дубликатов Товаров Wildberries. В этой статье расскажу про наше решение матчинга товаров на маркетплейсе и про то, как удалось сделать его быстрым.</p> <a href="https://habr.com/ru/articles/876036/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=876036#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 24 Jan 2025 09:01:16 GMT</pubDate>
+      <dc:creator><![CDATA[matanivanov (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Big Data]]></category>
+      <category><![CDATA[machine learning]]></category><category><![CDATA[data science]]></category><category><![CDATA[bigdata]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[matching]]></category><category><![CDATA[nlp]]></category><category><![CDATA[recsys]]></category><category><![CDATA[рекоммендации]]></category><category><![CDATA[faiss]]></category><category><![CDATA[community detection]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries перезапустила функцию поиска товаров по фото на сайте и в приложении]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/847622/</guid>
+		<link>https://habr.com/ru/news/847622/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=847622</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/50e/a0c/1f0/50ea0c1f04c3e26ac76bdabbc259a71c.jpg" /><p>Wildberries перезапустила функцию поиска товаров по&nbsp;фото на&nbsp;сайте и в&nbsp;мобильном приложении, в 3&nbsp;раза увеличив точность распознавания объектов. Обновленная нейросеть, обученная на&nbsp;базе из&nbsp;миллионов наиболее популярных на&nbsp;маркетплейсе товаров, позволяет пользователям эффективнее находить интересующие их предметы по&nbsp;загруженным изображениям, рассказали Хабру в&nbsp;компании.</p><p></p> <a href="https://habr.com/ru/articles/847622/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Wed, 02 Oct 2024 10:38:34 GMT</pubDate>
+    <dc:creator><![CDATA[LizzieSimpson]]></dc:creator>
+		<category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Искусственный интеллект]]></category>
+		<category><![CDATA[wildberries]]></category><category><![CDATA[маркетплейс]]></category><category><![CDATA[поиск изображений]]></category><category><![CDATA[изображения]]></category><category><![CDATA[изображения товаров]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[OTA-система обновления прошивок для 30 000 устройств в закрытом контуре: опыт Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/957556/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/957556/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=957556</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/dd5/c9a/ab4/dd5c9aab4f24058153115e2d73904d8e.png" /><p>Привет, Хабр! Меня зовут Пётр Растегаев, я лид backend-разработки команды девайсов. Сегодня я расскажу о нашей системе обновления прошивок устройств: как мы вообще дошли до <s>жизни такой</s> текущих принципов, какой стек технологий выбрали, какие архитектурные паттерны использовали при разработке и как выстроили удобный релизный цикл прошивок. Заваривайте чай — вас ждёт увлекательное путешествие ;-)</p> <a href="https://habr.com/ru/articles/957556/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=957556#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 20 Oct 2025 13:36:02 GMT</pubDate>
+      <dc:creator><![CDATA[petrastegaev1985 (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category>
+      <category><![CDATA[python]]></category><category><![CDATA[архитектура]]></category><category><![CDATA[ddd]]></category><category><![CDATA[ota]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[1000 в 1: единая платформа для событий Databus. Опыт Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/1000072/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/1000072/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1000072</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8db/e5c/f4c/8dbe5cf4cf66c51fe1add02faa0d856f.png" /><p>Думаю, многие сталкивались с ситуацией, когда в компании есть множество различных сервисов, которым нужно асинхронно обмениваться данными. Databus — это волшебная шина, которая как раз решает эту задачу.</p><p>В этой статье я расскажу, как устроен централизованный, надёжный и удобный способ асинхронного взаимодействия сервисов внутри Wildberries. Я Виктор Такташов, Golang-разработчик в команде Trust &amp; Safety. С задачами Highload знаком не понаслышке, потому что когда-то занимался сервером популярной онлайн-игры. К тому же я больше шести лет занимался борьбой, так что с проблемами расправляюсь умело и хладнокровно :-)</p><p>Почему мы решили сделать Databus</p> <a href="https://habr.com/ru/articles/1000072/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1000072#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 18 Feb 2026 13:00:29 GMT</pubDate>
+      <dc:creator><![CDATA[vityadev (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Go]]></category><category><![CDATA[Высоконагруженные системы]]></category>
+      <category><![CDATA[go]]></category><category><![CDATA[kafka]]></category><category><![CDATA[highload]]></category><category><![CDATA[databus]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[От legacy-монолита к микрофронтендам: архитектура современного SPA]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/1036296/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/1036296/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1036296</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/6d2/d64/02d/6d2d6402d997e0be8438b3f176604d39.PNG" /><p>Меня зовут Иван Некипелов, я технический руководитель команды фронтенд инфраструктуры в Wildberries &amp; Russ. Последнии несколько лет мы с командой развиваем архитектуру и инфраструктуру большого frontend-продукта.</p><p><br>В этой статье разберу наш путь от монолита к микрофронтендам: &nbsp;расскажу как решали ключевые проблемы и с какими сложностями столкнулись во время миграции.</p> <a href="https://habr.com/ru/articles/1036296/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1036296#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Tue, 19 May 2026 14:48:44 GMT</pubDate>
+      <dc:creator><![CDATA[VanyaJedi (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[JavaScript]]></category><category><![CDATA[Микросервисы]]></category>
+      <category><![CDATA[frontend]]></category><category><![CDATA[spa]]></category><category><![CDATA[microfrontends]]></category><category><![CDATA[architecture]]></category><category><![CDATA[module federation]]></category><category><![CDATA[typescript]]></category><category><![CDATA[javascript]]></category><category><![CDATA[monorepo]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Wildberries &amp; Russ приглашает на RecSys Meetup / 28 августа, 18:00]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/rwb/news/936928/</guid>
+		<link>https://habr.com/ru/companies/rwb/news/936928/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=936928</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/59b/5d3/0fa/59b5d30fafd69b2a44180896564606a1.png" /><p>На митапе поговорим о том, как технологии «угадывают желания» пользователей. Спикеры расскажут, как работают рекомендательные алгоритмы Wildberries &amp; Russ: от блока «вам может понравиться» до сложных моделей, влияющих на выдачу товаров. <br>Это про большие данные, машинное обучение, интересы пользователей и бизнес-задачи.</p><p><strong><a href="https://doit.wb.ru/pages/recsys-meetup?utm_source=habr&amp;utm_campaign=recsys&amp;utm_content=14082033">Регистрация уже открыта!</a></strong></p> <a href="https://habr.com/ru/articles/936928/#habracut">Узнать подробности</a>]]></description>
+		
+		<pubDate>Thu, 14 Aug 2025 09:33:52 GMT</pubDate>
+    <dc:creator><![CDATA[MariMokieva (RWB)]]></dc:creator>
+		<category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Конференции]]></category>
+		<category><![CDATA[recsys]]></category><category><![CDATA[рекомендательные системы]]></category><category><![CDATA[ml]]></category><category><![CDATA[machine learning]]></category><category><![CDATA[data science]]></category><category><![CDATA[ds]]></category><category><![CDATA[митап]]></category><category><![CDATA[meetup]]></category><category><![CDATA[wb]]></category><category><![CDATA[машинное обучение]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как работает антибот в мобильном приложении Wildberries]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/1032556/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/1032556/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1032556</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/381/ac7/f48/381ac7f4894732c6c06b0905b064c036.png" /><p>Привет, Хабр! Меня зовут Денис Ульянов, я уже 12 лет в IT и последние полтора года руковожу командой Antibot в Wildberries.</p><p>До работы в WB я три года был на тёмной стороне и занимался продуктами по сбору данных из открытых источников. Нейтрально намекаю на парсеры :) Должен признать, этот опыт помогает мне отстреливать ботов на ресурсах WB.</p><p>Сегодня поделюсь, как моя команда сделала не только антибота, но и собственный парсер для атак на себя. Надеюсь, после публикации не произойдёт массовое нападение ботов!</p> <a href="https://habr.com/ru/articles/1032556/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1032556#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Tue, 12 May 2026 11:00:59 GMT</pubDate>
+      <dc:creator><![CDATA[slvABTOP (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Высоконагруженные системы]]></category>
+      <category><![CDATA[антибот]]></category><category><![CDATA[ddos-защита]]></category><category><![CDATA[парсинг]]></category><category><![CDATA[информационная безопасность]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Архитектура маркетплейса]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/intervolga/articles/530090/</guid>
+      <link>https://habr.com/ru/companies/intervolga/articles/530090/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=530090</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/849/b30/7fa/849b307fa7475c59b7d9baaed3665c39.jpg" /><p>Как говорит <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81"><u>Википедия</u></a>, маркетплейс — это платформа e-commerce, онлайн-магазин электронной торговли, предоставляющий информацию о продукте или услуге третьих лиц, чьи операции обрабатываются его оператором. Если объяснять проще, то маркетплейс является торговой площадкой, которая работает по принципу связующего звена между покупателями и продавцами. Поначалу его легко перепутать с интернет-магазином, но между ними - кардинальная разница. У маркетплейса непримечательный дизайн, зато в каталоге сотни тысяч товаров. А у каждого товара — десятки цен.</p><p>Вот такой он, маркетплейс. Неприметный на первый взгляд, но дьявольски сложный внутри.</p> <a href="https://habr.com/ru/articles/530090/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=530090#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 27 Nov 2020 05:27:45 GMT</pubDate>
+      <dc:creator><![CDATA[stepan_ovchinnikov (ИНТЕРВОЛГА)]]></dc:creator>
+      <category><![CDATA[Блог компании ИНТЕРВОЛГА]]></category><category><![CDATA[Веб-разработка]]></category><category><![CDATA[Разработка под e-commerce]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Бизнес-модели]]></category>
+      <category><![CDATA[Маркетплейс]]></category><category><![CDATA[Разработка]]></category><category><![CDATA[внедрение]]></category><category><![CDATA[cms]]></category><category><![CDATA[it-компании]]></category><category><![CDATA[it-технологии]]></category><category><![CDATA[it-инфоструктура]]></category><category><![CDATA[интернет-магазин]]></category><category><![CDATA[web-разработка]]></category><category><![CDATA[web-программирование]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как прошёл Golang Meetup Wildberries &amp; Russ]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/972430/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/972430/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=972430</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4c5/708/ebb/4c5708ebb2b5af50efca2b2185191ef9.jpg" /><p>Привет, Хабр! 27 ноября обсудили на Golang Meetup Wildberries &amp; Russ, как строить надёжную бизнес-логику, оптимизировать работу с памятью и проектировать масштабируемую событийную архитектуру. В статье делимся записями докладов.</p> <a href="https://habr.com/ru/articles/972430/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=972430#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Tue, 02 Dec 2025 10:54:48 GMT</pubDate>
+      <dc:creator><![CDATA[svetlana_dolmatova (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Go]]></category>
+      <category><![CDATA[go]]></category><category><![CDATA[митап]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Не спеши, Маша! Разбор примеров из книги Хэррис Д.М., Хэррис С.Л. Цифровая схемотехника и архитектура компьютера]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/775718/</guid>
+      <link>https://habr.com/ru/articles/775718/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=775718</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2b5/11f/766/2b511f766e0dfc64851805f9ff4d10cc.png" /><p>И вот, скачав бесплатную версию книги, я в который раз убедился, что как оно было этак 40-50 лет тому назад, так оно фактически и осталось. Но больше убило другое. В научном плане стало даже хуже. Теорию, судя по содержанию книги, нынче пролетают "по диагонали", что влечет за собой элементарные ошибки, характерные больше для студентов техникума, чем "вышки", на которых, судя по рекламе, эта книга рассчитана. </p><p>Нижеследующий разбор примеров из книги, надеюсь, это подтвердит. Но, если в чем-то я не прав, то, как говаривали когда-то, старшие товарищи меня поправят.</p><p>Итак, начнем...</p><p></p> <a href="https://habr.com/ru/articles/775718/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=775718#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 22 Nov 2023 15:28:45 GMT</pubDate>
+      <dc:creator><![CDATA[lws0954]]></dc:creator>
+      <category><![CDATA[Профессиональная литература]]></category><category><![CDATA[Программирование микроконтроллеров]]></category><category><![CDATA[Производство и разработка электроники]]></category><category><![CDATA[Электроника для начинающих]]></category>
+      <category><![CDATA[параллельное программирование]]></category><category><![CDATA[автоматное программирование]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Биддер «одной цифрой» для Wildberries на Rust: контроллер с мёртвой зоной, лимиты API и выживание под 429]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1063434/</guid>
+      <link>https://habr.com/ru/articles/1063434/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1063434</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/845/851/468/8458514686245f905ef0781d06d6ac6f.gif" /><p>Я бэкенд-разработчик: пишу на Rust сервис аналитики для продавцов маркетплейсов. Одна из его частей — автоматический биддер, который превращает цель «ДРР не выше 12%» в непрерывное управление ставками. Внутри: контроллер с мёртвой зоной и клампами, per-token бакеты против 429 «Limited by global limiter, per seller», возобновляемые фоновые джобы и борьба с дедлоками параллельных писателей.</p> <a href="https://habr.com/ru/articles/1063434/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1063434#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 27 Jul 2026 10:12:46 GMT</pubDate>
+      <dc:creator><![CDATA[Vahe327]]></dc:creator>
+      <category><![CDATA[Rust]]></category><category><![CDATA[Разработка под e-commerce]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Контекстная реклама]]></category>
+      <category><![CDATA[rust]]></category><category><![CDATA[tokio]]></category><category><![CDATA[rate limiting]]></category><category><![CDATA[token bucket]]></category><category><![CDATA[http 429]]></category><category><![CDATA[backend]]></category><category><![CDATA[api маркетплейсов]]></category><category><![CDATA[автоматизация]]></category><category><![CDATA[контроллер]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[«Особое мнение» по каждому SKU: три AI-модели вместо BI-правил]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1036774/</guid>
+      <link>https://habr.com/ru/articles/1036774/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1036774</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ec7/664/bbe/ec7664bbe3076920d91440058fe2cca2.png" /><p>Мой знакомый Николай держит на Ozon магазин постельного белья. Со стороны всё нормально: оборот есть, товар продаётся, кабинет не пустует. А денег в конце месяца — нет. Не «мало», а непонятно куда они делись.</p><p>Я стал разбираться — и понял, что это не его частная беда. Полный P&amp;L по каждому товару никто не считает: на каталоге в 500–2000 позиций это часы в неделю. Товар крутится в топе по обороту — но оборот ничего не говорит о марже: после возвратов и рекламы он годами уходит в минус, в полной слепой зоне. Инструментов на рынке хватает, но почти все просто показывают ещё одну P&amp;L-таблицу — много цифр, красиво, и ровно ноль ответа на вопрос «и что мне теперь с этим делать».</p><p>Так появился SKUmind — сервис, который сводит прибыль по каждому SKU и говорит, что с ней делать. Под катом — почему я выкинул привычную для BI логику на правилах, как собрал консилиум из трёх AI-моделей разных вендоров с арбитратором, как реверс-инжинирил Ozon API двумя параллельными сессиями Claude и почему ревью кода теперь съедает 60–70% времени.</p> <a href="https://habr.com/ru/articles/1036774/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1036774#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 20 May 2026 05:54:44 GMT</pubDate>
+      <dc:creator><![CDATA[vkobzar]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Проектирование API]]></category><category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[Развитие стартапа]]></category><category><![CDATA[Python]]></category>
+      <category><![CDATA[маркетплейсы]]></category><category><![CDATA[Ozon]]></category><category><![CDATA[Wildberries]]></category><category><![CDATA[аналитика прибыли]]></category><category><![CDATA[LLM]]></category><category><![CDATA[ансамбль моделей]]></category><category><![CDATA[Claude API]]></category><category><![CDATA[реверс-инжиниринг]]></category><category><![CDATA[SaaS]]></category><category><![CDATA[юнит-экономика]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как DWH и BI-аналитика может помочь устранить до 80% ошибок при планировании отгрузок на маркетплейсы]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/837578/</guid>
+      <link>https://habr.com/ru/articles/837578/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=837578</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a08/959/37d/a0895937d0aac60a9d33c5f199279f00.png" /><p>Для проведения многомерного анализа продаж и разработки дальнейшей стратегии, необходимо учитывать не только розничные и онлайн-продажи, но и проводить анализ результатов торговли и результатов конкурентов на маркетплейсах: объем заказов, выкупа и возвратов, остатки на складах, затраты на логистику, сравнение с конкурентами и т. д.</p><p>Получить единый доступ к данным из Wildberries, Ozon, Яндекс Маркет и платформ аналитики маркетплейсов (Маяк, SellerFox, Moneyplace, MPStats) помогут корпоративное хранилище данных и аналитические приложения на базе современной BI-платформы.</p><p>В статье на примере дашбордов, разработанных для крупного производителя детской одежды с более 70 магазинами в России и странах СНГ, рассказываем, как DWH и BI могут помочь:</p><p> •	Разрабатывать новые стратегии маркетинга и продаж на маркетплейсах<br> •	Проводить ABC-XYZ анализ товаров<br> •	Планировать отгрузки продукции на склады</p><p></p> <a href="https://habr.com/ru/articles/837578/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=837578#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 21 Aug 2024 12:39:11 GMT</pubDate>
+      <dc:creator><![CDATA[qlever]]></dc:creator>
+      <category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[Визуализация данных]]></category><category><![CDATA[Управление e-commerce]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Хранение данных]]></category>
+      <category><![CDATA[маркетплейсы]]></category><category><![CDATA[бизнес-аналитика]]></category><category><![CDATA[bi]]></category><category><![CDATA[big data]]></category><category><![CDATA[dwh]]></category><category><![CDATA[хранилище данных]]></category><category><![CDATA[wildberries]]></category><category><![CDATA[ozon]]></category><category><![CDATA[дашборды]]></category><category><![CDATA[data analysis]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я подключил 3 маркетплейса к AI-агенту за 25 минут]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1001180/</guid>
+      <link>https://habr.com/ru/articles/1001180/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1001180</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/dbb/1ae/b4b/dbb1aeb4bd544948ec5cb5dad7d73aca.jpg" /><p>Три маркетплейса, три API, три набора подводных камней — и ноль ручного кодинга. Как мультиагентный пайплайн с CISO-агентом написал интеграцию с Ozon, Wildberries и Яндекс Маркетом за 25 минут. 35 задач, 23 файла, 21 баг найден автоматически.</p> <a href="https://habr.com/ru/articles/1001180/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1001180#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 19 Feb 2026 06:00:44 GMT</pubDate>
+      <dc:creator><![CDATA[smvlx]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление продажами]]></category><category><![CDATA[Яндекс API]]></category><category><![CDATA[Open source]]></category>
+      <category><![CDATA[openclaw]]></category><category><![CDATA[ozon api]]></category><category><![CDATA[wildberries api]]></category><category><![CDATA[яндекс маркет api]]></category><category><![CDATA[ai агенты]]></category><category><![CDATA[маркетплейсы]]></category><category><![CDATA[мультиагентный пайплайн]]></category><category><![CDATA[автоматизация]]></category><category><![CDATA[kai protocol]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Графовые сети в рекомендательных системах]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/rwb/articles/826422/</guid>
+      <link>https://habr.com/ru/companies/rwb/articles/826422/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=826422</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/718/4f5/110/7184f5110406957df7ae46da82b8cc5f.png" /><p>Всем привет! Меня зовут Александр Тришин, я работаю DS в команде персональных рекомендаций Wildberries и занимаюсь графовыми нейросетями. </p><p>Это был мой первый опыт работы с графовыми сетями, и мне пришлось погрузиться в изучение статей и проведение собственных экспериментов. В процессе я нашел много интересного и полезного, поэтому решил поделиться своими находками с вами. В результате графовая нейросеть используется в качестве кандидатной модели для увеличения exploration.</p><p>В этой публикации я расскажу вам о <strong>LightGCN и не только</strong>. Вспомним, что такое сверточные графовые сети, их основные компоненты и принципы работы: подробно разберем модель на user-item графе, после перейдём к item-item графу. Затем познакомимся с моделью LightGCN: рассмотрим архитектуру, процесс обучения, недостатки (медленная сходимость и смещение в популярное) и варианты их устранения. А в конце посмотрим, как это всё применять на практике: обучим сетку на датасете Movielens-25m, замерим метрики, столкнёмся с проблемами LightGCN и вместе их решим! Ноутбук прилагается 🤓</p> <a href="https://habr.com/ru/articles/826422/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=826422#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 05 Jul 2024 12:16:23 GMT</pubDate>
+      <dc:creator><![CDATA[Alex_TDS (RWB)]]></dc:creator>
+      <category><![CDATA[Блог компании RWB]]></category><category><![CDATA[Алгоритмы]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[recsys]]></category><category><![CDATA[datascience]]></category><category><![CDATA[data science]]></category><category><![CDATA[lightgcn]]></category><category><![CDATA[графовые нейросети]]></category><category><![CDATA[рекомендательные системы]]></category><category><![CDATA[рекомендации]]></category><category><![CDATA[neuralnetworks]]></category><category><![CDATA[neural network]]></category><category><![CDATA[wildberries]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+      
+
+      
+
+      
+
+    
+  </channel>
+</rss>
