@@ -211,9 +211,8 @@ styles.css                               →  Extended: new classes for
 .github/workflows/pages.yml              →  Unchanged
                                          │
 vk-pm-hard-skills-guide.html (600 KB)    →  Deleted (single-page version,
-                                         │  superseded)
+                                         │  superseded by multi-page site)
 vk-pm-hard-skills-guide.pdf              →  Deleted
-block1-reference.html (458 KB)           →  Was a duplicate; ensure deleted
 ```
 
 ### New files
@@ -241,7 +240,7 @@ Six phases. After each phase: commit + push to origin/main (GitHub Pages deploys
 - Update `index.html` for 3-part navigation
 - Update sidebar in all files
 - Create empty stub files: `part1-frameworks.html`, `part2-*.html`
-- Delete obsolete: `vk-pm-hard-skills-guide.html`, `.pdf`, duplicate `block1-reference.html`
+- Delete obsolete: `vk-pm-hard-skills-guide.html`, `vk-pm-hard-skills-guide.pdf`
 - Verify deploy works
 - **Commit + push**
 
