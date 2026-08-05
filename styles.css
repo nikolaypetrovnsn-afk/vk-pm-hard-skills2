@@ -438,3 +438,87 @@ pre code {
 /* ── Scrollbar ── */
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-thumb { background: var(--vk-border); border-radius: 2px; }
+
+/* === Part I & II additions === */
+
+.question-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #fafafa;
+}
+
+.question-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.badge-frequency {
+  background: #ff6b35;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.badge-frequency.rare {
+  background: #888;
+}
+
+.source-year {
+  color: #666;
+  font-size: 0.85em;
+}
+
+.question-text {
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.question-tests, .question-tips {
+  margin: 4px 0;
+  font-size: 0.95em;
+}
+
+.question-source {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 8px;
+}
+
+.case-walkthrough {
+  border-left: 3px solid #4a90d9;
+  padding-left: 16px;
+  margin: 20px 0;
+}
+
+.answer-example {
+  background: #f5f8fc;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 12px 0;
+}
+
+.formula-backref {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 16px 0;
+}
+
+.formula-backref-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.formula-inline-ref {
+  background: #e3f2fd;
+  padding: 1px 4px;
+  border-radius: 2px;
+  text-decoration: none;
+  border-bottom: 1px dotted #1565c0;
+}
