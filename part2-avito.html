@@ -228,7 +228,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Дерево метрик продукта — постройте для конкретного продукта Avito (например, Авито Недвижимость / Авито Доставка / Авито Работа).</p>
         <p><strong>Что проверяют:</strong> способность разложить бизнес-метрику (GMV, take rate, conversion) на input-метрики; понимание северной звезды и контр-метрик; учёт шума и трендов.</p>
-        <p><strong>На что обратить внимание:</strong> North Star для Avito — GMV (gross merchandise value). Дерево: GMV = #active listings × conversion to contact × conversion to deal × avg deal value × take rate. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> North Star для Avito — GMV (gross merchandise value). Дерево: GMV = #active listings × conversion to contact × conversion to deal × avg deal value × take rate. См. разбор в <a href="#case-listing-quality" class="formula-inline-ref">§4.1 — там дерево метрик качества объявления → конверсия в контакт</a>, <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -302,7 +302,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему поиска/ранжирования объявлений для Avito.</p>
         <p><strong>Что проверяют:</strong> архитектуру поиска (inverted index, ranking signals, ML-модели), understanding of relevance vs business metrics (GMV), A/B testing для ранжирования (counterfactual interleaving, см. статью Avito про то, почему A/B не подходит для ранжирования).</p>
-        <p><strong>На что обратить внимание:</strong> обычный A/B не работает для ранжирования — network effects (одно объявление показывается многим пользователям). Решения: interleaving, counterfactual evaluation. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B для ранжирования (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> обычный A/B не работает для ранжирования — network effects (одно объявление показывается многим пользователям). Решения: interleaving, counterfactual evaluation. См. разбор в <a href="#case-listing-quality" class="formula-inline-ref">§4.1 — там факторы ранжирования и метрики качества</a> и <a href="#case-ab-network" class="formula-inline-ref">§4.2 — A/B с network effects через switchback</a>, <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B для ранжирования (см. §III.2)</a>.</p>
       </div>
 
       <div class="question-card">

@@ -149,7 +149,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Новые товары без истории продаж плохо ранжируются. Как решить проблему холодного старта? Что делать, если один товар продаётся разными продавцами с разной ценой и доставкой?</p>
         <p><strong>Что проверяют:</strong> понимание холодного старта в ранжировании, бины по цене/доставке, матчер для склейки офферов, перенос статистики между бинами.</p>
-        <p><strong>На что обратить внимание:</strong> Ozon использует матрицу W для переноса статистики между бинами (10×10: цена × доставка). Матчер склеивает одинаковые товары от разных продавцов. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon использует матрицу W для переноса статистики между бинами (10×10: цена × доставка). Матчер склеивает одинаковые товары от разных продавцов. См. разбор в <a href="#case-query-prediction" class="formula-inline-ref">§4.1 — там матрица W и матчер обсуждаются как часть архитектуры поиска</a>, <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -201,7 +201,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Метрики в A/B-тесте «шумные» — у одной дисперсия в 100× больше, чем у другой. Как их сравнивать? Как привести к единой шкале?</p>
         <p><strong>Что проверяют:</strong> нормализация метрик, Poisson Bootstrap, деление аплифта на стандартное отклонение, multi-метричная линейная комбинация.</p>
-        <p><strong>На что обратить внимание:</strong> Ozon делит аплифт на стандартное отклонение — метрики в единой шкале, независимой от шума. Линейная сумма с весами: guardrails (выручка) с большим весом, growth (клики) с меньшим. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon делит аплифт на стандартное отклонение — метрики в единой шкале, независимой от шума. Линейная сумма с весами: guardrails (выручка) с большим весом, growth (клики) с меньшим. См. разбор в <a href="#case-ab-optimization" class="formula-inline-ref">§4.2 — там показано, как Poisson Bootstrap и веса применяются на практике</a>, <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -221,7 +221,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Приоритизуйте: (а) +2% конверсии в покупку, (б) +1.5% GMV, (в) +5.2% рекламной выручки — что важнее? Что делать, если они конфликтуют?</p>
         <p><strong>Что проверяют:</strong> иерархия метрик, North Star, guardrails vs growth, P&L-мышление.</p>
-        <p><strong>На что обратить внимание:</strong> Это реальные результаты Query Prediction. В иерархии: guardrails (выручка, GMV) — нельзя уронить. Growth (конверсия, клики) — можно растить. Рекламная выручка — отдельный P&L. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">Экономика (см. §III.3)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Это реальные результаты Query Prediction. В иерархии: guardrails (выручка, GMV) — нельзя уронить. Growth (конверсия, клики) — можно растить. Рекламная выручка — отдельный P&L. См. разбор в <a href="#case-query-prediction" class="formula-inline-ref">§4.1 — там эти три метрики обсуждаются как primary + guardrails</a>, <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">Экономика (см. §III.3)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -231,7 +231,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> В A/B-тесте 4 варианта ранжирования. Каждый показывает +X% к CTR, но -Y% к выручке. Как выбрать победителя? Что делать, если метрики «поехали» в разные стороны?</p>
         <p><strong>Что проверяют:</strong> multi-метричная оптимизация, веса, guardrails, сегментный анализ, отдельный A/B для финальной оценки.</p>
-        <p><strong>На что обратить внимание:</strong> Линейное суммирование метрик с весами, защитным метрикам — большие веса. После оптимизации — отдельный A/B для оценки истинного эффекта. Если метрики «поехали» — сегментируйте, не усредняйте. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Линейное суммирование метрик с весами, защитным метрикам — большие веса. После оптимизации — отдельный A/B для оценки истинного эффекта. Если метрики «поехали» — сегментируйте, не усредняйте. См. разбор в <a href="#case-ab-optimization" class="formula-inline-ref">§4.2 — там показано, как строится multi-метричная оптимизация с guardrails</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -241,7 +241,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Поиск показывает +2.1% к конверсии, но в одном регионе выдача стала хуже. Как найти и исправить? Как сегментировать?</p>
         <p><strong>Что проверяют:</strong> сегментный анализ, гео-фильтры, матрица W для переноса статистики, business rules в ранжировании.</p>
-        <p><strong>На что обратить внимание:</strong> Бизнес-фильтры (геодоступность) — критичны. Матрица W переносит статистику между бинами. Сегментация: по региону, по категории, по цене. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Бизнес-фильтры (геодоступность) — критичны. Матрица W переносит статистику между бинами. Сегментация: по региону, по категории, по цене. См. разбор в <a href="#case-query-prediction" class="formula-inline-ref">§4.1 — там обсуждается, почему Query Prediction выбрали вместо ANN, в том числе из-за бизнес-фильтров</a>, <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
       </div>
 
       <h3>Estimation</h3>
@@ -263,7 +263,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Сколько уникальных товаров нужно проиндексировать для query prediction, если у Ozon 100M+ SKU? Какой размер индекса? Какой объём памяти?</p>
         <p><strong>Что проверяют:</strong> масштабирование ML-инференса, размер индекса, BPE-токенизатор, ограничения GPU.</p>
-        <p><strong>На что обратить внимание:</strong> Топ-50 токенов на товар, BPE на 65K токенов, 24 слоя BERT, 550M параметров. Смешивание кандидатов 4:1 (классический : QP). Индекс: 100M × 50 токенов = 5B записей. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Топ-50 токенов на товар, BPE на 65K токенов, 24 слоя BERT, 550M параметров. Смешивание кандидатов 4:1 (классический : QP). Индекс: 100M × 50 токенов = 5B записей. См. разбор в <a href="#case-query-prediction" class="formula-inline-ref">§4.1 — там эти цифры и архитектура QP обсуждаются целиком</a>, <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
       </div>
 
       <div class="question-card">

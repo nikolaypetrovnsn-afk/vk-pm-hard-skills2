@@ -133,7 +133,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Вы PM в Тинькофф Инвестиции. Метрика DAU/MAU стагнирует. Предложите гипотезы, как это исправить.</p>
         <p><strong>Что проверяют:</strong> декомпозицию AARRR, генерацию гипотез по retention (контент-фичи, социальные фичи, геймификация), приоритизацию ICE/RICE, проектирование A/B-теста, выбор метрик успеха (retention day 1/7/30, конверсия в сделку, средний чек).</p>
-        <p><strong>На что обратить внимание:</strong> не предлагайте фичи вслепую — сначала сегментируйте пользователей (новички/опытные, активные/спящие), потом гипотезы по сегментам. См. <a href="part1-frameworks.html#product-sense" class="formula-inline-ref">Product Sense framework (см. §I.1)</a>, <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>, <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (см. §III.1.3)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> не предлагайте фичи вслепую — сначала сегментируйте пользователей (новички/опытные, активные/спящие), потом гипотезы по сегментам. См. разбор в <a href="#case-investments-retention" class="formula-inline-ref">§4.1 DAU/MAU стагнирует</a>, <a href="part1-frameworks.html#product-sense" class="formula-inline-ref">Product Sense framework (см. §I.1)</a>, <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>, <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (см. §III.1.3)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -195,7 +195,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Разложите [продукт Т-Банка: мобильный банк / Т-Инвестиции / Т-Бизнес] на показатели. Покажите, как технические метрики (конверсии, заходы) через прокси-метрики влияют на деньги компании.</p>
         <p><strong>Что проверяют:</strong> системное мышление, Top-Down подход (Level 0: Business Value → Level 1: Departmental → Level 2: Operational), соблюдение логики иерархии, понимание GMV/LTV/ARPU.</p>
-        <p><strong>На что обратить внимание:</strong> стройте дерево метрик, не список. Каждая метрика нижнего уровня должна влиять на метрику верхнего. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star и metric tree (см. §III.1)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> стройте дерево метрик, не список. Каждая метрика нижнего уровня должна влиять на метрику верхнего. См. разбор в <a href="#case-investments-retention" class="formula-inline-ref">§4.1 — там показано дерево метрик для Тинькофф Инвестиций</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star и metric tree (см. §III.1)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -205,7 +205,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Менеджер горит идеей внедрить новую фичу. Как поймём, что стало лучше? Какой дизайн эксперимента выберем?</p>
         <p><strong>Что проверяют:</strong> выбор целевой метрики и guardrail-метрик (которые нельзя уронить), расчёт sample size, длительность, сегментация, интерпретация неоднозначных результатов. Т-Банк использует тысячи тестов в год — важно знание sequential testing, CUPED, стратификации.</p>
-        <p><strong>На что обратить внимание:</strong> Т-Банк — один из пионеров Group Sequential Test в России. Упомяните CUPED для уменьшения дисперсии и стратификацию для контроля сегментов. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Т-Банк — один из пионеров Group Sequential Test в России. Упомяните CUPED для уменьшения дисперсии и стратификацию для контроля сегментов. См. разбор в <a href="#case-funnel-drop" class="formula-inline-ref">§4.2 — там показано, как A/B-методология применяется к падению конверсии</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -299,7 +299,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Реализуйте перевод денег со счёта A на счёт B. Белый экран, ни интерфейсов, ни шаблонов, нет намёка на БД.</p>
         <p><strong>Что проверяют:</strong> способность уточнять требования в условиях неопределённости, проектирование API, обработка транзакций, идемпотентность, консистентность данных.</p>
-        <p><strong>На что обратить внимание:</strong> ключевые вопросы: что если перевод упал посередине? как обеспечить идемпотентность (idempotency key)? как обрабатывать race condition при списании? См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> ключевые вопросы: что если перевод упал посередине? как обеспечить идемпотентность (idempotency key)? как обрабатывать race condition при списании? См. разбор в <a href="#case-system-design" class="formula-inline-ref">§4.3 System Design — шаблон требования → use cases → design → scale применим и здесь</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -309,7 +309,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Спроектировать API для брокерской платформы (как Тинькофф Инвестиции). Какой протокол выбрать (REST vs gRPC vs веб-сокеты)? Как обрабатывать стриминг котировок, рейтлимитирование, кэширование?</p>
         <p><strong>Что проверяют:</strong> понимание gRPC, REST, версионирования, дедлайнов запросов, кэширования (Redis), рейтинг-лимитирования, архитектуры высоконагруженных fintech-систем.</p>
-        <p><strong>На что обратить внимание:</strong> реальная архитектура — gRPC для ордеров, REST для публичного API, веб-сокеты для стриминга котировок. Redis для кэша, rate-limit через token bucket. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> реальная архитектура — gRPC для ордеров, REST для публичного API, веб-сокеты для стриминга котировок. Redis для кэша, rate-limit через token bucket. См. разбор в <a href="#case-system-design" class="formula-inline-ref">§4.3 System Design — структура high-level → deep dive → scale & reliability</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
       </div>
 
       <h3>Behavioral</h3>
