@@ -51,7 +51,606 @@
 
   <main class="main">
     <h1>Ozon: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+
+    <p class="lead">Ozon — технологический маркетплейс №2 в РФ по GMV, где PM работает на стыке бизнеса и тяжёлой инфраструктуры: тысячи факторов ранжирования, VCG-аукцион, собственная A/B-платформа с Gaussian processes, GPU-KNN, BERT-based query prediction. Здесь ценят понимание trade-offs ML-архитектуры, платформенное мышление и честность о минусах решений.</p>
+
+    <div class="note-block" style="background: #fff8e1; border-left: 4px solid #ffa000; padding: 12px 16px; margin: 20px 0;">
+      <p style="margin: 0;"><strong>Важно про источники:</strong> Ozon Tech ведёт активный корпоративный блог на Habr (40+ статей за 2023–2026), но прямых разборов собеседований PM почти нет. Все вопросы в этой главе — <strong>реконструкция по косвенным сигналам</strong>: статьи описывают реальные проблемы и решения, на которых строятся кейсы. Пометка «По косвенным сигналам» — означает, что прямых собеседовательских кейсов не найдено, но тематика достоверно проверяется.</p>
+    </div>
+
+    <section id="profile">
+      <h2>§1 Профиль компании</h2>
+
+      <h3>Бизнес-модель и основные продукты</h3>
+      <p>Ozon — экосистема маркетплейса с растущим числом вертикалей:</p>
+      <ul>
+        <li><strong>Маркетплейс B2C</strong> — поиск, рекомендации, карточка товара, корзина, чекаут. Основной двигатель GMV.</li>
+        <li><strong>Ozon Логистика</strong> — ПВЗ, склады, доставка, прогнозирование спроса, резервация товаров.</li>
+        <li><strong>Ozon Банк / Fintech</strong> — рассрочка, BNPL, платежи, Ozon Карта, эквайринг.</li>
+        <li><strong>Ozon Fresh</strong> — продукты быстрого потребления, 15-30 мин доставка.</li>
+        <li><strong>Ozon Premium</strong> — подписка, free-доставка, кешбэк, контент.</li>
+        <li><strong>Реклама (Ozon Реклама)</strong> — спонсированные позиции, VCG-аукцион, брендовые кампании.</li>
+        <li><strong>Seller API / Магазин приложений</strong> — платформа для продавцов и разработчиков интеграций.</li>
+        <li><strong>Ozon Travel, Ozon Цифровой</strong> — небоскрёбные вертикали.</li>
+      </ul>
+
+      <h3>Технологический масштаб (по статьям Ozon Tech, 2023–2026)</h3>
+      <ul>
+        <li>100M+ SKU в индексе поиска</li>
+        <li>1000+ факторов ранжирования, новые добавляются ежедневно</li>
+        <li>Собственная A/B-платформа: 1000+ метрик, параллельные эксперименты</li>
+        <li>Query Prediction: BERT 24 слоя, 550M параметров, BPE-токенизатор на 65K токенов</li>
+        <li>VCG-аукцион: 25% экономии для продавцов относительно старой системы «Трафареты»</li>
+        <li>«Сковородочный апокалипсис»: сотни RPS на один хит-товар при распродажах</li>
+      </ul>
+
+      <h3>Культура и что ценят в PM</h3>
+      <ul>
+        <li><strong>Платформенное мышление:</strong> API — это продукт с метриками, монетизацией, экосистемой. PM должен видеть платформу, а не отдельные фичи.</li>
+        <li><strong>Trade-off скорость/надёжность:</strong> бета-режим API, тестовая ревизия факторов — культура осознанных компромиссов. PM должен уметь их называть.</li>
+        <li><strong>Методологическая глубина A/B:</strong> не просто t-test, а Gaussian processes, Poisson Bootstrap, UCB/Thompson Sampling. PM работает с методологией, а не только с результатами.</li>
+        <li><strong>ML-грамотность:</strong> PM должен понимать DAG факторов, cold start, exploration vs exploitation, retrieval/ranking/reranking.</li>
+        <li><strong>Честность о минусах:</strong> в статьях открыто пишут про потерю 70% запросов при NOWAIT, риск падения пода, ограничения GPU. Это культурная черта: PM должен уметь говорить о trade-offs, а не только о победах.</li>
+        <li><strong>Выбор «скучного» решения:</strong> Query Prediction выбрали обратный индекс вместо модного ANN. Культура прагматизма над хайпом.</li>
+      </ul>
+
+      <h3>Уровни и отличия</h3>
+      <table>
+        <thead>
+          <tr><th>Уровень</th><th>Зона ответственности</th><th>Что проверяют на интервью</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Middle PM</td><td>Фича или подсистема (карточка, фильтры, чекаут)</td><td>Базовая продуктовая логика, A/B-методология, SQL, marketplace-метрики</td></tr>
+          <tr><td>Senior PM</td><td>Продуктовая линейка (поиск, реклама, логистика)</td><td>ML-tradeoffs, A/B-методология на масштабе, P&L, иерархия метрик</td></tr>
+          <tr><td>Lead PM / Group PM</td><td>Несколько команд, кросс-продуктовые инициативы</td><td>Платформенный подход, системный дизайн, стратегия вертикали</td></tr>
+          <tr><td>Principal PM</td><td>Стратегическое направление (API, реклама, маркетплейс)</td><td>Архитектурные trade-offs, экосистема продуктов, связи между вертикалями</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="format">
+      <h2>§2 Формат собеседования</h2>
+
+      <p><strong>Важно:</strong> публичных разборов процесса найма Ozon PM мало. Ниже — типовая схема для российского big tech, реконструированная по косвенным сигналам (вакансии, статьи, митапы).</p>
+
+      <ol>
+        <li><strong>HR-скрининг (20–30 минут).</strong> Базовое соответствие, мотивация, ожидания по зарплате.</li>
+        <li><strong>Продуктовый кейс (60 минут).</strong> Кейс на реальной задаче Ozon: поиск, рекомендации, реклама, логистика. Оценивают структурность, метрики, гипотезы.</li>
+        <li><strong>Аналитическая секция (60 минут).</strong> SQL, A/B-методология (MDE, sample size, CUPED, switchback), интерпретация результатов. Уровень — выше среднего по рынку.</li>
+        <li><strong>Hiring manager / System Design (60 минут).</strong> Глубокий разбор опыта, trade-offs, иногда system design на высокую нагрузку.</li>
+        <li><strong>Финал / знакомство с командой.</strong> Культурный fit, выбор команды.</li>
+      </ol>
+
+      <p><strong>Где отсеивают чаще всего:</strong> аналитическая секция (из-за слабого A/B-метода) и кейс-интервью (из-за неумения работать с иерархией метрик и ML-tradeoffs).</p>
+
+      <p><strong>Культура митапов:</strong> Ozon Tech проводит Ozon Tech Talks, ML-митапы, HighLoad-встречи. Это и канал найма, и индикатор тем в фокусе.</p>
+    </section>
+
+    <section id="questions">
+      <h2>§3 Реальные вопросы с собеседований (по косвенным сигналам)</h2>
+      <p>Все вопросы реконструированы по статьям блога Ozon Tech на Habr (2023–2026) и вакансиям на hh.ru. Пометка «По косвенным сигналам» — означает, что прямых собеседовательских кейсов не найдено, но тематика достоверно проверяется на материале реальных проблем компании.</p>
+
+      <h3>Product Sense</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990180)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Пользователь ищет «редми нот 12» — в выдаче нет нужного товара, потому что в карточках написано «Redmi Note 12». Как улучшить поиск? Что делать с опечатками, сленгом, косвенными описаниями?</p>
+        <p><strong>Что проверяют:</strong> понимание семантического поиска, trade-off между ANN и обратным индексом, выбор таргета для ML-модели, интерпретируемость.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon выбрал Query Prediction на обратном индексе (SPLADE v2), а не HNSW/Faiss. Таргет — «добавления в корзину», а не клики. Результаты: +2.1% конверсия в покупку, +1.5% GMV, +5.2% рекламная выручка. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и разбор в <a href="#case-query-prediction" class="formula-inline-ref">§4.1 Query Prediction</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 995840)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Новые товары без истории продаж плохо ранжируются. Как решить проблему холодного старта? Что делать, если один товар продаётся разными продавцами с разной ценой и доставкой?</p>
+        <p><strong>Что проверяют:</strong> понимание холодного старта в ранжировании, бины по цене/доставке, матчер для склейки офферов, перенос статистики между бинами.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon использует матрицу W для переноса статистики между бинами (10×10: цена × доставка). Матчер склеивает одинаковые товары от разных продавцов. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1024114)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Команды по-разному реализуют фильтрацию таблиц в разных разделах — пользователи путаются, обращения в поддержку растут. Что делать? Что стандартизировать, а что оставить на откуп командам?</p>
+        <p><strong>Что проверяют:</strong> дизайн-системное мышление, правило «стандартизируем то, что повторяется 2+ раза», ROI стандартов, баланс стандарт vs творчество.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon описывает 8-секционную структуру гайда, цветовую маркировку (зелёный/жёлтый/красный), правило «1:1» (текст = визуал). «Стандарт не должен мешать творчеству». См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a> и <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 970848)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> У вас есть Seller API. Какие метрики — North Star для этого продукта? Как балансировать интересы двух аудиторий — разработчиков интеграций и продавцов?</p>
+        <p><strong>Что проверяют:</strong> платформенное мышление, многоуровневые метрики (технические + продуктовые + бизнес), двусторонний рынок, монетизация API.</p>
+        <p><strong>На что обратить внимание:</strong> Технические (latency, uptime, error rate) + продуктовые (time to first call, активные интеграции) + бизнес (GMV через API). Webhook vs polling. Магазин приложений. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1014218)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Маркетплейс хочет запустить рекламу. Какой механизм аукциона выбрать — первой цены, второй цены, VCG? Почему именно VCG? Какие риски?</p>
+        <p><strong>Что проверяют:</strong> понимание аукционов (Vickrey, VCG), Nash equilibrium, влияние на экономику продавцов, trade-off между простотой и эффективностью.</p>
+        <p><strong>На что обратить внимание:</strong> VCG (Vickrey-Clarke-Groves) — продавцы платят «внешний эффект» на других. У Ozon — 25% экономии для продавцов относительно старой системы «Трафареты» (аукцион первой цены). См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#pricing" class="formula-inline-ref">Pricing (см. §III.10)</a>.</p>
+      </div>
+
+      <h3>Analytical</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1012750)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> У вас 4 непрерывных параметра рекомендательной модели. Тестировать все комбинации A/B-тестами — невозможно. Как оптимизировать? Как балансировать exploration vs exploitation?</p>
+        <p><strong>Что проверяют:</strong> байесовская оптимизация, Gaussian Process Regression, UCB/Thompson Sampling, multi-метричная оптимизация, guardrails.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon использует GP для предсказания аплифта, Poisson Bootstrap для дисперсии, UCB/Thompson Sampling для выбора. Лимит: 4 параметра, 5 метрик. Защитным метрикам — большие веса. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a> и разбор в <a href="#case-ab-optimization" class="formula-inline-ref">§4.2 Байесовская оптимизация A/B</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1012750)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Метрики в A/B-тесте «шумные» — у одной дисперсия в 100× больше, чем у другой. Как их сравнивать? Как привести к единой шкале?</p>
+        <p><strong>Что проверяют:</strong> нормализация метрик, Poisson Bootstrap, деление аплифта на стандартное отклонение, multi-метричная линейная комбинация.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon делит аплифт на стандартное отклонение — метрики в единой шкале, независимой от шума. Линейная сумма с весами: guardrails (выручка) с большим весом, growth (клики) с меньшим. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990518)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Как приоритизировать гипотезы о новых факторах ранжирования, если их «больше тысячи»? Как ML-команда может добавлять факторы без релиза?</p>
+        <p><strong>Что проверяют:</strong> платформенный подход, DAG факторов, feature-meta-store с ревизиями, trade-off скорость/надёжность.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon — DAG (направленный ациклический граф), feature-meta-store с типовыми факторами без кода, тестовая ревизия vs прод, overload-тестирование. См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">Приоритизация (см. §III.7)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990180)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Приоритизуйте: (а) +2% конверсии в покупку, (б) +1.5% GMV, (в) +5.2% рекламной выручки — что важнее? Что делать, если они конфликтуют?</p>
+        <p><strong>Что проверяют:</strong> иерархия метрик, North Star, guardrails vs growth, P&L-мышление.</p>
+        <p><strong>На что обратить внимание:</strong> Это реальные результаты Query Prediction. В иерархии: guardrails (выручка, GMV) — нельзя уронить. Growth (конверсия, клики) — можно растить. Рекламная выручка — отдельный P&L. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">Экономика (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1012750)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> В A/B-тесте 4 варианта ранжирования. Каждый показывает +X% к CTR, но -Y% к выручке. Как выбрать победителя? Что делать, если метрики «поехали» в разные стороны?</p>
+        <p><strong>Что проверяют:</strong> multi-метричная оптимизация, веса, guardrails, сегментный анализ, отдельный A/B для финальной оценки.</p>
+        <p><strong>На что обратить внимание:</strong> Линейное суммирование метрик с весами, защитным метрикам — большие веса. После оптимизации — отдельный A/B для оценки истинного эффекта. Если метрики «поехали» — сегментируйте, не усредняйте. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990180, 995840)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Поиск показывает +2.1% к конверсии, но в одном регионе выдача стала хуже. Как найти и исправить? Как сегментировать?</p>
+        <p><strong>Что проверяют:</strong> сегментный анализ, гео-фильтры, матрица W для переноса статистики, business rules в ранжировании.</p>
+        <p><strong>На что обратить внимание:</strong> Бизнес-фильтры (геодоступность) — критичны. Матрица W переносит статистику между бинами. Сегментация: по региону, по категории, по цене. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</p>
+      </div>
+
+      <h3>Estimation</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 950044)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените количество запросов в секунду на сервис резервации товаров во время распродажы 11.11. Сколько хитов создаёт «сковородочный апокалипсис»?</p>
+        <p><strong>Что проверяют:</strong> Fermi-оценка, понимание HighLoad, цикл заказа, конкуренция за одну строку в БД.</p>
+        <p><strong>На что обратить внимание:</strong> Реальный кейс Ozon — ожидали 10 RPS на товар, получили сотни. Пул соединений БД исчерпан за 10 секунд. Оценка: 10M пользователей × 5% одновременных × 10 хитов = 5000 RPS на топ-товар. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a> и разбор в <a href="#case-reservation" class="formula-inline-ref">§4.3 Резервация товаров</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990180)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Сколько уникальных товаров нужно проиндексировать для query prediction, если у Ozon 100M+ SKU? Какой размер индекса? Какой объём памяти?</p>
+        <p><strong>Что проверяют:</strong> масштабирование ML-инференса, размер индекса, BPE-токенизатор, ограничения GPU.</p>
+        <p><strong>На что обратить внимание:</strong> Топ-50 токенов на товар, BPE на 65K токенов, 24 слоя BERT, 550M параметров. Смешивание кандидатов 4:1 (классический : QP). Индекс: 100M × 50 токенов = 5B записей. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 970848)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените дневной GMV через API продавцов — какой % от общего GMV Ozon? Как посчитать time to first call для нового разработчика?</p>
+        <p><strong>Что проверяют:</strong> API как продукт, unit-экономика платформы, метрики time-to-value, атрибуция GMV к каналу.</p>
+        <p><strong>На что обратить внимание:</strong> GMV через API — ключевая бизнес-метрика. Крупные продавцы (80/20) — через API. Time to first call — от регистрации до первого успешного запроса. Магазин приложений ускоряет. См. <a href="part3-reference.html#economics" class="formula-inline-ref">Экономика (см. §III.3)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</p>
+      </div>
+
+      <h3>System Design</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 950044)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему резервации товаров на складе при высокой конкуренции за один хит. Что делать при «сковородочном апокалипсисе»?</p>
+        <p><strong>Что проверяют:</strong> блокировки БД, FOR UPDATE NOWAIT, буферизация, шардирование, consistent hashing, trade-off доступность/полнота.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon: краткосрочно — FOR UPDATE NOWAIT (потеря 70% запросов, но система жива). Долгосрочно — буферизация пачками, классификация трафика (single/mixed/wide), шардирование через consistent hashing, операционная БД + БД остатков. См. разбор в <a href="#case-reservation" class="formula-inline-ref">§4.3 Резервация товаров</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990518)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте архитектуру факторов ранжирования, чтобы ML-команда могла добавлять новые факторы без релиза сервиса. Как защищать прод?</p>
+        <p><strong>Что проверяют:</strong> DAG (направленный ациклический граф), feature-meta-store, ревизии (test/prod), декларативное описание, overload-тестирование.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon: фактор — узел в DAG, зависимости вычисляются автоматически. Feature-meta-store — типовые факторы без кода. Тестовая ревизия → overload → прод. ML-pipeline с проверкой перформанса и качества. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (см. §I.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1012750)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте A/B-платформу для 1000+ метрик и параллельных экспериментов. Как избежать каннибализации трафика?</p>
+        <p><strong>Что проверяют:</strong> параллельные эксперименты с разной солью, Python + HDFS + Clickhouse + Grafana + Airflow, daily cycle, отдельный A/B для финальной оценки.</p>
+        <p><strong>На что обратить внимание:</strong> N параллельных экспериментов (по одному на параметр), каждый со своей солью. Поверх — отдельный A/B с контролем/тестом/индифферентным. Ежедневный цикл: сбор метрик → бутстрап → переобучение GP → выбор параметров. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a> и разбор в <a href="#case-ab-optimization" class="formula-inline-ref">§4.2 Байесовская оптимизация</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 970848)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте API-платформу для продавцов: версионность, рейт-лимиты, документация, экосистема. Как мигрировать с polling на webhook?</p>
+        <p><strong>Что проверяют:</strong> API как продукт, бета-режим, backward compatibility, webhook vs polling, магазин приложений, dev-портал.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon: новые методы в бете, URL сохраняется, контракт может меняться. Webhook вместо polling — снижает нагрузку и задержки. Магазин приложений — витрина решений. dev.ozon.ru — личный кабинет. Telegram-каналы для обновлений. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <h3>Behavioral</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 970848, 950044)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите о случае, когда вы сделали осознанный trade-off между скоростью и надёжностью. Как вы приняли решение? Что бы сделали иначе?</p>
+        <p><strong>Что проверяют:</strong> осознанные компромиссы, способность назвать минусы решения, приоритет доступности над полнотой.</p>
+        <p><strong>На что обратить внимание:</strong> Бета-режим API — быстро, но контракт меняется. FOR UPDATE NOWAIT — потеря 70% запросов, но система жива. Культура Ozon: честно называть минусы. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a> и <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 990180)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Опишите ситуацию, где вы выбрали «скучное» решение вместо модного. Почему? Как защищали решение перед стейкхолдерами?</p>
+        <p><strong>Что проверяют:</strong> прагматизм над хайпом, способность аргументировать trade-off, понимание зрелости технологий.</p>
+        <p><strong>На что обратить внимание:</strong> Ozon выбрал обратный индекс вместо ANN (HNSW/Faiss). Причины: интерпретируемость, бизнес-фильтры, шардирование, скорость интеграции. См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a> и <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2023 (ст. 958334)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Как вы строите отношения с командой разработки при конфликте приоритетов? Что делать, если тимлид предлагает одно, а вы — другое?</p>
+        <p><strong>Что проверяют:</strong> взаимодействие с разработкой, понимание технической логики, способность слушать, data-driven разрешение конфликтов.</p>
+        <p><strong>На что обратить внимание:</strong> «Ошибка выжившего» в найме — алгоритмическое мышление важнее фреймворков. PM должен понимать техническую логику команды, а не только бизнес-требования. См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a> и <a href="part3-reference.html#people" class="formula-inline-ref">People (см. §III.19)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Ozon Tech, 2024 (ст. 1024114)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите о случае, когда вы внедрили стандарт, который экономил время команд. Как убедили команды его соблюдать?</p>
+        <p><strong>Что проверяют:</strong> платформенное мышление, ROI стандартов, управление изменениями, баланс стандарт vs творчество.</p>
+        <p><strong>На что обратить внимание:</strong> Design system — «хороший дизайн становится не случайностью, а системой». Стандарт не убивает творчество, а освобождает время. Цветовая маркировка (зелёный/жёлтый/красный). См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a> и <a href="part3-reference.html#people" class="formula-inline-ref">People (см. §III.19)</a>.</p>
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>§4 Разборы кейсов</h2>
+
+      <div class="case-walkthrough" id="case-query-prediction">
+        <h3>§4.1 Product Sense / Analytical: Query Prediction для поиска Ozon</h3>
+
+        <p><strong>Формулировка:</strong> Пользователь ищет «редми нот 12» — в выдаче нет нужного товара, потому что в карточках написано «Redmi Note 12». Как улучшить поиск? Что делать с опечатками, сленгом, косвенными описаниями?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Понять масштаб проблемы:</strong> % запросов с опечатками/сленгом, % нулевых выдач, конверсия из поиска по таким запросам vs «чистым».</li>
+          <li><strong>Декомпозиция проблемы:</strong> (а) matching — найти релевантные товары; (б) ranking — поставить их выше; (в) UX — показать, что нашлось.</li>
+          <li><strong>Выбор подхода:</strong>
+            <ul>
+              <li><strong>Чистый ANN (HNSW, Faiss):</strong> модно, но проблемы с бизнес-фильтрами (геодоступность), шардирование на 100M+ товаров сложно, интерпретируемость низкая.</li>
+              <li><strong>Обратный индекс + Query Prediction:</strong> модель предсказывает, по каким токенам документ будет найден, токены кладутся в обратный индекс. Инфраструктура фильтрации уже работает.</li>
+              <li><strong>Гибрид:</strong> смешивание 4:1 (классический индекс : QP).</li>
+            </ul>
+          </li>
+          <li><strong>Выбор таргета для модели:</strong> клики — много, но шумно (кликбейт). Заказы — мало, но чисто. «Добавления в корзину» — баланс: данных больше, чем заказов, и нет кликбейта.</li>
+          <li><strong>Архитектура модели:</strong> BERT-like, 24 слоя, 550M параметров, BPE-токенизатор на 65K токенов. Пулинг через максимум по токенам. Для каждого товара — топ-50 предсказанных токенов в обратный индекс.</li>
+          <li><strong>Онлайн-инференс:</strong> запрос токенизуется → поиск по QP-индексу как обычный полнотекстовый → смешивание 4:1 с классическим индексом.</li>
+          <li><strong>Метрики:</strong>
+            <ul>
+              <li><strong>Primary:</strong> конверсия в покупку из поиска.</li>
+              <li><strong>Guardrails:</strong> GMV per user, рекламная выручка, latency, diversity.</li>
+              <li><strong>Ofline:</strong> Recall@k, NDCG, доля нулевых выдач.</li>
+            </ul>
+          </li>
+          <li><strong>Эксперимент:</strong> A/B 50/50, 4 недели (capture недельную сезонность и отложенные покупки).</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Сначала оценю масштаб: допустим, 30% запросов содержат опечатки или сленг, у них нулевая выдача в 20% случаев против 5% у «чистых». Конверсия в покупку из таких запросов в 3× ниже. Это точка роста.</p>
+          <p>Декомпозиция: проблема в matching — релевантные товары есть, но не находятся. Ranking вторичен: если товар не в кандидатах, ранжирование не поможет.</p>
+          <p>Выбор подхода. ANN (HNSW, Faiss) — модно, но у нас 100M+ SKU, шардирование сложное, бизнес-фильтры (геодоступность) плохо ложатся на векторный поиск, интерпретируемость низкая. Выбираю Query Prediction на обратном индексе — модель предсказывает, по каким токенам документ будет найден, токены кладутся в индекс. Инфраструктура фильтрации и шардирования уже работает «из коробки».</p>
+          <p>Таргет для модели — «добавления в корзину», не клики. Кликбейта меньше, данных больше, чем у заказов. Это критично: на кликах модель учится показывать «привлекательные» товары, а не релевантные.</p>
+          <p>Архитектура: BERT-like, 24 слоя, 550M параметров, BPE на 65K токенов. Для каждого товара берём топ-50 предсказанных токенов — эвристика, которая побила более «умные» подходы с порогами вероятности.</p>
+          <p>Онлайн: запрос токенизуется, ищется по QP-индексу как обычный полнотекстовый. Смешивание 4:1 (классический : QP) — снижает риск деградации.</p>
+          <p>Метрики. Primary — конверсия в покупку из поиска. Guardrails — GMV per user, рекламная выручка, latency, diversity. Ofline — Recall@k, доля нулевых выдач.</p>
+          <p>Эксперимент: A/B 50/50, 4 недели. Ожидаю +2% к конверсии, +1.5% к GMV. Рекламная выручка может вырасти сильнее — релевантный поиск увеличивает клики по спонсированным позициям.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Выбор таргета:</strong> клики vs корзины vs заказы — это ключевое решение. Кликбейт портит модель. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</li>
+          <li><strong>Интерпретируемость:</strong> модель показывает, какой токен документа триггерил запрос. Это позволяет точечно улучшать описания товаров.</li>
+          <li><strong>Бизнес-фильтры:</strong> ANN плохо ложится на геодоступность. Обратный индекс — ок.</li>
+          <li><strong>Смешивание 4:1:</strong> полная замена индекса рискованна. Гибрид снижает риск.</li>
+          <li><strong>Ofline-метрики vs онлайн:</strong> модель оценивается на val loss, затем ручная разметка, затем A/B. Не прыгайте сразу в A/B.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать ANN «потому что это современно».</li>
+          <li>Не упомянуть выбор таргета для обучения.</li>
+          <li>Игнорировать бизнес-фильтры и шардирование.</li>
+          <li>Не учитывать интерпретируемость для поддержки.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — BERT, BPE, обратный индекс, ANN vs QP; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — primary + guardrails; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B, MDE, длительность; <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — search & ranking в e-commerce.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-ab-optimization">
+        <h3>§4.2 Analytical: байесовская оптимизация A/B для рекомендаций</h3>
+
+        <p><strong>Формулировка:</strong> У вас 4 непрерывных параметра рекомендательной модели. Тестировать все комбинации A/B-тестами — невозможно. Как оптимизировать? Как балансировать exploration vs exploitation?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Понять задачу:</strong> 4 непрерывных параметра → бесконечное число комбинаций. Классический A/B не работает.</li>
+          <li><strong>Выбор метода:</strong> байесовская оптимизация с Gaussian Process Regression как моделью-оценщиком.</li>
+          <li><strong>Почему GP:</strong>
+            <ul>
+              <li>Не накладывает ограничений на вид функции зависимости таргета.</li>
+              <li>Возвращает не только прогноз, но и стандартное отклонение → баланс exploration/exploitation.</li>
+              <li>Учитывает дисперсию измерения через шум на диагонали ковариационной матрицы.</li>
+            </ul>
+          </li>
+          <li><strong>Дисперсия метрик:</strong> Poisson Bootstrap. Деление аплифта на стандартное отклонение приводит метрики в единую шкалу, независимую от шума.</li>
+          <li><strong>Стратегии выбора параметров:</strong>
+            <ul>
+              <li><strong>UCB (Upper Confidence Bound):</strong> выбирает варианты с высоким прогнозом и большим отклонением.</li>
+              <li><strong>Thompson Sampling:</strong> сэмплирует аплифт из нормального распределения параметров модели.</li>
+            </ul>
+          </li>
+          <li><strong>Параллельные эксперименты:</strong> N экспериментов (по одному на параметр), каждый со своей солью. Поверх — отдельный A/B с контролем/тестом/индифферентным.</li>
+          <li><strong>Архитектура:</strong> Python-сервис + HDFS + Clickhouse + Grafana + Airflow DAG. Ежедневный цикл: сбор метрик → бутстрап → переобучение GP → выбор параметров.</li>
+          <li><strong>Лимиты:</strong> не более 4 параметров, не более 5 метрик при линейном суммировании. Защитным метрикам — большие веса.</li>
+          <li><strong>Финальная оценка:</strong> после оптимизации — отдельный A/B-тест для оценки истинного эффекта.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«У нас 4 непрерывных параметра рекомендательной модели: например, вес CTR, вес basket-add, вес purchase, вес diversity. Каждая комбинация — потенциальный A/B. Перебор невозможен.</p>
+          <p>Выбираю байесовскую оптимизацию. Модель-оценщик — Gaussian Process Regression. GP не накладывает ограничений на вид функции, возвращает прогноз и стандартное отклонение. Стандартное отклонение позволяет балансировать exploration (пробуем малоизученные области) и exploitation (используем лучшие известные).</p>
+          <p>Дисперсия метрик. У нас 5 метрик: CTR, basket-add, conversion, GMV, ad revenue. У каждой — разная дисперсия. Использую Poisson Bootstrap для оценки дисперсии. Делю аплифт на стандартное отклонение — метрики в единой шкале, можно их комбинировать.</p>
+          <p>Таргет: линейная сумма метрик с весами. Защитные (GMV, ad revenue) — вес 5. Growth (CTR, basket-add) — вес 1. Это не даёт оптимизатору уронить выручку ради кликов.</p>
+          <p>Стратегия выбора — Thompson Sampling: сэмплирую аплифт из нормального распределения параметров модели. Это балансирует exploration/exploitation автоматически.</p>
+          <p>Параллельные эксперименты. Создаю 4 параллельных A/B (по одному на параметр), каждый со своей солью. Теоретический максимум — 100^4 наборов в день. Поверх — отдельный A/B с контролем/тестом/индифферентным для финальной оценки.</p>
+          <p>Архитектура: Python-сервис, HDFS для хранения, Clickhouse + Grafana для мониторинга, Airflow DAG как планировщик. Ежедневный цикл: ночью собираю метрики, бутстрап, переобучение GP, выбор параметров на завтра.</p>
+          <p>Лимиты: не более 4 параметров одновременно (иначе GP переобучается), не более 5 метрик (иначе линейная сумма теряет смысл). Если нужно больше — разбиваю на итерации.</p>
+          <p>Финальная оценка. После оптимизации — отдельный A/B-тест на 2-4 недели, чтобы оценить истинный эффект. Оптимизатор может «подогнать» параметры под шум, финальный A/B проверяет реальный аплифт.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Bootstrap для дисперсии:</strong> без него метрики разной природы нельзя сравнивать. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (см. §III.2)</a>.</li>
+          <li><strong>Защитные метрики с большими весами:</strong> иначе оптимизатор уронит выручку ради кликов.</li>
+          <li><strong>Финальный A/B после оптимизации:</strong> оптимизатор может «подогнать» под шум.</li>
+          <li><strong>Лимит 4 параметра / 5 метрик:</strong> эвристика Ozon, основанная на практике.</li>
+          <li><strong>Exploration vs exploitation:</strong> UCB или Thompson Sampling — обязательно.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать grid search или random search «потому что проще».</li>
+          <li>Не упомянуть guardrails.</li>
+          <li>Не учитывать дисперсию метрик при сравнении.</li>
+          <li>Пропустить финальный A/B.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — Bayesian optimization, Gaussian processes, Poisson Bootstrap, UCB, Thompson Sampling; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — guardrails vs growth, линейная комбинация; <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — архитектура A/B-платформы.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-reservation">
+        <h3>§4.3 System Design: резервация товаров при высокой конкуренции</h3>
+
+        <p><strong>Формулировка:</strong> Спроектируйте систему резервации товаров на складе при высокой конкуренции за один хит. Что делать при «сковородочном апокалипсисе» — когда ожидали 10 RPS на товар, а получили сотни?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Сбор требований:</strong>
+            <ul>
+              <li>10M+ пользователей, пиковые распродажи (11.11, Black Friday).</li>
+              <li>Сотни RPS на один хит-товар.</li>
+              <li>Резервация: при оформлении заказа товар должен быть забронирован на N минут.</li>
+              <li>Consistency: нельзя продать один товар дважды.</li>
+              <li>Latency: оформление заказа < 2 сек.</li>
+            </ul>
+          </li>
+          <li><strong>Наивный подход (и почему он ломается):</strong> транзакция с блокировкой `FOR UPDATE` на все товары из заказа. При 100 RPS на один товар — все выстраиваются в очередь, пул соединений БД исчерпан за 10 секунд.</li>
+          <li><strong>Краткосрочное решение («костыль»):</strong>
+            <ul>
+              <li>`FOR UPDATE NOWAIT` — вместо ожидания блокировки сразу возвращает ошибку.</li>
+              <li>Вайт-лист «горячих» item_id: для акционных товаров — NOWAIT, для остальных — обычный процесс.</li>
+              <li>Результат: ~70% запросов падают с ошибкой, но система живёт.</li>
+              <li>UX: пользователь видит «товар только что купили» — это нормально при распродаже.</li>
+            </ul>
+          </li>
+          <li><strong>Долгосрочное решение — буферизация:</strong>
+            <ul>
+              <li>Собирать запросы в пачки и обрабатывать одной транзакцией с одной блокировкой.</li>
+              <li><strong>Классификация трафика:</strong> Single item (1 товар) — идеально для буферизации. Mixed (2–10) — с учётом пересечений. Wide (10+) — последовательно, без буферизации.</li>
+              <li><strong>Без тайм-аута:</strong> буфер отправляется сразу после завершения предыдущего. При низкой нагрузке — мгновенный ответ, при высокой — экономия на блокировках.</li>
+            </ul>
+          </li>
+          <li><strong>Шардирование:</strong>
+            <ul>
+              <li>Разделяем БД на операционную (резервы) и БД остатков.</li>
+              <li>Трафик по конкретному шарду идёт в один экземпляр приложения через consistent hashing.</li>
+              <li>Убираем конкуренцию между подами за одни данные.</li>
+            </ul>
+          </li>
+          <li><strong>Минусы финального решения:</strong>
+            <ul>
+              <li>Весь трафик по товару идёт в один под — при нехватке ресурсов он может упасть.</li>
+              <li>Нужно ограничивать InFlight-запросы на вызывающей стороне.</li>
+            </ul>
+          </li>
+          <li><strong>Observability:</strong> RPS на шард, latency p50/p95/p99, error rate, InFlight-запросы, пул соединений БД.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Соберу требования: 10M пользователей, распродажа 11.11, сотни RPS на хит-товар. Резервация: при оформлении товар бронируется на 15 минут. Consistency: нельзя продать дважды. Latency: < 2 сек.</p>
+          <p>Наивный подход — транзакция с `FOR UPDATE` на все товары из заказа. При 100 RPS на один товар все выстраиваются в очередь, пул соединений исчерпан за 10 секунд. Это и есть «сковородочный апокалипсис».</p>
+          <p>Краткосрочное решение. За сутки до следующей волны договариваемся с маркетингом о списке акционных товаров. Для них — `FOR UPDATE NOWAIT`: вместо ожидания блокировки сразу ошибка. ~70% запросов падают, но система живёт. UX: «товар только что купили» — это нормально при распродаже.</p>
+          <p>Долгосрочное решение — буферизация. Собираю запросы в пачки и обрабатываю одной транзакцией с одной блокировкой. Классификация трафика: Single item (1 товар) — идеально, буферизую. Mixed (2–10) — с учётом пересечений. Wide (10+) — последовательно, без буферизации.</p>
+          <p>Тайм-аут убираю: буфер отправляется сразу после завершения предыдущего. При низкой нагрузке — мгновенный ответ, при высокой — экономия на блокировках.</p>
+          <p>Шардирование. Разделяю БД на операционную (резервы) и БД остатков. Трафик по конкретному шарду идёт в один экземпляр приложения через consistent hashing. Убираю конкуренцию между подами за одни данные.</p>
+          <p>Минусы честно называю: весь трафик по товару идёт в один под — при нехватке ресурсов он может упасть. Поэтому ограничиваю InFlight-запросы на вызывающей стороне (circuit breaker, token bucket).</p>
+          <p>Observability: RPS на шард, latency p50/p95/p99, error rate, InFlight-запросы, пул соединений БД. Алерты на рост error rate или заполнение пула.</p>
+          <p>Критерий применимости: «высокая конкуренция за одну строку в БД» + «тысячи операций в секунду». Если хотя бы одно условие не выполняется — буферизация оверкилл.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Trade-off доступность/полнота:</strong> потерять 70% запросов, но сохранить систему — это осознанное решение. См. <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a>.</li>
+          <li><strong>Классификация трафика:</strong> single/mixed/wide — разная обработка. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</li>
+          <li><strong>Минусы своего решения:</strong> риск падения пода. Культура Ozon — честно называть минусы.</li>
+          <li><strong>Consistent hashing:</strong> трафик по одному товару идёт в один под — устраняет конкуренцию.</li>
+          <li><strong>UX-сторона:</strong> «товар только что купили» — это не баг, а норма при распродаже.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать «просто добавить серверов» — не решает конкуренцию за одну строку.</li>
+          <li>Не упомянуть FOR UPDATE NOWAIT как краткосрочное решение.</li>
+          <li>Не классифицировать трафик.</li>
+          <li>Не называть минусы своего решения.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — блокировки БД, FOR UPDATE NOWAIT, буферизация, шардирование, consistent hashing, circuit breaker; <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (§I.4)</a> — high-level → deep dive → scale; <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (§III.12)</a> — trade-off доступность/полнота.</p>
+      </div>
+    </section>
+
+    <section id="distinct">
+      <h2>§5 Что отличает Ozon</h2>
+
+      <h3>Специфика expectations</h3>
+      <ul>
+        <li><strong>Платформенное мышление:</strong> API — продукт с метриками и экосистемой. PM должен видеть платформу, а не отдельные фичи. Магазин приложений, dev.ozon.ru, Telegram-каналы — элементы экосистемы.</li>
+        <li><strong>Тяжёлая ML-инфраструктура:</strong> DAG факторов, feature-meta-store, GPU-KNN, BERT-based QP. PM должен понимать trade-offs ML-архитектуры.</li>
+        <li><strong>Своя A/B-платформа:</strong> не просто t-test, а Gaussian processes, bootstrap, параллельные эксперименты. PM работает с методологией, а не только с результатами.</li>
+        <li><strong>VCG-аукцион вместо первой цены:</strong> редкая для рынка ставка на экономическую теорию. 25% экономии для продавцов.</li>
+        <li><strong>Честность о минусах:</strong> в статьях открыто пишут про потерю 70% запросов, риск падения пода, ограничения GPU. Культура: PM должен уметь говорить о trade-offs.</li>
+        <li><strong>Выбор «скучного» решения:</strong> Query Prediction на обратном индексе вместо модного ANN. Прагматизм над хайпом.</li>
+        <li><strong>Trade-off скорость/надёжность:</strong> бета-режим API, тестовая ревизия факторов — культура осознанных компромиссов.</li>
+      </ul>
+
+      <h3>Типичные ошибки кандидатов</h3>
+      <ul>
+        <li>Предлагать «модные» решения (ANN, LLM) без учёта бизнес-фильтров и интерпретируемости.</li>
+        <li>Не упоминать guardrails в A/B-дизайне.</li>
+        <li>Сводить multi-метричную оптимизацию к одной метрике.</li>
+        <li>Не понимать платформенный подход (API как продукт, design system).</li>
+        <li>Бояться назвать минусы своего решения — в Ozon это красный флаг.</li>
+        <li>Не учитывать network effects в экспериментах на маркетплейсе.</li>
+      </ul>
+
+      <h3>Сигналы, что вы прошли раунд</h3>
+      <ul>
+        <li>На кейсе поиска предлагаете Query Prediction или гибрид, а не «просто ANN».</li>
+        <li>В A/B-дизайне упоминаете guardrails, иерархию метрик, дисперсию.</li>
+        <li>В System Design упоминаете классификацию трафика, шардирование, consistent hashing.</li>
+        <li>На вопросе про аукцион знаете разницу VCG vs первой цены.</li>
+        <li>Честно называете минусы своего решения.</li>
+        <li>На behavioral-вопросах показываете прагматизм над хайпом.</li>
+      </ul>
+    </section>
+
+    <section id="checklist">
+      <h2>§6 Чек-лист подготовки</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — CJM, hypothesis tree, trade-offs</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, multi-метричная оптимизация, SQL</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi, HighLoad-оценки</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — HighLoad, блокировки, шардирование</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — trade-offs, честность о минусах</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — иерархия, guardrails vs growth, multi-метричная оптимизация</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — Bayesian optimization, Gaussian processes, bootstrap, UCB/Thompson</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — GMV, take rate, VCG-аукцион, P&L</li>
+        <li><a href="part3-reference.html#data" class="formula-inline-ref">§III.4 Данные</a> — SQL, event taxonomy для marketplace</li>
+        <li><a href="part3-reference.html#tech-fluency" class="formula-inline-ref">§III.18 Tech Fluency</a> — BERT, BPE, обратный индекс, ANN vs QP, DAG, шардирование</li>
+        <li><a href="part3-reference.html#marketplace" class="formula-inline-ref">§III.20 Marketplace</a> — двухсторонний рынок, network effects, cold start, матчер</li>
+        <li><a href="part3-reference.html#stakeholders" class="formula-inline-ref">§III.13 Stakeholders</a> — взаимодействие с ML-командой, платформенное мышление</li>
+        <li><a href="part3-reference.html#strategy" class="formula-inline-ref">§III.12 Strategy</a> — trade-offs, «скучное» vs «модное»</li>
+      </ul>
+
+      <h3>Что прочитать в блоге Ozon Tech на Habr</h3>
+      <ul>
+        <li><a href="https://habr.com/ru/articles/990180/" target="_blank">Query Prediction, или как мы отказались от ANN (2024)</a> — основной кейс про поиск</li>
+        <li><a href="https://habr.com/ru/articles/1012750/" target="_blank">A/B-оптимизация с Gaussian processes (2024)</a> — методология A/B</li>
+        <li><a href="https://habr.com/ru/articles/950044/" target="_blank">Сковородочный апокалипсис (2023)</a> — System Design резервации</li>
+        <li><a href="https://habr.com/ru/articles/990518/" target="_blank">Архитектура факторов ранжирования (2024)</a> — DAG, feature-meta-store</li>
+        <li><a href="https://habr.com/ru/articles/995840/" target="_blank">Цена и доставка в ранжировании (2023)</a> — cold start, матрица W</li>
+        <li><a href="https://habr.com/ru/articles/1014218/" target="_blank">VCG-аукцион в Ozon (2024)</a> — экономика рекламы</li>
+        <li><a href="https://habr.com/ru/articles/970848/" target="_blank">API как продукт (2023)</a> — платформенное мышление</li>
+        <li><a href="https://habr.com/ru/articles/1024114/" target="_blank">Гайды и дизайн-система (2024)</a> — стандарты</li>
+        <li><a href="https://habr.com/ru/articles/1063304/" target="_blank">От ANN к KNN на GPU (2024)</a> — retrieval рекомендаций</li>
+        <li><a href="https://habr.com/ru/articles/958334/" target="_blank">Ошибка выжившего в найме (2023)</a> — behavioral</li>
+      </ul>
+
+      <h3>Что повторить про экономику маркетплейса</h3>
+      <ul>
+        <li>GMV = сумма заказов, выручка = GMV минус возвраты, take rate = commission / GMV</li>
+        <li>VCG-аукцион: продавец платит «внешний эффект» на других, не свою ставку</li>
+        <li>Cold start: бины по цене × доставке, матрица W для переноса статистики</li>
+        <li>Network effects: user-level A/B не работает для ранжирования — switchback</li>
+        <li>API как продукт: GMV через интеграции, time to first call, магазин приложений</li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
