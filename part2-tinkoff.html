@@ -50,8 +50,529 @@
   </nav>
 
   <main class="main">
-    <h1>Тинькофф: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+    <h1>Тинькофф (Т-Банк): подготовка к собеседованию</h1>
+
+    <p class="lead">Т-Банк позиционирует себя как IT-компанию, а не банк. Здесь сильная metrics-driven культура: тысячи A/B-тестов в год, отдельная System Design-секция, курируемая техдиректором, и формализованный процесс с матрицей оценки. Для PM обязательно понимание fintech-специфики: AARRR, конверсия из регистрации в первое пополнение, retention day 1/7/30, unit-экономика.</p>
+
+    <section id="profile">
+      <h2>§1 Профиль компании</h2>
+
+      <h3>Бизнес-модель и основные продукты</h3>
+      <p>Т-Банк — экосистема fintech-продуктов вокруг ядра «карта Тинькофф Black»:</p>
+      <ul>
+        <li><strong>Дебетовая и кредитная карта (Black, Platinum)</strong> — основной продукт, драйвер привлечения и retention</li>
+        <li><strong>Тинькофф Инвестиции</strong> — брокерская платформа, API для алготрейдинга (~1 млн ордеров/день, 20 000 RPS)</li>
+        <li><strong>Тинькофф Бизнес</strong> — счета, эквайринг, бухгалтерия для ИП и малого бизнеса</li>
+        <li><strong>Тинькофф Мобайл</strong> — MVNO-оператор связи</li>
+        <li><strong>Т-Страхование, Т-Travel, T-Pass</strong> — смежные вертикали вокруг подписочной модели</li>
+        <li><strong>Платформа разработки (VoiceKit, Sage, мессенджер)</strong> — внутренние продукты, часть — для внешнего B2B-рынка</li>
+      </ul>
+
+      <h3>Культура и что ценят в PM</h3>
+      <ul>
+        <li><strong>Metrics-driven:</strong> тысячи A/B-тестов в год, культура «без метрики — нет фичи». Команда Origination публикует статьи о Group Sequential Test — ожидается понимание продвинутых методов (sequential testing, CUPED, стратификация).</li>
+        <li><strong>Технологичность:</strong> отказ от коробочных решений (Siebel CRM) в пользу собственной платформы. Стек: Java уходит, Python и Go активно развиваются. PostgreSQL, Redis, Kafka — стандарт.</li>
+        <li><strong>System Design как отдельная секция:</strong> курируется техдиректором Александром Поломодовым (199 интервью/год, 2/3 — System Design). Стандартизированный набор задачек, критерии оценки.</li>
+        <li><strong>Менеджерская секция:</strong> отдельный этап для PM-позиций — взаимодействие команд, техдолг, сроки.</li>
+        <li><strong>Top-Down thinking:</strong> от Business Value → Departmental → Operational. PM должен уметь спуститься от P&L к метрике конкретной фичи.</li>
+      </ul>
+
+      <h3>Уровни и отличия</h3>
+      <table>
+        <thead>
+          <tr><th>Уровень</th><th>Зона ответственности</th><th>Что проверяют на интервью</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Middle PM / TPM</td><td>Одна фича или поток в продукте</td><td>Продуктовый кейс + SQL + System Design basics</td></tr>
+          <tr><td>Senior PM / Senior TPM</td><td>Продуктовая линейка или вертикаль</td><td>3 секции: техническая, продуктовая, менеджерская; A/B-методология</td></tr>
+          <tr><td>Lead PM / Product Lead</td><td>Несколько команд, кросс-продуктовые инициативы</td><td>Стратегия, найм, бюджет, взаимодействие со смежными отделами</td></tr>
+          <tr><td>Principal / Head of Product</td><td>Стратегическое направление экосистемы</td><td>P&L-мышление, портфельная приоритизация, бизнес-моделирование</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="format">
+      <h2>§2 Формат собеседования</h2>
+
+      <p>Процесс в Т-Банке длительный — от отклика до оффера 1.5+ месяца:</p>
+
+      <ol>
+        <li><strong>HR-скрининг.</strong> Базовое соответствие, мотивация, ожидания по зарплате.</li>
+        <li><strong>System Design-секция (1 час).</strong> Стандартизированная, на доске (Miro). Сбор требований → варианты использования → системные требования → проработка → презентация. Для TPM — обязательна.</li>
+        <li><strong>Продуктовые кейсы (1 час).</strong> Кейсы на реальных продуктах Т-Банка: мобильный банк, Инвестиции, Бизнес. Оценка фичи через конверсию из «увидевших в воспользовавшихся».</li>
+        <li><strong>Менеджерская секция.</strong> Взаимодействие команд, техдолг, сроки, конфликты. Отдельный этап для PM/TPM.</li>
+        <li><strong>Знакомство с командами.</strong> Несколько коротких встреч с потенциальными лидами команд — культурный fit и выбор команды.</li>
+        <li><strong>Оффер.</strong> Решение обычно в течение 1-2 недель после финала.</li>
+      </ol>
+
+      <p><strong>Где отсеивают чаще всего:</strong> System Design-секция (если кандидат не умеет вести диалог и обосновывать trade-offs) и продуктовый кейс (если не структурирован и не переходит от проблемы к метрикам).</p>
+
+      <p><strong>Скрининг-платформа:</strong> Тинькофф создал собственную платформу с небольшими кусками кода, который можно запускать — 20 вопросов за 20 минут (упоминается для технических ролей).</p>
+    </section>
+
+    <section id="questions">
+      <h2>§3 Реальные вопросы с собеседований</h2>
+      <p>Вопросы собраны из статей 2023-2026 годов на Habr (личные статьи кандидатов + блог Т-Банка). Пометка «Частый» — 2+ источника описывают похожий паттерн.</p>
+
+      <h3>Product Sense</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Интервьюер показывает скриншот фичи в приложении мобильного банка и спрашивает: как фича должна работать, как оценить её эффективность, как оценить удовлетворённость пользователей, а также как повлиять на показатель конверсии — из увидевших в воспользовавшихся.</p>
+        <p><strong>Что проверяют:</strong> продуктовое мышление, умение формулировать метрики успеха фичи, понимание воронки (видел → воспользовался), способность предлагать гипотезы по росту конверсии.</p>
+        <p><strong>На что обратить внимание:</strong> сначала опишите, как фича решает пользовательскую задачу (JTBD), потом — метрики (видел → кликнул → воспользовался → остался), потом — гипотезы по росту каждого шага. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a> и <a href="part3-reference.html#discovery" class="formula-inline-ref">CustDev (см. §III.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Вы PM в Тинькофф Инвестиции. Метрика DAU/MAU стагнирует. Предложите гипотезы, как это исправить.</p>
+        <p><strong>Что проверяют:</strong> декомпозицию AARRR, генерацию гипотез по retention (контент-фичи, социальные фичи, геймификация), приоритизацию ICE/RICE, проектирование A/B-теста, выбор метрик успеха (retention day 1/7/30, конверсия в сделку, средний чек).</p>
+        <p><strong>На что обратить внимание:</strong> не предлагайте фичи вслепую — сначала сегментируйте пользователей (новички/опытные, активные/спящие), потом гипотезы по сегментам. См. <a href="part1-frameworks.html#product-sense" class="formula-inline-ref">Product Sense framework (см. §I.1)</a>, <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>, <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (см. §III.1.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Конверсия из регистрации в первое пополнение брокерского счёта упала на 15% за неделю. Ваши действия?</p>
+        <p><strong>Что проверяют:</strong> алгоритм поиска причин: проверка корректности данных → декомпозиция по сегментам (новые/старые, iOS/Android/Web, источник трафика) → внешние факторы (конкуренты, сезонность, новости) → внутренние факторы (релизы, изменения UX, сбои).</p>
+        <p><strong>На что обратить внимание:</strong> структурированный root cause analysis — это бинарный поиск. Делите пространство причин пополам: глобальное vs локальное, новые vs текущие. См. разбор в <a href="#case-funnel-drop" class="formula-inline-ref">§4.2 Падение конверсии</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> У вас 10 идей для развития продукта Т-Банка, ресурсы команды ограничены. Как выбрать?</p>
+        <p><strong>Что проверяют:</strong> RICE scoring (Reach × Impact × Confidence / Effort), стратегическое соответствие OKR, учёт зависимостей между фичами, стоимость задержки (cost of delay).</p>
+        <p><strong>На что обратить внимание:</strong> RICE — не единственный критерий. Учитывайте стратегическое соответствие OKR, риски и зависимости. См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE/WSJF (см. §III.7)</a> и <a href="part3-reference.html#okr" class="formula-inline-ref">OKR (см. §III.6)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Блог Т-Банка на Habr, 2021 (методология актуальна)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Обновляем интерфейс банкоматов. На какие метрики смотреть? Как понять, что редизайн успешен, если из-за безопасности и плохого интернета не можем собирать много данных об использовании?</p>
+        <p><strong>Что проверяют:</strong> способность работать в условиях ограниченной телеметрии, выбор прокси-метрик (длительность сессии, диспуты, обращения в колл-центр), понимание контекста использования (неприватная среда, очередь, стресс).</p>
+        <p><strong>На что обратить внимание:</strong> реальные прокси-метрики для банкоматов: частота диспутов, обращения в колл-центр после операции, длительность сессии, доля прерванных операций. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">прокси-метрики (см. §III.1)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B в офлайне (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Какую фичу запустить в [продукт Т-Банка: Т-Мобайл / Т-Инвестиции / Т-Бизнес / T-Pass]? Обоснуйте выбор, опишите MVP и метрики.</p>
+        <p><strong>Что проверяют:</strong> понимание экосистемы Т-Банка, способность формулировать гипотезу, MVP-подход, выбор north star metric и guardrail metrics, понимание unit-экономики.</p>
+        <p><strong>На что обратить внимание:</strong> MVP — это не «обрезанная фича», а минимальный тест гипотезы. Определите, какую гипотезу проверяете, какая метрика подтвердит/опровергнет, какой срок эксперимента. См. <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a> и <a href="part3-reference.html#pmf" class="formula-inline-ref">PMF (см. §III.9)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Повышать CR на конкретном этапе пользовательского пути» — типовая задача. Какой этап выберете и почему?</p>
+        <p><strong>Что проверяют:</strong> умение анализировать воронку, находить узкие места, формулировать гипотезы улучшения, проектировать эксперимент.</p>
+        <p><strong>На что обратить внимание:</strong> выбирайте этап с максимальным drop-off, не с максимальным объёмом. Узкое место = точка роста. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a> и <a href="part3-reference.html#data" class="formula-inline-ref">SQL-паттерны (см. §III.4)</a>.</p>
+      </div>
+
+      <h3>Analytical</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Разложите [продукт Т-Банка: мобильный банк / Т-Инвестиции / Т-Бизнес] на показатели. Покажите, как технические метрики (конверсии, заходы) через прокси-метрики влияют на деньги компании.</p>
+        <p><strong>Что проверяют:</strong> системное мышление, Top-Down подход (Level 0: Business Value → Level 1: Departmental → Level 2: Operational), соблюдение логики иерархии, понимание GMV/LTV/ARPU.</p>
+        <p><strong>На что обратить внимание:</strong> стройте дерево метрик, не список. Каждая метрика нижнего уровня должна влиять на метрику верхнего. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star и metric tree (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Блог Т-Банка на Habr, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Менеджер горит идеей внедрить новую фичу. Как поймём, что стало лучше? Какой дизайн эксперимента выберем?</p>
+        <p><strong>Что проверяют:</strong> выбор целевой метрики и guardrail-метрик (которые нельзя уронить), расчёт sample size, длительность, сегментация, интерпретация неоднозначных результатов. Т-Банк использует тысячи тестов в год — важно знание sequential testing, CUPED, стратификации.</p>
+        <p><strong>На что обратить внимание:</strong> Т-Банк — один из пионеров Group Sequential Test в России. Упомяните CUPED для уменьшения дисперсии и стратификацию для контроля сегментов. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Найти топ-5 категорий расходов по клиентам за последний месяц. / Написать запрос с JOIN. / Найти дубликаты в таблице. / В чём разница между INNER и LEFT JOIN?</p>
+        <p><strong>Что проверяют:</strong> базовый/средний SQL — JOIN, GROUP BY, оконные функции, подзапросы. Для PM-позиций (особенно Technical Product Manager) уровень ниже, чем у аналитиков, но обязателен.</p>
+        <p><strong>На что обратить внимание:</strong> отточите оконные функции (ROW_NUMBER, RANK, LAG, LEAD) — это топ-1 пробел у кандидатов. См. <a href="part3-reference.html#data" class="formula-inline-ref">SQL-паттерны (см. §III.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Метрика упала на 20%. Ваши действия?</p>
+        <p><strong>Что проверяют:</strong> системный подход: исключить проблемы с качеством данных → внешние факторы (сезонность, рынок) → технические сбои → изменения в продукте/маркетинге. Принцип бинарного поиска — вопросы, делящие пространство причин пополам (глобальное vs локальное, новые vs текущие пользователи).</p>
+        <p><strong>На что обратить внимание:</strong> сначала проверьте данные, потом сегментируйте. Не начинайте с гипотез без верификации. См. разбор в <a href="#case-funnel-drop" class="formula-inline-ref">§4.2 Падение конверсии</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">декомпозицию метрик (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Блог Т-Банка на Habr, 2022 (методология актуальна)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Как измерять качество продукта, который поставляет команда? Какие метрики внедрить?</p>
+        <p><strong>Что проверяют:</strong> понимание метрик дефектов (тест vs прод), SLA, количества заведённых/закрытых дефектов, способности создать единый подход к метрикам для разных команд.</p>
+        <p><strong>На что обратить внимание:</strong> quality metrics: defect escape rate (дефекты, дошедшие в прод), MTTR (mean time to recover), SLA-breaches, change failure rate. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Блог Т-Банка на Habr, 2021 (методология актуальна)</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Какие метрики смотреть при обновлении интерфейса банкоматов? Как измерять успешность, если данных мало?</p>
+        <p><strong>Что проверяют:</strong> выбор прокси-метрик в условиях ограниченной телеметрии: диспуты, обращения в колл-центр, длительность сессии, частота операций, retention пользователей банкоматов.</p>
+        <p><strong>На что обратить внимание:</strong> в офлайне A/B-тесты сложнее — используются гео-тесты или time-switched experiments. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">гео-тесты (см. §III.2)</a>.</p>
+      </div>
+
+      <h3>Estimation</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените количество транзакций через Тинькофф в день.</p>
+        <p><strong>Что проверяют:</strong> Fermi estimation: население РФ ~146 млн → клиенты Тинькофф ~30 млн активных → доля активных по картам ~20 млн → среднее транзакций на человека в день ~1.5 → ~30 млн транзакций/день. Важно показать ход рассуждений, проверить адекватность, назвать факторы погрешности.</p>
+        <p><strong>На что обратить внимание:</strong> всегда sanity check — у вас должно получаться ~20-40 млн транзакций/день для топ-банка. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi-подход (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените размер рынка для [продукт: подписка T-Pass / страхование / инвестиции для новичков].</p>
+        <p><strong>Что проверяют:</strong> TAM/SAM/SOM, декомпозиция через демографию и проникновение, понимание fintech-рынка РФ, конкуренции (Сбер, ВТБ, Альфа, Точка).</p>
+        <p><strong>На что обратить внимание:</strong> TAM → SAM → SOM. TAM — весь рынок, SAM — доступная часть с учётом каналов, SOM — реалистичный capture за 3-5 лет. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">TAM/SAM/SOM (см. §I.3)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Сколько ордеров в день проходит через API Тинькофф Инвестиций? Какова пиковая нагрузка?</p>
+        <p><strong>Что проверяют:</strong> понимание нагрузки fintech-системы, способности оценить через количество активных алготрейдеров, частоту запросов, пиковые события (открытие/закрытие торгов). Реальные цифры из блога: ~1 млн ордеров/день, до 20 000 запросов/сек.</p>
+        <p><strong>На что обратить внимание:</strong> пиковая нагрузка — на открытии и закрытии торгов (10:00 и 23:50 МСК). Реальная цифра — ~1 млн ордеров/день, 20 000 RPS. См. <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (см. §I.4)</a>.</p>
+      </div>
+
+      <h3>System Design</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектировать небольшую систему: 2 группы пользователей, несколько сервисов со своей бизнес-логикой, пара БД и один брокер сообщений. За час нужно дойти до масштабирования и отказоустойчивости.</p>
+        <p><strong>Что проверяют:</strong> System Design-навык: сбор требований → варианты использования → системные требования → проработка → презентация. Умение работать на доске (Miro), знание паттернов распределённых систем (Kafka, БД, микросервисы), масштабирование, отказоустойчивость.</p>
+        <p><strong>На что обратить внимание:</strong> структурируйте по шаблону: требования → use cases → high-level design → deep dive → scale & reliability. Не ныряйте в детали до high-level. См. <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design для PM (см. §I.4)</a> и разбор в <a href="#case-system-design" class="formula-inline-ref">§4.3 System Design</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Реализуйте перевод денег со счёта A на счёт B. Белый экран, ни интерфейсов, ни шаблонов, нет намёка на БД.</p>
+        <p><strong>Что проверяют:</strong> способность уточнять требования в условиях неопределённости, проектирование API, обработка транзакций, идемпотентность, консистентность данных.</p>
+        <p><strong>На что обратить внимание:</strong> ключевые вопросы: что если перевод упал посередине? как обеспечить идемпотентность (idempotency key)? как обрабатывать race condition при списании? См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектировать API для брокерской платформы (как Тинькофф Инвестиции). Какой протокол выбрать (REST vs gRPC vs веб-сокеты)? Как обрабатывать стриминг котировок, рейтлимитирование, кэширование?</p>
+        <p><strong>Что проверяют:</strong> понимание gRPC, REST, версионирования, дедлайнов запросов, кэширования (Redis), рейтинг-лимитирования, архитектуры высоконагруженных fintech-систем.</p>
+        <p><strong>На что обратить внимание:</strong> реальная архитектура — gRPC для ордеров, REST для публичного API, веб-сокеты для стриминга котировок. Redis для кэша, rate-limit через token bucket. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <h3>Behavioral</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите о себе. Какой у вас опыт, чем занимались, к чему стремитесь?</p>
+        <p><strong>Что проверяют:</strong> структурированность рассказа, соответствие опыту, мотивацию. Придётся рассказывать несколько раз разным собеседующим — каждый должен точно понимать, кто вы.</p>
+        <p><strong>На что обратить внимание:</strong> 2-минутная версия для HR, 5-минутная для технической секции, 10-минутная для финала. Натренеруйте все три. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Обсуждение ситуаций: сроки поставки, техдолг, неработающий продукт. Как взаимодействуете с командами разработки?</p>
+        <p><strong>Что проверяют:</strong> реальный опыт планирования и руководства командами, способность работать с техдолгом, управлять сроками, разрешать конфликты. Отдельная «Секция по Менеджменту» в Тинькофф.</p>
+        <p><strong>На что обратить внимание:</strong> ответы по STAR: Situation, Task, Action, Result. Техдолг — через trade-off с новыми фичами, не «отдадим потом». См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a> и <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите про проект, где можно было поступить лучше. Какие выводы сделали?</p>
+        <p><strong>Что проверяют:</strong> рефлексию, способность извлекать уроки из негативного опыта, честность. Даже негативный опыт с правильными выводами — плюс.</p>
+        <p><strong>На что обратить внимание:</strong> не выбирайте «политически нейтральный» кейс — интервьюеры видят фейк. Реальная неудача с конкретными выводами — сильнее. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">STAR (см. §I.5)</a>.</p>
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>§4 Разборы кейсов</h2>
+
+      <div class="case-walkthrough" id="case-investments-retention">
+        <h3>§4.1 Product Sense: DAU/MAU стагнирует в Тинькофф Инвестиции</h3>
+
+        <p><strong>Формулировка:</strong> Вы PM в Тинькофф Инвестиции. Метрика DAU/MAU стагнирует. Предложите гипотезы, как это исправить.</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Декомпозиция метрики:</strong> DAU/MAU = (активные в день) / (активные в месяц). Стагнация означает: либо новые не приходят, либо текущие заходят реже.</li>
+          <li><strong>Сегментация:</strong> разбейте DAU/MAU по сегментам: новые vs опытные, алготрейдеры vs long-term инвесторы, мобильные vs web, активные vs спящие.</li>
+          <li><strong>Гипотезы по сегментам:</strong>
+            <ul>
+              <li><em>Новички:</em> сложный онбординг, страх первой сделки, нет education-контента.</li>
+              <li><em>Опытные:</em> не хватает инструментов (нет нужных индикаторов, нет social trading), уходят к конкурентам за функционалом.</li>
+              <li><em>Спящие:</em> нет триггеров на возвращение (нет push про дивиденды, новости по портфелю).</li>
+              <li><em>Алготрейдеры:</em> ограничения API, нет backtesting-инструментов.</li>
+            </ul>
+          </li>
+          <li><strong>Приоритизация:</strong> RICE — Reach × Impact × Confidence / Effort.</li>
+          <li><strong>Эксперимент:</strong> A/B-тест на топ-2 гипотезах, primary metric — DAU/MAU на 30 дней, guardrail — конверсия в сделку (чтобы не получили рост заходов без активности).</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«DAU/MAU стагнирует — значит, либо новые не приходят, либо текущие заходят реже. Сначала сегментирую: новички / опытные / спящие / алготрейдеры. Допустим, данные показывают: новички заходят, но не возвращаются после 7 дня; опытные стабильны; спящие растут как доля базы.</p>
+          <p>Топ-гипотеза — у новичков нет причины возвращаться. Они купили первую акцию, не понимают, что делать дальше, и забывают. Решение: education-флоу — после первой сделки серия push про dividend dates, portfolio health, market news. Можно добавить геймификацию — «checkpoint в обучении».</p>
+          <p>Для спящих — reactivation-кампания: персональные push про изменение их портфеля (если портфель просел, предложим хеджирующую позицию; если вырос — congratulation + что делать с прибылью).</p>
+          <p>Приоритизация. Reach у education — все новички, Impact — высокий (day 7 retention коррелирует с LTV), Confidence — средний (нужен тест), Effort — 2 спринта. RICE ~ высокий. Для reactivation — Reach меньше (только спящие), но Effort ниже.</p>
+          <p>Эксперимент: A/B на 50/50, primary metric — day 30 retention, guardrail — конверсия в сделку (чтобы education не превратился в entertainment без транзакций). Длительность — 6 недель, чтобы capture полный цикл.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Сегментацию:</strong> общая метрика DAU/MAU скрывает, где именно проблема. Сегментируйте first, потом гипотезы. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</li>
+          <li><strong>Guardrail metrics:</strong> retention без конверсии в сделку = engagement theater. Заходят, но не торгуют — LTV не растёт.</li>
+          <li><strong>Cohort analysis:</strong> смотрите retention по когортам привлечения, не только по calendar month.</li>
+          <li><strong>Latency:</strong> education-эффект может проявиться через 60+ дней. Не обрывайте тест раньше.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать фичи без сегментации.</li>
+          <li>Не учитывать guardrail — рост заходов без роста активности.</li>
+          <li>Слишком короткий эксперимент для retention-эффекта.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — декомпозиция DAU/MAU; <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (§III.1.3)</a> — day 30 как primary; <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (§III.7)</a> — приоритизация гипотез; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B с guardrail; <a href="part3-reference.html#economics" class="formula-inline-ref">LTV (§III.3)</a> — долгосрочный север.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-funnel-drop">
+        <h3>§4.2 Analytical: падение конверсии из регистрации в первое пополнение</h3>
+
+        <p><strong>Формулировка:</strong> Конверсия из регистрации в первое пополнение брокерского счёта упала на 15% за неделю. Ваши действия?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Шаг 1 — верификация данных.</strong> Не сломался ли пайплайн? Совпадает ли число с backend-логами? Не изменилось ли определение метрики?</li>
+          <li><strong>Шаг 2 — декомпозиция по сегментам (бинарный поиск):</strong>
+            <ul>
+              <li>Платформа: iOS / Android / Web — падение везде или на одной?</li>
+              <li>Источник трафика: organic / paid / referral — может, упала только платная кампания?</li>
+              <li>Когорта: новые vs возвращающиеся пользователи — падение у тех, кто только что зарегистрировался?</li>
+              <li>Гео: РФ vs другие страны.</li>
+            </ul>
+          </li>
+          <li><strong>Шаг 3 — внешние факторы.</strong> Новости рынка (обвал биржи → люди не хотят вкладывать), действия конкурентов (Сбер запустил акцию), регуляторные изменения.</li>
+          <li><strong>Шаг 4 — внутренние факторы.</strong> Релизы за последние 7-14 дней, изменения в онбординге, A/B-тесты на продакшене, изменения в платёжном шлюзе.</li>
+          <li><strong>Шаг 5 — топ-3 гипотезы и проверка.</strong></li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Сначала проверю корректность данных. Сравню конверсию из BI с backend-логами и сырыми event-ами. Если расхождений нет — падение реальное.</p>
+          <p>Дальше — бинарный поиск. Делю на сегменты: iOS / Android / Web. Допустим, падение только на Android. Это сужает гипотезы: либо релиз Android-приложения, либо технический баг на конкретной версии.</p>
+          <p>Проверяю Android-релизы за последние 2 недели. Если был релиз — смотрю, не сломался ли шаг пополнения (например, после обновления СБП-интеграции). Параллельно — крэш-логи и funnel-анализ по версиим приложения.</p>
+          <p>Если Android-версия распределена равномерно — значит, не релиз. Тогда проверяю A/B-тесты. Не выкатили ли мы тест на 50%+ Android-трафика с негативным эффектом на шаг пополнения?</p>
+          <p>Если A/B чисто — внешние факторы. За последнюю неделю были новости рынка? Допустим, ЦБ подня ключевую ставку — это могло напугать новичков. Но тогда падение было бы и на iOS. Если только Android — это точно внутренняя проблема.</p>
+          <p>Топ-3 гипотезы: (1) баг в Android-релизе, (2) негативный A/B, (3) поломка СБП-интеграции. Проверка: крэш-логи, откат теста, мониторинг платежей.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Верификация данных FIRST:</strong> кандидаты сразу формулируют продуктовые гипотезы, пропуская шаг «а корректно ли посчитано». См. <a href="part3-reference.html#data" class="formula-inline-ref">Data Quality (см. §III.4)</a>.</li>
+          <li><strong>Бинарный поиск:</strong> не перебирайте все сегменты — делите пополам, чтобы быстро локализовать.</li>
+          <li><strong>Latency effects:</strong> возможно, падение — отложенный эффект релиза 2 недели назад.</li>
+          <li><strong>Корреляция с внешними событиями:</strong> новости рынка, регуляторные изменения.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Начинать с гипотез без проверки данных.</li>
+          <li>Не сегментировать и делать выводы по общей метрике.</li>
+          <li>Игнорировать внешние факторы (новости, регуляторы).</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — декомпозиция воронки; <a href="part3-reference.html#data" class="formula-inline-ref">SQL Patterns (§III.4)</a> — funnel-анализ по сегментам и версиям; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — проверка активных A/B; <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — крэш-логи, monitoring.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-system-design">
+        <h3>§4.3 System Design: проектирование системы для 2 групп пользователей</h3>
+
+        <p><strong>Формулировка:</strong> Спроектировать небольшую систему: 2 группы пользователей, несколько сервисов со своей бизнес-логикой, пара БД и один брокер сообщений. За час нужно дойти до масштабирования и отказоустойчивости.</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Сбор требований (5-10 минут):</strong> какие 2 группы пользователей? Какие use cases? Какие volume/latency требования? Что считается успехом?</li>
+          <li><strong>Use cases:</strong> для каждой группы — основные сценарии. Например, клиенты делают заказы, операторы их обрабатывают.</li>
+          <li><strong>High-level design (15 минут):</strong> набросать блоки: client → API gateway → service A/B → DB A/B → message broker. Показать потоки данных.</li>
+          <li><strong>Deep dive (20 минут):</strong> выбрать один сервис и проработать детали — schema, API, кэширование, обработка ошибок.</li>
+          <li><strong>Масштабирование (10 минут):</strong> горизонтальное vs вертикальное, шардирование БД, read replicas, кэш-слой.</li>
+          <li><strong>Отказоустойчивость (5 минут):</strong> что если упадёт сервис A? Что если потеряем сообщения в Kafka? Circuit breakers, retries, dead-letter queue.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Сначала уточняю требования. Допустим, 2 группы — клиенты (делают заказы) и операторы (обрабатывают). Use cases: клиент создаёт заказ, оператор берёт его в работу, обновляет статус, клиент получает уведомление. Volume: 10 000 заказов/день, пик — 100 RPS. Latency: P99 &lt; 500 мс.</p>
+          <p>High-level. Client → API Gateway → Order Service → DB (PostgreSQL) + Cache (Redis). Operator Service → тот же DB. Notification Service подписан на Kafka-топик с events. API Gateway ограничивает rate и валидирует auth.</p>
+          <p>Deep dive на Order Service. API: POST /orders (создание), GET /orders/{id} (статус), PATCH /orders/{id}/assign (оператор берёт). Schema: orders(id, client_id, status, created_at, operator_id, ...). Status — enum: new, assigned, in_progress, completed, cancelled. Кэш на GET-запросы, TTL 60 секунд.</p>
+          <p>Масштабирование. Order Service — stateless, горизонтально масштабируется. DB — read replicas для GET, master для writes. При росте — шардирование по client_id.</p>
+          <p>Отказоустойчивость. Если Order Service упал — API Gateway возвращает 503, client retries с экспоненциальной задержкой. Если потеряли Kafka-сообщение — Notification Service имеет batch-задачу, которая сверяет статусы и досылает уведомления. Circuit breaker между сервисами — если Operator Service лежит, Order Service не блокируется, а кладёт event в retry-очередь.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Сбор требований:</strong> кандидаты ныряют в архитектуру без понимания, что строим. Спросите volume, latency, consistency requirements. См. <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (см. §I.4)</a>.</li>
+          <li><strong>Trade-offs:</strong> каждое решение имеет trade-off. Redis-кэш — быстрее, но stale data. Read replicas — масштабируют чтение, но eventual consistency.</li>
+          <li><strong>Failure modes:</strong> что если упадёт Kafka? Что если DB master потерялся? Circuit breakers, retries, DLQ.</li>
+          <li><strong>Observability:</strong> как будете знать, что система здорова? Метрики, логи, tracing.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Начинать с рисования архитектуры без требований.</li>
+          <li>Не упомянуть trade-offs.</li>
+          <li>Игнорировать отказоустойчивость — «ну, упадёт, перезапустим».</li>
+          <li>Не вести диалог с интервьюером.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (§I.4)</a> — шаблон требования → use cases → design → scale; <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — Kafka, шардирование, circuit breakers; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — observability метрики.</p>
+      </div>
+    </section>
+
+    <section id="distinct">
+      <h2>§5 Что отличает Тинькофф</h2>
+
+      <h3>Специфика expectations</h3>
+      <ul>
+        <li><strong>Metrics-driven культура:</strong> тысячи A/B-тестов в год. Ожидается знание продвинутых методов: sequential testing, CUPED, стратификация. Команда Origination публикует статьи — читайте их перед собеседованием.</li>
+        <li><strong>Технологичная компания:</strong> Т-Банк позиционирует себя как IT-компанию, а не банк. Отказ от коробочных решений в пользу собственной платформы. Стек: Python, Go, PostgreSQL, Redis, Kafka, Kubernetes.</li>
+        <li><strong>System Design как отдельная секция:</strong> курируется техдиректором Александром Поломодовым (199 интервью/год, 2/3 — System Design). Стандартизированный набор задачек, критерии оценки.</li>
+        <li><strong>Менеджерская секция:</strong> отдельный этап для PM/TPM — взаимодействие команд, техдолг, сроки. Это не «behavioral light», а полноценная проверка управленческих навыков.</li>
+        <li><strong>Fintech-специфика:</strong> AARRR, конверсия из регистрации в первое пополнение, retention day 1/7/30, диспуты, NPL, ARPU, LTV/CAC, unit-экономика. Без этого не понять контекст кейсов.</li>
+        <li><strong>Top-Down thinking:</strong> от Business Value → Departmental → Operational. PM должен уметь спуститься от P&L к метрике конкретной фичи.</li>
+      </ul>
+
+      <h3>Типичные ошибки кандидатов</h3>
+      <ul>
+        <li>Готовиться к продуктовым кейсам, но не готовиться к System Design.</li>
+        <li>Не знать продвинутые методы A/B-тестирования (CUPED, sequential testing).</li>
+        <li>На менеджерской секции отвечать общими словами вместо конкретных STAR-кейсов.</li>
+        <li>Предлагать фичи без связи с метриками и unit-экономикой.</li>
+        <li>Не подготовить 3 версии рассказа о себе (2/5/10 минут).</li>
+      </ul>
+
+      <h3>Сигналы, что вы прошли раунд</h3>
+      <ul>
+        <li>Интервьюер на System Design задаёт уточняющие вопросы и предлагает рассмотреть альтернативы — вы в диалоге.</li>
+        <li>На продуктовом кейсе вас просят раскрыть одну из гипотез подробнее — значит, гипотезы качественные.</li>
+        <li>На менеджерской секции интервьюер приводит контрпримеры из своего опыта — вы на уровне senior.</li>
+        <li>В конце предлагается познакомиться с несколькими командами — позитивный сигнал, выбирают под какой_team.</li>
+      </ul>
+    </section>
+
+    <section id="checklist">
+      <h2>§6 Чек-лист подготовки</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — CIRCLES, MVP, метрики</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, CUPED, sequential testing, SQL</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi, TAM/SAM/SOM</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — микросервисы, Kafka, trade-offs, отказоустойчивость</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — STAR, 3 версии рассказа о себе</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — AARRR, North Star, metric tree</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — CUPED, sequential testing, стратификация</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — LTV/CAC, unit economics, P&L</li>
+        <li><a href="part3-reference.html#data" class="formula-inline-ref">§III.4 Данные</a> — SQL: JOIN, оконные функции, funnel</li>
+        <li><a href="part3-reference.html#prioritization" class="formula-inline-ref">§III.7 Приоритизация</a> — RICE, WSJF</li>
+        <li><a href="part3-reference.html#okr" class="formula-inline-ref">§III.6 OKR</a> — связь с стратегией</li>
+        <li><a href="part3-reference.html#tech-fluency" class="formula-inline-ref">§III.18 Tech Fluency</a> — Kafka, Redis, шардирование, circuit breakers</li>
+      </ul>
+
+      <h3>Что почитать/посмотреть</h3>
+      <ul>
+        <li><a href="https://habr.com/ru/articles/803471/">Habr: Как пройти собеседование на TPM в Тинькофф (2024)</a></li>
+        <li><a href="https://habr.com/ru/articles/784860/">Habr: Технологический бум Тинькофф, рождение System Design интервью (2024)</a></li>
+        <li><a href="https://habr.com/ru/companies/tbank/articles/876984/">Блог Т-Банка: Использование последовательного тестирования (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/tbank/articles/684608/">Блог Т-Банка: Как мы метрики качества внедряли (2022, методология актуальна)</a></li>
+        <li><a href="https://habr.com/ru/companies/tbank/articles/588410/">Блог Т-Банка: Метрики при обновлении интерфейса банкоматов (2021, методология актуальна)</a></li>
+        <li><a href="https://habr.com/ru/articles/731202/">Habr: Что под капотом у Тинькофф Инвестиций (2023)</a></li>
+        <li><a href="https://habr.com/ru/articles/994204/">Habr: Как решать продуктовые кейсы на собеседованиях (2026)</a></li>
+        <li>Доклады Т-Банка на HighLoad++, Podlodka, FinNext</li>
+      </ul>
+
+      <h3>SQL-подготовка</h3>
+      <ul>
+        <li>База: SELECT, WHERE, GROUP BY, HAVING, ORDER BY.</li>
+        <li>JOIN: INNER, LEFT, RIGHT, FULL, CROSS. Разница — топ-вопрос.</li>
+        <li>Оконные функции: ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, SUM OVER.</li>
+        <li>Подзапросы и CTE (WITH).</li>
+        <li>Практика: 30+ задач на LeetCode SQL / Stepik.</li>
+      </ul>
+
+      <h3>Self-check: 5 вопросов для самопроверки</h3>
+      <ol>
+        <li>Можете ли вы за 60 секунд спроектировать high-level архитектуру для системы с 2 группами пользователей?</li>
+        <li>Можете ли вы объяснить, как CUPED уменьшает дисперсию в A/B-тесте?</li>
+        <li>Можете ли вы написать SQL для funnel-аналитики с оконными функциями?</li>
+        <li>Можете ли вы разложить DAU/MAU Тинькофф Инвестиций на 5+ сегментов и предложить гипотезы стагнации?</li>
+        <li>Можете ли вы рассказать о провале проекта по STAR с конкретными выводами?</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
