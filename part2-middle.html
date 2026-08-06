@@ -51,7 +51,455 @@
 
   <main class="main">
     <h1>Middle-tier (Контур, Skyeng, 2ГИС): подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+
+    <p class="lead">Middle-tier — три компании с уникальными доменами: Контур (B2B SaaS, бухгалтерия и ЭДО), Skyeng (EdTech с двусторонним рынком), 2ГИС (гео-продукт, карты и навигация). Публичных разборов PM-собеседований здесь меньше, чем в big tech, но домены и культура отличаются — это требует разной подготовки.</p>
+
+    <div class="note-block" style="background: #fff8e1; border-left: 4px solid #ffa000; padding: 12px 16px; margin: 20px 0;">
+      <p style="margin: 0;"><strong>Важно про источники:</strong> для всех трёх компаний публичные интервью-кейсы — редкость. PM-позиции часто закрываются через внутренний рынок и рекомендации. Вопросы в этой главе — <strong>реконструкция по косвенным сигналам</strong>: корпоративные блоги, статьи о продуктовой культуре, вакансии. Реальные формулировки могут отличаться, но тематика достоверна.</p>
+    </div>
+
+    <section id="kontur">
+      <h2>§1 Контур</h2>
+
+      <h3>Профиль</h3>
+      <p><strong>Бизнес-модель:</strong> B2B SaaS для бизнеса — бухгалтерия (Контур.Бухгалтерия, Контур.Эльба), ЭДО (Диадок), отчётность (Экстерн), проверка контрагентов (Фокус), HR-tech. Экосистема из ~50 продуктов с общими каналами продаж. ~3,1 млн предпринимателей в экосистеме.</p>
+
+      <p><strong>Культура:</strong></p>
+      <ul>
+        <li><strong>B2B SaaS-фокус:</strong> регуляторный контекст (отчётность в налоговую, страховые взносы), многозвенные цепочки ЛПР, длинные циклы сделки.</li>
+        <li><strong>Сильная UX-исследовательская культура:</strong> отдельная UX-лаборатория, 10 000+ исследований. Проверяют способность формулировать гипотезы и выбирать методы.</li>
+        <li><strong>Тестовое задание — обязательный этап:</strong> формализованный шаблон проверки, 8 исследователей-проверяющих, 3 рабочих дня на проверку.</li>
+        <li><strong>Длинные циклы развития зрелых продуктов:</strong> Контур.Эльба, Бухгалтерия, Диадок, Экстерн — продукты с историей 10+ лет.</li>
+        <li><strong>Дискавери-долг и продуктовые исследования</strong> — частая тема кейсов.</li>
+      </ul>
+
+      <h3>Реальные вопросы (по косвенным сигналам)</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как бы вы улучшили Контур.Эльбу / Контур.Бухгалтерию для микробизнеса? Какие гипотезы проверите, какие метрики будете смотреть?»</p>
+        <p><strong>Что проверяют:</strong> способность декомпозировать B2B-продукт на пользовательские сценарии (ИП, бухгалтер, наёмный сотрудник), находить узкие места в онбординге и ежедневных задачах, формулировать проверяемые гипотезы. Учитывается понимание регуляторного контекста.</p>
+        <p><strong>На что обратить внимание:</strong> B2B-сегментация: ИП без сотрудников / ИП с сотрудниками / главный бухгалтер / наёмный бухгалтер. У каждой роли — свой сценарий. См. <a href="part3-reference.html#discovery" class="formula-inline-ref">CustDev в B2B (см. §III.5)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">B2B-метрики (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Стратегия запуска нового HR-tech продукта в портфеле Контур. С чего начнёте, как будете проверять спрос, как использовать существующую экосистему?»</p>
+        <p><strong>Что проверяют:</strong> стратегическое мышление в B2B SaaS: cust-dev с целевым сегментом, MVP-подход, использование существующих каналов (продажи, партнёрская сеть), понимание цикла B2B-продаж.</p>
+        <p><strong>На что обратить внимание:</strong> B2B-цикл продажи: пробный период → демо → пилот → enterprise-контракт. Использование экосистемы — кросс-продажи через существующих клиентов. См. <a href="part3-reference.html#gtm" class="formula-inline-ref">GTM (см. §III.16)</a> и <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «В Контур.Диадок поступило 5 идей от разных стейкхолдеров: ускорение загрузки, новый шаблон документа, ИИ-суммаризация, мобильная фича, интеграция с 1С. Как будете приоритизировать?»</p>
+        <p><strong>Что проверяют:</strong> навык приоритизации (RICE/ICE), работа со стейкхолдерами в B2B, учёт технического долга и дискавери-долга, баланс между краткосрочными метриками и долгосрочным развитием.</p>
+        <p><strong>На что обратить внимание:</strong> B2B-специфика: enterprise-клиенты ценят стабильность больше, чем новые фичи. Техдолг в зрелом продукте — критичен. См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE/WSJF (см. §III.7)</a> и <a href="part3-reference.html#backlog" class="formula-inline-ref">Бэклог (см. §III.8)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Churn rate в Контур.Эльбе вырос на 15% за квартал для премиум-тарифа. Как будете разбираться? Какие гипотезы проверите?»</p>
+        <p><strong>Что проверяют:</strong> структурированный дебаг метрик в B2B: когортный анализ (по сроку использования, типу бизнеса, каналу привлечения), проверка качества данных, внешние факторы (изменения законодательства, конкуренты), анализ пользовательского пути.</p>
+        <p><strong>На что обратить внимание:</strong> B2B-churn отличается от B2C — клиент уходит не «потому что не понравилось», а потому что бизнес закрылся / сменил процесс / ушёл к конкуренту с другой ценой. Сегментируйте по причине. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">B2B-метрики (см. §III.1)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">LTV/Churn (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2023-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Какая целевая метрика была бы у Контур.Экстерна? Как декомпозировать North Star на прокси-метрики? Какие контр-метрики важно не уронить?»</p>
+        <p><strong>Что проверяют:</strong> знание B2B SaaS-метрик: MRR, NRR, churn, LTV/CAC, NPS. Умение строить дерево метрик (North Star → прокси → контр-метрики).</p>
+        <p><strong>На что обратить внимание:</strong> North Star для Экстерна — например, «доля успешных отчётных периодов» (клиент сдал всё вовремя). Прокси: количество отправленных отчётов, MAU. Контр-метрики: ошибки в отчётах, жалобы в поддержку, churn. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star (см. §III.1)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">MRR/NRR (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Запустили A/B-тест нового онбординга в Контур.Бухгалтерии. Бизнесу важна конверсия в платный тариф за 90 дней, но эксперимент нужно завершить за 3 недели. Как предсказать долгосрочный эффект?»</p>
+        <p><strong>Что проверяют:</strong> понимание прокси-метрик в B2B, CUPED, проблема регрессии к среднему. Умение выбирать прокси, коррелирующие с долгосрочной метрикой.</p>
+        <p><strong>На что обратить внимание:</strong> прокси для 90-дневной конверсии: завершённость онбординга, подключение в первые 7 дней, повторный вход в течение 14 дней. Валидируйте прокси на исторических данных. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">CUPED и прокси (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Оцените количество компаний в России, которые обмениваются электронными документами через ЭДО. Какой % рынка у Контур.Диадока?»</p>
+        <p><strong>Что проверяют:</strong> Fermi-подход: ~2 млн компаний в России активно используют ЭДО, ~30-40% market share Диадока.</p>
+        <p><strong>На что обратить внимание:</strong> население компаний РФ ~4 млн ЮЛ + ~3,5 млн ИП. Из них активных с ЭДО ~30%. Доля Диадока — 30-40% (Контур заявляет о 3,1 млн предпринимателей в экосистеме). См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Сколько новых клиентов в месяц может привлечь отдел прямых продаж Контур.Фокуса? Какой размер команды нужен для удвоения продаж?»</p>
+        <p><strong>Что проверяют:</strong> понимание B2B-воронки: лиды → квалификация → демо → пилот → сделка. Умение оценивать конверсии по этапам, средний цикл сделки (30-90 дней), нагрузку на менеджера (50-100 активных лидов).</p>
+        <p><strong>На что обратить внимание:</strong> B2B-воронка: 1000 лидов → 300 квалифицированных → 100 демо → 30 пилотов → 15 сделок. Цикл — 30-90 дней. Нагрузка на менеджера — 50-100 активных лидов. См. <a href="part3-reference.html#gtm" class="formula-inline-ref">GTM (см. §III.16)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">CAC (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Спроектируйте сервис проверки контрагентов для Контур.Фокуса: источники данных, обновление, кэширование, API для экосистемы.»</p>
+        <p><strong>Что проверяют:</strong> архитектурное мышление в B2B SaaS: интеграции с госреестрами (ЕГРЮЛ, ФНС), кэширование (Redis), очереди (Kafka), версионирование данных, API-дизайн.</p>
+        <p><strong>На что обратить внимание:</strong> источники: ЕГРЮЛ, ФНС, Росстат, суды, банкротства. Обновление — daily batch + on-demand. Кэш — Redis с TTL. API — REST с версионированием. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Контур, 2023-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Заказчик (продакт-лид другой команды) пришёл с фичей, которая, по вашему исследованию, не решает боль пользователя. Как будете действовать?»</p>
+        <p><strong>Что проверяют:</strong> умение аргументированно опровергать гипотезу стейкхолдера, предлагать альтернативу, опираться на данные и метрики. Способность сохранять партнёрские отношения при несогласии.</p>
+        <p><strong>На что обратить внимание:</strong> культура «не просто отказать, а предложить альтернативу». Хороший ответ: «вот данные CustDev, вот альтернативная гипотеза с большим потенциалом, давай протестируем обе». См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <h3>Что отличает Контур</h3>
+      <ul>
+        <li><strong>Длинные циклы сделки:</strong> 30-90 дней, многозвенные ЛПР (бухгалтер → главбух → директор → ИБ → CIO).</li>
+        <li><strong>Регуляторный контекст:</strong> изменения в Налоговом кодексе напрямую влияют на продукт.</li>
+        <li><strong>Сильная UX-культура:</strong> 10 000+ исследований, отдельная UX-лаборатория.</li>
+        <li><strong>Тестовое задание — обязательный этап</strong> с формализованной проверкой.</li>
+        <li><strong>Экосистема из ~50 продуктов</strong> с общими каналами продаж — кросс-продажи как ключевой growth-механизм.</li>
+      </ul>
+    </section>
+
+    <section id="skyeng">
+      <h2>§2 Skyeng</h2>
+
+      <h3>Профиль</h3>
+      <p><strong>Бизнес-модель:</strong> EdTech с двусторонним рынком — ученики и преподаватели. Основные продукты: Skyeng (английский для взрослых), Skysmart (для школьников), Skypro (профессиональные курсы). ~50 млн уроков проведено, ~70% рынка СНГ-преподавателей в базе.</p>
+
+      <p><strong>Культура:</strong></p>
+      <ul>
+        <li><strong>EdTech-домен:</strong> метрики обучения (завершённость курсов, retention, конверсия в платные уроки).</li>
+        <li><strong>Data-driven культура:</strong> мультиканальная атрибуция, BI-аналитика, A/B-тесты.</li>
+        <li><strong>Массовый найм преподавателей как продукт:</strong> рекрутинг автоматизирован, ML-модель отбора. До 150 000 кандидатов в год, пики 500/мес.</li>
+        <li><strong>Продуктовая двойственность:</strong> EdTech + IT (нужно и образование, и разработку).</li>
+        <li><strong>«Продакт vs директор»</strong> — частая тема обсуждения роли PM на стыке цифрового и образовательного проекта.</li>
+      </ul>
+
+      <h3>Реальные вопросы (по косвенным сигналам)</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как бы вы улучшили Skyeng для взрослых профессионалов, изучающих английский для карьеры? Какие новые сценарии добавили бы?»</p>
+        <p><strong>Что проверяют:</strong> декомпозиция продукта на пользовательские сценарии (профессиональный английский, подготовка к собеседованию, деловая переписка), формулировка гипотез, выбор метрик.</p>
+        <p><strong>На что обратить внимание:</strong> EdTech-воронка: пробный → первый урок → покупка пакета → удержание. Метрики: завершённость уроков, конверсия в следующий пакет, NPS. См. <a href="part3-reference.html#discovery" class="formula-inline-ref">CustDev (см. §III.5)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023-2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Запускаем новое направление Skypro (профессиональные курсы). Как определите первые 3 темы, целевую аудиторию, метрики успеха первого квартала?»</p>
+        <p><strong>Что проверяют:</strong> стратегическое мышление в EdTech: анализ рынка труда (IT, маркетинг, дизайн), cust-dev с работающими профессионалами, MVP-подход, метрики (CAC, LTV, завершённость, трудоустройство).</p>
+        <p><strong>На что обратить внимание:</strong> критерии успеха первого квартала: CAC &lt; LTV/3, завершённость &gt; 60%, NPS &gt; 8, трудоустройство &gt; 30% (для карьерных курсов). См. <a href="part3-reference.html#economics" class="formula-inline-ref">LTV/CAC (см. §III.3)</a> и <a href="part3-reference.html#pmf" class="formula-inline-ref">PMF (см. §III.9)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023-2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Команда получила 5 идей: ИИ-ассистент преподавателя, геймификация уроков, мобильные push, видео-разборы домашних заданий, интеграция с корпоративными LMS. Как будете приоритизировать?»</p>
+        <p><strong>Что проверяют:</strong> RICE/ICE-приоритизация в EdTech, учёт метрик (retention, конверсия, NPS), работа со стейкхолдерами (преподаватели, ученики, маркетинг).</p>
+        <p><strong>На что обратить внимание:</strong> в EdTech retention зависит от преподавателя, не только от продукта. Геймификация может демотивировать взрослых. Корпоративные LMS — длинный цикл продажи. См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Заявки на уроки атрибутируются по Last Click, но каналы «воюют» за них. Как построите мультиканальную модель атрибуции, чтобы справедливо оценить вклад каждого канала?»</p>
+        <p><strong>Что проверяют:</strong> понимание моделей атрибуции (first/last/time-decay/linear/custom), работа с мультиканальными касаниями (YouTube, рассылки, блогеры, performance), BI-аналитика.</p>
+        <p><strong>На что обратить внимание:</strong> last-click переоценивает performance-каналы, недооценивает awareness. Multi-touch атрибуция — data-driven, через Markov chains или Shapley value. См. <a href="part3-reference.html#data" class="formula-inline-ref">Data (см. §III.4)</a> и <a href="part3-reference.html#growth" class="formula-inline-ref">Growth (см. §III.11)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023-2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Retention преподавателей упал на 12% за полгода. Как будете разбираться? Это проблема найма, онбординга или продукта?»</p>
+        <p><strong>Что проверяют:</strong> структурированный дебаг в двухстороннем рынке (учителя ↔ ученики): когортный анализ по каналу найма, по сроку работы, по нагрузке.</p>
+        <p><strong>На что обратить внимание:</strong> учителя уходят по разным причинам: низкая загрузка (проблема matching), выгорание (проблема нагрузки), низкая оплата (проблема юнит-экономики), неудобная платформа (проблема продукта). Сегментируйте. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">Segmentation (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Бизнесу важна конверсия ученика в покупку 2-го пакета уроков (90+ дней), но A/B-тест нужно завершить за 2 недели. Какие прокси-метрики возьмёте?»</p>
+        <p><strong>Что проверяют:</strong> понимание прокси-метрик в EdTech: завершённость первого урока, повторная запись в течение 7 дней, NPS после 3-го урока. Умение валидировать прокси историческими данными.</p>
+        <p><strong>На что обратить внимание:</strong> прокси для 90-дневной конверсии: завершённость онбординга, NPS после 3 урока, количество пройденных уроков в первые 14 дней. Валидация — корреляция прокси с long-term на исторических данных. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">CUPED и прокси (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Оцените количество человек в России, изучающих английский язык онлайн. Какой % рынка у Skyeng?»</p>
+        <p><strong>Что проверяют:</strong> Fermi-подход: население РФ → доля изучающих английский → доля онлайн → доля Skyeng.</p>
+        <p><strong>На что обратить внимание:</strong> 146 млн → 20 млн изучающих английский → 5 млн онлайн → 1-2 млн у Skyeng. Sanity check: ~50 млн уроков Skyeng = при средней частоте 1 урок/неделю = ~1 млн активных. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Сколько преподавателей в месяц может обработать автоматическая система найма? Что ограничивает пропускную способность?»</p>
+        <p><strong>Что проверяют:</strong> понимание воронки найма (отклик → ML-оценка → тестовое → тренировочный урок → онбординг).</p>
+        <p><strong>На что обратить внимание:</strong> публичные данные: до 150 000 кандидатов/год, пики 500/мес. Узкие места: ML-модель (точность), методисты (тренировочные уроки), рекрутеры (финальная проверка). См. <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Спроектируйте систему мультиканальной атрибуции для Skyeng: сбор касаний, хранение, модель распределения ценности, дашборды для каналов.»</p>
+        <p><strong>Что проверяют:</strong> архитектура data-пайплайна: трекинг касаний (Browser SDK, server-side), хранилище (ClickHouse / Postgres), модель атрибуции, дашборды.</p>
+        <p><strong>На что обратить внимание:</strong> трекинг — client-side (pixel) + server-side (postbacks). Хранилище — ClickHouse для аналитики. Модель — last-click как baseline, data-driven как продвинутый. Дашборды — self-service для каналов. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#data" class="formula-inline-ref">Data (см. §III.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr Skyeng, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «В Skyeng у нас стык цифрового и образовательного проекта. Как вы понимаете границу между продуктовым менеджментом и традиционным управлением проектом? Приведите пример из опыта.»</p>
+        <p><strong>Что проверяют:</strong> понимание роли PM на стыке: «чистый» PM проверяет гипотезы, «чистый» менеджер соблюдает сроки и бюджеты.</p>
+        <p><strong>На что обратить внимание:</strong> «чистый» PM — discovery, гипотезы, метрики. «Чистый» Project Manager — delivery, сроки, ресурсы. В EdTech оба аспекта важны: курсы нельзя бесконечно тестировать, но и нельзя выпускать без проверки. См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a> и <a href="part3-reference.html#backlog" class="formula-inline-ref">Бэклог (см. §III.8)</a>.</p>
+      </div>
+
+      <h3>Что отличает Skyeng</h3>
+      <ul>
+        <li><strong>Двусторонний рынок:</strong> учителя ↔ ученики. Метрики с обеих сторон влияют друг на друга.</li>
+        <li><strong>Массовый найм преподавателей как продукт:</strong> ML-модель отбора, 150 000 кандидатов/год.</li>
+        <li><strong>Data-driven атрибуция:</strong> multi-touch attribution как реальная задача, не теория.</li>
+        <li><strong>EdTech-метрики:</strong> завершённость, retention, конверсия в следующий пакет, трудоустройство.</li>
+        <li><strong>Двойственность роли PM:</strong> продуктовые гипотезы + образовательный процесс.</li>
+      </ul>
+    </section>
+
+    <section id="2gis">
+      <h2>§3 2ГИС</h2>
+
+      <h3>Профиль</h3>
+      <p><strong>Бизнес-модель:</strong> гео-продукт — карты, навигатор, бизнес-справочник, локальный поиск. ~80 млн пользователей. Монетизация — реклама локальных бизнесов, промопродажение организаций в справочнике.</p>
+
+      <p><strong>Культура:</strong></p>
+      <ul>
+        <li><strong>Гео-домен:</strong> карты, навигация, бизнес-справочник, локальный поиск.</li>
+        <li><strong>Прозрачный наймовый процесс (2026):</strong> Welcome-встреча (behavioral) → Application Review → System Design → финал.</li>
+        <li><strong>Product Discovery — важная часть работы:</strong> поездки в Китай для вдохновения (Baidu Maps, Gaode, Tencent).</li>
+        <li><strong>Квартальные продуктовые интенсивы</strong> с брифами и RICE-приоритизацией.</li>
+        <li><strong>Культура roadmap challenge:</strong> открытая встреча продактов и инженеров для приоритизации.</li>
+        <li><strong>Полевые проезды</strong> для поиска аномалий в навигации.</li>
+      </ul>
+
+      <h3>Реальные вопросы</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как бы вы улучшили навигатор 2ГИС для водителей в час пик? Какие сценарии и метрики будете рассматривать?»</p>
+        <p><strong>Что проверяют:</strong> декомпозиция навигационного продукта: построение маршрута, ETA, голосовые подсказки, предупреждения о пробках. Умение работать с геометриками (скорость, штрафы за повороты), метриками (среднее ETA-отклонение, доля перестроений маршрута, CSAT).</p>
+        <p><strong>На что обратить внимание:</strong> в час пик ключевые метрики: ETA-точность (фактическое время vs предсказание), доля перестроений маршрута (если часто перестраивается — плохая модель), CSAT после маршрута. Сценарии: поездка домой с работы, объезд пробок, альтернативные маршруты. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Карточка организации в 2ГИС влияет на рекламу, отзывы, навигацию. Как измените карточку для сети кофеен? На что обращать внимание?»</p>
+        <p><strong>Что проверяют:</strong> системное мышление в продукте со множеством взаимосвязей: изменение карточки влияет на рекламу (CTR, конверсия в звонок), отзывы (видимость), навигацию (точка входа).</p>
+        <p><strong>На что обратить внимание:</strong> изменение карточки — мульти-эффект: CTR рекламы ↑, конверсия в звонок ↑, но и нагрузка на колл-центр ↑, видимость отзывов меняет рейтинг. Метрики: конверсия в звонок/построение маршрута, CSAT бизнеса, advertising revenue. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Команда продактов едет в Китай за вдохновением. Как вы организуете Product Discovery? Что будете изучать, как трансформировать наблюдения в бэклог?»</p>
+        <p><strong>Что проверяют:</strong> Product Discovery-подход: сценарии (такси, метро, пеший), приложения-конкуренты (Baidu Maps, Gaode, Tencent), культурные особенности (WeChat-экосистема, AliPay).</p>
+        <p><strong>На что обратить внимание:</strong> Discovery — это не «посмотреть и скопировать», а «понять принципы и адаптировать». Возвращайтесь с гипотезами, не с решениями. Каждое наблюдение → гипотеза для родного рынка → приоритизация через RICE. См. <a href="part3-reference.html#discovery" class="formula-inline-ref">Discovery (см. §III.5)</a> и <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Какая North Star метрика у навигатора 2ГИС? Как декомпозировать её на прокси-метрики? Какие контр-метрики важно не уронить?»</p>
+        <p><strong>Что проверяют:</strong> знание навигационных метрик: MAU, DAU, доля повторных открытий, среднее время в приложении, CSAT после маршрута.</p>
+        <p><strong>На что обратить внимание:</strong> North Star — например, «количество завершённых маршрутов с CSAT > 4». Прокси: ETA-точность, скорость построения, доля успешных маршрутов (не отменённых). Контр-метрики: вылеты, неверные маршруты, жалобы. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «DAU навигатора упал на 8% за месяц в конкретном городе. Как будете разбираться?»</p>
+        <p><strong>Что проверяют:</strong> структурированный дебаг: сегментация (платформа, гео, когорта), проверка качества данных (GPS-позиционирование, аномалии), внешние факторы (сезонность, конкуренты, события), технические инциденты.</p>
+        <p><strong>На что обратить внимание:</strong> в конкретном городе — скорее всего, локальная проблема: технический инцидент, конкурент запустил агрессивную кампанию, сезонность (например, лето — меньше поездок в деловой центр). Полевые проезды для поиска аномалий — реальная практика 2ГИС. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">декомпозиция метрик (см. §III.1)</a> и <a href="part3-reference.html#data" class="formula-inline-ref">Data (см. §III.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «После квартального интенсива у вас 15 брифов с оценками RICE. Какой порог включения в план? Как поступите с задачами, не попавшими в квартал?»</p>
+        <p><strong>Что проверяют:</strong> понимание RICE (Reach × Impact × Confidence / Effort), принцип «осознанного дефицита» (задач всегда больше, чем ресурсов).</p>
+        <p><strong>На что обратить внимание:</strong> «осознанный дефицит» — ресурсов всегда не хватает. Порог включения — top-N по RICE, где N = capacity команды. Задачи, не попавшие в квартал, — не «отклонены», а «отложены». Возвращайтесь к ним в следующем квартале. Коммуницируйте отказы прозрачно. См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a> и <a href="part3-reference.html#backlog" class="formula-inline-ref">Бэклог (см. §III.8)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Оцените количество пользователей AR-навигации внутри зданий в России. Какой % от всех пользователей навигаторов это составляет?»</p>
+        <p><strong>Что проверяют:</strong> Fermi-подход: крупные ТЦ, аэропорты, метро → доля с AR-фичей → доля 2ГИС-пользователей.</p>
+        <p><strong>На что обратить внимание:</strong> ~80 млн пользователей 2ГИС. AR-навигация — новая фича, ~1-5% от MAU. В ТЦ/аэропортах — ~10 млн посещений/мес, из них с AR ~500 тыс. Sanity check с публичными данными. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Сколько организаций в справочнике 2ГИС в одном городе-миллионнике? Как часто данные нужно обновлять?»</p>
+        <p><strong>Что проверяют:</strong> оценка ~100-200 тыс. организаций на город-миллионник. Умение оценивать частоту обновления.</p>
+        <p><strong>На что обратить внимание:</strong> ~100-200 тыс. организаций. Обновление: 10-15% в год переезжают/закрываются, 5% новые. Краудсорсинг («городские герои») — канал обновления. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Спроектируйте сервис построения маршрутов общественного транспорта: источники данных, алгоритм, кэширование, API.»</p>
+        <p><strong>Что проверяют:</strong> архитектура гео-сервиса: граф дорог и маршрутов (Overture / OSM), алгоритмы (Dijkstra, A*, RAPTOR для транспорта), кэширование популярных маршрутов, обновление расписаний, штрафы за пересадки.</p>
+        <p><strong>На что обратить внимание:</strong> RAPTOR для общественного транспорта (быстрее Dijkstra для transit). Кэш — популярные маршруты с TTL. Обновление расписаний — daily batch + real-time для задержек. Штрафы за пересадки — снижают количество пересадок в маршруте. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Расскажите о реальной ситуации из практики: как вы разбирались в сути задачи, принимали решения, брали на себя ответственность, выстраивали взаимодействие с коллегами, реагировали на сложности или разногласия.»</p>
+        <p><strong>Что проверяют:</strong> поведенческое интервью в формате STAR. Не ищут «правильных» ответов — интересен способ мышления, принятия решений и извлечения уроков. Важно: реальные случаи, а не абстрактные рассуждения.</p>
+        <p><strong>На что обратить внимание:</strong> готовьте 3-5 реальных кейсов: сложное решение, конфликт, неудача, инициатива, командная работа. Каждый рассказывается по STAR. 2ГИС ценит рефлексию и уроки, не только успех. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">STAR (см. §I.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr 2ГИС, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «На roadmap challenge ваша фича получила низкий приоритет из-за RICE. Как будете отстаивать её или примете решение?»</p>
+        <p><strong>Что проверяют:</strong> культуру открытого обсуждения, способность принять «осознанный дефицит», умение либо усилить аргументацию, либо адаптировать фичу, либо согласиться с приоритетом.</p>
+        <p><strong>На что обратить внимание:</strong> roadmap challenge — это не «продавить свою фичу», а совместный поиск истины. Если RICE низкий — усильте аргументацию (данные, импакт), пересчитайте, или примите решение. Зрелость = способность принять «не сейчас». См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <h3>Что отличает 2ГИС</h3>
+      <ul>
+        <li><strong>Гео-домен:</strong> уникальные метрики (ETA-точность, перестроения маршрута, полевые проезды).</li>
+        <li><strong>Прозрачный наймовый процесс:</strong> Welcome-встреча (behavioral) → Application Review → System Design → финал. Официально задокументирован.</li>
+        <li><strong>Product Discovery как часть работы:</strong> поездки за вдохновением (Китай), полевые проезды.</li>
+        <li><strong>Квартальные продуктовые интенсивы:</strong> брифы + RICE-приоритизация + roadmap challenge.</li>
+        <li><strong>Краудсорсинг данных:</strong> «городские герои» — канал обновления справочника.</li>
+        <li><strong>Культура «осознанного дефицита»:</strong> задач всегда больше, чем ресурсов — это норма, не проблема.</li>
+      </ul>
+    </section>
+
+    <section id="middle-checklist">
+      <h2>§4 Чек-лист подготовки (для всех трёх компаний)</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — сегментация B2B/EdTech/гео-сегментов</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, CUPED, прокси-метрики</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi для niche-рынков</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — B2B-интеграции, data-pipelines, гео-сервисы</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — STAR, культура «осознанного дефицита»</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — North Star, B2B/EdTech/гео-метрики</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — CUPED, прокси-метрики</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — MRR/NRR (B2B), LTV/CAC (EdTech)</li>
+        <li><a href="part3-reference.html#discovery" class="formula-inline-ref">§III.5 Discovery</a> — CustDev в B2B, Product Discovery</li>
+        <li><a href="part3-reference.html#prioritization" class="formula-inline-ref">§III.7 Приоритизация</a> — RICE, roadmap challenge</li>
+        <li><a href="part3-reference.html#stakeholders" class="formula-inline-ref">§III.13 Stakeholders</a> — B2B ЛПР, команда продактов</li>
+        <li><a href="part3-reference.html#gtm" class="formula-inline-ref">§III.16 GTM</a> — B2B-воронка</li>
+        <li><a href="part3-reference.html#marketplace" class="formula-inline-ref">§III.20 Marketplace</a> — двусторонний рынок (Skyeng)</li>
+      </ul>
+
+      <h3>Что почитать/посмотреть</h3>
+      <ul>
+        <li><a href="https://habr.com/ru/companies/skbkontur/articles/1044876/">Habr Контур: экосистема и клиентские задачи (2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/skbkontur/articles/1006128/">Habr Контур: дискавери-процесс (2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/skbkontur/articles/904390/">Habr Контур: B2B SaaS специфика (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/skyeng/articles/826000/">Habr Skyeng: навыки продакта (2024)</a></li>
+        <li><a href="https://habr.com/ru/companies/skyeng/articles/954572/">Habr Skyeng: мультитач-атрибуция (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/skyeng/articles/741612/">Habr Skyeng: найм преподавателей как продукт (2023)</a></li>
+        <li><a href="https://habr.com/ru/companies/2gis/articles/1034286/">Habr 2ГИС: Welcome-встреча в найме (2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/2gis/articles/1021146/">Habr 2ГИС: продуктовая культура и roadmap challenge (2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/2gis/articles/922182/">Habr 2ГИС: поездка в Китай (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/2gis/articles/1015140/">Habr 2ГИС: лёгкие маршруты (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/2gis/articles/1045896/">Habr 2ГИС: зелёная волна (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/751280/">Habr: 13 вопросов для собеседования продакта (2023)</a></li>
+      </ul>
+
+      <h3>Self-check: 5 вопросов для самопроверки</h3>
+      <ol>
+        <li>Можете ли вы построить дерево метрик для Контур.Экстерна (B2B SaaS)?</li>
+        <li>Можете ли вы описать мультиканальную атрибуцию для Skyeng и её trade-offs?</li>
+        <li>Можете ли вы предложить North Star для навигатора 2ГИС и декомпозировать её?</li>
+        <li>Можете ли вы описать B2B-цикл продажи Контур.Фокуса от лида до сделки?</li>
+        <li>Можете ли вы рассказать реальную ситуацию из практики по STAR с уроками?</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
