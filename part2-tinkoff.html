@@ -205,7 +205,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Менеджер горит идеей внедрить новую фичу. Как поймём, что стало лучше? Какой дизайн эксперимента выберем?</p>
         <p><strong>Что проверяют:</strong> выбор целевой метрики и guardrail-метрик (которые нельзя уронить), расчёт sample size, длительность, сегментация, интерпретация неоднозначных результатов. Т-Банк использует тысячи тестов в год — важно знание sequential testing, CUPED, стратификации.</p>
-        <p><strong>На что обратить внимание:</strong> Т-Банк — один из пионеров Group Sequential Test в России. Упомяните CUPED для уменьшения дисперсии и стратификацию для контроля сегментов. См. разбор в <a href="#case-funnel-drop" class="formula-inline-ref">§4.2 — там показано, как A/B-методология применяется к падению конверсии</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> Т-Банк — один из пионеров Group Sequential Test в России. Упомяните CUPED для уменьшения дисперсии и стратификацию для контроля сегментов. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -368,6 +368,34 @@
           <li><strong>Приоритизация:</strong> RICE — Reach × Impact × Confidence / Effort.</li>
           <li><strong>Эксперимент:</strong> A/B-тест на топ-2 гипотезах, primary metric — DAU/MAU на 30 дней, guardrail — конверсия в сделку (чтобы не получили рост заходов без активности).</li>
         </ol>
+
+        <h4>Дерево метрик</h4>
+        <pre class="metric-tree">
+North Star: D30 retention активного инвестора
+│
+├── DAU/MAU (stickiness — primary)
+│   ├── DAU
+│   │   ├── Новички (day 0-7)
+│   │   │   ├── Конверсия install → register
+│   │   │   └── Конверсия register → first action
+│   │   ├── Опытные (active > 30d)
+│   │   │   └── Sessions per active user
+│   │   └── Реактивированные (dormant > 30d)
+│   └── MAU
+│       ├── New MAU (first month)
+│       └── Returning MAU
+│
+├── Конверсия в сделку (guardrail — не уронить)
+│   ├── Browse → watchlist add
+│   ├── Watchlist → order placed
+│   └── Order → executed
+│
+└── Portfolio engagement (leading indicator)
+    ├── Education completion rate
+    ├── Push interaction rate
+    └── Portfolio view depth
+        </pre>
+        <p>Каждая метрика нижнего уровня влияет на верхнюю. Если DAU/MAU стагнирует — ищи, какой лист дерева просел: новички не активируются? опытные снижают frequency? реактивация не работает? Это сужает пространство гипотез до конкретного сегмента.</p>
 
         <h4>Пример ответа</h4>
         <div class="answer-example">

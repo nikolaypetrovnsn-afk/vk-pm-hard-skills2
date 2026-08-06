@@ -302,7 +302,7 @@
         </div>
         <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему поиска/ранжирования объявлений для Avito.</p>
         <p><strong>Что проверяют:</strong> архитектуру поиска (inverted index, ranking signals, ML-модели), understanding of relevance vs business metrics (GMV), A/B testing для ранжирования (counterfactual interleaving, см. статью Avito про то, почему A/B не подходит для ранжирования).</p>
-        <p><strong>На что обратить внимание:</strong> обычный A/B не работает для ранжирования — network effects (одно объявление показывается многим пользователям). Решения: interleaving, counterfactual evaluation. См. разбор в <a href="#case-listing-quality" class="formula-inline-ref">§4.1 — там факторы ранжирования и метрики качества</a> и <a href="#case-ab-network" class="formula-inline-ref">§4.2 — A/B с network effects через switchback</a>, <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B для ранжирования (см. §III.2)</a>.</p>
+        <p><strong>На что обратить внимание:</strong> обычный A/B не работает для ранжирования — network effects (одно объявление показывается многим пользователям). Решения: interleaving, counterfactual evaluation. См. разбор в <a href="#case-ab-network" class="formula-inline-ref">§4.2 — A/B с network effects через switchback</a>, <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B для ранжирования (см. §III.2)</a>.</p>
       </div>
 
       <div class="question-card">
@@ -388,6 +388,39 @@
           </li>
           <li><strong>Эксперимент:</strong> A/B на топ-2 гипотезах, primary — conversion view→contact, guardrail — conversion contact→deal (чтобы не получить рост контактов без сделок).</li>
         </ol>
+
+        <h4>Дерево метрик</h4>
+        <pre class="metric-tree">
+North Star: GMV (gross merchandise value)
+│
+├── #active listings
+│   ├── New listings per day
+│   │   ├── Конверсия: создание → модерация
+│   │   └── Конверсия: модерация → публикация
+│   └── Listing lifetime (дни жизни объявления)
+│
+├── Conversion: view → contact (primary фокус §4.1)
+│   ├── Listing quality
+│   │   ├── Наличие и качество фото
+│   │   ├── Полнота описания (от 100 знаков)
+│   │   └── Заполненность характеристик
+│   ├── Trust к продавцу
+│   │   ├── Рейтинг и отзывы
+│   │   ├── Верификация (ИП/ООО/паспорт)
+│   │   └── Стаж на платформе
+│   ├── Relevance (соответствие intent покупателя)
+│   └── UX (видимость кнопки контакта, чат/телефон)
+│
+├── Conversion: contact → deal (guardrail)
+│   ├── Response time продавца
+│   ├── Price negotiation outcome
+│   └── Payment / delivery options
+│
+├── Avg deal value
+│
+└── Take rate (комиссия Avito)
+        </pre>
+        <p>Дерево связывает North Star (GMV) с листовыми метриками, которые команда может двигать напрямую. Если конверсия view→contact просела — спускайтесь по ветке «Listing quality / Trust / Relevance / UX» и ищите, какой фактор изменился.</p>
 
         <h4>Пример ответа</h4>
         <div class="answer-example">
