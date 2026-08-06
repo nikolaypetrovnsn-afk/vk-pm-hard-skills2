@@ -50,8 +50,550 @@
   </nav>
 
   <main class="main">
-    <h1>Wildberries: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+    <h1>Wildberries (RWB): подготовка к собеседованию</h1>
+
+    <p class="lead">Wildberries (с 2024 года — часть RWB, объединение с Russ) — крупнейший российский маркетплейс с HighLoad-масштабом: ~20 млн заказов/сутки, 79+ млн MAU, 1+ млрд запросов в день. Здесь ценят P&L-мышление, A/B-тестирование как религию, иерархию метрик и понимание ML-tradeoffs. Корпоративный блог RWB на Habr — основной публичный источник о процессах и культуре.</p>
+
+    <div class="note-block" style="background: #fff8e1; border-left: 4px solid #ffa000; padding: 12px 16px; margin: 20px 0;">
+      <p style="margin: 0;"><strong>Важно про источники:</strong> Wildberries почти не имеет публичных разборов собеседований (Glassdoor/otzovik/joblab недоступны или пусты). Все вопросы в этой главе — <strong>реконструкция по косвенным сигналам</strong>: корпоративный блог RWB на Habr, вакансии на hh.ru, материалы митапов. Реальные формулировки на интервью могут отличаться, но тематика и метрики, которые проверяют, реконструированы достоверно.</p>
+    </div>
+
+    <section id="profile">
+      <h2>§1 Профиль компании</h2>
+
+      <h3>Бизнес-модель и основные продукты</h3>
+      <p>RWB — международная технологическая компания, объединяющая Wildberries (маркетплейс) и Russ (логистика). Ключевые направления:</p>
+      <ul>
+        <li><strong>Маркетплейс B2C</strong> — поиск, рекомендации, карточка товара, корзина, оформление заказа</li>
+        <li><strong>Wildberries Цифровой</strong> — цифровая продукция (книги, игры, подписки)</li>
+        <li><strong>Wildberries Travel</strong> — бронирование билетов, отелей</li>
+        <li><strong>WB Кошелёк / Fintech</strong> — рассрочка, BNPL, платежи</li>
+        <li><strong>WB Partners</strong> — приложение и сервисы для продавцов</li>
+        <li><strong>Логистика</strong> — ПВЗ, склады, доставка, прогнозирование спроса</li>
+        <li><strong>Trust & Safety / Антифрод</strong> — модерация UGC, антибот, матчинг товаров</li>
+        <li><strong>CDN / MediaBasket</strong> — файловое хранилище для медиаконтента</li>
+      </ul>
+
+      <h3>Масштаб (из статьи «Файловое хранилище Wildberries», Habr, 27.11.2025)</h3>
+      <ul>
+        <li>~20 млн заказов в сутки</li>
+        <li>79+ млн уникальных пользователей в месяц</li>
+        <li>1+ млрд запросов в день</li>
+        <li>8.17 ПБ переданных данных в сутки, пиковая скорость выдачи 1.2 Tb/s</li>
+        <li>Миллионный RPS на медиа-хранилище</li>
+      </ul>
+
+      <h3>Культура и что ценят в PM</h3>
+      <ul>
+        <li><strong>P&L-мышление:</strong> WB — компания с дискаунтерской ДНК. Каждое продуктовое решение оценивается через влияние на выручку / оборот / затраты. PM обязан мыслить P&L.</li>
+        <li><strong>A/B-тестирование как религия:</strong> у WB собственный внутренний сервис A/B. Практически любое изменение проходит через A/B. Когда A/B невозможен — синтетический контроль.</li>
+        <li><strong>Иерархия метрик:</strong> верхнеуровневая метрика (выручка/оборот) → чувствительные прокси-метрики → офлайн-метрики (асессорская разметка). PM должен уметь строить иерархию для своей области.</li>
+        <li><strong>ML-пронизанность:</strong> поиск, рекомендации, матчинг, антифрод, модерация, логистика — всё ML-powered. PM работает в плотной связке с DS/ML-командой.</li>
+        <li><strong>HighLoad-масштаб:</strong> от PM ожидается понимание tradeoffs масштаба — что значит новая фича при 20 млн заказов/сутки.</li>
+        <li><strong>CJM и воронки:</strong> базовая работа — построение CJM, оптимизация воронок.</li>
+        <li><strong>Скорость важнее идеальной архитектуры:</strong> WB — прагматичная компания. «Идеальная» архитектура подчинена бизнес-задаче.</li>
+      </ul>
+
+      <h3>Уровни и отличия</h3>
+      <p>Уровни формализованы в вакансиях RWB на hh.ru (2026):</p>
+      <table>
+        <thead>
+          <tr><th>Уровень</th><th>Зона ответственности</th><th>Что проверяют на интервью</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Middle PM</td><td>Фича или страница в маркетплейсе</td><td>Воронки, A/B, базовый SQL, P&L</td></tr>
+          <tr><td>Senior PM</td><td>Продуктовая линейка (поиск, рекомендации, логистика)</td><td>Иерархия метрик, ML-tradeoffs, синтетический контроль, P&L-моделирование</td></tr>
+          <tr><td>Lead PM</td><td>Несколько команд, вертикаль</td><td>Cross-functional координация, найм, стратегия вертикали</td></tr>
+          <tr><td>Principal / Head of Product</td><td>Кросс-продуктовые инициативы</td><td>Архитектура marketplace, долгосрочная стратегия, P&L на уровне экосистемы</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="format">
+      <h2>§2 Формат собеседования</h2>
+
+      <p><strong>Важно:</strong> публичных разборов процесса найма WB PM практически нет. Ниже — типовая схема для российского big tech, реконструированная по косвенным сигналам (вакансии, статьи, митапы).</p>
+
+      <ol>
+        <li><strong>HR-скрининг.</strong> Базовое соответствие, мотивация, ожидания по зарплате.</li>
+        <li><strong>Продуктовый кейс.</strong> Кейс на реальной задаче WB: воронка, метрики, A/B-дизайн.</li>
+        <li><strong>Аналитическая секция.</strong> SQL, A/B-методология, иерархия метрик.</li>
+        <li><strong>Hiring manager интервью.</strong> Глубокий разбор опыта, P&L-мышление, ML-tradeoffs.</li>
+        <li><strong>Финал / знакомство с командой.</strong> Культурный fit, выбор команды.</li>
+      </ol>
+
+      <p><strong>Где отсеивают чаще всего:</strong> кейс-интервью (из-за неумения работать с иерархией метрик) и аналитическая секция (из-за слабого SQL и непонимания A/B-методологии).</p>
+
+      <p><strong>Культура митапов:</strong> WB регулярно проводит тематические митапы — ML Meetup, RecSys Meetup, Infra Meetup, Golang Meetup, AntiDDoS Meetup, Inside AI Meetup, Trust & Safety AI Meetup. Это и канал найма, и индикатор тем, что в компании в фокусе.</p>
+    </section>
+
+    <section id="questions">
+      <h2>§3 Реальные вопросы с собеседований (по косвенным сигналам)</h2>
+      <p>Все вопросы реконструированы по статьям блога RWB на Habr (2024-2026), вакансиям на hh.ru и материалам митапов. Пометка «По косвенным сигналам» — означает, что прямых собеседовательских кейсов не найдено, но тематика достоверно проверяется.</p>
+
+      <h3>Product Sense</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Карточка товара — одна из ключевых страниц маркетплейса. Как вы будете искать точки роста конверсии из просмотра карточки в корзину/заказ? Какие гипотезы проверите, какие метрики будете смотреть?</p>
+        <p><strong>Что проверяют:</strong> понимание воронки e-commerce, способность формулировать гипотезы, выбор прокси-метрик, знание A/B-методологии.</p>
+        <p><strong>На что обратить внимание:</strong> декомпозируйте воронку: показ → клик → просмотр → корзина → заказ → выкуп. Сегментируйте: новые vs возвращающиеся, мобильные vs десктоп, по категориям. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Бизнес просит оптимизировать выручку. Вы запускаете изменение в рекомендательной ленте. Как построите иерархию метрик, чтобы можно было измерять небольшие изменения? Какие онлайн- и офлайн-метрики включите?</p>
+        <p><strong>Что проверяют:</strong> понимание верхнеуровневых метрик (выручка, оборот) и прокси-метрик (клики, глубина ленты, релевантность по асессорам), навык построения чувствительного измерительного прибора.</p>
+        <p><strong>На что обратить внимание:</strong> иерархия: верхний уровень (выручка) → прокси (CTR, CVR, diversity) → офлайн (асессорская разметка). Асессоры нужны, потому что онлайн-метрики зашумлены. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">иерархию метрик (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2024-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Вы продакт-менеджер, отвечаете за запуск новой категории (например, БАДы, электроника, одежда). Какие шаги? Как будете оценивать успех запуска? С кем из команд взаимодействовать?</p>
+        <p><strong>Что проверяют:</strong> cross-functional координация, понимание двухстороннего рынка (sellers и buyers), запуск по этапам, метрики успеха категории (GMV, конверсия, ассортиментная полнота, цена).</p>
+        <p><strong>На что обратить внимание:</strong> запуск категории = работа с 5+ командами: ассортимент, ценообразование, поиск, рекомендации, антифрод. Метрики: GMV категории, конверсия в покупку, полнота ассортимента, средняя цена, доля повторных покупок. См. <a href="part3-reference.html#gtm" class="formula-inline-ref">GTM (см. §III.16)</a> и <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> На маркетплейсе один и тот же товар продаётся разными продавцами. Как улучшить функциональность «предложение других продавцов» — чтобы пользователь мог купить дешевле или с более быстрой доставкой?</p>
+        <p><strong>Что проверяют:</strong> понимание задачи матчинга товаров, diversity выдачи, метрики конверсии в альтернативное предложение, взаимодействие с ML-командой.</p>
+        <p><strong>На что обратить внимание:</strong> матчинг — это ML-задача (CLIP, эмбеддинги). Продуктовые метрики: доля пользователей, переключившихся на альтернативу, экономия на цене, рост конверсии. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Команда маркетинга просит запустить массовую пуш-рассылку. Как оцените эффективность? Как учтёте отрицательный долгосрочный эффект (баннерная слепота, отписки, снижение лояльности)? Как изолировать чистый аплифт в GMV от каннибализации органических покупок?</p>
+        <p><strong>Что проверяют:</strong> критическое мышление про атрибуцию, LTV пользователя, краткосрочный vs долгосрочный эффект, holdout-группы, синтетический контроль.</p>
+        <p><strong>На что обратить внимание:</strong> пуш-кампании имеют отрицательный долгосрочный эффект — отписки, баннерная слепота. Чистый аплифт = прирост GMV в тесте vs holdout, минус churn от отписок. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">holdout и синтетический контроль (см. §III.2)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">LTV (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2024-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Пользователь делает фото товара в реальной жизни и хочет найти такой же на WB. Как спроектировать продукт поиска по фото? Какие ML-компоненты, какие UX-решения, какие метрики успеха?</p>
+        <p><strong>Что проверяют:</strong> понимание мультимодального поиска (CLIP + LLM), продуктовый UX сквозного сценария, метрики Recall@k, конверсия в покупку, удержание.</p>
+        <p><strong>На что обратить внимание:</strong> CLIP для эмбеддингов изображений + текста, LLM для уточнения запроса. UX: кандидат → выбор лучшего → карточка. Метрики: Recall@k, конверсия в покупку, удержание функции. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Вы PM финtech-направления WB. Как будете развивать рассрочку/кредитование на чекауте? Какие метрики, как балансировать UX-комфорт и риск-аппетит?</p>
+        <p><strong>Что проверяют:</strong> понимание финtech-метрик (Approval rate, NPL, Risk-adjusted return), P&L-мышление, взаимодействие с риск-командой, комплаенс.</p>
+        <p><strong>На что обратить внимание:</strong> ключевые метрики: Approval rate (доля одобренных), NPL (non-performing loans), Risk-adjusted return, take rate. Баланс: высокий approval = рост выручки, но рост NPL. См. <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a> и <a href="part3-reference.html#pricing" class="formula-inline-ref">Pricing (см. §III.10)</a>.</p>
+      </div>
+
+      <h3>Analytical</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Напишите SQL-запрос: посчитать GMV, выручку, take rate по категориям за период. Учтите возвраты и отмены. Сделайте разрез по неделям.</p>
+        <p><strong>Что проверяют:</strong> SQL (window functions, CTE, JOIN по нескольким таблицам заказов/товаров), понимание отличий GMV от выручки, take rate, обработка возвратов.</p>
+        <p><strong>На что обратить внимание:</strong> GMV = сумма заказов, выручка = GMV минус возвраты и отмены, take rate = commission / GMV. Возвраты — отдельная таблица, JOIN по order_id. См. <a href="part3-reference.html#data" class="formula-inline-ref">SQL-паттерны (см. §III.4)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Команда поиска выкатила новую модель ранжирования. Как спроектируете A/B-тест? Какой срез пользователей выберете, на какие метрики смотрите, как оцените статистическую значимость, что делать если метрики «поехали» в разные стороны?</p>
+        <p><strong>Что проверяют:</strong> знание A/B-методологии (длительность, размер выборки, MDE), множественные сравнения, сегментный анализ, понимание иерархии метрик.</p>
+        <p><strong>На что обратить внимание:</strong> у WB собственный внутренний сервис A/B. Если метрики «поехали» в разные стороны — сегментируйте (возможно, эффект в разных сегментах разный). Для marketplace важны network effects — можно применить switchback. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B-методы (см. §III.2)</a> и разбор в <a href="#case-ab-ranking" class="formula-inline-ref">§4.2 A/B для ранжирования</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2024-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Как посчитаете LTV пользователя WB? Какой горизонт, какие компоненты (заказы, возвраты, маржинальность, фиксированные затраты на привлечение)? Как атрибутировать покупку к каналу привлечения?</p>
+        <p><strong>Что проверяют:</strong> понимание unit-экономики, временной стоимости денег, cohort-анализа, атрибуция (last-click vs multi-touch), разница между LTV и gross margin.</p>
+        <p><strong>На что обратить внимание:</strong> LTV горизонт — 12-24 месяца (WB). Компоненты: Gross profit (выручка минус возвраты минус cost of goods), минус cost of serving (логистика, ПВЗ), минус CAC. Атрибуция: last-click проще, multi-touch точнее. См. <a href="part3-reference.html#economics" class="formula-inline-ref">LTV (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Задержка доставки в разы увеличивает вероятность отказа от выкупа товара (траты на обратную доставку). Как будете оценивать качество логистики? Какие метрики, какие срезы?</p>
+        <p><strong>Что проверяют:</strong> логистические KPI (on-time delivery, SLA, refused-on-delivery rate), знание обратных потоков, способность строить dashboard иерархии метрик.</p>
+        <p><strong>На что обратить внимание:</strong> ключевые метрики: SLA (доля заказов, доставленных в срок), refused-on-delivery rate (доля отказов от выкупа), cycle time (от заказа до выдачи). Срезы: ПВЗ, склады, категории товаров, регионы. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Вы PM новой страницы приложения. Как опишете ТЗ на логирование событий? Какие события обязательны, какие свойства у них, как проконтролируете, что разметка доедет до прода?</p>
+        <p><strong>Что проверяют:</strong> понимание product analytics (event taxonomy, properties), работа с разработчиками, тестирование логов, влияние на аналитические pipeline'ы.</p>
+        <p><strong>На что обратить внимание:</strong> event taxonomy — иерархическая (screen → action → result). Properties — стандартизованные (item_id, price, source). Контроль: тестирование на staging, валидация schema, мониторинг после релиза. См. <a href="part3-reference.html#data" class="formula-inline-ref">Data (см. §III.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Вы запускаете новый сервис (например, рассрочка или премиум-подписку). Постройте P&L на 12 месяцев. Какие переменные затраты, какие фиксированные, при каком объёме выходите в безубыток? Какой take rate?</p>
+        <p><strong>Что проверяют:</strong> финансовое моделирование, understanding of fixed/variable costs, contribution margin, break-even analysis, take rate, операционный рычаг.</p>
+        <p><strong>На что обратить внимание:</strong> P&L = Revenue - Variable Costs - Fixed Costs. Break-even = Fixed Costs / (Price - Variable Cost per unit). Take rate — доля выручки, которую забирает WB. См. <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a> и <a href="part3-reference.html#pricing" class="formula-inline-ref">Pricing (см. §III.10)</a>.</p>
+      </div>
+
+      <h3>Estimation</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> В регионе X планируется рост заказов на 30% за полгода. Как оцените, нужно ли расширять складскую сеть / открывать новые ПВЗ? Какие входные данные, какой горизонт прогноза?</p>
+        <p><strong>Что проверяют:</strong> capacity planning, понимание цикла заказа (от приёмки до выдачи), прогнозирование спроса, взаимодействие с DS-командой.</p>
+        <p><strong>На что обратить внимание:</strong> входные: текущая загрузка складов, прогноз заказов по регионам, время цикла, средний объём заказа. Horizon — 6-12 месяцев. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2023-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените размер рынка онлайн-бронирования билетов в РФ. Какую долю может занять WB Travel за 2 года? Какие допущения?</p>
+        <p><strong>Что проверяют:</strong> market sizing (TAM/SAM/SOM), top-down и bottom-up подходы, способность делать разумные допущения.</p>
+        <p><strong>На что обратить внимание:</strong> TAM — все билеты в РФ, SAM — онлайн-бронирование (~70% от TAM), SOM — реалистичная доля WB за 2 года (~5-10%). Sanity check с публичными данными. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">TAM/SAM/SOM (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените количество заказов в сутки, которые обрабатывает WB. Какие данные нужны (население, доля интернет-покупателей, частота покупок, доля рынка WB)?</p>
+        <p><strong>Что проверяют:</strong> Fermi-оценки, structured problem-solving, умение делать допущения и проверять их на реальность.</p>
+        <p><strong>На что обратить внимание:</strong> население РФ ~146 млн → интернет-покупатели ~80 млн → активные пользователи WB ~30 млн → средняя частота 0.7 заказов/месяц → ~20 млн заказов/месяц. WB公开но сообщает ~20 млн заказов/сутки — sanity check. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi (см. §I.3)</a>.</p>
+      </div>
+
+      <h3>System Design</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте распределённое файловое хранилище для картинок товаров при миллионном RPS. Требования: быстрая отдача (миллисекунды), отказоустойчивость, миллиарды файлов, пиковая нагрузка 1.2 Tb/s.</p>
+        <p><strong>Что проверяют:</strong> HighLoad-архитектура (шардирование, репликация, кэширование, CDN), выбор СУБД/объектного хранилища, observability, failure modes.</p>
+        <p><strong>На что обратить внимание:</strong> CDN-слой (edge locations), origin-хранилище (S3-совместимое), кэш-слой (Redis), шардирование по hash(file_id). Failure modes: что если упадёт CDN? Origin? Кэш? См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и разбор в <a href="#case-storage" class="formula-inline-ref">§4.3 Файловое хранилище</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему персональных рекомендаций для ленты товаров. Какие ML-модели (двухбашенные, трансформеры, TF-IDF), какой pipeline обучения и инференса, как делать реранкинг, как тестировать через A/B?</p>
+        <p><strong>Что проверяют:</strong> понимание recsys-архитектуры (candidate generation → ranking → reranking), tradeoffs между сложностью и качеством, A/B-инфраструктура.</p>
+        <p><strong>На что обратить внимание:</strong> важный урок WB — иногда TF-IDF обходит BERT4Rec на A/B. Не гонитесь за SOTA без проверки. Pipeline: candidate generation (two-tower) → ranking (transformer) → reranking (business rules). См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему антибот-защиты мобильного приложения маркетплейса. Какие сигналы, какие эвристики vs ML, как отличать ботов от реальных пользователей, что делать с false positives?</p>
+        <p><strong>Что проверяют:</strong> понимание fraud detection, signature analysis, device fingerprinting, ML-классификаторы, trade-off precision/recall, UX-импликации ложных блокировок.</p>
+        <p><strong>На что обратить внимание:</strong> сигналы: device fingerprint, behaviour (touch patterns, gyroscope), IP, account history. Эвристики для явных паттернов, ML для тонких. False positives → мягкие действия (captcha, delay), не жёсткая блокировка. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</p>
+      </div>
+
+      <h3>Behavioral</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите про ваш путь из инженера в тимлида / PM. С какими сложностями столкнулись, как менялось мышление, как выстраивали отношения с командой?</p>
+        <p><strong>Что проверяют:</strong> self-awareness, понимание разницы между индивидуальной и командной эффективностью, способность делегировать, работать через людей.</p>
+        <p><strong>На что обратить внимание:</strong> ключевой сдвиг — от «делать самому» к «работать через людей». Делегирование, найм, мотивация. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a> и <a href="part3-reference.html#people" class="formula-inline-ref">People (см. §III.19)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> WB — компания с высоким темпом. Расскажите про ситуацию, когда приходилось работать под сильным давлением сроков / несколько параллельных приоритетов. Как расставляли приоритеты, как избегали выгорания?</p>
+        <p><strong>Что проверяют:</strong> stress-tolerance, приоритизация (RICE/ICE), способность сохранять качество под давлением, self-management.</p>
+        <p><strong>На что обратить внимание:</strong> WB — прагматичная компания, ценит скорость. Но не путайте скорость с хаосом. Хороший ответ: «приоритизация через RICE, явные trade-offs со стейкхолдерами, защита команды от контексто-переключений». См. <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (см. §III.7)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">По косвенным сигналам</span>
+          <span class="question-source">Источник: Habr RWB, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите про опыт построения функции / команды с нуля. С какими вызовами столкнулись, как нанимали, как выстраивали процессы, какие метрики качества функции использовали?</p>
+        <p><strong>Что проверяют:</strong> строительство функции с нуля, найм и онбординг, выстраивание процессов, KPI функции, взаимодействие с другими командами.</p>
+        <p><strong>На что обратить внимание:</strong> WB активно строит новые функции — Trust & Safety, QA, аналитика. Хороший ответ: «определил mission функции, нанял первых 3-5 человек, выстроил процессы, KPI функции в привязке к бизнес-метрикам». См. <a href="part3-reference.html#people" class="formula-inline-ref">People (см. §III.19)</a>.</p>
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>§4 Разборы кейсов</h2>
+
+      <div class="case-walkthrough" id="case-card-conversion">
+        <h3>§4.1 Product Sense: точки роста конверсии на карточке товара</h3>
+
+        <p><strong>Формулировка:</strong> Карточка товара — одна из ключевых страниц маркетплейса. Как вы будете искать точки роста конверсии из просмотра карточки в корзину/заказ?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Декомпозиция воронки:</strong> показ → клик на карточку → просмотр → добавление в корзину → оформление → заказ → выкуп. Падение может быть на любом шаге.</li>
+          <li><strong>Сегментация:</strong> новые vs возвращающиеся, мобильные vs десктоп, по категориям, по цене, по типу продавца (профессиональный vs частный).</li>
+          <li><strong>Анализ текущей конверсии:</strong> какие шаги имеют наибольший drop-off? Это и есть точки роста.</li>
+          <li><strong>Гипотезы по узким местам:</strong>
+            <ul>
+              <li>Качество фото / видео → улучшить, добавить видео.</li>
+              <li>Описание неполное → структурировать, добавить характеристики.</li>
+              <li>Цена кажется высокой → показать «предложение других продавцов».</li>
+              <li>Нет отзывов → стимулировать покупателей.</li>
+              <li>Доставка долго → показать альтернативы с быстрой доставкой.</li>
+              <li>UX: кнопка «в корзину» плохо видна → поднять над сгибом.</li>
+            </ul>
+          </li>
+          <li><strong>Приоритизация:</strong> RICE — Reach × Impact × Confidence / Effort.</li>
+          <li><strong>Эксперимент:</strong> A/B на топ-2 гипотезах, primary — conversion view→cart, guardrail — conversion cart→order (чтобы не получить рост корзин без заказов) и возвраты.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Карточка товара — ключевая страница. Сначала декомпозирую воронку: показ → клик → просмотр → корзина → заказ → выкуп. Сегментирую: новые vs возвращающиеся, мобильные vs десктоп, по категориям.</p>
+          <p>Допустим, данные показывают: наибольший drop-off на шаге «просмотр → корзина» в категории электроники у новых пользователей. Это сужает гипотезы: либо не хватает доверия (отзывы, рейтинг продавца), либо не хватает информации (характеристики, фото), либо цена кажется высокой.</p>
+          <p>Топ-гипотеза — отсутствие отзывов для новых пользователей в электронике (где чек высокий). Решение: стимулировать покупателей оставлять отзывы (пуш после выкупа + бонус), показывать отзывы с других площадок (если интегрировано), выделить топ-отзывы.</p>
+          <p>Вторая гипотеза — качество фото. В электронике важно рассмотреть товар. Решение: требовать минимум 5 фото с разных ракурсов, добавить видео, 360°-обзор для топовых категорий.</p>
+          <p>Приоритизация. Отзывы — Reach высокий (все новые в электронике), Impact высокий (доверие коррелирует с конверсией), Confidence средний, Effort — 3 спринта. RICE высокий.</p>
+          <p>Эксперимент: A/B на 50/50 новых пользователей в электронике. Primary — conversion view→cart. Guardrails — conversion cart→order (чтобы отзывы не привели к импульсивным корзинам без заказов), возвраты (если отзывы создадут завышенные ожидания). Длительность — 4 недели, чтобы capture разные категории.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Сегментацию:</strong> общая конверсия скрывает, где именно проблема. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</li>
+          <li><strong>Guardrail metrics:</strong> рост корзин без заказов = пустая метрика. Рост заказов без выкупа = рост возвратов (cost of reverse logistics).</li>
+          <li><strong>Network effects:</strong> отзывы — это UGC, влияет на всех продавцов. A/B может потребовать switchback.</li>
+          <li><strong>Иерархию метрик:</strong> выручка → конверсия view→cart → CTR на отзывы → доля пользователей, прочитавших отзыв.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать фичи без сегментации.</li>
+          <li>Не учитывать guardrail — рост заказов без учёта возвратов.</li>
+          <li>Игнорировать network effects в эксперименте.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — воронка e-commerce; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — декомпозиция воронки; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B с guardrails; <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (§III.7)</a> — приоритизация; <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (§III.3)</a> — cost of returns.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-ab-ranking">
+        <h3>§4.2 Analytical: A/B-тест для новой модели ранжирования</h3>
+
+        <p><strong>Формулировка:</strong> Команда поиска выкатила новую модель ранжирования. Как спроектируете A/B-тест? Какой срез пользователей выберете, на какие метрики смотрите, как оцените статистическую значимость, что делать если метрики «поехали» в разные стороны?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Определение primary metric и guardrails:</strong> primary — conversion view→cart или GMV per user. Guardrails — latency, take rate, diversity, возвраты.</li>
+          <li><strong>MDE:</strong> какой эффект хотим заметить? Для ранжирования — обычно 0.5-1% от baseline.</li>
+          <li><strong>Sample size:</strong> через формулу с учётом baseline, MDE, alpha, power. С CUPED можно снизить в 1.5-2 раза.</li>
+          <li><strong>Длительность:</strong> минимум 2-4 недели, чтобы capture недельную сезонность и отложенные эффекты (пользователь добавил в корзину, но купил через 3 дня).</li>
+          <li><strong>Network effects:</strong> ранжирование влияет на продавцов (одни получают больше показов, другие меньше). Обычный user-level A/B не работает — продавцы в тесте и контроле пересекаются.</li>
+          <li><strong>Решения:</strong> switchback-дизайн (переключение по дням/гео), interleaving (показ смесей одному пользователю), counterfactual evaluation (офлайн через IPS).</li>
+          <li><strong>Если метрики «поехали» в разные стороны:</strong> сегментируйте — возможно, эффект разный в разных сегментах. Не пытайтесь усреднять.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Primary metric — conversion view→cart (чувствительная, быстро двигается). Guardrails — GMV per user (бизнес-метрика), latency (UX), take rate (экономика), diversity (качество выдачи), возвраты (long-term).</p>
+          <p>MDE — 0.5% относительного эффекта. Baseline конверсия — 8%. Sample size через формулу — ~5 млн пользователей на группу. С CUPED — ~2.5 млн.</p>
+          <p>Длительность — 4 недели. Это capture недельную сезонность и отложенные эффекты (пользователь смотрит товар сегодня, покупает через неделю).</p>
+          <p>Network effects: ранжирование влияет на продавцов. Если в тесте одни продавцы получают больше показов, их товары покупают, а в контроле — другие. Это искажает оценку.</p>
+          <p>Решение — switchback по дням. Понедельник — variant A, вторник — variant B, и так далее. Усреднение по дням компенсирует network effect. Альтернатива — interleaving для ранжирования: показываем одному пользователю смесь результатов A и B, меряем клики. Дисперсия ниже, sample size в 10-100 раз меньше.</p>
+          <p>Если метрики «поехали» в разные стороны — например, conversion view→cart выросла, а GMV упал. Сегментируем: возможно, новая модель помогает дешёвым товарам, но снижает средний чек. Это не «проблема теста», а особенность модели — нужно решить, что важнее.</p>
+          <p>Statistical significance: t-test для continuous metrics, chi-square для binary. Поправка на multiple testing — Bonferroni или FDR. Не смотрите «в ходе» теста — это p-hacking.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Network effects:</strong> user-level A/B для ранжирования — классическая ошибка. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">switchback (см. §III.2)</a>.</li>
+          <li><strong>CUPED:</strong> простой способ снизить sample size.</li>
+          <li><strong>Guardrails:</strong> рост primary без проверки guardrails = «успех», который разрушит бизнес.</li>
+          <li><strong>Latency effects:</strong> ранжирование может влиять на покупки через дни/недели. Короткий тест недостоверен.</li>
+          <li><strong>«Поехавшие» метрики:</strong> не пытайтесь усреднять — сегментируйте.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать user-level A/B для ранжирования.</li>
+          <li>Не упомянуть switchback, interleaving, CUPED.</li>
+          <li>Смотреть «в ходе» теста.</li>
+          <li>Игнорировать guardrail metrics.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — MDE, sample size, CUPED, switchback, interleaving, multiple testing; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — primary + guardrails; <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — network effects.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-storage">
+        <h3>§4.3 System Design: файловое хранилище для маркетплейса</h3>
+
+        <p><strong>Формулировка:</strong> Спроектируйте распределённое файловое хранилище для картинок товаров при миллионном RPS. Требования: быстрая отдача (миллисекунды), отказоустойчивость, миллиарды файлов, пиковая нагрузка 1.2 Tb/s.</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Сбор требований:</strong> миллионный RPS, 1.2 Tb/s, миллиарды файлов, latency в миллисекундах, отказоустойчивость.</li>
+          <li><strong>High-level архитектура:</strong> клиент → CDN (edge locations) → origin-хранилище (S3-совместимое) → кэш-слой (Redis).</li>
+          <li><strong>CDN-слой:</strong> edge-серверы в регионах, отдача популярных файлов из кэша. Hit ratio — ключевой KPI.</li>
+          <li><strong>Origin-хранилище:</strong> S3-совместимое объектное хранилище. Шардирование по hash(file_id) для балансировки нагрузки.</li>
+          <li><strong>Кэш-слой:</strong> Redis для горячих файлов. TTL и LRU eviction.</li>
+          <li><strong>Загрузка файлов:</strong> загрузка через API → валидация → оптимизация (resize, WebP) → загрузка в origin → инвалидация кэша.</li>
+          <li><strong>Отказоустойчивость:</strong> репликация origin (3 копии в разных ДЦ), fallback CDN на другой провайдер, circuit breakers.</li>
+          <li><strong>Observability:</strong> метрики (RPS, latency p50/p95/p99, hit ratio, error rate), логи, tracing.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Требования: миллионный RPS, 1.2 Tb/s, миллиарды файлов, latency в миллисекундах. Архитектура — многослойная, потому что один слой не справится.</p>
+          <p>CDN-слой: edge-серверы в регионах, отдача популярных файлов из кэша. 80-90% трафика закрывается на CDN. Hit ratio — ключевой KPI, цель — 90%+.</p>
+          <p>Origin-хранилище: S3-совместимое объектное хранилище. Шардирование по hash(file_id) — равномерное распределение по нодам. Репликация — 3 копии в разных ДЦ для отказоустойчивости.</p>
+          <p>Кэш-слой: Redis для горячих файлов (топ-1% по популярности). TTL — 1 час, LRU eviction. Этот слой закрывает剩下的 10-20% трафика, который не попал в CDN.</p>
+          <p>Загрузка файлов: API → валидация (формат, размер) → оптимизация (resize, WebP) → загрузка в origin → инвалидация кэша. Оптимизация — отдельный сервис, чтобы не блокировать загрузку.</p>
+          <p>Отказоустойчивость. Если упадёт CDN — fallback на origin (медленнее, но работает). Если упадёт origin — CDN продолжает отдавать из кэша, но новые файлы недоступны. Circuit breakers между слоями.</p>
+          <p>Observability: RPS, latency p50/p95/p99, hit ratio, error rate. Alarms на рост error rate или падение hit ratio.</p>
+          <p>Масштабирование: горизонтальное — добавляем ноды origin и edge. Вертикальное — упирается в лимиты железа. Шардирование — позволяет бесконечно масштабироваться горизонтально.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>CDN-слой:</strong> кандидаты сразу идут в origin-хранилище, забывая про edge-caching. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</li>
+          <li><strong>Загрузку файлов:</strong> не только отдача, но и загрузка. Оптимизация (resize, WebP) — критична для маркетплейса.</li>
+          <li><strong>Инвалидацию кэша:</strong> при обновлении картинки нужно инвалидировать CDN и Redis.</li>
+          <li><strong>Failure modes:</strong> что если упадёт CDN? Origin? Кэш? Нужны fallback-стратегии.</li>
+          <li><strong>Hit ratio:</strong> ключевой KPI для CDN. Низкий hit ratio = перегрузка origin.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать одну БД для всех файлов.</li>
+          <li>Не учитывать CDN-слой.</li>
+          <li>Игнорировать загрузку и оптимизацию файлов.</li>
+          <li>Не упомянуть failure modes и observability.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — CDN, шардирование, репликация, circuit breakers; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — observability (RPS, latency, hit ratio); <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design (§I.4)</a> — high-level → deep dive → scale.</p>
+      </div>
+    </section>
+
+    <section id="distinct">
+      <h2>§5 Что отличает Wildberries</h2>
+
+      <h3>Специфика expectations</h3>
+      <ul>
+        <li><strong>P&L и unit-экономика повсюду:</strong> WB — компания с дискаунтерской ДНК. Каждое продуктовое решение оценивается через влияние на выручку / оборот / затраты.</li>
+        <li><strong>A/B-тестирование как религия:</strong> у WB собственный внутренний сервис A/B. Когда A/B невозможен — синтетический контроль.</li>
+        <li><strong>Иерархия метрик:</strong> верхнеуровневая → чувствительные прокси → офлайн (асессоры). PM должен уметь строить иерархию для своей области.</li>
+        <li><strong>ML-пронизанность:</strong> поиск, рекомендации, матчинг, антифрод, модерация, логистика — всё ML-powered. PM работает в плотной связке с DS/ML-командой.</li>
+        <li><strong>HighLoad-масштаб:</strong> 20 млн заказов/сутки, миллиардный RPS, петабайты данных. От PM ожидается понимание tradeoffs масштаба.</li>
+        <li><strong>CJM и воронки:</strong> базовая работа — построение CJM, оптимизация воронок.</li>
+        <li><strong>Trust & Safety, антифрод, модерация UGC:</strong> большая область с собственными метриками.</li>
+        <li><strong>Скорость важнее идеальной архитектуры:</strong> WB — прагматичная компания. «Идеальная» архитектура подчинена бизнес-задаче.</li>
+      </ul>
+
+      <h3>Типичные ошибки кандидатов</h3>
+      <ul>
+        <li>Не готовиться к A/B-методологии (switchback, interleaving, CUPED).</li>
+        <li>Не понимать иерархию метрик и роль асессоров.</li>
+        <li>Сводить ML-торговлю к «новейшая модель = лучшая» (TF-IDF иногда обходит BERT4Rec).</li>
+        <li>Игнорировать P&L-влияние решений.</li>
+        <li>Не учитывать network effects в экспериментах.</li>
+        <li>Не понимать масштаб (20 млн заказов/сутки — это не «много», это HighLoad).</li>
+      </ul>
+
+      <h3>Сигналы, что вы прошли раунд</h3>
+      <ul>
+        <li>На кейсе вы сами предлагаете switchback и CUPED.</li>
+        <li>В A/B-дизайне упоминаете guardrails и иерархию метрик.</li>
+        <li>В System Design упоминаете CDN, шардирование, failure modes.</li>
+        <li>На P&L-вопросах свободно оперируете GMV, take rate, unit economics.</li>
+        <li>На ML-вопросах упоминаете tradeoffs (TF-IDF vs BERT4Rec, simplicity vs SOTA).</li>
+      </ul>
+    </section>
+
+    <section id="checklist">
+      <h2>§6 Чек-лист подготовки</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — CJM, воронки, hypothesis tree</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, switchback, CUPED, SQL</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi, TAM/SAM/SOM</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — HighLoad, CDN, шардирование</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — high-tempo, делегирование</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — иерархия, North Star, прокси-метрики, асессоры</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — switchback, interleaving, CUPED, синтетический контроль</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — GMV, take rate, LTV, P&L, break-even</li>
+        <li><a href="part3-reference.html#data" class="formula-inline-ref">§III.4 Данные</a> — SQL, event taxonomy</li>
+        <li><a href="part3-reference.html#marketplace" class="formula-inline-ref">§III.20 Marketplace</a> — двусторонний рынок, network effects</li>
+        <li><a href="part3-reference.html#tech-fluency" class="formula-inline-ref">§III.18 Tech Fluency</a> — ML pipeline, HighLoad, CDN</li>
+        <li><a href="part3-reference.html#prioritization" class="formula-inline-ref">§III.7 Приоритизация</a> — RICE</li>
+      </ul>
+
+      <h3>Что почитать/посмотреть</h3>
+      <ul>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/886064/">Habr RWB: В каких командах и проектах WB есть задачи для аналитиков (2025)</a> — основной источник контекста</li>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/967988/">Habr RWB: Файловое хранилище Wildberries — бескомпромиссный HighLoad (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/972082/">Habr RWB: Трансформеры для персональных рекомендаций (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/876036/">Habr RWB: Быстрый матчинг товаров на маркетплейсе (2025)</a></li>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/1032556/">Habr RWB: Как работает антибот в мобильном приложении WB (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/861288/">Habr: Стратегия WB как онлайн-дискаунтера (2024)</a></li>
+        <li><a href="https://habr.com/ru/articles/861928/">Habr: Юнит-экономика WB (2024)</a></li>
+        <li><a href="https://habr.com/ru/companies/rwb/articles/1007460/">Habr RWB: 8 историй айтишниц Wildberries & Russ (2026)</a></li>
+        <li>Доклады с митапов WB (ML, RecSys, Infra, Trust & Safety AI) на YouTube</li>
+      </ul>
+
+      <h3>Self-check: 5 вопросов для самопроверки</h3>
+      <ol>
+        <li>Можете ли вы построить иерархию метрик для рекомендательной ленты WB — от выручки до асессорской разметки?</li>
+        <li>Можете ли вы спроектировать switchback-эксперимент для новой модели ранжирования?</li>
+        <li>Можете ли вы написать SQL для расчёта GMV и take rate с учётом возвратов?</li>
+        <li>Можете ли вы построить P&L для рассрочки на чекауте на 12 месяцев?</li>
+        <li>Можете ли вы объяснить, почему TF-IDF иногда обходит BERT4Rec на A/B-тестах?</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
