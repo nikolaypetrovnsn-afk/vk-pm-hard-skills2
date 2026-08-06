@@ -51,7 +51,553 @@
 
   <main class="main">
     <h1>Avito: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+
+    <p class="lead">Avito — крупнейший российский classifieds с сильной аналитической культурой и фокусом на marketplace-метрики. Здесь ценят понимание воронки (создание объявления → просмотры → контакты → сделки), знание switchback-тестирования для сетевых эффектов и опыт работы с trust & safety. Прозрачный процесс: 5 этапов, официально задокументированных, с фидбеком для непрошедших.</p>
+
+    <section id="profile">
+      <h2>§1 Профиль компании</h2>
+
+      <h3>Бизнес-модель и основные продукты</h3>
+      <p>Avito — двусторонний marketplace (classifieds) с несколькими крупными вертикалями:</p>
+      <ul>
+        <li><strong>Авто</strong> — продажи автомобилей, запчасти, сервисы (Авито Авто)</li>
+        <li><strong>Недвижимость</strong> — аренда и продажа квартир, коммерческая недвижимость</li>
+        <li><strong>Товары</strong> — потребительские товары, электроника, одежда (конкуренция с Wildberries, Ozon)</li>
+        <li><strong>Услуги</strong> — от репетиторов до ремонта</li>
+        <li><strong>Работа</strong> — вакансии и резюме</li>
+        <li><strong>Avito Доставка</strong> — логистика и оплата для сделок на платформе</li>
+        <li><strong>Avito Fintech</strong> — платёжные сервисы, рассрочка, страхование сделок</li>
+      </ul>
+
+      <p><strong>Монетизация:</strong> платные размещения, продвижение объявлений, Avito Доставка (комиссия с сделки), рекламные форматы, подписки для профессиональных продавцов.</p>
+
+      <h3>Культура и что ценят в PM</h3>
+      <ul>
+        <li><strong>Marketplace-мышление:</strong> PM должен понимать дилемму «курица и яйцо» — балансировать сторону спроса и предложения. Решения, выгодные для одной стороны, могут навредить другой.</li>
+        <li><strong>Сильная аналитическая культура:</strong> A/B-тесты, статистика, SQL — обязательны даже для PM, не только для аналитиков. Особый фокус на switchback-тестах для сетевых эффектов.</li>
+        <li><strong>Trust & Safety как отдельная дисциплина:</strong> верификация продавцов, антифрод, Quality Score — это явная фишка Avito в сравнении с другими российскими компаниями. Доверие к продавцам критично для сделок.</li>
+        <li><strong>ML-проекты в работе PM:</strong> статья «Как продакту выжить в мире ИИ-фичей» — PM в Avito работают с ML-продуктами и должны понимать пайплайн ML-разработки.</li>
+        <li><strong>Культурные ценности:</strong> «изменения начинаются с тебя», комьюнити, чёткие цели, простота. Стресс-интервью официально отрицается.</li>
+        <li><strong>Прозрачность процесса:</strong> 5 этапов, официально задокументированных на career.avito.com/directions/product/, с фидбеком для непрошедших.</li>
+      </ul>
+
+      <h3>Уровни и отличия</h3>
+      <p>Согласно публичному playbook Avito (avito-tech/playbook на GitHub):</p>
+      <table>
+        <thead>
+          <tr><th>Уровень</th><th>Зона ответственности</th><th>Что проверяют на интервью</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Middle Product Manager</td><td>Фича или метрика внутри вертикали</td><td>Базовые знания PM, аналитика, исследования, SQL</td></tr>
+          <tr><td>Senior Product Manager</td><td>Продуктовая линейка или кросс-функциональная инициатива</td><td>Дерево метрик, A/B-методология, финансовые модели, антифрод</td></tr>
+          <tr><td>Lead Product Manager</td><td>Несколько команд, вертикаль целиком</td><td>Стратегия вертикали, найм, менторство, P&L</td></tr>
+          <tr><td>Principal Product</td><td>Кросс-вертикальные инициативы</td><td>Архитектура marketplace, network effects, долгосрочная стратегия</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="format">
+      <h2>§2 Формат собеседования</h2>
+
+      <p>Официальный процесс на career.avito.com/directions/product/ (5 этапов):</p>
+
+      <ol>
+        <li><strong>Звонок с рекрутером.</strong> Вопросы про последний продукт, целеполагание и работу с метриками, опыт пипл-менеджмента.</li>
+        <li><strong>Оценка навыков (30 минут).</strong> Базовые знания продакт-менеджмента, аналитика и исследования.</li>
+        <li><strong>Кейс-интервью (1.5 часа).</strong> Погружение в продукт + аналитика. Проводят продуктовый руководитель + аналитик. Контекст кейса выдаётся заранее.</li>
+        <li><strong>HR-интервью (1 час).</strong> Софт-скиллы, опыт управления командой.</li>
+        <li><strong>Знакомство с командой.</strong> Культурный fit и выбор команды.</li>
+      </ol>
+
+      <p><strong>Подготовка по официальным рекомендациям Avito:</strong></p>
+      <ul>
+        <li>Управление командами, постановка целей, работа с метриками</li>
+        <li>Продуктовое мышление на реальных задачах (кейс с контекстом заранее)</li>
+        <li>Дерево метрик продукта и A/B-тесты</li>
+        <li>Базовые вопросы по математике и задачи на логику</li>
+        <li>UX-исследования: формулировка и проверка гипотез, мини-кейс</li>
+      </ul>
+
+      <p><strong>Где отсеивают чаще всего:</strong> кейс-интервью (1.5 часа) — кандидаты проваливают из-за неумения совместить product sense и analytics в одном разговоре, и неструктурированного подхода к hypothesis tree.</p>
+
+      <p><strong>Фидбек:</strong> Avito даёт фидбек непрошедшим кандидатам — это часть их культурных ценностей.</p>
+    </section>
+
+    <section id="questions">
+      <h2>§3 Реальные вопросы с собеседований</h2>
+      <p>Вопросы собраны из официальных источников Avito (career.avito.com, avito-tech/playbook, Habr AvitoTech) и видео с нанимающими менеджерами 2023-2026 годов.</p>
+
+      <h3>Product Sense</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: YouTube Avito, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Какие сегменты пользователей есть у Classified-модели? (Вопрос с реального собеседования на продакта в Avito)</p>
+        <p><strong>Что проверяют:</strong> понимание бизнес-модели classifieds (двусторонний рынок: продавцы/покупатели), сегментация по intent, частоте, вертикалям (недвижимость/авто/товары/услуги).</p>
+        <p><strong>На что обратить внимание:</strong> не ограничивайтесь «продавцы vs покупатели». Сегментируйте по: intent (high/low), частоте (разовые/профессионалы), вертикали, гео, типу устройства. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace-модель (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: YouTube Avito, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Исследование показало, что 3 из 5 респондентов не находят кнопку в сценарии, и мы узнали, что в этом сценарии упала конверсия на 5 процентных пунктов. Каким вопросом первым делом должен заняться продакт и как размышлять?</p>
+        <p><strong>Что проверяют:</strong> приоритизацию проблемы, различение качественных (UX-исследование) и количественных (конверсия) сигналов, гипотезный подход, нехватку данных для решения.</p>
+        <p><strong>На что обратить внимание:</strong> ключевой вопрос — «насколько эта кнопка влияет на бизнес-метрику?». 3 из 5 — это качественный сигнал, 5 п.п. — количественный. Нужно понять, какие пользователи не находят кнопку, какой % от общего traffica, и какой экономический эффект. См. <a href="part3-reference.html#discovery" class="formula-inline-ref">CustDev (см. §III.5)</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">метрики (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: YouTube Avito, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Инвестор спрашивает вас, какой Retention у classified-сервиса. Как вы будете вести беседу, что уточните и как ответите?</p>
+        <p><strong>Что проверяют:</strong> понимание специфики retention в classifieds (уникальность по сравнению с retention в других моделях, retention продавцов vs покупателей, периодичность транзакций).</p>
+        <p><strong>На что обратить внимание:</strong> retention в classifieds — нелинейный. Покупатели делают покупки редко (квартира — раз в 5 лет, авто — раз в 3 года). Поэтому классический day 30 retention не работает. Уточните: retention чего? покупателей? продавцов? профессиональных продавцов? См. <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (см. §III.1.3)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: career.avito.com, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Решите продуктовый кейс (формулировка контекста выдается заранее). Первая половина интервью — погружение в продукт, вторая — вопросы по аналитике.</p>
+        <p><strong>Что проверяют:</strong> структурированный подход к решению кейса, продуктовое мышление на реальной задаче Avito, способность декомпозировать проблему, hypothesis tree.</p>
+        <p><strong>На что обратить внимание:</strong> контекст кейса дают заранее — обязательно изучите его. Структура: проблема → декомпозиция → гипотезы → метрики → эксперимент. См. <a href="part1-frameworks.html#product-sense" class="formula-inline-ref">CIRCLES (см. §I.1)</a> и <a href="part1-frameworks.html#analytical" class="formula-inline-ref">Analytical (см. §I.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: career.avito.com + YouTube, 2023/2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите о работе с другим продуктом — конкретика: постановка целей, выбор метрик, работа с A/B-тестами, итоговый результат и выводы.</p>
+        <p><strong>Что проверяют:</strong> способность описать опыт в структурной форме (STAR), глубину понимания метрик и экспериментов в реальном продукте, умение делать выводы.</p>
+        <p><strong>На что обратить внимание:</strong> рассказывайте по STAR: Situation, Task, Action, Result. В Action — конкретика про метрики и A/B, в Result — измеримый исход и выводы. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: career.avito.com, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Мини-кейс на UX-исследование: как сформулировать и проверить гипотезу? Расскажите об опыте с любыми типами исследований.</p>
+        <p><strong>Что проверяют:</strong> знание качественных/количественных методов, способность ставить гипотезу и выбирать метод валидации, понимание trade-off между скоростью и качеством дискавери.</p>
+        <p><strong>На что обратить внимание:</strong> различайте qual (интервью, юзабилити-тесты) и quant (опросы, A/B). Trade-off: 5 интервью дают сигнал за неделю, опрос на 1000 респондентов — за месяц. См. <a href="part3-reference.html#discovery" class="formula-inline-ref">Discovery (см. §III.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr AvitoTech, 2024-2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Как улучшить качество объявлений / как поднять конверсию из просмотра в контакт (метрика Avito-специфичная)?</p>
+        <p><strong>Что проверяют:</strong> знание воронки classifieds (создание объявления → просмотры → контакты → сделки), понимание факторов качества (фото, описание, цена, верификация продавца), способность генерировать гипотезы и приоритизировать.</p>
+        <p><strong>На что обратить внимание:</strong> факторов качества много — фото, описание, цена, верификация, отзыв. Структурируйте: качество объявления → рейтинг продавца → доверие покупателя → конверсия в контакт. См. разбор в <a href="#case-listing-quality" class="formula-inline-ref">§4.1 Качество объявлений</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <h3>Analytical</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: YouTube Avito, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Какие ключевые метрики вы будете использовать как продакт (неважно какого продукта)? Расскажите, как будете размышлять.</p>
+        <p><strong>Что проверяют:</strong> дерево метрик, понимание input/output метрик, ability to choose north star, знание контр-метрик и прокси-метрик.</p>
+        <p><strong>На что обратить внимание:</strong> не перечисляйте метрики — стройте дерево. North Star → input метрики → guardrail метрики. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: YouTube Avito, 2023</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Объясните разницу между корреляцией и причинно-следственными связями.</p>
+        <p><strong>Что проверяют:</strong> статистическую грамотность, понимание confounding variables, способность привести примеры ложной корреляции в продуктовых данных.</p>
+        <p><strong>На что обратить внимание:</strong> классика: продажи мороженого коррелируют с утоплениями, но не вызывают их (confounding variable — жара). В продукте: рост push-уведомлений коррелирует с churn, но не вызывает его (confounding — неактивные пользователи получают больше push). См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">причинность vs корреляции (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: career.avito.com + Habr, 2024/2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Дерево метрик продукта — постройте для конкретного продукта Avito (например, Авито Недвижимость / Авито Доставка / Авито Работа).</p>
+        <p><strong>Что проверяют:</strong> способность разложить бизнес-метрику (GMV, take rate, conversion) на input-метрики; понимание северной звезды и контр-метрик; учёт шума и трендов.</p>
+        <p><strong>На что обратить внимание:</strong> North Star для Avito — GMV (gross merchandise value). Дерево: GMV = #active listings × conversion to contact × conversion to deal × avg deal value × take rate. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr AvitoTech, 2025-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> A/B-тест: спроектируйте эксперимент для оценки фичи. Какой MDE выбрать? Какой размер выборки? Что делать при сетевых эффектах?</p>
+        <p><strong>Что проверяют:</strong> знание методологии A/B (ошибки I/II рода, мощность, доверительный интервал, t-test), расчёт sample size, понимание network effects и switchback-тестов (особенно актуально для Avito — см. их статью про switchback).</p>
+        <p><strong>На что обратить внимание:</strong> в marketplace A/B сложный из-за network effects — продавцы влияют на покупателей и наоборот. Решение — switchback-дизайн: переключение групп по дням/гео, чтобы усреднить network effect. См. разбор в <a href="#case-ab-network" class="formula-inline-ref">§4.2 A/B с сетевыми эффектами</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B-методологию (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: YouTube Avito, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Разбор кейса с интервью Авито (продуктовая аналитика): выстроить структуру кейса, декомпозировать гипотезы по направлениям, спрогнозировать базу.</p>
+        <p><strong>Что проверяют:</strong> структурирование проблемы, ability to break down hypothesis tree, базовое прогнозирование метрик, использование данных для принятия решений.</p>
+        <p><strong>На что обратить внимание:</strong> hypothesis tree — это не список, а дерево. Каждая ветка заканчивается проверяемой гипотезой. См. <a href="part1-frameworks.html#analytical" class="formula-inline-ref">hypothesis trees (см. §I.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: career.avito.com + Habr, 2025/2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> SQL-задача / задача на логику / базовые вопросы по математике.</p>
+        <p><strong>Что проверяют:</strong> базовый SQL (JOIN, GROUP BY, оконные функции), логику, математическую статистику (вероятность, комбинаторика).</p>
+        <p><strong>На что обратить внимание:</strong> Avito требует SQL даже от PM, не только от аналитиков. Особое внимание — оконные функции и JOIN. См. <a href="part3-reference.html#data" class="formula-inline-ref">SQL-паттерны (см. §III.4)</a>.</p>
+      </div>
+
+      <h3>Estimation</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: career.avito.com (косвенно), 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените размер рынка [категории] для Авито (например, рынок недвигимости / услуг / автозапчастей в России).</p>
+        <p><strong>Что проверяют:</strong> подход Fermi-оценки, знание TAM/SAM/SOM, способность декомпозировать рынок по сегментам, проверку разумности результата.</p>
+        <p><strong>На что обратить внимание:</strong> для недвижимости: число сделок в год × средний чек. Для услуг: число домохозяйств × частота заказа услуг × средний чек. Sanity check с публичными данными Росстата. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation (см. §I.3)</a> и <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Публичные данные Avito, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Сколько объявлений в категории X публикуется в день? Сколько контактов/сделок?</p>
+        <p><strong>Что проверяют:</strong> понимание воронки classifieds, способность оценить объём транзакций, знание метрик Avito (на сайте: «каждую секунду 10 сделок, 70 млн пользователей, 230 млн активных объявлений»).</p>
+        <p><strong>На что обратить внимание:</strong> публичные цифры Avito: ~70 млн MAU, ~230 млн активных объявлений, ~10 сделок/секунду = ~860 000 сделок/день. Используйте это как sanity check. См. <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace воронка (см. §III.20)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr AvitoTech + avito-tech/playbook, 2024</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Оцените влияние фичи на выручку (до запуска): какой % пользователей затронет, какой прирост конверсии ожидается, какой прирост GMV?</p>
+        <p><strong>Что проверяют:</strong> финансовое моделирование, юнит-экономику, ability to build traction model, понимание take rate и монетизации Avito (платные размещения, продвижение).</p>
+        <p><strong>На что обратить внимание:</strong> до запуска постройте traction model: % activation × conversion lift × avg deal value × take rate = выручка. Сравните с cost of development. См. <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a> и <a href="part3-reference.html#pricing" class="formula-inline-ref">Pricing (см. §III.10)</a>.</p>
+      </div>
+
+      <h3>System Design</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr AvitoTech, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему поиска/ранжирования объявлений для Avito.</p>
+        <p><strong>Что проверяют:</strong> архитектуру поиска (inverted index, ranking signals, ML-модели), understanding of relevance vs business metrics (GMV), A/B testing для ранжирования (counterfactual interleaving, см. статью Avito про то, почему A/B не подходит для ранжирования).</p>
+        <p><strong>На что обратить внимание:</strong> обычный A/B не работает для ранжирования — network effects (одно объявление показывается многим пользователям). Решения: interleaving, counterfactual evaluation. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a> и <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B для ранжирования (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr AvitoTech, 2023-2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте систему антифрода / верификации продавцов для classifieds.</p>
+        <p><strong>Что проверяют:</strong> понимание trust & safety, ML для фрода, композитная метрика оценки качества (Quality Score — см. статью Avito), баланс между ложными срабатываниями и пропуском фрода.</p>
+        <p><strong>На что обратить внимание:</strong> композитная метрика Quality Score = f(precision, recall, cost of fraud, cost of false positive). Нельзя оптимизировать только recall — заблокируете легитимных продавцов. См. разбор в <a href="#case-antifraud" class="formula-inline-ref">§4.3 Антифрод</a> и <a href="part3-reference.html#metrics" class="formula-inline-ref">композитные метрики (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr AvitoTech, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Спроектируйте платформу A/B-тестирования для marketplace с сетевыми эффектами.</p>
+        <p><strong>Что проверяют:</strong> понимание network effects в classifieds (продавцы влияют на покупателей и наоборот), switchback-дизайн, interpolation, counterfactual approaches, CUPED.</p>
+        <p><strong>На что обратить внимание:</strong> switchback — переключение варианта по дням/гео, чтобы усреднить network effect. CUPED — для уменьшения дисперсии. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B-методы (см. §III.2)</a> и разбор в <a href="#case-ab-network" class="formula-inline-ref">§4.2 A/B с сетевыми эффектами</a>.</p>
+      </div>
+
+      <h3>Behavioral</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Был ли ты с чем-то не согласен внутри своей команды? Как ты решал эту проблему?</p>
+        <p><strong>Что проверяют:</strong> способность конструктивно решать конфликты, зрелость суждений, готовность предлагать решения, а не просто делегировать вверх.</p>
+        <p><strong>На что обратить внимание:</strong> плохой ответ: «пошёл к тимлиду, и он решил». Хороший: «сформулировал свою позицию с данными, обсудил с командой, предложил компромисс». См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">STAR (см. §I.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2025</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> В чем заключается интерес бизнеса? Существуют ли бизнесы, главный интерес которых — не прибыль? Как интересы пользователей сходятся с интересами бизнеса?</p>
+        <p><strong>Что проверяют:</strong> широту мышления, способность рассуждать о purpose-driven business, понимание multi-stakeholder balance (особенно актуально для Avito — их манифест подчеркивает ценности).</p>
+        <p><strong>На что обратить внимание:</strong> Avito ценит purpose-driven подход. Хороший ответ: «бизнес — это система создания ценности для пользователей; прибыль — следствие, а не цель. Долгосрочно прибыль получают те, кто решает пользовательскую проблему». См. <a href="part3-reference.html#strategy" class="formula-inline-ref">Strategy (см. §III.12)</a> и <a href="part3-reference.html#stakeholders" class="formula-inline-ref">Stakeholders (см. §III.13)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: career.avito.com + YouTube, 2023/2024/2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> Расскажите о своем опыте управления командой / постановке целей / работе с метриками. Как вы растёте как продакт?</p>
+        <p><strong>Что проверяют:</strong> культурный fit с Avito (чёткие цели, комьюнити, избегание сложностей), способность к рефлексии, карьерные амбиции, self-awareness.</p>
+        <p><strong>На что обратить внимание:</strong> Avito ценит self-awareness и осознанный рост. Хороший ответ: «рос от execution к strategy, сейчас учусь работать с неопределённостью». См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a>.</p>
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>§4 Разборы кейсов</h2>
+
+      <div class="case-walkthrough" id="case-listing-quality">
+        <h3>§4.1 Product Sense: повышение конверсии из просмотра в контакт</h3>
+
+        <p><strong>Формулировка:</strong> Как улучшить качество объявлений / как поднять конверсию из просмотра в контакт?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Декомпозиция воронки:</strong> создание объявления → модерация → показы → просмотры → контакты → сделки. Падение на шаге «просмотр → контакт» = проблема в доверии или релевантности.</li>
+          <li><strong>Факторы конверсии из просмотра в контакт:</strong>
+            <ul>
+              <li>Качество объявления: фото, описание, цена, полнота характеристик.</li>
+              <li>Доверие к продавцу: рейтинг, отзывы, верификация, стаж на платформе.</li>
+              <li>Релевантность: соответствует ли объявление intent покупателя.</li>
+              <li>UX: легко ли найти кнопку контакта, есть ли варианты (чат/телефон).</li>
+            </ul>
+          </li>
+          <li><strong>Сегментация проблемы:</strong> в каких категориях конверсия ниже? Новые продавцы vs опытные? Какие устройства?</li>
+          <li><strong>Гипотезы (по приоритету):</strong>
+            <ul>
+              <li>Нет фото или плохое качество → обязать фото, подсказать улучшение.</li>
+              <li>Нет верификации продавца → бейдж верификации для прошедших проверку.</li>
+              <li>Цена ниже рынка → подозрение в фроде, нужна маркировка.</li>
+              <li>Нет отзывов → стимулировать покупателей оставлять отзывы.</li>
+            </ul>
+          </li>
+          <li><strong>Эксперимент:</strong> A/B на топ-2 гипотезах, primary — conversion view→contact, guardrail — conversion contact→deal (чтобы не получить рост контактов без сделок).</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Конверсия из просмотра в контакт — это метрика доверия и релевантности. Падает, когда пользователь видит объявление, но не решается написать. Сначала сегментирую: в каких категориях, у каких продавцов, на каких устройствах.</p>
+          <p>Допустим, данные показывают: падение у новых продавцов без верификации, особенно в категории товаров. Топ-гипотеза — отсутствие доверия. Решение: бейдж верификации для продавцов, прошедших проверку документов (для профи — ИП/ООО, для частных — паспорт).</p>
+          <p>Вторая гипотеза — качество объявлений. У новых продавцов часто нет фото или описание на одно предложение. Решение: wizard при создании объявления с подсказками, минимальные требования (фото, описание от 100 знаков), примеры хороших объявлений.</p>
+          <p>Приоритизация. Верификация — Reach высокий (все новые продавцы), Impact на доверие высокий, Confidence средний (нужен тест), Effort — 3 спринта (верификация + UI + ML). RICE — высокий.</p>
+          <p>Эксперимент: A/B на 50/50 новых продавцов. Primary — conversion view→contact для объявлений этих продавцов. Guardrail — conversion contact→deal (если верификация создаст ощущение «официального» продавца, может снизить неформальный диалог). Длительность — 4 недели, чтобы capture разные категории.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Сегментацию:</strong> общая метрика конверсии скрывает, где именно проблема. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (см. §III.1)</a>.</li>
+          <li><strong>Guardrail metrics:</strong> рост контактов без роста сделок = пустая метрика. Пользователи пишут, но не покупают — нет доверия.</li>
+          <li><strong>Network effects:</strong> верификация для одной стороны влияет и на другую. A/B может потребовать switchback-дизайна. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">switchback (см. §III.2)</a>.</li>
+          <li><strong>Quality Score:</strong> композитная метрика качества объявления (фото + описание + цена + отзывы) — сильнее, чем отдельные метрики. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">композитные метрики (см. §III.1)</a>.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать фичи без сегментации проблемы.</li>
+          <li>Не учитывать guardrail metrics.</li>
+          <li>Игнорировать network effects в эксперименте.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — двусторонняя воронка; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — декомпозиция воронки и Quality Score; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B с switchback для network effects; <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE (§III.7)</a> — приоритизация гипотез.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-ab-network">
+        <h3>§4.2 Analytical: A/B-тест с сетевыми эффектами</h3>
+
+        <p><strong>Формулировка:</strong> A/B-тест: спроектируйте эксперимент для оценки фичи. Какой MDE выбрать? Какой размер выборки? Что делать при сетевых эффектах?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Определение primary metric и guardrails:</strong> что улучшаем, что не должны уронить.</li>
+          <li><strong>MDE (Minimum Detectable Effect):</strong> какой эффект мы хотим заметить? Обычно 0.5-2% от baseline.</li>
+          <li><strong>Sample size:</strong> через формулу с учётом baseline rate, MDE, alpha (0.05), power (0.8).</li>
+          <li><strong>Сетевые эффекты в marketplace:</strong> продавцы влияют на покупателей и наоборот. Обычный user-level A/B не работает — пользователь в тесте видит тех же продавцов, что и в контроле.</li>
+          <li><strong>Решения:</strong>
+            <ul>
+              <li><strong>Switchback-дизайн:</strong> переключение варианта по дням/гео, чтобы усреднить network effect.</li>
+              <li><strong>Cluster randomization:</strong> рандомизация по кластерам (гео, категория), а не по пользователям.</li>
+              <li><strong>Counterfactual evaluation:</strong> оценка офлайн через propensity scoring.</li>
+              <li><strong>Interleaving:</strong> для ранжирования — показ обоих вариантов одному пользователю.</li>
+            </ul>
+          </li>
+          <li><strong>CUPED:</strong> для уменьшения дисперсии и снижения sample size.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Допустим, фича — новое ранжирование объявлений. Primary metric — conversion view→contact. Guardrails — GMV, take rate, latency.</p>
+          <p>MDE. Базовая конверсия — 5%. Хотим заметить относительный эффект 1% (то есть до 5.05%). Это типичный MDE для marketplace.</p>
+          <p>Sample size. Через формулу: n = 16 × p × (1-p) / MDE² = 16 × 0.05 × 0.95 / 0.0005² ≈ 3 млн пользователей на группу. С CUPED можно снизить до 1.5 млн.</p>
+          <p>Сетевые эффекты. Ранжирование влияет на то, какие объявления видят покупатели, а значит — на клики и контакты для продавцов. Если одни и те же продавцы видны в тесте и контроле, мы не сможем изолировать эффект.</p>
+          <p>Решение — switchback-дизайн. Каждый день переключаем вариант для всей популяции (или для гео-кластеров). Понедельник — variant A, вторник — variant B, и так далее. Усредняем по дням, чтобы network effect компенсировался.</p>
+          <p>Альтернатива — interleaving для ранжирования. Показываем одному пользователю смесь результатов A и B, меряем клики. Дисперсия ниже, sample size в 10-100 раз меньше. Но сложнее в имплементации.</p>
+          <p>CUPED применим на уровне пользователя: корректируем метрику на pre-experiment covariates (историческая активность). Дисперсия падает на 30-50%, sample size — пропорционально.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Network effects:</strong> кандидаты предлагают обычный user-level A/B, не учитывая, что продавцы общие для теста и контроля. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">switchback (см. §III.2)</a>.</li>
+          <li><strong>CUPED:</strong> простой способ снизить sample size в 1.5-2 раза. Обязательно упомянуть.</li>
+          <li><strong>Guardrail metrics:</strong> рост primary без проверки guardrails = получить «успех», который разрушит бизнес.</li>
+          <li><strong>Interleaving для ранжирования:</strong> особенно важно, когда A/B невозможен из-за network effects.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать user-level A/B для ранжирования без учёта network effects.</li>
+          <li>Не упомянуть CUPED и switchback.</li>
+          <li>Сводить MDE к «возьмём 1%» без расчёта sample size.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — MDE, sample size, switchback, interleaving, CUPED; <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — primary + guardrails; <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — network effects.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-antifraud">
+        <h3>§4.3 System Design: система антифрода для classifieds</h3>
+
+        <p><strong>Формулировка:</strong> Спроектируйте систему антифрода / верификации продавцов для classifieds.</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Определение проблемы:</strong> какие типы фрода в classifieds? Мошеннические схемы (предоплата без товара), фейковые объявления, дубли, бот-аккаунты, накрутка отзывов.</li>
+          <li><strong>Архитектура системы:</strong>
+            <ul>
+              <li><strong>Сбор сигналов:</strong> поведение пользователя, device fingerprint, IP, история аккаунта, характеристики объявления.</li>
+              <li><strong>ML-модели:</strong> классификатор фрода (бинарный), модель риска (вероятность), ансамбль.</li>
+              <li><strong>Правила:</strong> экспертные правила для явных паттернов (один IP — 10 аккаунтов).</li>
+              <li><strong>Действия:</strong> блокировка, запрос верификации, понижение в выдаче, маркировка предупреждением.</li>
+              <li><strong>Quality Score:</strong> композитная метрика для оценки качества модели.</li>
+            </ul>
+          </li>
+          <li><strong>Trade-off precision vs recall:</strong> высокий recall = блокируем много фрода, но и много ложных срабатываний (блокируем легитимных). Нужен компромисс.</li>
+          <li><strong>Quality Score = f(precision, recall, cost of fraud, cost of false positive).</strong> Cost of fraud — упущенная выручка + репутационный ущерб. Cost of false positive — потеря продавца, churn.</li>
+          <li><strong>Human-in-the-loop:</strong> пограничные кусы отправляются на ручную модерацию.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Типы фрода в classifieds: предоплата без товара, фейковые объявления, дубли, бот-аккаунты, накрутка отзывов. Архитектура: сбор сигналов → ML-модели → правила → действие.</p>
+          <p>Сигналы: device fingerprint, IP, история аккаунта (возраст, активность), характеристики объявления (цена ниже рынка, отсутствие фото), поведение (массовые постинги, копирование текста).</p>
+          <p>ML-модель — бинарный классификатор фрода. Ансамбль gradient boosting + neural net. Отдельная модель — для risk score (вероятность фрода). Правила для явных паттернов: один IP — 10 аккаунтов за час → автоблок.</p>
+          <p>Действия по порогу вероятности: &gt; 0.9 — автоблок, 0.5-0.9 — запрос верификации (документы), 0.2-0.5 — понижение в выдаче, &lt; 0.2 — без действия.</p>
+          <p>Quality Score — композитная метрика. Cost of fraud — упущенная выручка + репутация. Cost of false positive — churn заблокированного продавца + негативные отзывы. Оптимизируем Quality Score = α × precision × cost_fp + β × recall × cost_fraud.</p>
+          <p>Human-in-the-loop: пограничные кейсы (0.5-0.9) — на ручную модерацию. Модераторы размечают, разметка идёт в переобучение.</p>
+          <p>Метрики системы: precision, recall, false positive rate, время срабатывания, cost saved.</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Cost-based оптимизация:</strong> нельзя оптимизировать только recall — заблокируете легитимных продавцов. Cost of fraud vs cost of false positive — основа решения. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">композитные метрики (см. §III.1)</a>.</li>
+          <li><strong>Human-in-the-loop:</strong> ML не идеален, пограничные кейсы — на модерацию.</li>
+          <li><strong>Feedback loop:</strong> разметка модераторов должна идти в переобучение.</li>
+          <li><strong>Adversarial robustness:</strong> мошенники адаптируются. Нужен continuous monitoring и регулярное переобучение.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать ML-чёрный ящик без cost-based оптимизации.</li>
+          <li>Не упомянуть human-in-the-loop.</li>
+          <li>Игнорировать adversarial robustness.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — композитный Quality Score; <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — ML pipeline, feedback loop; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B для оценки impact антифрода; <a href="part3-reference.html#marketplace" class="formula-inline-ref">Marketplace (§III.20)</a> — trust & safety в двустороннем рынке.</p>
+      </div>
+    </section>
+
+    <section id="distinct">
+      <h2>§5 Что отличает Avito</h2>
+
+      <h3>Специфика expectations</h3>
+      <ul>
+        <li><strong>Marketplace-мышление:</strong> PM должен понимать network effects, баланс сторон спроса и предложения. Решения, выгодные для одной стороны, могут навредить другой.</li>
+        <li><strong>Сильная аналитическая культура:</strong> A/B-тесты, статистика, SQL — обязательны даже для PM. Особый фокус на switchback-тестах для network effects и interleaving для ранжирования.</li>
+        <li><strong>Trust & Safety как отдельная дисциплина:</strong> верификация продавцов, антифрод, Quality Score — явная фишка Avito. PM должен понимать cost-based оптимизацию precision vs recall.</li>
+        <li><strong>ML-проекты в работе PM:</strong> PM работают с ML-продуктами, должны понимать пайплайн ML-разработки, feature engineering, переобучение.</li>
+        <li><strong>Культурные ценности:</strong> «изменения начинаются с тебя», комьюнити, чёткие цели, простота. Стресс-интервью официально отрицается.</li>
+        <li><strong>Прозрачность процесса:</strong> 5 этапов, официально задокументированных, с фидбеком для непрошедших.</li>
+      </ul>
+
+      <h3>Типичные ошибки кандидатов</h3>
+      <ul>
+        <li>Не готовиться к switchback-тестам и network effects.</li>
+        <li>Предлагать user-level A/B для ранжирования.</li>
+        <li>Сводить антифрод к «блокировать всё подозрительное» без учёта false positive cost.</li>
+        <li>Не сегментировать проблемы — общие метрики без декомпозиции.</li>
+        <li>На behavioral отвечать «пошёл к тимлиду» вместо «сформулировал позицию с данными».</li>
+      </ul>
+
+      <h3>Сигналы, что вы прошли раунд</h3>
+      <ul>
+        <li>На кейс-интервью интервьюер даёт дополнительные данные и вы продолжаете строить hypothesis tree — вы в диалоге.</li>
+        <li>Вас просят раскрыть одну из гипотез и предлагают альтернативы — глубина достаточная.</li>
+        <li>На A/B-вопросах вы сами предлагаете switchback и interleaving — это продвинутый уровень.</li>
+        <li>В конце интервьюер рассказывает про команду и продукт — позитивный сигнал.</li>
+        <li>HR упоминает фидбек в течение нескольких дней — вы в шорт-листе.</li>
+      </ul>
+    </section>
+
+    <section id="checklist">
+      <h2>§6 Чек-лист подготовки</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — CIRCLES, hypothesis trees, сегментация</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, switchback, interleaving, CUPED, SQL</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi, TAM/SAM/SOM</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — поиск, ранжирование, антифрод</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — STAR, ценности Avito</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — North Star, metric tree, композитные метрики</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — switchback, interleaving, CUPED, network effects</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — GMV, take rate, unit economics</li>
+        <li><a href="part3-reference.html#data" class="formula-inline-ref">§III.4 Данные</a> — SQL, funnel-аналитика</li>
+        <li><a href="part3-reference.html#discovery" class="formula-inline-ref">§III.5 Discovery</a> — CustDev, UX-исследования</li>
+        <li><a href="part3-reference.html#marketplace" class="formula-inline-ref">§III.20 Marketplace</a> — двусторонний рынок, network effects</li>
+        <li><a href="part3-reference.html#tech-fluency" class="formula-inline-ref">§III.18 Tech Fluency</a> — ML pipeline, search ranking</li>
+      </ul>
+
+      <h3>Что почитать/посмотреть</h3>
+      <ul>
+        <li><a href="https://career.avito.com/directions/product/">Официальная страница Avito: процесс найма PM (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/936804/">Habr AvitoTech: Методичка по A/B-тестированию (2025)</a></li>
+        <li><a href="https://habr.com/ru/articles/1048780/">Habr AvitoTech: Switchback-тесты (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/1043880/">Habr AvitoTech: Почему A/B не подходит для ранжирования (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/767728/">Habr AvitoTech: Quality Score (2023)</a></li>
+        <li><a href="https://habr.com/ru/articles/862016/">Habr AvitoTech: Верификация продавцов (2024)</a></li>
+        <li><a href="https://habr.com/ru/articles/1064332/">Habr AvitoTech: Единая метрика для сотен моделей антифрода (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/910106/">Habr: найм в Авито Недвижимость (2025)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=AeVakoJHV34">YouTube: 5 вопросов на собеседовании для PM (Avito, 2023)</a></li>
+        <li><a href="https://www.youtube.com/watch?v=50q5Hrw8W3g">YouTube: Портрет идеального менеджера продукта (Avito)</a></li>
+        <li><a href="https://raw.githubusercontent.com/avito-tech/playbook/master/product-levels.md">Avito Tech Playbook: Product Levels (GitHub)</a></li>
+      </ul>
+
+      <h3>Self-check: 5 вопросов для самопроверки</h3>
+      <ol>
+        <li>Можете ли вы спроектировать switchback-эксперимент для оценки фичи ранжирования?</li>
+        <li>Можете ли вы построить дерево метрик для Авито Недвижимости, разложив GMV на input-метрики?</li>
+        <li>Можете ли вы объяснить, почему обычный A/B не работает для marketplace из-за network effects?</li>
+        <li>Можете ли вы описать композитный Quality Score для антифрода с учётом cost of fraud и cost of false positive?</li>
+        <li>Можете ли вы привести пример ложной корреляции в продуктовых данных?</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
