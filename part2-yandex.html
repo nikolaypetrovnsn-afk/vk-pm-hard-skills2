@@ -51,7 +51,510 @@
 
   <main class="main">
     <h1>Яндекс: подготовка к собеседованию</h1>
-    <p>Заглушка — будет заполнено в Фазе 2 (ВК) или Фазе 4 (остальные).</p>
+
+    <p class="lead">Яндекс — компания с самой сильной аналитической культурой среди российского big tech. На собеседованиях ценят структурность, знание метрик и A/B-тестирования, техническую глубину и умение работать с feedback loop в рекомендательных системах. В отличие от VK или Ozon, здесь обязательны алгоритмические секции даже для продуктовых ролей.</p>
+
+    <section id="profile">
+      <h2>§1 Профиль компании</h2>
+
+      <h3>Бизнес-модель и основные продукты</h3>
+      <p>Яндекс — экосистема из нескольких вертикально-интегрированных бизнесов:</p>
+      <ul>
+        <li><strong>Поиск и портальные сервисы</strong> — основной рекламный бизнес, Яндекс.Поиск, Картинки, Новости, Маркет, Кинопоиск, Услуги</li>
+        <li><strong>Яндекс Go (Такси, Еда, Лавка, Доставка)</strong> — сверхлокальные сервисы с геозависимым спросом</li>
+        <li><strong>Яндекс 360 (Почта, Диск, Документы, Мессенджер)</strong> — productivity-сегмент, конкуренция с VK Workspace и Mail.ru</li>
+        <li><strong>Яндекс Cloud и B2B-сервисы</strong> — растущий enterprise-сегмент, AI API, Yandex Query</li>
+        <li><strong>Алиса и AI-направление</strong> — голосовой помощник, YandexGPT, AI ART, Summaries</li>
+        <li><strong>Авто и гео</strong> — Яндекс.Карты, Navigator, Auto, спутниковые снимки</li>
+      </ul>
+
+      <h3>Культура и что ценят в PM</h3>
+      <ul>
+        <li><strong>Аналитическая строгость:</strong> каждое решение должно быть подкреплено метриками и/или A/B-тестом. Голословных «мне кажется» не принимают.</li>
+        <li><strong>Техническая глубина:</strong> PM должен понимать ограничения систем — feedback loop, latency, стоимость inference, exploration vs exploitation. Статья «От PRD к evals» — отражение тренда: от продакта ждут прототипирования, agent architecture, evals.</li>
+        <li><strong>Объяснимость решений:</strong> в Такси — формальный верификатор цены, в Лавке — объяснимый exploration. Культура «каждое решение должно быть обосновано».</li>
+        <li><strong>Знание экосистемы:</strong> любят кейсы на собственных продуктах (Такси, Лавка, Поиск, Музыка). Из двух сравнимых кандидатов выбирают того, у кого «ярче огонь в глазах» и кто изучил материалы команды.</li>
+        <li><strong>Алгоритмическая подготовка:</strong> даже для продуктовых ролей требуется как минимум одна алгоритмическая секция. Сложность — LeetCode Easy/Medium, формат вайтборда.</li>
+      </ul>
+
+      <h3>Уровни и отличия</h3>
+      <table>
+        <thead>
+          <tr><th>Уровень</th><th>Зона ответственности</th><th>Что проверяют на интервью</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Middle PM</td><td>Одна фича или подсистема продукта</td><td>Базовая продуктовая логика, A/B-методология, одна алгосекция</td></tr>
+          <tr><td>Senior PM</td><td>Продуктовая линейка или vertical внутри сервиса</td><td>Стратегия, trade-offs, метрики верхнего уровня, две алгосекции или architecture-секция</td></tr>
+          <tr><td>Lead PM / Group PM</td><td>Несколько команд, кросс-продуктовые инициативы</td><td>Системный дизайн, приоритизация на уровне портфеля, найм и менторство</td></tr>
+          <tr><td>Principal PM</td><td>Стратегическое направление экосистемы</td><td>Архитектурные trade-offs на уровне нескольких сервисов, связи с другими бизнесами Яндекса</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="format">
+      <h2>§2 Формат собеседования</h2>
+
+      <p>Процесс найма в Яндекс — один из самых многоэтапных на российском рынке:</p>
+
+      <ol>
+        <li><strong>HR-скрининг (20-30 минут).</strong> Базовое соответствие вакансии, мотивация, ожидания по зарплате.</li>
+        <li><strong>Алгоритмическая секция 1 (1 час).</strong> Вайтборд, без запуска кода. Сложность LeetCode Easy/Medium: sliding window, two pointers, бинарный поиск, базовое динамическое программирование. Для PM — обычно одна секция вместо двух.</li>
+        <li><strong>Алгоритмическая секция 2 (1 час).</strong> Сложнее: графы, динамическое программирование, структуры данных. У разработчиков — обязательна; у PM — опциональна в зависимости от роли.</li>
+        <li><strong>Секция по архитектуре / System Design (1 час).</strong> Микросервисы, trade-offs, масштабирование. Примеры: чат, платёжный шлюз, система ценообразования.</li>
+        <li><strong>Продуктовый кейс (1 час).</strong> Кейс на реальном продукте Яндекса. Декомпозиция → гипотезы → метрики → план A/B.</li>
+        <li><strong>Финал с нанимающим (4 блока).</strong> Мотивация, конфликт, глубокий разбор прошлого опыта, вопросы кандидата.</li>
+      </ol>
+
+      <p><strong>Где отсеивают чаще всего:</strong> алгоритмическая секция (особенно у кандидатов без CS-бэкграунда) и продуктовый кейс (из-за неумения структурировать и переходить от проблемы к метрикам).</p>
+
+      <p><strong>Фидбек:</strong> Яндекс — одна из немногих российских компаний, которая даёт развёрнутый фидбек с разбором, что именно не так. Это отличительная черта процесса.</p>
+    </section>
+
+    <section id="questions">
+      <h2>§3 Реальные вопросы с собеседований</h2>
+      <p>Все вопросы собраны из публичных источников 2025-2026 годов (Habr, блог Яндекса, Яндекс Практикум). Пометка «Частый» — 2+ независимых источника упоминают похожую тему. Пометка «Редкий» — уникальный кейс из одной статьи.</p>
+
+      <h3>Product Sense</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr / Яндекс Практикум, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как бы вы улучшили Яндекс.Такси / Яндекс.Поиск / Яндекс.Лавку / Яндекс.Музыку? Какие метрики бы вы смотрели?»</p>
+        <p><strong>Что проверяют:</strong> способность декомпозировать продукт на пользовательские сценарии, находить узкие места, формулировать гипотезы и предлагать измеримые улучшения. Учитывается знание экосистемы Яндекса.</p>
+        <p><strong>На что обратить внимание:</strong> не предлагайте фичи вслепую — сначала сегментируйте сценарии (заказчик/исполнитель, новое/повторное, высокий/низкий чек), потом найдите узкое место, потом гипотеза. Подходит frameworks: <a href="part1-frameworks.html#product-sense" class="formula-inline-ref">CIRCLES (см. §I.1)</a>. Метрики смотрите через <a href="part3-reference.html#metrics" class="formula-inline-ref">метрическое дерево (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Спроектируйте новую фичу для Яндекс.Музыки / Яндекс.Еды / Яндекс.Лавки. Какие гипотезы проверяете, как измерите успех?»</p>
+        <p><strong>Что проверяют:</strong> продуктовое мышление end-to-end: от CustDev и JTBD до метрик и A/B-теста. Кандидат должен показать, как от пользовательской проблемы прийти к решению и доказать его эффективность.</p>
+        <p><strong>На что обратить внимание:</strong> не пропускайте CustDev-шаг — даже 5 интервью дают сигнал. Для измерения используйте <a href="part3-reference.html#experimentation" class="formula-inline-ref">методологию A/B (см. §III.2)</a>, определите primary metric и guardrail metrics.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Где точки роста для музыкального стриминга? Догонять рынок или создавать новый? Какая метрика будет North Star?»</p>
+        <p><strong>Что проверяют:</strong> стратегическое мышление, анализ рынка (конкуренты: VK Музыка, МТС.музыка, Звук), способность находить неочевидные ниши (геймификация, умные колонки, подкасты, аудиокниги) и оценивать охват.</p>
+        <p><strong>На что обратить внимание:</strong> North Star должен быть одновременно амбициозным и измеримым. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">North Star Metric (см. §III.1.2)</a>. Для оценки рынка применяйте <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Fermi-подход (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Блог Яндекса на Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «В Яндекс.Лавке рекомендательная система замыкается на привычках пользователя. Как вывести его за пределы известного? Что будете измерять?»</p>
+        <p><strong>Что проверяют:</strong> понимание feedback loop в рекомендательных системах, дилеммы exploration vs exploitation, знание метрик (discovery, diversity, GMV, CTR, CVR). Умение искать компромисс между краткосрочными и долгосрочными метриками.</p>
+        <p><strong>На что обратить внимание:</strong> это вопрос не про «добавить случайности», а про системный trade-off. См. разбор в <a href="#case-lavka-exploration" class="formula-inline-ref">§4.2 Лавка: exploration</a>. Применяйте методы <a href="part3-reference.html#experimentation" class="formula-inline-ref">контрфактической оценки (см. §III.2)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как оценивал бы рынок новой AI-ниши? Что делал бы, если прямых конкурентов вообще нет? Кто главный конкурент AI-решений в сегменте крупных корпораций?»</p>
+        <p><strong>Что проверяют:</strong> способность работать с неопределённостью, понимание специфики AI-рынка (open-source модели, монетизация, стоимость внедрений). Часто кандидаты хорошо работают с существующим бэклогом, но не умеют искать новые направления.</p>
+        <p><strong>На что обратить внимание:</strong> главный конкурент AI-решений в enterprise — не другая AI-компания, а «как сейчас делают вручную». См. <a href="part3-reference.html#competitive" class="formula-inline-ref">анализ конкурентов (см. §III.14)</a> и <a href="part3-reference.html#strategy" class="formula-inline-ref">стратегию (см. §III.12)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Кто здесь пользователь? А кто лицо, принимающее решение о покупке? Какой основной риск этого продукта?»</p>
+        <p><strong>Что проверяют:</strong> различение пользователя и ЛПР в enterprise (юрист пользуется, директор принимает, ИБ блокирует, CIO согласовывает бюджет). Умение видеть реальные риски (недоверие к AI, дорогая интеграция, кастомизация убивает экономику).</p>
+        <p><strong>На что обратить внимание:</strong> в B2B-продукте пользователь ≠ ЛПР ≠ блокер. См. <a href="part3-reference.html#stakeholders" class="formula-inline-ref">работу со стейкхолдерами (см. §III.13)</a>.</p>
+      </div>
+
+      <h3>Analytical</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Netology on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «DAU упал на 10%. Как будете разбираться? Какие гипотезы проверите в первую очередь?»</p>
+        <p><strong>Что проверяют:</strong> структурированный подход к дебагу метрик: сегментация (платформа, гео, когорта), проверка качества данных, внешние факторы, проверка корректности расчёта (не пропали ли пользователи из выборки).</p>
+        <p><strong>На что обратить внимание:</strong> сначала проверьте, что метрика считается правильно (не сломался ли пайплайн), потом сегментируйте, потом внешние факторы. См. разбор в <a href="#case-dau-drop" class="formula-inline-ref">§4.3 DAU debugging</a>. Применяйте <a href="part3-reference.html#metrics" class="formula-inline-ref">декомпозицию метрик (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Netology on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Retention растёт. Но в расчёт попали только те, кто уже вернулся хотя бы раз. Какие выводы можно делать? Какая ловушка здесь?»</p>
+        <p><strong>Что проверяют:</strong> знание классических ловушек аналитики: ошибка выжившего, selection bias, парадокс Симпсона, p-hacking. Способность задавать вопросы к метрике до того, как менять продукт.</p>
+        <p><strong>На что обратить внимание:</strong> это классическая survivorship bias. Корректное сравнение — все пользователи когорты vs вернувшиеся. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">ловушки метрик (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Бизнесу важна долгосрочная метрика (LTV, конверсия в бронирование за 90 дней), но эксперимент нужно завершить за 2-3 недели. Как предсказать долгосрочный эффект?»</p>
+        <p><strong>Что проверяют:</strong> понимание прокси-метрик, CUPED, проблемы регрессии к среднему. Умение строить модель на исторических экспериментах, а не на пользовательских корреляциях. Знание, что обычная регрессия смешивает настоящую связь с шумом.</p>
+        <p><strong>На что обратить внимание:</strong> не путайте корреляцию и причинность. CUPED — стандарт в Яндексе для уменьшения дисперсии. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">методы A/B (см. §III.2)</a> и <a href="part3-reference.html#economics" class="formula-inline-ref">LTV (см. §III.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «После релиза конверсия выросла и на десктопе, и на мобильных. Но в общем отчёте она упала. Как такое возможно? Что делать?»</p>
+        <p><strong>Что проверяют:</strong> знание парадокса Симпсона — когда общий показатель ухудшается, хотя в каждом сегменте ситуация улучшается. Способность сегментировать данные перед выводами.</p>
+        <p><strong>На что обратить внимание:</strong> парадокс Симпсона возникает из-за изменения состава сегментов. Реальный кейс из автомобильного дилера: низкомаржинальный шиномонтаж — главный драйвер LTV. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">сегментацию (см. §III.1)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Netology on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Команда поменяла первый экран, клики на кнопку выросли. Можно ли говорить, что изменение успешное? Какие три вопроса задать метрике до изменения продукта?»</p>
+        <p><strong>Что проверяют:</strong> навык валидации вывода по метрике: (1) какие пользователи и события попали в расчёт, (2) совпадает ли метрика с целью, (3) что было дальше после изменения. Пример: рост регистраций не означает успех онбординга.</p>
+        <p><strong>На что обратить внимание:</strong> всегда смотрите на метрику следующего шага воронки. Рост кликов без роста конверсии в покупку — каннибализация, не успех. См. <a href="part3-reference.html#metrics" class="formula-inline-ref">воронки (см. §III.1)</a> и <a href="part3-reference.html#data" class="formula-inline-ref">SQL-паттерны (см. §III.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Яндекс Практикум on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как провести A/B-тест? Что делать, если результат положительный в одном сегменте и отрицательном в другом?»</p>
+        <p><strong>Что проверяют:</strong> знание методологии A/B-тестирования: выбор размера выборки, определение primary metric и guardrail metrics, длительность, интерпретация с учётом сегментации. Понимание, что смотреть «в ходе» теста нельзя.</p>
+        <p><strong>На что обратить внимание:</strong> различайте запланированную сегментацию (pre-registered) и post-hoc анализ (data dredging). Для pre-registered сегментов выводы валидны, для post-hoc — нужны поправки на множественное тестирование. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">методологию A/B (см. §III.2)</a>.</p>
+      </div>
+
+      <h3>Estimation</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Яндекс Практикум on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Сколько заказов делает Яндекс.Еда за день в Москве / в России?»</p>
+        <p><strong>Что проверяют:</strong> Fermi-подход: население Москвы → доля тех, кто пользуется доставкой → средняя частота заказов. Умение разбивать задачу на множители и проверять порядок цифр.</p>
+        <p><strong>На что обратить внимание:</strong> всегда делайте sanity check. Москва ~13 млн, если у вас получается 50 млн заказов в день — пересчитывайте. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">Estimation methods (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Сколько умных колонок в домах в России? Какой процент рынка у Сбербум? Сколько человек слушают подкасты, аудиокниги?»</p>
+        <p><strong>Что проверяют:</strong> оценка смежных рынков для продуктовой стратегии: ~20-25 млн умных колонок, ~16-18 млн подкастов, ~25-30 млн аудиокниг. Умение находить данные и оценивать охват ниш.</p>
+        <p><strong>На что обратить внимание:</strong> для каждой оценки называйте источник допущения или логику расчёта. См. <a href="part1-frameworks.html#estimation" class="formula-inline-ref">top-down/bottom-up (см. §I.3)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Что является юнитом в B2B AI-продукте? Как считать экономику, если есть on-premise, кастомизация, интеграции?»</p>
+        <p><strong>Что проверяют:</strong> различие юнитов в B2B vs B2C (компания-клиент, департамент, количество сотрудников, документов, AI-запросов). Учёт стоимости GPU, кастомизации, поддержки, presale, SLA.</p>
+        <p><strong>На что обратить внимание:</strong> enterprise AI почти никогда не является «идеальным SaaS». Считайте юнит-экономику с учётом cost of serving. См. <a href="part3-reference.html#economics" class="formula-inline-ref">unit economics (см. §III.3)</a>.</p>
+      </div>
+
+      <h3>System Design</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Блог Яндекса на Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как бы вы спроектировали алгоритм ценообразования Яндекс.Такси? Какие факторы учесть? Как обеспечить изменяемость и объяснимость цены?»</p>
+        <p><strong>Что проверяют:</strong> system design на масштабе Яндекса: фиксированная/таксометр/интервальная цена, геозоны, тарифные категории, десятки факторов (скидки, спрос, лыжи, коты). Требования: простота правок, быстрая активация, объяснимость, пересчёт, история, откаты. Решение — DSL вместо скриптового языка.</p>
+        <p><strong>На что обратить внимание:</strong> ключевой инсайт — вынос алгоритма из кода в DSL, чтобы менять цены без релизов. См. полный разбор в <a href="#case-taxi-pricing" class="formula-inline-ref">§4.1 Такси: ценообразование</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Блог Яндекса на Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как спроектировать рекомендательную систему, которая не замыкается на привычках пользователя? Куда встроить exploration?»</p>
+        <p><strong>Что проверяют:</strong> знание архитектуры рекомендательных систем: reweighting, контрфактические методы (IPS), LLM-аугментация, post-ranking с многоруким бандитом. Понимание trade-off: Thompson Sampling vs UCB, выбор гиперпараметров, офлайн-валидация → пристрелочный онлайн-эксперимент → накопление сигнала → переобучение.</p>
+        <p><strong>На что обратить внимание:</strong> exploration — не отдельный блок, а сквозная ответственность retrieval → ranking → post-ranking. См. <a href="#case-lavka-exploration" class="formula-inline-ref">§4.2 Лавка: exploration</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Спроектируйте [сервис] — обычно 1 час. Примеры из практики: чат, платёжный шлюз, система ценообразования.»</p>
+        <p><strong>Что проверяют:</strong> способность обсуждать архитектуру на уровне микросервисов, trade-offs, масштабирование. В Яндексе — отдельная часовая секция после двух алгоритмических. Учитывается умение вести диалог и обосновывать решения.</p>
+        <p><strong>На что обратить внимание:</strong> не ныряйте в детали одного сервиса — сначала набросайте high-level, потом углубляйтесь по запросу интервьюера. См. <a href="part1-frameworks.html#system-design" class="formula-inline-ref">System Design для PM (см. §I.4)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-rare">Редкий</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Как организовать пилот AI-продукта в крупной корпорации? Как доказывать ROI? Через кого продавать?»</p>
+        <p><strong>Что проверяют:</strong> понимание enterprise-цикла: длинный цикл продаж, тендеры, on-premise, SLA, партнёрства. Умение строить B2B-воронку, доказывать бизнес-эффект, заходить через партнёров. Каналы продаж отличаются от B2C.</p>
+        <p><strong>На что обратить внимание:</strong> пилот должен иметь измеримый ROI в деньгах, не в «внедрено успешно». См. <a href="part3-reference.html#gtm" class="formula-inline-ref">GTM (см. §III.16)</a> и <a href="part3-reference.html#stakeholders" class="formula-inline-ref">B2B-стейкхолдеров (см. §III.13)</a>.</p>
+      </div>
+
+      <h3>Behavioral</h3>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Расскажите про самый сложный продукт, который вы запускали. Какую роль играли, с какими трудностями столкнулись, что получилось?»</p>
+        <p><strong>Что проверяют:</strong> структурированный рассказ (STAR), способность различать «не хватило времени» и конкретные причины (архитектура, тестирование, интеграция, легаси). В Яндексе ценят, когда менеджер знает, на что именно ему нужно было время.</p>
+        <p><strong>На что обратить внимание:</strong> используйте STAR: Situation, Task, Action, Result. Не говорите «не хватило времени» — конкретизируйте. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">Behavioral (см. §I.5)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Опишите конфликт с командой / стейкхолдером и его решение. Как вы приоритизируете бэклог?»</p>
+        <p><strong>Что проверяют:</strong> навык коммуникации (в Яндексе много общения со смежными отделами), способность работать в неопределённости и конфликтах. Часто задают в формате STAR — международные компании отказывают за «недостаточно структурированные ответы».</p>
+        <p><strong>На что обратить внимание:</strong> конфликт должен разрешаться через данные/метрики, не через «я переубедил». Для приоритизации используйте <a href="part3-reference.html#prioritization" class="formula-inline-ref">RICE/WSJF (см. §III.7)</a>.</p>
+      </div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="badge-frequency badge-frequent">Частый</span>
+          <span class="question-source">Источник: Яндекс Практикум on Habr, 2026</span>
+        </div>
+        <p class="question-text"><strong>Формулировка:</strong> «Почему хотите работать именно в этой команде Яндекса? Какие вопросы у вас есть к продукту?»</p>
+        <p><strong>Что проверяют:</strong> мотивацию (в Яндексе из двух сравнимых кандидатов выбирают того, у кого «ярче огонь в глазах»). Кандидат должен провести исследование, изучить выступления команды и статьи на Хабре. Отвечать «всё понятно, вопросов нет» — нельзя.</p>
+        <p><strong>На что обратить внимание:</strong> подготовьте 3-5 осмысленных вопросов о продукте команды. Изучите статьи команды на Хабре за последний год. См. <a href="part1-frameworks.html#behavioral" class="formula-inline-ref">motivation signals (см. §I.5)</a>.</p>
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>§4 Разборы кейсов</h2>
+
+      <div class="case-walkthrough" id="case-taxi-pricing">
+        <h3>§4.1 System Design: алгоритм ценообразования Яндекс.Такси</h3>
+
+        <p><strong>Формулировка:</strong> Спроектируйте алгоритм ценообразования Яндекс.Такси. Какие факторы учесть? Как обеспечить изменяемость и объяснимость цены?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Декомпозиция:</strong> что такое «цена» для Такси — это не одно число, а семейство цен: фиксированная ( surge), таксометр (по времени/расстоянию), интервальная («от 200 до 300 ₽»).</li>
+          <li><strong>Факторы:</strong> геозона, тарифная категория (Эконом/Комфорт/Бизнес), спрос-предложение (surge-коэффициент), скидки/промокоды, опции (детское кресло, лыжи, коты), время суток, погода, пробки.</li>
+          <li><strong>Требования к системе:</strong> простота правок (без релизов), быстрая активация (минуты, не часы), объяснимость (почему эта цена?), пересчёт при изменении факторов, история (кто когда что поменял), откаты (отмена неверной конфигурации).</li>
+          <li><strong>Архитектурное решение:</strong> DSL вместо скриптового языка. Цена описывается декларативно как цепочка преобразований: базовая цена → surge-множитель → скидки → опции. Каждое преобразование верифицируется.</li>
+          <li><strong>Верификация:</strong> формальный верификатор проверяет, что DSL-правила корректны (нет противоречий, все ветки покрыты, цена в адекватном диапазоне).</li>
+        </ol>
+
+        <h4>Пример ответа (8-12 минут устного разбора)</h4>
+        <div class="answer-example">
+          <p>«Цена Такси — это не формула, а пайплайн преобразований. Допустим, у нас есть базовая цена поездки, рассчитанная по геозоне и тарифу. Затем surge-множитель умножает её на коэффициент спроса. Потом применяются скидки — персональные и промокоды. Затем опции: детское кресло +100 ₽, перевозка животных +50 ₽. Каждый шаг — отдельное правило в DSL.</p>
+          <p>Почему DSL, а не Python-скрипты? Скрипты быстро превращаются в нечитаемую кашу, их невозможно верифицировать, и каждое изменение требует релиза. DSL позволяет прайс-менеджеру менять правила в админке, верификатор проверяет их за секунды, и изменение уходит в продакшен за минуты.</p>
+          <p>Объяснимость — отдельное требование. Если водитель или пользователь жалуется на цену, мы должны показать цепочку: вот базовая цена, вот surge-коэффициент 1.4, вот скидка 10%, вот опция +100 ₽. Это и для поддержки, и для доверия.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Верификация правил:</strong> без формального верификатора любая ошибка в DSL уходит в продакшен и ломает цены. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</li>
+          <li><strong>Откаты и история:</strong> прайс-менеджер должен уметь откатить изменение за секунды, не дожидаясь релиза.</li>
+          <li><strong>A/B-тестирование цен:</strong> цены можно тестировать, но с ограничениями — guardrail metrics должны включать отмены, жалобы, отток водителей. См. <a href="part3-reference.html#experimentation" class="formula-inline-ref">A/B-методологию (см. §III.2)</a>.</li>
+          <li><strong>Каннибализация тарифов:</strong> изменение цены Эконома может перетечь спрос на Комфорт и наоборот — это надо учитывать в эксперименте.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Предлагать хардкодить факторы в коде сервиса.</li>
+          <li>Не упомянуть объяснимость — в Яндексе это обязательное требование.</li>
+          <li>Сводить ценообразование к «машинному обучению без интерпретации».</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#pricing" class="formula-inline-ref">Pricing Models (§III.10)</a> — выбираем DSL-based прайсинг вместо ML-чёрного ящика; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — A/B с guardrail на отмены и жалобы; <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (§III.18)</a> — DSL как архитектурный паттерн для изменяемых бизнес-правил.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-lavka-exploration">
+        <h3>§4.2 Product Sense + System Design: exploration в рекомендациях Лавки</h3>
+
+        <p><strong>Формулировка:</strong> В Яндекс.Лавке рекомендательная система замыкается на привычках пользователя. Как вывести его за пределы известного? Что будете измерять?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Проблема feedback loop:</strong> пользователь заказывал молоко и хлеб → система учится рекомендовать молоко и хлеб → пользователь никогда не видит новые категории → LTV плато.</li>
+          <li><strong>Дилемма exploration vs exploitation:</strong> exploitation — рекомендовать проверенное (короткий CTR, низкая вариативность); exploration — рекомендовать новое (низкий краткосрочный CTR, высокий потенциал открытия).</li>
+          <li><strong>Где встраивать exploration:</strong> не в одном месте, а сквозь пайплайн:
+            <ul>
+              <li><strong>Retrieval:</strong> reweighting кандидатов — повышаем вес не популярных.</li>
+              <li><strong>Ranking:</strong> контрфактические методы (Inverse Propensity Scoring) — корректируем bias популярности.</li>
+              <li><strong>Post-ranking:</strong> многорукий бандит (Thompson Sampling или UCB) — динамически балансируем explore/exploit.</li>
+              <li><strong>LLM-аугментация:</strong> генерируем описания и обоснования для новых товаров, чтобы поднять CTR.</li>
+            </ul>
+          </li>
+          <li><strong>Метрики:</strong> краткосрочные (CTR, CVR, GMV) — будут проседать; долгосрочные (discovery, diversity, retention 30+, LTV) — должны расти. Строим композитную метрику или multi-objective оптимизацию.</li>
+          <li><strong>Валидация:</strong> офлайн-валидация на исторических данных → пристрелочный онлайн-эксперимент на 1-2% трафика → накопление сигнала → переобучение.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Замыкание на привычках — это классический feedback loop в рекомендательных системах. Пользователь видит только то, что уже покупал, и не открывает новые категории. LTV выходит на плато.</p>
+          <p>Решение — не "добавить случайности", а системный exploration на нескольких уровнях. На retrieval — reweighting, чтобы поднимать не популярных кандидатов. На ranking — Inverse Propensity Scoring, корректирующий bias популярности. На post-ranking — многорукий бандит: Thompson Sampling для баланса explore/exploit, с гиперпараметром, который мы крутим в зависимости от того, насколько пользователь уже "исследован".</p>
+          <p>Метрики. Краткосрочные — CTR и CVR — почти наверняка просядут, потому что exploration — это затраты. Долгосрочные — discovery (доля новых категорий в заказах), diversity (entropy распределения по категориям), retention на 30+ дней, LTV. Строим композитную метрику: short-term loss компенсируется long-term gain, если retention растёт.</p>
+          <p>Валидация поэтапная. Сначала офлайн — на исторических логах проверяем, что IPS-коррекция не ухудшает метрики. Потом пристрелочный эксперимент на 1% трафика — смотрим, нет ли катастрофы. Потом масштабируем до 10-50% и копим сигнал.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Thompson Sampling vs UCB:</strong> Thompson лучше для batched feedback (как в Лавке, где сигнал о покупке приходит через часы/дни), UCB — для real-time. См. <a href="part3-reference.html#tech-fluency" class="formula-inline-ref">Tech Fluency (см. §III.18)</a>.</li>
+          <li><strong>Холодный старт для новых товаров:</strong> exploration помогает не только новым категориям для пользователя, но и новым SKU вообще — им нужно получить первый сигнал.</li>
+          <li><strong>Cost of exploration:</strong> каждая "исследовательская" рекомендация — это упущенный CTR. Считайте этот cost отдельно, как бюджет на marketing research.</li>
+          <li><strong>Guardrail metrics:</strong> следите за LTV когорты — если exploration каннибализирует retention, баланс нужно сместить обратно.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>«Просто добавим случайный товар в recommendations» — без ML-коррекции это убьёт CTR.</li>
+          <li>Не упомянуть IPS и контрфактические методы — без них exploration даёт смещённую оценку.</li>
+          <li>Сравнивать только краткосрочные метрики — получите отрицательный результат и откажетесь от правильной идеи.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — композитная метрика short-term loss + long-term gain; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — офлайн-валидация + пристрелочный A/B + масштабирование; <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (§III.1.3)</a> — 30-дневное окно для оценки долгосрочного retention; <a href="part3-reference.html#economics" class="formula-inline-ref">LTV (§III.3)</a> — main north star для exploration.</p>
+      </div>
+
+      <div class="case-walkthrough" id="case-dau-drop">
+        <h3>§4.3 Analytical: DAU упал на 10%</h3>
+
+        <p><strong>Формулировка:</strong> DAU упал на 10%. Как будете разбираться? Какие гипотезы проверите в первую очередь?</p>
+
+        <h4>Структура ответа</h4>
+        <ol>
+          <li><strong>Шаг 1 — проверка корректности данных.</strong> Не сломался ли пайплайн? Не пропали ли пользователи из выборки? Совпадает ли число с другими источниками (Backend logs vs BI)?</li>
+          <li><strong>Шаг 2 — сегментация.</strong> Разбейте падение по: платформе (iOS/Android/Web), гео, когорте (новые/вернувшиеся), каналу привлечения, версии приложения.</li>
+          <li><strong>Шаг 3 — внешние факторы.</strong> Праздник, выходной, сбой у партнёра (например, упал СБП), новость о компании, действия конкурентов.</li>
+          <li><strong>Шаг 4 — внутренние факторы.</strong> Что зарелизили за последние 7-14 дней? A/B-тесты на продакшене? Изменения в онбординге? Удаление фичи?</li>
+          <li><strong>Шаг 5 — формулирование гипотез и проверка.</strong> Топ-3 гипотезы → данные для проверки → вывод.</li>
+        </ol>
+
+        <h4>Пример ответа</h4>
+        <div class="answer-example">
+          <p>«Сначала проверю, что DAU действительно упал, а не сломалась отчётность. Сравню с backend-логами и сырыми данными. Если расхождений нет — падение реальное.</p>
+          <p>Дальше сегментирую. Допустим, падение концентрируется на Android-пользователях в Москве. Это сужает гипотезы: либо релиз, либо геозависимый фактор. Если Android-релиз был — смотрим, не сломалось ли что-то критичное (push, deeplink, крэш-логи).</p>
+          <p>Если сегментация не выявила локальной аномалии — падение распределено равномерно. Тогда внешние факторы: погода, праздник, сбой инфраструктуры. Параллельно проверяю A/B-тесты — не выкатили ли мы что-то на 50%+ трафика с негативным эффектом.</p>
+          <p>Топ-3 гипотезы обычно: (1) баг в релизе, (2) негативный A/B-тест, (3) внешний фактор. Для каждой — конкретная проверка: крэш-логи, откат теста, корреляция с внешними событиями.»</p>
+        </div>
+
+        <h4>Что часто упускают</h4>
+        <ul>
+          <li><strong>Проверка качества данных FIRST:</strong> кандидаты часто сразу начинают формулировать продуктовые гипотезы, пропуская шаг «а корректно ли посчитан DAU». См. <a href="part3-reference.html#data" class="formula-inline-ref">Data Quality (см. §III.4)</a>.</li>
+          <li><strong>Сегментация по новым/вернувшимся:</strong> DAU = New + Returning. Если упали New — проблема в привлечении, если Returning — в продукте.</li>
+          <li><strong>Сезонность:</strong> сравнивайте с аналогичным периодом прошлого года, не только с прошлой неделей.</li>
+          <li><strong>Latency effects:</strong> возможно, падение — это отложенный эффект релиза 2 недели назад.</li>
+        </ul>
+
+        <h4>Красные флаги</h4>
+        <ul>
+          <li>Начинать с гипотез без проверки данных.</li>
+          <li>Не сегментировать и делать выводы по общей метрике.</li>
+          <li>Останавливаться на первой правдоподобной гипотезе без проверки альтернатив.</li>
+        </ul>
+
+        <p class="formula-backref"><strong>Применяемые формулы и методы:</strong> <a href="part3-reference.html#metrics" class="formula-inline-ref">Metric Trees (§III.1)</a> — декомпозиция DAU = New + Returning; <a href="part3-reference.html#data" class="formula-inline-ref">SQL Patterns (§III.4)</a> — когортный и сегментный анализ; <a href="part3-reference.html#experimentation" class="formula-inline-ref">Experimentation (§III.2)</a> — проверка активных A/B-тестов; <a href="part3-reference.html#retention-rolling" class="formula-inline-ref">Rolling Retention (§III.1.3)</a> — отложенный эффект на retention.</p>
+      </div>
+    </section>
+
+    <section id="distinct">
+      <h2>§5 Что отличает Яндекс</h2>
+
+      <h3>Специфика expectations</h3>
+      <ul>
+        <li><strong>Аналитическая строгость выше, чем у многих российских компаний.</strong> Метрики, A/B-тесты, оценка эффективности — обязательная часть даже для middle-позиций.</li>
+        <li><strong>Алгоритмический фильтр.</strong> Две алгоритмические секции для разработчиков; для продуктовых ролей — как минимум одна. Это отличает Яндекс от Ozon, VK, Т-Банка, где алгоритмы часто менее акцентированы.</li>
+        <li><strong>Техническая глубина PM-роли.</strong> Продакты в Яндексе должны понимать технические ограничения — feedback loop, exploration vs exploitation, latency, стоимость inference. Статья «От PRD к evals» подтверждает тренд: от продакта ждут прототипирования, agent architecture, evals.</li>
+        <li><strong>Объяснимость решений.</strong> В Такси — формальный верификатор и цепочка преобразований цены. В Лавке — объяснимый exploration. Культура «каждое решение должно быть обосновано».</li>
+        <li><strong>AI-фокус.</strong> Активный найм AI-продактов (статьи 2026 года показывают устойчивый тренд). Требования: understanding LLM limitations, hallucinations, AI governance, Human-in-the-loop, cost/latency intuition.</li>
+      </ul>
+
+      <h3>Типичные ошибки кандидатов</h3>
+      <ul>
+        <li>Готовиться только к продуктовым кейсам и провалить алгосекцию.</li>
+        <li>Предлагать фичи, не подкреплённые метриками и гипотезами.</li>
+        <li>Не знать разницу между CUPED и обычной регрессией.</li>
+        <li>Сводить exploration к «добавить случайности».</li>
+        <li>На behavioral отвечать не по STAR — «недостаточно структурированные ответы» — частый повод для отказа.</li>
+        <li>Отвечать «всё понятно, вопросов нет» на вопрос о мотивации.</li>
+      </ul>
+
+      <h3>Сигналы, что вы прошли раунд</h3>
+      <ul>
+        <li>Интервьюер задаёт уточняющие вопросы, а не перенаправляет — значит, вы идёте по нужной структуре.</li>
+        <li>Вас просят раскрыть одну из гипотез подробнее — значит, гипотезы качественные.</li>
+        <li>В конце интервьюер рассказывает про команду и продукт — это позитивный сигнал.</li>
+        <li>HR после финала предлагает фидбек в течение нескольких дней, а не «мы вернёмся» — положительный знак.</li>
+      </ul>
+    </section>
+
+    <section id="checklist">
+      <h2>§6 Чек-лист подготовки</h2>
+
+      <h3>Что повторить в Части I</h3>
+      <ul>
+        <li><a href="part1-frameworks.html#product-sense" class="formula-inline-ref">§I.1 Product Sense</a> — CIRCLES, особенно декомпозиция и гипотезы</li>
+        <li><a href="part1-frameworks.html#analytical" class="formula-inline-ref">§I.2 Analytical</a> — A/B-методология, ловушки (survivorship, Simpson, p-hacking), CUPED</li>
+        <li><a href="part1-frameworks.html#estimation" class="formula-inline-ref">§I.3 Estimation</a> — Fermi-подход для оценки заказов/рынков</li>
+        <li><a href="part1-frameworks.html#system-design" class="formula-inline-ref">§I.4 System Design</a> — микросервисы, DSL-паттерны, trade-offs</li>
+        <li><a href="part1-frameworks.html#behavioral" class="formula-inline-ref">§I.5 Behavioral</a> — STAR, мотивация, конфликты</li>
+      </ul>
+
+      <h3>Что прорешать в Части III</h3>
+      <ul>
+        <li><a href="part3-reference.html#metrics" class="formula-inline-ref">§III.1 Метрики</a> — North Star, metric tree, ловушки</li>
+        <li><a href="part3-reference.html#experimentation" class="formula-inline-ref">§III.2 Экспериментация</a> — A/B, CUPED, multiple testing</li>
+        <li><a href="part3-reference.html#economics" class="formula-inline-ref">§III.3 Экономика</a> — LTV, unit economics</li>
+        <li><a href="part3-reference.html#data" class="formula-inline-ref">§III.4 Данные</a> — SQL-паттерны: cohort, rolling retention, funnel</li>
+        <li><a href="part3-reference.html#pricing" class="formula-inline-ref">§III.10 Pricing</a> — DSL-прайсинг, surge, интервальные цены</li>
+        <li><a href="part3-reference.html#tech-fluency" class="formula-inline-ref">§III.18 Tech Fluency</a> — feedback loop, exploration vs exploitation, latency/cost</li>
+      </ul>
+
+      <h3>Что почитать/посмотреть</h3>
+      <ul>
+        <li><a href="https://habr.com/ru/companies/yandex/articles/1065984/">Блог Яндекса: ценообразование Такси (Habr, 2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/yandex/articles/1051044/">Блог Яндекса: exploration в рекомендациях Лавки (Habr, 2026)</a></li>
+        <li><a href="https://habr.com/ru/companies/yandex_praktikum/articles/1066858/">Яндекс Практикум: процесс найма (Habr, 2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/1042250/">Habr: архитектурная секция Яндекса (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/1066638/">Habr: CUPED и прокси-метрики (2026)</a></li>
+        <li><a href="https://habr.com/ru/articles/1066368/">Habr: парадокс Симпсона в бизнес-метриках (2026)</a></li>
+        <li>Школа менеджеров Яндекса — публичные материалы на yandex.ru/yaca</li>
+      </ul>
+
+      <h3>Алгоритмическая подготовка</h3>
+      <ul>
+        <li>LeetCode Easy/Medium: sliding window, two pointers, бинарный поиск, базовое динамическое программирование.</li>
+        <li>Формат вайтборда: пишете код без запуска, объясняете вслух.</li>
+        <li>Минимум 50 задач на LeetCode для уверенности.</li>
+      </ul>
+
+      <h3>Self-check: 5 вопросов для самопроверки</h3>
+      <ol>
+        <li>Можете ли вы за 60 секунд декомпозировать DAU на ключевые сегменты и назвать топ-3 гипотезы падения?</li>
+        <li>Можете ли вы объяснить разницу между CUPED и обычной регрессией в A/B-тестах?</li>
+        <li>Можете ли вы спроектировать DSL для прайсинга с верификацией и откатами?</li>
+        <li>Можете ли вы назвать trade-off между Thompson Sampling и UCB в рекомендательных системах?</li>
+        <li>Можете ли вы рассказать про самый сложный продукт по STAR с конкретикой в Action и измеримым Result?</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
